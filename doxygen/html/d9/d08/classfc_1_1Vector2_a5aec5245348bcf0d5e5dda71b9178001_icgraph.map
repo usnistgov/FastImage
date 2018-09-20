@@ -1,0 +1,10 @@
+<map id="fc::Vector2::setXY" name="fc::Vector2::setXY">
+<area shape="rect" id="node2" href="$d9/d08/classfc_1_1Vector2.html#ad30b8f86b3f06ad37bbdd969e0e95e51" title="fc::Vector2\&lt; T \&gt;::Vector2" alt="" coords="193,5,364,32"/>
+<area shape="rect" id="node3" href="$d9/d08/classfc_1_1Vector2.html#aa85cc460abc8809bd278cc1a37a34738" title="fc::Vector2\&lt; T \&gt;::operator+=" alt="" coords="184,56,373,83"/>
+<area shape="rect" id="node4" href="$d9/d08/classfc_1_1Vector2.html#acf30967fe6f42911aeea516543eb726e" title="fc::Vector2\&lt; T \&gt;::operator&#45;=" alt="" coords="186,107,371,133"/>
+<area shape="rect" id="node5" href="$d9/d08/classfc_1_1Vector2.html#acbc36b7ced69acf8fa5094e216bf45a7" title="fc::Vector2\&lt; T \&gt;::operator*=" alt="" coords="185,157,372,184"/>
+<area shape="rect" id="node6" href="$d9/d08/classfc_1_1Vector2.html#a3057882a89f1b623f706af68614a2fbf" title="fc::Vector2\&lt; T \&gt;::operator/=" alt="" coords="186,208,371,235"/>
+<area shape="rect" id="node7" href="$d9/d08/classfc_1_1Vector2.html#a2bf9246d95a97c3f3883fd7b22c45f6e" title="fc::Vector2\&lt; T \&gt;::operator=" alt="" coords="188,259,369,285"/>
+<area shape="rect" id="node8" href="$d9/d08/classfc_1_1Vector2.html#aceb03f4c1b057710fbb95d0b29c11e1b" title="fc::Vector2\&lt; T \&gt;::translate" alt="" coords="191,309,367,336"/>
+<area shape="rect" id="node9" href="$d9/d08/classfc_1_1Vector2.html#a5d08f50cf4fbb34744a0c31ad9b591e6" title="fc::Vector2\&lt; T \&gt;::normalize" alt="" coords="187,360,370,387"/>
+</map>

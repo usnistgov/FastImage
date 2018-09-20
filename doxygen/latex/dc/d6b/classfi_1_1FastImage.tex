@@ -1,0 +1,1362 @@
+\hypertarget{classfi_1_1FastImage}{}\section{fi\+:\+:Fast\+Image$<$ User\+Type $>$ Class Template Reference}
+\label{classfi_1_1FastImage}\index{fi\+::\+Fast\+Image$<$ User\+Type $>$@{fi\+::\+Fast\+Image$<$ User\+Type $>$}}
+
+
+Main api object to access the targeted image.  
+
+
+
+
+{\ttfamily \#include $<$Fast\+Image/api/\+Fast\+Image.\+h$>$}
+
+
+
+Collaboration diagram for fi\+:\+:Fast\+Image$<$ User\+Type $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d55/classfi_1_1FastImage__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classfi_1_1FastImage_1_1Options}{Options}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1FastImage_1_1Options}{Options} to customise \hyperlink{classfi_1_1FastImage}{Fast\+Image}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfi_1_1FastImage_a1ac7484406bb49b685b27cab0ea2cbcf}{Fast\+Image} (\hyperlink{classfi_1_1ATileLoader}{A\+Tile\+Loader}$<$ User\+Type $>$ $\ast$tile\+Loader, const uint32\+\_\+t \&radius)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1FastImage}{Fast\+Image} constructor. \end{DoxyCompactList}\item 
+\hyperlink{classfi_1_1FastImage_a0db8d5c797b4e6d13b09655d272ae22c}{Fast\+Image} (std\+::unique\+\_\+ptr$<$ \hyperlink{classfi_1_1ATileLoader}{A\+Tile\+Loader}$<$ User\+Type $>$$>$ tile\+Loader, const uint32\+\_\+t \&radius)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1FastImage}{Fast\+Image} constructor. \end{DoxyCompactList}\item 
+\hyperlink{classfi_1_1FastImage_a694492eb7802678db82993d8d087604b}{$\sim$\+Fast\+Image} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1FastImage}{Fast\+Image} destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1FastImage_aa2ae5e5498f57462abd876108a55475c}{configure\+And\+Run} ()
+\begin{DoxyCompactList}\small\item\em Set up and run the graph. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage_a17a18b7839a4fd6f8b1cfd2253983bd5}{get\+Radius} () const
+\item 
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage_a1ea580c3c08fe5be5575f0007b1bafbe}{get\+Image\+Width} (uint32\+\_\+t level=0) const
+\begin{DoxyCompactList}\small\item\em Get Image width in px. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage_a355d2e82840f50ccafe0ee681f9aa70f}{get\+Image\+Height} (uint32\+\_\+t level=0) const
+\begin{DoxyCompactList}\small\item\em Get Image height in px. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage_a4544e690ce41bfc0b4ca4e94f5ecd2b1}{get\+Tile\+Width} (uint32\+\_\+t level=0) const
+\begin{DoxyCompactList}\small\item\em Get Tile width in px. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage_ae9f67a164a2e42f7c80b8443080e876b}{get\+Tile\+Height} (uint32\+\_\+t level=0) const
+\begin{DoxyCompactList}\small\item\em Get Tile height in px. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage_a0a92ed9c575ad2664b1e96422375543c}{get\+View\+Height} (uint32\+\_\+t level=0) const
+\begin{DoxyCompactList}\small\item\em Get view height. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage_a21092b9c0fe86ea190291fc79901dc93}{get\+View\+Width} (uint32\+\_\+t level=0) const
+\begin{DoxyCompactList}\small\item\em Get view width. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage_a84984ae1d928ef604866f126ed0a583b}{get\+Number\+Tiles\+Height} (uint32\+\_\+t level=0) const
+\begin{DoxyCompactList}\small\item\em Get number of tiles in a column. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage_a5bb1377a075185ce8445b1dcb6886b6e}{get\+Number\+Tiles\+Width} (uint32\+\_\+t level=0) const
+\begin{DoxyCompactList}\small\item\em Get number of tiles in a row. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage_aaa3d1fe92e83a2e1568a7b66ecfd2d2a}{get\+Nb\+Pyramid\+Levels} () const
+\begin{DoxyCompactList}\small\item\em Get Number of pyramid levels. \end{DoxyCompactList}\item 
+\hyperlink{classfi_1_1FastImage_1_1Options}{Options} $\ast$ \hyperlink{classfi_1_1FastImage_ada03468c50745d94854fcbe87227bbfd}{get\+Fast\+Image\+Options} () const
+\begin{DoxyCompactList}\small\item\em Get the Fast Image options. \end{DoxyCompactList}\item 
+htgs\+::m\+\_\+data\+\_\+t$<$ \hyperlink{classfi_1_1View}{View}$<$ User\+Type $>$ $>$ \hyperlink{classfi_1_1FastImage_aa7c2a5653c878ef1d7f31360eaa85171}{get\+Available\+View\+Blocking} ()
+\begin{DoxyCompactList}\small\item\em Get an available (fully loaded) view. \end{DoxyCompactList}\item 
+std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ \hyperlink{classfi_1_1FastImage_a96ce689446ebd9ee200f8a8f44eb28c0}{get\+Hit\+Miss\+Cache} (uint32\+\_\+t level=0)
+\begin{DoxyCompactList}\small\item\em Get the Hit and miss cache access. \end{DoxyCompactList}\item 
+double \hyperlink{classfi_1_1FastImage_a9a2d39cfad1bbc8a1b5d573a5249cb68}{get\+Image\+Size\+M\+Bytes} (uint32\+\_\+t level=0)
+\begin{DoxyCompactList}\small\item\em Get the image size in Bytes. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage_adc03852a5c3ecabab795cd13034c3d9e}{get\+Number\+Tiles\+Feature\+Computed} () const
+\begin{DoxyCompactList}\small\item\em Get the number of tiles in a feature already computed. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage_a37f70f57589775492c72a43b23ab0872}{get\+Number\+Tiles\+Feature\+Total} () const
+\begin{DoxyCompactList}\small\item\em Get the number of total tiles in a feature. \end{DoxyCompactList}\item 
+bool \hyperlink{classfi_1_1FastImage_aace944dbe0639a772d2f37ff3804580a}{is\+Feature\+Done} ()
+\begin{DoxyCompactList}\small\item\em Get the information is a feature has been totally computed. \end{DoxyCompactList}\item 
+bool \hyperlink{classfi_1_1FastImage_a21e4cc2542c571fad7ccdc9575aadb2c}{is\+Graph\+Processing\+Tiles} ()
+\begin{DoxyCompactList}\small\item\em Get the information if the graph is still processing tiles. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1FastImage_a8b88d3cfcc2acc2e6d6d4baa2185cf9a}{set\+Number\+Tiles\+Feature\+Computed} (uint32\+\_\+t number\+Tiles\+Feature\+Computed)
+\begin{DoxyCompactList}\small\item\em Set the number of tiles in a feature already computed. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1FastImage_a7313f9c3bddf643dfab8cf026527651a}{set\+Number\+Tiles\+Feature\+Total} (uint32\+\_\+t number\+Tiles\+Feature\+Total)
+\begin{DoxyCompactList}\small\item\em Set the number of total tiles in a feature. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1FastImage_af123b9f6554040faab14dcb0a06e2b84}{finished\+Requesting\+Tiles} ()
+\begin{DoxyCompactList}\small\item\em Indicate to the system no more request will be done. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1FastImage_aac69be21b7a131eade5b1ea79dbee59d}{wait\+For\+Graph\+Complete} ()
+\begin{DoxyCompactList}\small\item\em Wait to the graph to complete. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1FastImage_a595c22ba44ba635133c7a20cbd4e2d13}{request\+Tile} (uint32\+\_\+t row\+Index, uint32\+\_\+t col\+Index, bool finish\+Requesting\+Tiles, uint32\+\_\+t level=0)
+\begin{DoxyCompactList}\small\item\em Request a tile. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1FastImage_abd44908134edad1df4a61faec9cdbf9e}{request\+Feature} (const \hyperlink{classfc_1_1Feature}{fc\+::\+Feature} \&feature, uint32\+\_\+t level=0)
+\begin{DoxyCompactList}\small\item\em Request a specific feature into a features collection. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1FastImage_a81c5c39784220efcebce2121a6552e53}{request\+All\+Tiles} (bool finish\+Requesting\+Tiles, uint32\+\_\+t level=0)
+\begin{DoxyCompactList}\small\item\em Request all tiles following a traversal. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1FastImage_a9778dab9f8a9ec5c834a00a9410f474a}{increment\+Tile\+Feature\+Computed} ()
+\begin{DoxyCompactList}\small\item\em Increment the number of tiles for a region already computed. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1FastImage_a79de6c7e6854a742c306d4ec5d942061}{write\+Graph\+Dot\+File} (const std\+::string \&filename, int flags=0)
+\begin{DoxyCompactList}\small\item\em Create a dot file at the path filename. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+htgs\+::\+Task\+Graph\+Conf$<$ \hyperlink{classfi_1_1HTGSViewRequestData}{H\+T\+G\+S\+View\+Request\+Data}$<$ User\+Type $>$, htgs\+::\+Memory\+Data$<$ \hyperlink{classfi_1_1View}{View}$<$ User\+Type $>$ $>$ $>$ $\ast$ \hyperlink{classfi_1_1FastImage_a81ec16682f029e8d7f64888c6212066b}{get\+Task\+Graph} () const
+\begin{DoxyCompactList}\small\item\em Get the H\+T\+GS task graph. \end{DoxyCompactList}\item 
+bool \hyperlink{classfi_1_1FastImage_a9a9ebae36096801272a6a8bf8260ef05}{is\+Finished\+Requesting\+Views} () const
+\begin{DoxyCompactList}\small\item\em Test if the system has finished sending tiles. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1FastImage_a40fb0f9749893a6e04548ee778ee5c1a}{send\+Request} (uint32\+\_\+t index\+Tile\+Row, uint32\+\_\+t index\+Tile\+Col, uint32\+\_\+t level=0)
+\begin{DoxyCompactList}\small\item\em Send a \hyperlink{classfi_1_1View}{View} request to the \hyperlink{classfi_1_1ViewLoader}{View\+Loader} about the tile at coordinate (index\+Tile\+Row, index\+Tile\+Col) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage_a1ebd8ba4863bd2c0e1a2a3df6469dc27}{\+\_\+radius}
+\item 
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage_a517076aaa824901ca1e14b00a934be54}{\+\_\+number\+Tiles\+Feature\+Computed}
+\begin{DoxyCompactList}\small\item\em Number of tiles treated for a feature. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage_a24f06aeefc60764d9cf261417420d92a}{\+\_\+number\+Tiles\+Feature\+Total}
+\item 
+htgs\+::\+Task\+Graph\+Conf$<$ \hyperlink{classfi_1_1HTGSViewRequestData}{H\+T\+G\+S\+View\+Request\+Data}$<$ User\+Type $>$, htgs\+::\+Memory\+Data$<$ \hyperlink{classfi_1_1View}{View}$<$ User\+Type $>$ $>$ $>$ $\ast$ \hyperlink{classfi_1_1FastImage_af3d88915c813b26921a6e329f1880b20}{\+\_\+task\+Graph}
+\item 
+htgs\+::\+Task\+Graph\+Runtime $\ast$ \hyperlink{classfi_1_1FastImage_abff349ecfa318ce51929691878d9230d}{\+\_\+runtime}
+\begin{DoxyCompactList}\small\item\em H\+T\+GS Graph runtime. \end{DoxyCompactList}\item 
+\hyperlink{classfi_1_1ATileLoader}{A\+Tile\+Loader}$<$ User\+Type $>$ $\ast$ \hyperlink{classfi_1_1FastImage_ae2b26c6fbdedf4f23ddf57f1b95828ab}{\+\_\+tile\+Loader}
+\begin{DoxyCompactList}\small\item\em Tile Loader. \end{DoxyCompactList}\item 
+\hyperlink{classfi_1_1ViewCounter}{View\+Counter}$<$ User\+Type $>$ $\ast$ \hyperlink{classfi_1_1FastImage_ab93b796420eb2bbd6263dff2294be1d7}{\+\_\+view\+Counter}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1View}{View} Counter. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classfi_1_1FigCache}{Fig\+Cache}$<$ User\+Type $>$ $\ast$ $>$ \hyperlink{classfi_1_1FastImage_aea01a1147574f77e4f656e5f0525236b}{\+\_\+all\+Cache}
+\begin{DoxyCompactList}\small\item\em Tile Caches given to each tile loader. \end{DoxyCompactList}\item 
+\hyperlink{classfi_1_1FastImage_1_1Options}{Options} $\ast$ \hyperlink{classfi_1_1FastImage_a3ee97b9a34ba54a51254d308506403fb}{\+\_\+fast\+Image\+Options} = nullptr
+\begin{DoxyCompactList}\small\item\em Fast Image \hyperlink{classfi_1_1FastImage_1_1Options}{Options}. \end{DoxyCompactList}\item 
+bool \hyperlink{classfi_1_1FastImage_a8229ae7c13d06365af07f6cad94662ba}{\+\_\+has\+Been\+Configured} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename User\+Type$>$\newline
+class fi\+::\+Fast\+Image$<$ User\+Type $>$}
+
+Main api object to access the targeted image. 
+
+The \hyperlink{classfi_1_1FastImage}{Fast\+Image} object will be use to access the image. It is templatized, with the format the user want the image\textquotesingle{}s pixel. It is an H\+T\+GS graph working with a cache to avoid too much IO from the disk. All the view requests are sent to a \hyperlink{classfi_1_1View}{View} Loader, which transfer requests for specific tiles to the tiles loader (file format dependant). Then pieces of the view will be sent to a \hyperlink{classfi_1_1View}{View} counter to finalized the view. Once ready, the final view is made available.
+
+It will use an \hyperlink{classfi_1_1ATileLoader}{A\+Tile\+Loader} to access the underlying image.
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{auto} *tileLoader = \textcolor{keyword}{new} \hyperlink{classfi_1_1GrayscaleTiffTileLoader}{fi::GrayscaleTiffTileLoader<uint32\_t>}(pathImage
+      , 10);
+\textcolor{keyword}{auto} *fi = \textcolor{keyword}{new} \hyperlink{classfi_1_1FastImage}{fi::FastImage<uint32\_t>}(tileLoader, 0);
+\end{DoxyCode}
+
+
+Once opened, it can be configured more precisely thanks to it options.
+
+
+\begin{DoxyCode}
+fi->getFastImageOptions()->setPreserveOrder(preserveOrder);
+fi->getFastImageOptions()->setFinishRequestingViews(finishRequestingViews);
+fi->getFastImageOptions()->setNumberOfViewParallel(numberOfViewParallel);
+fi->getFastImageOptions()->setNumberOfTilesToCache(numberOfTilesToCache);
+fi->getFastImageOptions()->setNumberOfTileLoader(numberOfTileLoader);
+fi->getFastImageOptions()->setTraversalType(traversalType);
+fi->getFastImageOptions()->setFillingType(fillingType);
+fi->getFastImageOptions()->setNbReleasePyramid(pyramidLvl, nbRelease);
+\end{DoxyCode}
+
+
+When the configuration is done, the graph can be executed\+:
+
+
+\begin{DoxyCode}
+fi->configureAndRun();
+\end{DoxyCode}
+
+
+The user can request some view from \hyperlink{classfi_1_1FastImage}{Fast\+Image}\+:
+
+
+\begin{DoxyCode}
+fi->requestTile(...);
+fi->requestFeature(...);
+fi->requestAllTiles(...);
+\end{DoxyCode}
+
+
+N\+O\+TE\+: The boolean parameter indicate to the system that no more views will be requested.
+
+Once the views are requested they can be acquired and can be used\+:
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{while} (fi->isGraphProcessingTiles()) \{
+  \textcolor{keyword}{auto} pView = fi->getAvailableViewBlocking();
+  \textcolor{keywordflow}{if} (pView != \textcolor{keyword}{nullptr}) \{
+  ...
+  pView->releaseMemory();
+  \}
+\}
+\end{DoxyCode}
+
+
+If not already done, we have to tell to the system no more tiles will be requested
+
+
+\begin{DoxyCode}
+fi->finishedRequestingTiles();
+\end{DoxyCode}
+
+
+Wait for fast image to be done (not entirely necessary, but makes it safe for cleanup) 
+\begin{DoxyCode}
+fi->waitForGraphComplete();
+\end{DoxyCode}
+
+
+Then the system can release all memory used by fast image (including the tile loader) 
+\begin{DoxyCode}
+\textcolor{keyword}{delete} fi;
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em User\+Type} & Pixel Type asked by the end user \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 142 of file Fast\+Image.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfi_1_1FastImage_a1ac7484406bb49b685b27cab0ea2cbcf}\label{classfi_1_1FastImage_a1ac7484406bb49b685b27cab0ea2cbcf}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!Fast\+Image@{Fast\+Image}}
+\index{Fast\+Image@{Fast\+Image}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{Fast\+Image()}{FastImage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+\hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::\hyperlink{classfi_1_1FastImage}{Fast\+Image} (\begin{DoxyParamCaption}\item[{\hyperlink{classfi_1_1ATileLoader}{A\+Tile\+Loader}$<$ User\+Type $>$ $\ast$}]{tile\+Loader,  }\item[{const uint32\+\_\+t \&}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\hyperlink{classfi_1_1FastImage}{Fast\+Image} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Loader} & Image Tile\+Loader \\
+\hline
+{\em radius} & Number of pixel around the central tile\\
+\hline
+\end{DoxyParams}
+Construct the Fast Image object and set up the defaults values, plus the given \hyperlink{classfi_1_1ATileLoader}{A\+Tile\+Loader}. 
+
+Definition at line 285 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a1ac7484406bb49b685b27cab0ea2cbcf_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a0db8d5c797b4e6d13b09655d272ae22c}\label{classfi_1_1FastImage_a0db8d5c797b4e6d13b09655d272ae22c}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!Fast\+Image@{Fast\+Image}}
+\index{Fast\+Image@{Fast\+Image}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{Fast\+Image()}{FastImage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+\hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::\hyperlink{classfi_1_1FastImage}{Fast\+Image} (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{classfi_1_1ATileLoader}{A\+Tile\+Loader}$<$ User\+Type $>$$>$}]{tile\+Loader,  }\item[{const uint32\+\_\+t \&}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\hyperlink{classfi_1_1FastImage}{Fast\+Image} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Loader} & std\+::unique\+\_\+ptr to the image Tile\+Loader \\
+\hline
+{\em radius} & Number of pixel around the central tile\\
+\hline
+\end{DoxyParams}
+Construct the Fast Image object and set up the defaults values, plus the given \hyperlink{classfi_1_1ATileLoader}{A\+Tile\+Loader}. 
+
+Definition at line 301 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a0db8d5c797b4e6d13b09655d272ae22c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a694492eb7802678db82993d8d087604b}\label{classfi_1_1FastImage_a694492eb7802678db82993d8d087604b}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!````~Fast\+Image@{$\sim$\+Fast\+Image}}
+\index{````~Fast\+Image@{$\sim$\+Fast\+Image}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{$\sim$\+Fast\+Image()}{~FastImage()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+\hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::$\sim$\hyperlink{classfi_1_1FastImage}{Fast\+Image} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\hyperlink{classfi_1_1FastImage}{Fast\+Image} destructor. 
+
+Destroy the object. Wait for the graph to complete, delete the options, the different levels of cache, and the graph runtime. 
+
+Definition at line 314 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a694492eb7802678db82993d8d087604b_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classfi_1_1FastImage_aa2ae5e5498f57462abd876108a55475c}\label{classfi_1_1FastImage_aa2ae5e5498f57462abd876108a55475c}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!configure\+And\+Run@{configure\+And\+Run}}
+\index{configure\+And\+Run@{configure\+And\+Run}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{configure\+And\+Run()}{configureAndRun()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::configure\+And\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set up and run the graph. 
+
+Configure the \hyperlink{classfi_1_1FastImage}{Fast\+Image} object and launch the runtime. The options are parsed and applied. The different graph\textquotesingle{}s tasks (\hyperlink{classfi_1_1ViewLoader}{View\+Loader}, \hyperlink{classfi_1_1ATileLoader}{A\+Tile\+Loader}, \hyperlink{classfi_1_1ViewCounter}{View\+Counter}) are created. The memory for the graph is allocated. 
+
+Definition at line 329 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_aa2ae5e5498f57462abd876108a55475c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{dc/d6b/classfi_1_1FastImage_aa2ae5e5498f57462abd876108a55475c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_af123b9f6554040faab14dcb0a06e2b84}\label{classfi_1_1FastImage_af123b9f6554040faab14dcb0a06e2b84}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!finished\+Requesting\+Tiles@{finished\+Requesting\+Tiles}}
+\index{finished\+Requesting\+Tiles@{finished\+Requesting\+Tiles}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{finished\+Requesting\+Tiles()}{finishedRequestingTiles()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::finished\+Requesting\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Indicate to the system no more request will be done. 
+
+
+
+Definition at line 568 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_af123b9f6554040faab14dcb0a06e2b84_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_af123b9f6554040faab14dcb0a06e2b84_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_aa7c2a5653c878ef1d7f31360eaa85171}\label{classfi_1_1FastImage_aa7c2a5653c878ef1d7f31360eaa85171}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+Available\+View\+Blocking@{get\+Available\+View\+Blocking}}
+\index{get\+Available\+View\+Blocking@{get\+Available\+View\+Blocking}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+Available\+View\+Blocking()}{getAvailableViewBlocking()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+htgs\+::m\+\_\+data\+\_\+t$<$\hyperlink{classfi_1_1View}{View}$<$User\+Type$>$ $>$ \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+Available\+View\+Blocking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an available (fully loaded) view. 
+
+\begin{DoxyReturn}{Returns}
+Available view 
+\end{DoxyReturn}
+
+
+Definition at line 506 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_aa7c2a5653c878ef1d7f31360eaa85171_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_ada03468c50745d94854fcbe87227bbfd}\label{classfi_1_1FastImage_ada03468c50745d94854fcbe87227bbfd}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+Fast\+Image\+Options@{get\+Fast\+Image\+Options}}
+\index{get\+Fast\+Image\+Options@{get\+Fast\+Image\+Options}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+Fast\+Image\+Options()}{getFastImageOptions()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+\hyperlink{classfi_1_1FastImage_1_1Options}{Options}$\ast$ \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+Fast\+Image\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Fast Image options. 
+
+\begin{DoxyReturn}{Returns}
+Fast Image options 
+\end{DoxyReturn}
+
+
+Definition at line 502 of file Fast\+Image.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_ada03468c50745d94854fcbe87227bbfd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a96ce689446ebd9ee200f8a8f44eb28c0}\label{classfi_1_1FastImage_a96ce689446ebd9ee200f8a8f44eb28c0}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+Hit\+Miss\+Cache@{get\+Hit\+Miss\+Cache}}
+\index{get\+Hit\+Miss\+Cache@{get\+Hit\+Miss\+Cache}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+Hit\+Miss\+Cache()}{getHitMissCache()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+std\+::pair$<$uint32\+\_\+t, uint32\+\_\+t$>$ \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+Hit\+Miss\+Cache (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{level = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Hit and miss cache access. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Pyramid level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair$<$hit, miss$>$ 
+\end{DoxyReturn}
+
+
+Definition at line 516 of file Fast\+Image.\+h.
+
+\mbox{\Hypertarget{classfi_1_1FastImage_a355d2e82840f50ccafe0ee681f9aa70f}\label{classfi_1_1FastImage_a355d2e82840f50ccafe0ee681f9aa70f}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+Image\+Height@{get\+Image\+Height}}
+\index{get\+Image\+Height@{get\+Image\+Height}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+Image\+Height()}{getImageHeight()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+Image\+Height (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{level = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get Image height in px. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Pyramid level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Image height in px 
+\end{DoxyReturn}
+
+
+Definition at line 447 of file Fast\+Image.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a355d2e82840f50ccafe0ee681f9aa70f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a9a2d39cfad1bbc8a1b5d573a5249cb68}\label{classfi_1_1FastImage_a9a2d39cfad1bbc8a1b5d573a5249cb68}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+Image\+Size\+M\+Bytes@{get\+Image\+Size\+M\+Bytes}}
+\index{get\+Image\+Size\+M\+Bytes@{get\+Image\+Size\+M\+Bytes}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+Image\+Size\+M\+Bytes()}{getImageSizeMBytes()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+double \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+Image\+Size\+M\+Bytes (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{level = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the image size in Bytes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Pyramid level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The image size in Bytes 
+\end{DoxyReturn}
+
+
+Definition at line 523 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a9a2d39cfad1bbc8a1b5d573a5249cb68_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a1ea580c3c08fe5be5575f0007b1bafbe}\label{classfi_1_1FastImage_a1ea580c3c08fe5be5575f0007b1bafbe}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+Image\+Width@{get\+Image\+Width}}
+\index{get\+Image\+Width@{get\+Image\+Width}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+Image\+Width()}{getImageWidth()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+Image\+Width (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{level = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get Image width in px. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Pyramid level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Image width in px 
+\end{DoxyReturn}
+
+
+Definition at line 440 of file Fast\+Image.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a1ea580c3c08fe5be5575f0007b1bafbe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_aaa3d1fe92e83a2e1568a7b66ecfd2d2a}\label{classfi_1_1FastImage_aaa3d1fe92e83a2e1568a7b66ecfd2d2a}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+Nb\+Pyramid\+Levels@{get\+Nb\+Pyramid\+Levels}}
+\index{get\+Nb\+Pyramid\+Levels@{get\+Nb\+Pyramid\+Levels}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+Nb\+Pyramid\+Levels()}{getNbPyramidLevels()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+Nb\+Pyramid\+Levels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get Number of pyramid levels. 
+
+\begin{DoxyReturn}{Returns}
+Number of pyramid levels 
+\end{DoxyReturn}
+
+
+Definition at line 496 of file Fast\+Image.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_aaa3d1fe92e83a2e1568a7b66ecfd2d2a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_adc03852a5c3ecabab795cd13034c3d9e}\label{classfi_1_1FastImage_adc03852a5c3ecabab795cd13034c3d9e}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+Number\+Tiles\+Feature\+Computed@{get\+Number\+Tiles\+Feature\+Computed}}
+\index{get\+Number\+Tiles\+Feature\+Computed@{get\+Number\+Tiles\+Feature\+Computed}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+Number\+Tiles\+Feature\+Computed()}{getNumberTilesFeatureComputed()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+Number\+Tiles\+Feature\+Computed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of tiles in a feature already computed. 
+
+\begin{DoxyReturn}{Returns}
+The number of tiles in a feature 
+\end{DoxyReturn}
+
+
+Definition at line 532 of file Fast\+Image.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_adc03852a5c3ecabab795cd13034c3d9e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a37f70f57589775492c72a43b23ab0872}\label{classfi_1_1FastImage_a37f70f57589775492c72a43b23ab0872}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+Number\+Tiles\+Feature\+Total@{get\+Number\+Tiles\+Feature\+Total}}
+\index{get\+Number\+Tiles\+Feature\+Total@{get\+Number\+Tiles\+Feature\+Total}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+Number\+Tiles\+Feature\+Total()}{getNumberTilesFeatureTotal()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+Number\+Tiles\+Feature\+Total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of total tiles in a feature. 
+
+\begin{DoxyReturn}{Returns}
+The number of tiles in a feature 
+\end{DoxyReturn}
+
+
+Definition at line 538 of file Fast\+Image.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a37f70f57589775492c72a43b23ab0872_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a84984ae1d928ef604866f126ed0a583b}\label{classfi_1_1FastImage_a84984ae1d928ef604866f126ed0a583b}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+Number\+Tiles\+Height@{get\+Number\+Tiles\+Height}}
+\index{get\+Number\+Tiles\+Height@{get\+Number\+Tiles\+Height}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+Number\+Tiles\+Height()}{getNumberTilesHeight()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+Number\+Tiles\+Height (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{level = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of tiles in a column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Pyramid level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of tiles in a column 
+\end{DoxyReturn}
+
+
+Definition at line 482 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a84984ae1d928ef604866f126ed0a583b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a84984ae1d928ef604866f126ed0a583b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a5bb1377a075185ce8445b1dcb6886b6e}\label{classfi_1_1FastImage_a5bb1377a075185ce8445b1dcb6886b6e}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+Number\+Tiles\+Width@{get\+Number\+Tiles\+Width}}
+\index{get\+Number\+Tiles\+Width@{get\+Number\+Tiles\+Width}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+Number\+Tiles\+Width()}{getNumberTilesWidth()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+Number\+Tiles\+Width (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{level = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of tiles in a row. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Pyramid level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of tiles in a row 
+\end{DoxyReturn}
+
+
+Definition at line 490 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a5bb1377a075185ce8445b1dcb6886b6e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a5bb1377a075185ce8445b1dcb6886b6e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a17a18b7839a4fd6f8b1cfd2253983bd5}\label{classfi_1_1FastImage_a17a18b7839a4fd6f8b1cfd2253983bd5}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+Radius@{get\+Radius}}
+\index{get\+Radius@{get\+Radius}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+Radius()}{getRadius()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the view radius \begin{DoxyReturn}{Returns}
+The view radius 
+\end{DoxyReturn}
+
+
+Definition at line 435 of file Fast\+Image.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a17a18b7839a4fd6f8b1cfd2253983bd5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a81ec16682f029e8d7f64888c6212066b}\label{classfi_1_1FastImage_a81ec16682f029e8d7f64888c6212066b}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+Task\+Graph@{get\+Task\+Graph}}
+\index{get\+Task\+Graph@{get\+Task\+Graph}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+Task\+Graph()}{getTaskGraph()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+htgs\+::\+Task\+Graph\+Conf$<$\hyperlink{classfi_1_1HTGSViewRequestData}{H\+T\+G\+S\+View\+Request\+Data}$<$User\+Type$>$, htgs\+::\+Memory\+Data$<$\hyperlink{classfi_1_1View}{View}$<$User\+Type$>$ $>$ $>$$\ast$ \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+Task\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Get the H\+T\+GS task graph. 
+
+\begin{DoxyReturn}{Returns}
+The task graph 
+\end{DoxyReturn}
+
+
+Definition at line 698 of file Fast\+Image.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a81ec16682f029e8d7f64888c6212066b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_ae9f67a164a2e42f7c80b8443080e876b}\label{classfi_1_1FastImage_ae9f67a164a2e42f7c80b8443080e876b}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+Tile\+Height@{get\+Tile\+Height}}
+\index{get\+Tile\+Height@{get\+Tile\+Height}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+Tile\+Height()}{getTileHeight()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+Tile\+Height (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{level = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get Tile height in px. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Pyramid level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tile height in px 
+\end{DoxyReturn}
+
+
+Definition at line 461 of file Fast\+Image.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_ae9f67a164a2e42f7c80b8443080e876b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a4544e690ce41bfc0b4ca4e94f5ecd2b1}\label{classfi_1_1FastImage_a4544e690ce41bfc0b4ca4e94f5ecd2b1}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+Tile\+Width@{get\+Tile\+Width}}
+\index{get\+Tile\+Width@{get\+Tile\+Width}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+Tile\+Width()}{getTileWidth()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+Tile\+Width (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{level = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get Tile width in px. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Pyramid level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tile width in px 
+\end{DoxyReturn}
+
+
+Definition at line 454 of file Fast\+Image.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a4544e690ce41bfc0b4ca4e94f5ecd2b1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a0a92ed9c575ad2664b1e96422375543c}\label{classfi_1_1FastImage_a0a92ed9c575ad2664b1e96422375543c}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+View\+Height@{get\+View\+Height}}
+\index{get\+View\+Height@{get\+View\+Height}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+View\+Height()}{getViewHeight()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+View\+Height (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{level = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get view height. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Pyramid level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classfi_1_1View}{View} height 
+\end{DoxyReturn}
+
+
+Definition at line 468 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a0a92ed9c575ad2664b1e96422375543c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a0a92ed9c575ad2664b1e96422375543c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a21092b9c0fe86ea190291fc79901dc93}\label{classfi_1_1FastImage_a21092b9c0fe86ea190291fc79901dc93}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!get\+View\+Width@{get\+View\+Width}}
+\index{get\+View\+Width@{get\+View\+Width}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{get\+View\+Width()}{getViewWidth()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::get\+View\+Width (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{level = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get view width. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Pyramid level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classfi_1_1View}{View} width 
+\end{DoxyReturn}
+
+
+Definition at line 475 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a21092b9c0fe86ea190291fc79901dc93_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a21092b9c0fe86ea190291fc79901dc93_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a9778dab9f8a9ec5c834a00a9410f474a}\label{classfi_1_1FastImage_a9778dab9f8a9ec5c834a00a9410f474a}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!increment\+Tile\+Feature\+Computed@{increment\+Tile\+Feature\+Computed}}
+\index{increment\+Tile\+Feature\+Computed@{increment\+Tile\+Feature\+Computed}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{increment\+Tile\+Feature\+Computed()}{incrementTileFeatureComputed()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::increment\+Tile\+Feature\+Computed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increment the number of tiles for a region already computed. 
+
+
+
+Definition at line 681 of file Fast\+Image.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a9778dab9f8a9ec5c834a00a9410f474a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_aace944dbe0639a772d2f37ff3804580a}\label{classfi_1_1FastImage_aace944dbe0639a772d2f37ff3804580a}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!is\+Feature\+Done@{is\+Feature\+Done}}
+\index{is\+Feature\+Done@{is\+Feature\+Done}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{is\+Feature\+Done()}{isFeatureDone()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+bool \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::is\+Feature\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the information is a feature has been totally computed. 
+
+\begin{DoxyReturn}{Returns}
+Is a feature has been totally computed 
+\end{DoxyReturn}
+
+
+Definition at line 544 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_aace944dbe0639a772d2f37ff3804580a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a9a9ebae36096801272a6a8bf8260ef05}\label{classfi_1_1FastImage_a9a9ebae36096801272a6a8bf8260ef05}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!is\+Finished\+Requesting\+Views@{is\+Finished\+Requesting\+Views}}
+\index{is\+Finished\+Requesting\+Views@{is\+Finished\+Requesting\+Views}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{is\+Finished\+Requesting\+Views()}{isFinishedRequestingViews()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+bool \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::is\+Finished\+Requesting\+Views (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Test if the system has finished sending tiles. 
+
+\begin{DoxyReturn}{Returns}
+true if the system has finished sending tiles, false either 
+\end{DoxyReturn}
+
+
+Definition at line 704 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a9a9ebae36096801272a6a8bf8260ef05_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a21e4cc2542c571fad7ccdc9575aadb2c}\label{classfi_1_1FastImage_a21e4cc2542c571fad7ccdc9575aadb2c}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!is\+Graph\+Processing\+Tiles@{is\+Graph\+Processing\+Tiles}}
+\index{is\+Graph\+Processing\+Tiles@{is\+Graph\+Processing\+Tiles}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{is\+Graph\+Processing\+Tiles()}{isGraphProcessingTiles()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+bool \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::is\+Graph\+Processing\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the information if the graph is still processing tiles. 
+
+\begin{DoxyReturn}{Returns}
+True If the graph is still processing tile, False else 
+\end{DoxyReturn}
+
+
+Definition at line 551 of file Fast\+Image.\+h.
+
+\mbox{\Hypertarget{classfi_1_1FastImage_a81c5c39784220efcebce2121a6552e53}\label{classfi_1_1FastImage_a81c5c39784220efcebce2121a6552e53}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!request\+All\+Tiles@{request\+All\+Tiles}}
+\index{request\+All\+Tiles@{request\+All\+Tiles}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{request\+All\+Tiles()}{requestAllTiles()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::request\+All\+Tiles (\begin{DoxyParamCaption}\item[{bool}]{finish\+Requesting\+Tiles,  }\item[{uint32\+\_\+t}]{level = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Request all tiles following a traversal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em finish\+Requesting\+Tiles} & True if the end user has finished to request views, else False. \\
+\hline
+{\em level} & Pyramid level \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 660 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a81c5c39784220efcebce2121a6552e53_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_abd44908134edad1df4a61faec9cdbf9e}\label{classfi_1_1FastImage_abd44908134edad1df4a61faec9cdbf9e}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!request\+Feature@{request\+Feature}}
+\index{request\+Feature@{request\+Feature}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{request\+Feature()}{requestFeature()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::request\+Feature (\begin{DoxyParamCaption}\item[{const \hyperlink{classfc_1_1Feature}{fc\+::\+Feature} \&}]{feature,  }\item[{uint32\+\_\+t}]{level = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Request a specific feature into a features collection. 
+
+Requests all the views which compose a specific \hyperlink{classfc_1_1Feature}{fc\+::\+Feature} at a specific pyramid level. All these requests are send to the \hyperlink{classfi_1_1ViewLoader}{View\+Loader}. 
+\begin{DoxyParams}{Parameters}
+{\em feature} & Features collection\textquotesingle{}s feature \\
+\hline
+{\em level} & Pyramid level \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 615 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_abd44908134edad1df4a61faec9cdbf9e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a595c22ba44ba635133c7a20cbd4e2d13}\label{classfi_1_1FastImage_a595c22ba44ba635133c7a20cbd4e2d13}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!request\+Tile@{request\+Tile}}
+\index{request\+Tile@{request\+Tile}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{request\+Tile()}{requestTile()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::request\+Tile (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{row\+Index,  }\item[{uint32\+\_\+t}]{col\+Index,  }\item[{bool}]{finish\+Requesting\+Tiles,  }\item[{uint32\+\_\+t}]{level = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Request a tile. 
+
+Request a tile at indexes (row\+Index, col\+Index) to the \hyperlink{classfi_1_1ViewLoader}{View\+Loader} at a specific pyramid level. 
+\begin{DoxyParams}{Parameters}
+{\em row\+Index} & Row tile index \\
+\hline
+{\em col\+Index} & Column tile index \\
+\hline
+{\em finish\+Requesting\+Tiles} & True if the end user has finished to request views, else False. \\
+\hline
+{\em level} & Pyramid level \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 589 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a595c22ba44ba635133c7a20cbd4e2d13_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a40fb0f9749893a6e04548ee778ee5c1a}\label{classfi_1_1FastImage_a40fb0f9749893a6e04548ee778ee5c1a}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!send\+Request@{send\+Request}}
+\index{send\+Request@{send\+Request}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{send\+Request()}{sendRequest()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::send\+Request (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{index\+Tile\+Row,  }\item[{uint32\+\_\+t}]{index\+Tile\+Col,  }\item[{uint32\+\_\+t}]{level = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Send a \hyperlink{classfi_1_1View}{View} request to the \hyperlink{classfi_1_1ViewLoader}{View\+Loader} about the tile at coordinate (index\+Tile\+Row, index\+Tile\+Col) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\+Tile\+Row} & Row\textquotesingle{}s index of the view\textquotesingle{}s center tile asked \\
+\hline
+{\em index\+Tile\+Col} & Col\textquotesingle{}s index of the view\textquotesingle{}s center tile asked \\
+\hline
+{\em level} & Pyramid level \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 713 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a40fb0f9749893a6e04548ee778ee5c1a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a40fb0f9749893a6e04548ee778ee5c1a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a8b88d3cfcc2acc2e6d6d4baa2185cf9a}\label{classfi_1_1FastImage_a8b88d3cfcc2acc2e6d6d4baa2185cf9a}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!set\+Number\+Tiles\+Feature\+Computed@{set\+Number\+Tiles\+Feature\+Computed}}
+\index{set\+Number\+Tiles\+Feature\+Computed@{set\+Number\+Tiles\+Feature\+Computed}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{set\+Number\+Tiles\+Feature\+Computed()}{setNumberTilesFeatureComputed()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::set\+Number\+Tiles\+Feature\+Computed (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{number\+Tiles\+Feature\+Computed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the number of tiles in a feature already computed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+Tiles\+Feature\+Computed} & The number of tiles computed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 555 of file Fast\+Image.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a8b88d3cfcc2acc2e6d6d4baa2185cf9a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a7313f9c3bddf643dfab8cf026527651a}\label{classfi_1_1FastImage_a7313f9c3bddf643dfab8cf026527651a}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!set\+Number\+Tiles\+Feature\+Total@{set\+Number\+Tiles\+Feature\+Total}}
+\index{set\+Number\+Tiles\+Feature\+Total@{set\+Number\+Tiles\+Feature\+Total}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{set\+Number\+Tiles\+Feature\+Total()}{setNumberTilesFeatureTotal()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::set\+Number\+Tiles\+Feature\+Total (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{number\+Tiles\+Feature\+Total }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the number of total tiles in a feature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+Tiles\+Feature\+Total} & The number of total tiles in a feature \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 562 of file Fast\+Image.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_a7313f9c3bddf643dfab8cf026527651a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_aac69be21b7a131eade5b1ea79dbee59d}\label{classfi_1_1FastImage_aac69be21b7a131eade5b1ea79dbee59d}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!wait\+For\+Graph\+Complete@{wait\+For\+Graph\+Complete}}
+\index{wait\+For\+Graph\+Complete@{wait\+For\+Graph\+Complete}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{wait\+For\+Graph\+Complete()}{waitForGraphComplete()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::wait\+For\+Graph\+Complete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wait to the graph to complete. 
+
+
+
+Definition at line 576 of file Fast\+Image.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_aac69be21b7a131eade5b1ea79dbee59d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6b/classfi_1_1FastImage_aac69be21b7a131eade5b1ea79dbee59d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImage_a79de6c7e6854a742c306d4ec5d942061}\label{classfi_1_1FastImage_a79de6c7e6854a742c306d4ec5d942061}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!write\+Graph\+Dot\+File@{write\+Graph\+Dot\+File}}
+\index{write\+Graph\+Dot\+File@{write\+Graph\+Dot\+File}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{write\+Graph\+Dot\+File()}{writeGraphDotFile()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::write\+Graph\+Dot\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{int}]{flags = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a dot file at the path filename. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & path for the dot file \\
+\hline
+{\em flags} & to print the graph \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 690 of file Fast\+Image.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classfi_1_1FastImage_aea01a1147574f77e4f656e5f0525236b}\label{classfi_1_1FastImage_aea01a1147574f77e4f656e5f0525236b}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!\+\_\+all\+Cache@{\+\_\+all\+Cache}}
+\index{\+\_\+all\+Cache@{\+\_\+all\+Cache}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{\+\_\+all\+Cache}{\_allCache}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+std\+::vector$<$\hyperlink{classfi_1_1FigCache}{Fig\+Cache}$<$User\+Type$>$ $\ast$$>$ \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::\+\_\+all\+Cache\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tile Caches given to each tile loader. 
+
+
+
+Definition at line 747 of file Fast\+Image.\+h.
+
+\mbox{\Hypertarget{classfi_1_1FastImage_a3ee97b9a34ba54a51254d308506403fb}\label{classfi_1_1FastImage_a3ee97b9a34ba54a51254d308506403fb}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!\+\_\+fast\+Image\+Options@{\+\_\+fast\+Image\+Options}}
+\index{\+\_\+fast\+Image\+Options@{\+\_\+fast\+Image\+Options}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{\+\_\+fast\+Image\+Options}{\_fastImageOptions}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+\hyperlink{classfi_1_1FastImage_1_1Options}{Options}$\ast$ \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::\+\_\+fast\+Image\+Options = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fast Image \hyperlink{classfi_1_1FastImage_1_1Options}{Options}. 
+
+
+
+Definition at line 750 of file Fast\+Image.\+h.
+
+\mbox{\Hypertarget{classfi_1_1FastImage_a8229ae7c13d06365af07f6cad94662ba}\label{classfi_1_1FastImage_a8229ae7c13d06365af07f6cad94662ba}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!\+\_\+has\+Been\+Configured@{\+\_\+has\+Been\+Configured}}
+\index{\+\_\+has\+Been\+Configured@{\+\_\+has\+Been\+Configured}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{\+\_\+has\+Been\+Configured}{\_hasBeenConfigured}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+bool \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::\+\_\+has\+Been\+Configured = false\hspace{0.3cm}{\ttfamily [private]}}
+
+Private flag to be sure the FI is configure 
+
+Definition at line 753 of file Fast\+Image.\+h.
+
+\mbox{\Hypertarget{classfi_1_1FastImage_a517076aaa824901ca1e14b00a934be54}\label{classfi_1_1FastImage_a517076aaa824901ca1e14b00a934be54}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!\+\_\+number\+Tiles\+Feature\+Computed@{\+\_\+number\+Tiles\+Feature\+Computed}}
+\index{\+\_\+number\+Tiles\+Feature\+Computed@{\+\_\+number\+Tiles\+Feature\+Computed}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{\+\_\+number\+Tiles\+Feature\+Computed}{\_numberTilesFeatureComputed}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::\+\_\+number\+Tiles\+Feature\+Computed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of tiles treated for a feature. 
+
+
+
+Definition at line 727 of file Fast\+Image.\+h.
+
+\mbox{\Hypertarget{classfi_1_1FastImage_a24f06aeefc60764d9cf261417420d92a}\label{classfi_1_1FastImage_a24f06aeefc60764d9cf261417420d92a}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!\+\_\+number\+Tiles\+Feature\+Total@{\+\_\+number\+Tiles\+Feature\+Total}}
+\index{\+\_\+number\+Tiles\+Feature\+Total@{\+\_\+number\+Tiles\+Feature\+Total}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{\+\_\+number\+Tiles\+Feature\+Total}{\_numberTilesFeatureTotal}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::\+\_\+number\+Tiles\+Feature\+Total\hspace{0.3cm}{\ttfamily [private]}}
+
+Number of tiles in totals for a feature 
+
+Definition at line 727 of file Fast\+Image.\+h.
+
+\mbox{\Hypertarget{classfi_1_1FastImage_a1ebd8ba4863bd2c0e1a2a3df6469dc27}\label{classfi_1_1FastImage_a1ebd8ba4863bd2c0e1a2a3df6469dc27}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!\+\_\+radius@{\+\_\+radius}}
+\index{\+\_\+radius@{\+\_\+radius}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{\+\_\+radius}{\_radius}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::\+\_\+radius\hspace{0.3cm}{\ttfamily [private]}}
+
+\hyperlink{classfi_1_1View}{View} radius, i.\+e. number of pixels in each direction around the center tile 
+
+Definition at line 727 of file Fast\+Image.\+h.
+
+\mbox{\Hypertarget{classfi_1_1FastImage_abff349ecfa318ce51929691878d9230d}\label{classfi_1_1FastImage_abff349ecfa318ce51929691878d9230d}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!\+\_\+runtime@{\+\_\+runtime}}
+\index{\+\_\+runtime@{\+\_\+runtime}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{\+\_\+runtime}{\_runtime}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+htgs\+::\+Task\+Graph\+Runtime$\ast$ \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::\+\_\+runtime\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+H\+T\+GS Graph runtime. 
+
+
+
+Definition at line 738 of file Fast\+Image.\+h.
+
+\mbox{\Hypertarget{classfi_1_1FastImage_af3d88915c813b26921a6e329f1880b20}\label{classfi_1_1FastImage_af3d88915c813b26921a6e329f1880b20}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!\+\_\+task\+Graph@{\+\_\+task\+Graph}}
+\index{\+\_\+task\+Graph@{\+\_\+task\+Graph}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{\+\_\+task\+Graph}{\_taskGraph}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+htgs\+::\+Task\+Graph\+Conf$<$\hyperlink{classfi_1_1HTGSViewRequestData}{H\+T\+G\+S\+View\+Request\+Data}$<$User\+Type$>$, htgs\+::\+Memory\+Data$<$\hyperlink{classfi_1_1View}{View}$<$User\+Type$>$ $>$ $>$$\ast$ \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::\+\_\+task\+Graph\hspace{0.3cm}{\ttfamily [private]}}
+
+H\+T\+GS Graph to load the views and the tiles 
+
+Definition at line 734 of file Fast\+Image.\+h.
+
+\mbox{\Hypertarget{classfi_1_1FastImage_ae2b26c6fbdedf4f23ddf57f1b95828ab}\label{classfi_1_1FastImage_ae2b26c6fbdedf4f23ddf57f1b95828ab}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!\+\_\+tile\+Loader@{\+\_\+tile\+Loader}}
+\index{\+\_\+tile\+Loader@{\+\_\+tile\+Loader}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{\+\_\+tile\+Loader}{\_tileLoader}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+\hyperlink{classfi_1_1ATileLoader}{A\+Tile\+Loader}$<$User\+Type$>$$\ast$ \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::\+\_\+tile\+Loader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tile Loader. 
+
+
+
+Definition at line 741 of file Fast\+Image.\+h.
+
+\mbox{\Hypertarget{classfi_1_1FastImage_ab93b796420eb2bbd6263dff2294be1d7}\label{classfi_1_1FastImage_ab93b796420eb2bbd6263dff2294be1d7}} 
+\index{fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}!\+\_\+view\+Counter@{\+\_\+view\+Counter}}
+\index{\+\_\+view\+Counter@{\+\_\+view\+Counter}!fi\+::\+Fast\+Image@{fi\+::\+Fast\+Image}}
+\subsubsection{\texorpdfstring{\+\_\+view\+Counter}{\_viewCounter}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+\hyperlink{classfi_1_1ViewCounter}{View\+Counter}$<$User\+Type$>$$\ast$ \hyperlink{classfi_1_1FastImage}{fi\+::\+Fast\+Image}$<$ User\+Type $>$\+::\+\_\+view\+Counter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{classfi_1_1View}{View} Counter. 
+
+
+
+Definition at line 744 of file Fast\+Image.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/anb22/\+Documents/\+Fast-\/\+Image/\+Fast\+Image/src/\+Fast\+Image/api/\hyperlink{FastImage_8h}{Fast\+Image.\+h}\end{DoxyCompactItemize}

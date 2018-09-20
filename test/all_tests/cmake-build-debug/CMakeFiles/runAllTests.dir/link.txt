@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/runAllTests.dir/testAll.o  -o runAllTests -lgtest -lgtest_main 

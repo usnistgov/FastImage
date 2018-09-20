@@ -1,0 +1,130 @@
+\hypertarget{classfi_1_1ReleaseCountRule}{}\section{fi\+:\+:Release\+Count\+Rule Class Reference}
+\label{classfi_1_1ReleaseCountRule}\index{fi\+::\+Release\+Count\+Rule@{fi\+::\+Release\+Count\+Rule}}
+
+
+Memory management release rule based on a count that is decremented after each use, and released when the count reaches 0.  
+
+
+
+
+{\ttfamily \#include $<$Fast\+Image/rules/\+Release\+Count\+Rule.\+h$>$}
+
+
+
+Inheritance diagram for fi\+:\+:Release\+Count\+Rule\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{d5/de8/classfi_1_1ReleaseCountRule__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for fi\+:\+:Release\+Count\+Rule\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{d2/d3e/classfi_1_1ReleaseCountRule__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfi_1_1ReleaseCountRule_afa61c9e8da9b8710c3b8ccfd159f9bab}{Release\+Count\+Rule} (uint32\+\_\+t release\+Count)
+\begin{DoxyCompactList}\small\item\em Release Rule for views. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1ReleaseCountRule_a0e452931ebff91183524aa5cfc339485}{memory\+Used} () override
+\begin{DoxyCompactList}\small\item\em Indicate the memory has been used. \end{DoxyCompactList}\item 
+bool \hyperlink{classfi_1_1ReleaseCountRule_abfe693ebddb1e75e8149489df2ed867a}{can\+Release\+Memory} () override
+\begin{DoxyCompactList}\small\item\em Test if the memory can be released. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{classfi_1_1ReleaseCountRule_adae4400daea0e3ca57a2e355bbc78046}{\+\_\+release\+Count} = 1
+\begin{DoxyCompactList}\small\item\em release to actually be released \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Memory management release rule based on a count that is decremented after each use, and released when the count reaches 0. 
+
+Definition at line 49 of file Release\+Count\+Rule.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfi_1_1ReleaseCountRule_afa61c9e8da9b8710c3b8ccfd159f9bab}\label{classfi_1_1ReleaseCountRule_afa61c9e8da9b8710c3b8ccfd159f9bab}} 
+\index{fi\+::\+Release\+Count\+Rule@{fi\+::\+Release\+Count\+Rule}!Release\+Count\+Rule@{Release\+Count\+Rule}}
+\index{Release\+Count\+Rule@{Release\+Count\+Rule}!fi\+::\+Release\+Count\+Rule@{fi\+::\+Release\+Count\+Rule}}
+\subsubsection{\texorpdfstring{Release\+Count\+Rule()}{ReleaseCountRule()}}
+{\footnotesize\ttfamily fi\+::\+Release\+Count\+Rule\+::\+Release\+Count\+Rule (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{release\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Release Rule for views. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em release\+Count} & Number of time the view need to be ask for release to actually be released \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 54 of file Release\+Count\+Rule.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classfi_1_1ReleaseCountRule_abfe693ebddb1e75e8149489df2ed867a}\label{classfi_1_1ReleaseCountRule_abfe693ebddb1e75e8149489df2ed867a}} 
+\index{fi\+::\+Release\+Count\+Rule@{fi\+::\+Release\+Count\+Rule}!can\+Release\+Memory@{can\+Release\+Memory}}
+\index{can\+Release\+Memory@{can\+Release\+Memory}!fi\+::\+Release\+Count\+Rule@{fi\+::\+Release\+Count\+Rule}}
+\subsubsection{\texorpdfstring{can\+Release\+Memory()}{canReleaseMemory()}}
+{\footnotesize\ttfamily bool fi\+::\+Release\+Count\+Rule\+::can\+Release\+Memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Test if the memory can be released. 
+
+\begin{DoxyReturn}{Returns}
+True if the memory can be released, False else 
+\end{DoxyReturn}
+
+
+Definition at line 62 of file Release\+Count\+Rule.\+h.
+
+\mbox{\Hypertarget{classfi_1_1ReleaseCountRule_a0e452931ebff91183524aa5cfc339485}\label{classfi_1_1ReleaseCountRule_a0e452931ebff91183524aa5cfc339485}} 
+\index{fi\+::\+Release\+Count\+Rule@{fi\+::\+Release\+Count\+Rule}!memory\+Used@{memory\+Used}}
+\index{memory\+Used@{memory\+Used}!fi\+::\+Release\+Count\+Rule@{fi\+::\+Release\+Count\+Rule}}
+\subsubsection{\texorpdfstring{memory\+Used()}{memoryUsed()}}
+{\footnotesize\ttfamily void fi\+::\+Release\+Count\+Rule\+::memory\+Used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Indicate the memory has been used. 
+
+
+
+Definition at line 58 of file Release\+Count\+Rule.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classfi_1_1ReleaseCountRule_adae4400daea0e3ca57a2e355bbc78046}\label{classfi_1_1ReleaseCountRule_adae4400daea0e3ca57a2e355bbc78046}} 
+\index{fi\+::\+Release\+Count\+Rule@{fi\+::\+Release\+Count\+Rule}!\+\_\+release\+Count@{\+\_\+release\+Count}}
+\index{\+\_\+release\+Count@{\+\_\+release\+Count}!fi\+::\+Release\+Count\+Rule@{fi\+::\+Release\+Count\+Rule}}
+\subsubsection{\texorpdfstring{\+\_\+release\+Count}{\_releaseCount}}
+{\footnotesize\ttfamily uint32\+\_\+t fi\+::\+Release\+Count\+Rule\+::\+\_\+release\+Count = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+release to actually be released 
+
+Number of time the view need to be ask for 
+
+Definition at line 67 of file Release\+Count\+Rule.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/anb22/\+Documents/\+Fast-\/\+Image/\+Fast\+Image/src/\+Fast\+Image/rules/\hyperlink{ReleaseCountRule_8h}{Release\+Count\+Rule.\+h}\end{DoxyCompactItemize}

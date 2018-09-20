@@ -1,0 +1,8 @@
+<map id="fi::ViewCounter::executeTask" name="fi::ViewCounter::executeTask">
+<area shape="rect" id="node2" href="$df/dae/classfi_1_1ViewCounter.html#a9b208c1ff386265adc30d4e338dbc2c8" title="Switch for the selected filling and fill the ghost region. " alt="" coords="255,11,423,53"/>
+<area shape="rect" id="node4" href="$df/dae/classfi_1_1ViewCounter.html#a20e96bdb97f1aecc5bb0a81fb456c0fc" title="Send the current view if no ordered, or handle the traversal and the views. " alt="" coords="248,89,431,116"/>
+<area shape="rect" id="node3" href="$df/dae/classfi_1_1ViewCounter.html#ae583cf9ca69170e595208b2c4066c767" title="Filling type where the data are duplicated from the nearest border : radius 1 for a 3x3 tile with onl..." alt="" coords="510,5,643,32"/>
+<area shape="rect" id="node5" href="$df/dae/classfi_1_1ViewCounter.html#a8a1bd60b42035140d6abee7e58fc3561" title="Update the current traversal, used for insure ordering. " alt="" coords="723,63,925,105"/>
+<area shape="rect" id="node6" href="$df/dae/classfi_1_1ViewCounter.html#a30a0d5ae3d727aea55e70ee4eb45127f" title="Test if the view received is next one to be send if order needed. " alt="" coords="731,144,917,171"/>
+<area shape="rect" id="node7" href="$df/dae/classfi_1_1ViewCounter.html#a6941e894f768fe1f0deb1b7ff771e2bc" title="Try to send already stored view. " alt="" coords="479,107,675,149"/>
+</map>

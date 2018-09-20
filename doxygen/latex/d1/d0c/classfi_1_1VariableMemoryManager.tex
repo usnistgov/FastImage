@@ -1,0 +1,226 @@
+\hypertarget{classfi_1_1VariableMemoryManager}{}\section{fi\+:\+:Variable\+Memory\+Manager$<$ T $>$ Class Template Reference}
+\label{classfi_1_1VariableMemoryManager}\index{fi\+::\+Variable\+Memory\+Manager$<$ T $>$@{fi\+::\+Variable\+Memory\+Manager$<$ T $>$}}
+
+
+Variable Memory manager used to manage the memory for each pyramid level.  
+
+
+
+
+{\ttfamily \#include $<$Fast\+Image/memory/\+Variable\+Memory\+Manager.\+h$>$}
+
+
+
+Inheritance diagram for fi\+:\+:Variable\+Memory\+Manager$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{df/ddf/classfi_1_1VariableMemoryManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for fi\+:\+:Variable\+Memory\+Manager$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d99/classfi_1_1VariableMemoryManager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfi_1_1VariableMemoryManager_a7df31faaa03ce722f8eedb3e7275a8de}{Variable\+Memory\+Manager} (const std\+::string \&name, std\+::vector$<$ size\+\_\+t $>$ memory\+Pool\+Sizes, std\+::vector$<$ std\+::shared\+\_\+ptr$<$ htgs\+::\+I\+Memory\+Allocator$<$ T $>$$>$$>$ memory\+Allocators, htgs\+::\+M\+M\+Type type)
+\begin{DoxyCompactList}\small\item\em Memory manager constructor. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classfi_1_1VariableMemoryManager_a781ac82a7b0c437ef36f1d17b31e4d3d}{get\+Memory\+Pool\+Size} () override
+\begin{DoxyCompactList}\small\item\em Get memory pool size. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ htgs\+::\+I\+Memory\+Allocator$<$ T $>$ $>$ \hyperlink{classfi_1_1VariableMemoryManager_aa5b46e9102d8f33f202e42ef33433a45}{get\+Allocator} () override
+\begin{DoxyCompactList}\small\item\em Get memory allocator. \end{DoxyCompactList}\item 
+\hyperlink{classfi_1_1VariableMemoryManager}{Variable\+Memory\+Manager} $\ast$ \hyperlink{classfi_1_1VariableMemoryManager_aeac9f9bf6ed6cb9a308d0e24c73a6ede}{copy} () override
+\begin{DoxyCompactList}\small\item\em Copy Function used by H\+T\+GS. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classfi_1_1VariableMemoryManager_a24ad349fc12308a924d62ecd2b37b4ad}{get\+Name} () override
+\begin{DoxyCompactList}\small\item\em Get Name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ size\+\_\+t $>$ \hyperlink{classfi_1_1VariableMemoryManager_a52671e5b09a6e742cd6fcf1e5014569d}{\+\_\+memory\+Pool\+Sizes}
+\begin{DoxyCompactList}\small\item\em Memory pool size. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ htgs\+::\+I\+Memory\+Allocator$<$ T $>$ $>$ $>$ \hyperlink{classfi_1_1VariableMemoryManager_a408610d37510b46d4f7a81bda0060135}{\+\_\+memory\+Allocators}
+\begin{DoxyCompactList}\small\item\em Memory allocators. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class fi\+::\+Variable\+Memory\+Manager$<$ T $>$}
+
+Variable Memory manager used to manage the memory for each pyramid level. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Representing a View$<$\+User\+Type$>$ \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 52 of file Variable\+Memory\+Manager.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfi_1_1VariableMemoryManager_a7df31faaa03ce722f8eedb3e7275a8de}\label{classfi_1_1VariableMemoryManager_a7df31faaa03ce722f8eedb3e7275a8de}} 
+\index{fi\+::\+Variable\+Memory\+Manager@{fi\+::\+Variable\+Memory\+Manager}!Variable\+Memory\+Manager@{Variable\+Memory\+Manager}}
+\index{Variable\+Memory\+Manager@{Variable\+Memory\+Manager}!fi\+::\+Variable\+Memory\+Manager@{fi\+::\+Variable\+Memory\+Manager}}
+\subsubsection{\texorpdfstring{Variable\+Memory\+Manager()}{VariableMemoryManager()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classfi_1_1VariableMemoryManager}{fi\+::\+Variable\+Memory\+Manager}$<$ T $>$\+::\hyperlink{classfi_1_1VariableMemoryManager}{Variable\+Memory\+Manager} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::vector$<$ size\+\_\+t $>$}]{memory\+Pool\+Sizes,  }\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ htgs\+::\+I\+Memory\+Allocator$<$ T $>$$>$$>$}]{memory\+Allocators,  }\item[{htgs\+::\+M\+M\+Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Memory manager constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Memory manager name \\
+\hline
+{\em memory\+Pool\+Sizes} & Pool size \\
+\hline
+{\em memory\+Allocators} & Memory allocator \\
+\hline
+{\em type} & Memory manager type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file Variable\+Memory\+Manager.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d0c/classfi_1_1VariableMemoryManager_a7df31faaa03ce722f8eedb3e7275a8de_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classfi_1_1VariableMemoryManager_aeac9f9bf6ed6cb9a308d0e24c73a6ede}\label{classfi_1_1VariableMemoryManager_aeac9f9bf6ed6cb9a308d0e24c73a6ede}} 
+\index{fi\+::\+Variable\+Memory\+Manager@{fi\+::\+Variable\+Memory\+Manager}!copy@{copy}}
+\index{copy@{copy}!fi\+::\+Variable\+Memory\+Manager@{fi\+::\+Variable\+Memory\+Manager}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classfi_1_1VariableMemoryManager}{Variable\+Memory\+Manager}$\ast$ \hyperlink{classfi_1_1VariableMemoryManager}{fi\+::\+Variable\+Memory\+Manager}$<$ T $>$\+::copy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Copy Function used by H\+T\+GS. 
+
+\begin{DoxyReturn}{Returns}
+Copied Variable Memory Manager 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file Variable\+Memory\+Manager.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d0c/classfi_1_1VariableMemoryManager_aeac9f9bf6ed6cb9a308d0e24c73a6ede_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1VariableMemoryManager_aa5b46e9102d8f33f202e42ef33433a45}\label{classfi_1_1VariableMemoryManager_aa5b46e9102d8f33f202e42ef33433a45}} 
+\index{fi\+::\+Variable\+Memory\+Manager@{fi\+::\+Variable\+Memory\+Manager}!get\+Allocator@{get\+Allocator}}
+\index{get\+Allocator@{get\+Allocator}!fi\+::\+Variable\+Memory\+Manager@{fi\+::\+Variable\+Memory\+Manager}}
+\subsubsection{\texorpdfstring{get\+Allocator()}{getAllocator()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+std\+::shared\+\_\+ptr$<$htgs\+::\+I\+Memory\+Allocator$<$T$>$ $>$ \hyperlink{classfi_1_1VariableMemoryManager}{fi\+::\+Variable\+Memory\+Manager}$<$ T $>$\+::get\+Allocator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Get memory allocator. 
+
+\begin{DoxyReturn}{Returns}
+Memory allocator 
+\end{DoxyReturn}
+
+
+Definition at line 77 of file Variable\+Memory\+Manager.\+h.
+
+\mbox{\Hypertarget{classfi_1_1VariableMemoryManager_a781ac82a7b0c437ef36f1d17b31e4d3d}\label{classfi_1_1VariableMemoryManager_a781ac82a7b0c437ef36f1d17b31e4d3d}} 
+\index{fi\+::\+Variable\+Memory\+Manager@{fi\+::\+Variable\+Memory\+Manager}!get\+Memory\+Pool\+Size@{get\+Memory\+Pool\+Size}}
+\index{get\+Memory\+Pool\+Size@{get\+Memory\+Pool\+Size}!fi\+::\+Variable\+Memory\+Manager@{fi\+::\+Variable\+Memory\+Manager}}
+\subsubsection{\texorpdfstring{get\+Memory\+Pool\+Size()}{getMemoryPoolSize()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+size\+\_\+t \hyperlink{classfi_1_1VariableMemoryManager}{fi\+::\+Variable\+Memory\+Manager}$<$ T $>$\+::get\+Memory\+Pool\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Get memory pool size. 
+
+\begin{DoxyReturn}{Returns}
+Memory pool size 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file Variable\+Memory\+Manager.\+h.
+
+\mbox{\Hypertarget{classfi_1_1VariableMemoryManager_a24ad349fc12308a924d62ecd2b37b4ad}\label{classfi_1_1VariableMemoryManager_a24ad349fc12308a924d62ecd2b37b4ad}} 
+\index{fi\+::\+Variable\+Memory\+Manager@{fi\+::\+Variable\+Memory\+Manager}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!fi\+::\+Variable\+Memory\+Manager@{fi\+::\+Variable\+Memory\+Manager}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+std\+::string \hyperlink{classfi_1_1VariableMemoryManager}{fi\+::\+Variable\+Memory\+Manager}$<$ T $>$\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Get Name. 
+
+\begin{DoxyReturn}{Returns}
+Name 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file Variable\+Memory\+Manager.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classfi_1_1VariableMemoryManager_a408610d37510b46d4f7a81bda0060135}\label{classfi_1_1VariableMemoryManager_a408610d37510b46d4f7a81bda0060135}} 
+\index{fi\+::\+Variable\+Memory\+Manager@{fi\+::\+Variable\+Memory\+Manager}!\+\_\+memory\+Allocators@{\+\_\+memory\+Allocators}}
+\index{\+\_\+memory\+Allocators@{\+\_\+memory\+Allocators}!fi\+::\+Variable\+Memory\+Manager@{fi\+::\+Variable\+Memory\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+memory\+Allocators}{\_memoryAllocators}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+std\+::vector$<$std\+::shared\+\_\+ptr$<$htgs\+::\+I\+Memory\+Allocator$<$T$>$ $>$ $>$ \hyperlink{classfi_1_1VariableMemoryManager}{fi\+::\+Variable\+Memory\+Manager}$<$ T $>$\+::\+\_\+memory\+Allocators\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Memory allocators. 
+
+
+
+Definition at line 101 of file Variable\+Memory\+Manager.\+h.
+
+\mbox{\Hypertarget{classfi_1_1VariableMemoryManager_a52671e5b09a6e742cd6fcf1e5014569d}\label{classfi_1_1VariableMemoryManager_a52671e5b09a6e742cd6fcf1e5014569d}} 
+\index{fi\+::\+Variable\+Memory\+Manager@{fi\+::\+Variable\+Memory\+Manager}!\+\_\+memory\+Pool\+Sizes@{\+\_\+memory\+Pool\+Sizes}}
+\index{\+\_\+memory\+Pool\+Sizes@{\+\_\+memory\+Pool\+Sizes}!fi\+::\+Variable\+Memory\+Manager@{fi\+::\+Variable\+Memory\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+memory\+Pool\+Sizes}{\_memoryPoolSizes}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+std\+::vector$<$size\+\_\+t$>$ \hyperlink{classfi_1_1VariableMemoryManager}{fi\+::\+Variable\+Memory\+Manager}$<$ T $>$\+::\+\_\+memory\+Pool\+Sizes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Memory pool size. 
+
+
+
+Definition at line 98 of file Variable\+Memory\+Manager.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/anb22/\+Documents/\+Fast-\/\+Image/\+Fast\+Image/src/\+Fast\+Image/memory/\hyperlink{VariableMemoryManager_8h}{Variable\+Memory\+Manager.\+h}\end{DoxyCompactItemize}

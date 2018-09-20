@@ -1,0 +1,13 @@
+<map id="fi::FastImage::requestTile" name="fi::FastImage::requestTile">
+<area shape="rect" id="node2" href="$dc/d6b/classfi_1_1FastImage.html#a84984ae1d928ef604866f126ed0a583b" title="Get number of tiles in a column. " alt="" coords="501,5,671,47"/>
+<area shape="rect" id="node5" href="$dc/d6b/classfi_1_1FastImage.html#a5bb1377a075185ce8445b1dcb6886b6e" title="Get number of tiles in a row. " alt="" coords="501,325,671,367"/>
+<area shape="rect" id="node8" href="$dc/db9/classfi_1_1FastImage_1_1Options.html#a3cfa4c38cdb0b2018c812bbcb8e9dd63" title="Get if is finish sent. " alt="" coords="491,391,681,432"/>
+<area shape="rect" id="node9" href="$dc/d6b/classfi_1_1FastImage.html#a40fb0f9749893a6e04548ee778ee5c1a" title="Send a View request to the ViewLoader about the tile at coordinate (indexTileRow, indexTileCol) ..." alt="" coords="241,198,425,225"/>
+<area shape="rect" id="node11" href="$dc/d6b/classfi_1_1FastImage.html#af123b9f6554040faab14dcb0a06e2b84" title="Indicate to the system no more request will be done. " alt="" coords="224,413,443,455"/>
+<area shape="rect" id="node3" href="$dc/d6b/classfi_1_1FastImage.html#a355d2e82840f50ccafe0ee681f9aa70f" title="Get Image height in px. " alt="" coords="729,166,928,193"/>
+<area shape="rect" id="node4" href="$dc/d6b/classfi_1_1FastImage.html#ae9f67a164a2e42f7c80b8443080e876b" title="Get Tile height in px. " alt="" coords="737,42,921,69"/>
+<area shape="rect" id="node6" href="$dc/d6b/classfi_1_1FastImage.html#a1ea580c3c08fe5be5575f0007b1bafbe" title="Get Image width in px. " alt="" coords="731,231,926,258"/>
+<area shape="rect" id="node7" href="$dc/d6b/classfi_1_1FastImage.html#a4544e690ce41bfc0b4ca4e94f5ecd2b1" title="Get Tile width in px. " alt="" coords="739,311,919,338"/>
+<area shape="rect" id="node10" href="$dc/d6b/classfi_1_1FastImage.html#a17a18b7839a4fd6f8b1cfd2253983bd5" title="fi::FastImage::getRadius" alt="" coords="503,122,669,149"/>
+<area shape="rect" id="node12" href="$dc/db9/classfi_1_1FastImage_1_1Options.html#a7c0ae60a439a4be02b4600618e2fcebe" title="Set if has finish requesting views. " alt="" coords="493,456,679,497"/>
+</map>

@@ -1,0 +1,285 @@
+\hypertarget{classfc_1_1BlobMerger}{}\section{fc\+:\+:Blob\+Merger Class Reference}
+\label{classfc_1_1BlobMerger}\index{fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}}
+
+
+Merges multiple \hyperlink{classfc_1_1ViewAnalyse}{fc\+::\+View\+Analyse} to build the \hyperlink{classfc_1_1Feature}{Feature} Collection.  
+
+
+
+
+{\ttfamily \#include $<$Fast\+Image/\+Feature\+Collection/\+Tasks/\+Blob\+Merger.\+h$>$}
+
+
+
+Inheritance diagram for fc\+:\+:Blob\+Merger\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{d1/d9d/classfc_1_1BlobMerger__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for fc\+:\+:Blob\+Merger\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d0c/classfc_1_1BlobMerger__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfc_1_1BlobMerger_a6304048cc051fa0401bb998b15bac73d}{Blob\+Merger} (uint32\+\_\+t image\+Height, uint32\+\_\+t image\+Width, uint32\+\_\+t nb\+Tiles)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfc_1_1BlobMerger}{Blob\+Merger} constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classfc_1_1BlobMerger_a81af854864e9ae220ad7c5fed0eef195}{execute\+Task} (std\+::shared\+\_\+ptr$<$ \hyperlink{classfc_1_1ViewAnalyse}{View\+Analyse} $>$ data) override
+\begin{DoxyCompactList}\small\item\em Get the view analyse, merge them into one analyse and merge all blob to build the feature collection. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classfc_1_1BlobMerger_a5b14aeeae9e03ceee8fdd90d2828a1bb}{get\+Name} () override
+\begin{DoxyCompactList}\small\item\em Get the name of the task. \end{DoxyCompactList}\item 
+\hyperlink{classfc_1_1BlobMerger}{Blob\+Merger} $\ast$ \hyperlink{classfc_1_1BlobMerger_a71cdaa2d3b28253922f0e43d911003ca}{copy} () override
+\begin{DoxyCompactList}\small\item\em Task copy, should be a singleton, to send bask itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfc_1_1Blob}{Blob} $\ast$ \hyperlink{classfc_1_1BlobMerger_ac2e61560c60b1467e385a3d08577c650}{get\+Blob\+From\+Coord} (const int32\+\_\+t \&row, const int32\+\_\+t \&col) const
+\begin{DoxyCompactList}\small\item\em Retrieve a blob from a coordinate, nullptr is to blob is corresponding. \end{DoxyCompactList}\item 
+void \hyperlink{classfc_1_1BlobMerger_a11fa980b355aa46271460f33a5cce0ac}{merge} ()
+\begin{DoxyCompactList}\small\item\em Merge all the blobs from all the view analyser. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{classfc_1_1BlobMerger_ad1b9d727d311831ea57e8f57161f8e13}{\+\_\+nb\+Tiles} = 0
+\begin{DoxyCompactList}\small\item\em Images number of tiles. \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{classfc_1_1Blob}{Blob} $\ast$, std\+::list$<$ \hyperlink{namespacefc_a7da125cb1e99553c27c07139ee8a62ca}{Coordinate} $>$ $>$ \hyperlink{classfc_1_1BlobMerger_a290bb3c28c7042b92761ec2a55f017dc}{\+\_\+to\+Merge} \{\}
+\begin{DoxyCompactList}\small\item\em Merge structure. \end{DoxyCompactList}\item 
+\hyperlink{structfc_1_1ListBlobs}{List\+Blobs} $\ast$ \hyperlink{classfc_1_1BlobMerger_a2754a886c8ef78537af5bd94e564cf55}{\+\_\+blobs}
+\begin{DoxyCompactList}\small\item\em Blobs list. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfc_1_1BlobMerger_abea5457da76db98d6a29dd06561d5bcf}{\+\_\+count} = 0
+\begin{DoxyCompactList}\small\item\em Number of views analysed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Merges multiple \hyperlink{classfc_1_1ViewAnalyse}{fc\+::\+View\+Analyse} to build the \hyperlink{classfc_1_1Feature}{Feature} Collection. 
+
+Merge the different analyse with a disjoint-\/set data structure to represent each blobs and merge them easily\+: \href{https://en.wikipedia.org/wiki/Disjoint-set_data_structure}{\tt https\+://en.\+wikipedia.\+org/wiki/\+Disjoint-\/set\+\_\+data\+\_\+structure} 
+
+Definition at line 62 of file Blob\+Merger.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfc_1_1BlobMerger_a6304048cc051fa0401bb998b15bac73d}\label{classfc_1_1BlobMerger_a6304048cc051fa0401bb998b15bac73d}} 
+\index{fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}!Blob\+Merger@{Blob\+Merger}}
+\index{Blob\+Merger@{Blob\+Merger}!fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}}
+\subsubsection{\texorpdfstring{Blob\+Merger()}{BlobMerger()}}
+{\footnotesize\ttfamily fc\+::\+Blob\+Merger\+::\+Blob\+Merger (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{image\+Height,  }\item[{uint32\+\_\+t}]{image\+Width,  }\item[{uint32\+\_\+t}]{nb\+Tiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\hyperlink{classfc_1_1BlobMerger}{Blob\+Merger} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Height} & Image Height \\
+\hline
+{\em image\+Width} & Image\+Width \\
+\hline
+{\em nb\+Tiles} & Number of tiles in the image \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file Blob\+Merger.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classfc_1_1BlobMerger_a71cdaa2d3b28253922f0e43d911003ca}\label{classfc_1_1BlobMerger_a71cdaa2d3b28253922f0e43d911003ca}} 
+\index{fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}!copy@{copy}}
+\index{copy@{copy}!fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily \hyperlink{classfc_1_1BlobMerger}{Blob\+Merger}$\ast$ fc\+::\+Blob\+Merger\+::copy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Task copy, should be a singleton, to send bask itself. 
+
+\begin{DoxyReturn}{Returns}
+itself 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file Blob\+Merger.\+h.
+
+\mbox{\Hypertarget{classfc_1_1BlobMerger_a81af854864e9ae220ad7c5fed0eef195}\label{classfc_1_1BlobMerger_a81af854864e9ae220ad7c5fed0eef195}} 
+\index{fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}!execute\+Task@{execute\+Task}}
+\index{execute\+Task@{execute\+Task}!fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}}
+\subsubsection{\texorpdfstring{execute\+Task()}{executeTask()}}
+{\footnotesize\ttfamily void fc\+::\+Blob\+Merger\+::execute\+Task (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classfc_1_1ViewAnalyse}{View\+Analyse} $>$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Get the view analyse, merge them into one analyse and merge all blob to build the feature collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & View analyse \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file Blob\+Merger.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df4/classfc_1_1BlobMerger_a81af854864e9ae220ad7c5fed0eef195_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfc_1_1BlobMerger_ac2e61560c60b1467e385a3d08577c650}\label{classfc_1_1BlobMerger_ac2e61560c60b1467e385a3d08577c650}} 
+\index{fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}!get\+Blob\+From\+Coord@{get\+Blob\+From\+Coord}}
+\index{get\+Blob\+From\+Coord@{get\+Blob\+From\+Coord}!fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}}
+\subsubsection{\texorpdfstring{get\+Blob\+From\+Coord()}{getBlobFromCoord()}}
+{\footnotesize\ttfamily \hyperlink{classfc_1_1Blob}{Blob}$\ast$ fc\+::\+Blob\+Merger\+::get\+Blob\+From\+Coord (\begin{DoxyParamCaption}\item[{const int32\+\_\+t \&}]{row,  }\item[{const int32\+\_\+t \&}]{col }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Retrieve a blob from a coordinate, nullptr is to blob is corresponding. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & Row \\
+\hline
+{\em col} & Column \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a blob has been found, else False 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file Blob\+Merger.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df4/classfc_1_1BlobMerger_ac2e61560c60b1467e385a3d08577c650_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfc_1_1BlobMerger_a5b14aeeae9e03ceee8fdd90d2828a1bb}\label{classfc_1_1BlobMerger_a5b14aeeae9e03ceee8fdd90d2828a1bb}} 
+\index{fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily std\+::string fc\+::\+Blob\+Merger\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Get the name of the task. 
+
+\begin{DoxyReturn}{Returns}
+Task name 
+\end{DoxyReturn}
+
+
+Definition at line 97 of file Blob\+Merger.\+h.
+
+\mbox{\Hypertarget{classfc_1_1BlobMerger_a11fa980b355aa46271460f33a5cce0ac}\label{classfc_1_1BlobMerger_a11fa980b355aa46271460f33a5cce0ac}} 
+\index{fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}!merge@{merge}}
+\index{merge@{merge}!fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}}
+\subsubsection{\texorpdfstring{merge()}{merge()}}
+{\footnotesize\ttfamily void fc\+::\+Blob\+Merger\+::merge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Merge all the blobs from all the view analyser. 
+
+
+
+Definition at line 121 of file Blob\+Merger.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df4/classfc_1_1BlobMerger_a11fa980b355aa46271460f33a5cce0ac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df4/classfc_1_1BlobMerger_a11fa980b355aa46271460f33a5cce0ac_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classfc_1_1BlobMerger_a2754a886c8ef78537af5bd94e564cf55}\label{classfc_1_1BlobMerger_a2754a886c8ef78537af5bd94e564cf55}} 
+\index{fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}!\+\_\+blobs@{\+\_\+blobs}}
+\index{\+\_\+blobs@{\+\_\+blobs}!fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}}
+\subsubsection{\texorpdfstring{\+\_\+blobs}{\_blobs}}
+{\footnotesize\ttfamily \hyperlink{structfc_1_1ListBlobs}{List\+Blobs}$\ast$ fc\+::\+Blob\+Merger\+::\+\_\+blobs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Blobs list. 
+
+
+
+Definition at line 169 of file Blob\+Merger.\+h.
+
+\mbox{\Hypertarget{classfc_1_1BlobMerger_abea5457da76db98d6a29dd06561d5bcf}\label{classfc_1_1BlobMerger_abea5457da76db98d6a29dd06561d5bcf}} 
+\index{fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}!\+\_\+count@{\+\_\+count}}
+\index{\+\_\+count@{\+\_\+count}!fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}}
+\subsubsection{\texorpdfstring{\+\_\+count}{\_count}}
+{\footnotesize\ttfamily uint32\+\_\+t fc\+::\+Blob\+Merger\+::\+\_\+count = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of views analysed. 
+
+
+
+Definition at line 172 of file Blob\+Merger.\+h.
+
+\mbox{\Hypertarget{classfc_1_1BlobMerger_ad1b9d727d311831ea57e8f57161f8e13}\label{classfc_1_1BlobMerger_ad1b9d727d311831ea57e8f57161f8e13}} 
+\index{fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}!\+\_\+nb\+Tiles@{\+\_\+nb\+Tiles}}
+\index{\+\_\+nb\+Tiles@{\+\_\+nb\+Tiles}!fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}}
+\subsubsection{\texorpdfstring{\+\_\+nb\+Tiles}{\_nbTiles}}
+{\footnotesize\ttfamily uint32\+\_\+t fc\+::\+Blob\+Merger\+::\+\_\+nb\+Tiles = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Images number of tiles. 
+
+
+
+Definition at line 163 of file Blob\+Merger.\+h.
+
+\mbox{\Hypertarget{classfc_1_1BlobMerger_a290bb3c28c7042b92761ec2a55f017dc}\label{classfc_1_1BlobMerger_a290bb3c28c7042b92761ec2a55f017dc}} 
+\index{fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}!\+\_\+to\+Merge@{\+\_\+to\+Merge}}
+\index{\+\_\+to\+Merge@{\+\_\+to\+Merge}!fc\+::\+Blob\+Merger@{fc\+::\+Blob\+Merger}}
+\subsubsection{\texorpdfstring{\+\_\+to\+Merge}{\_toMerge}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{classfc_1_1Blob}{Blob} $\ast$, std\+::list$<$\hyperlink{namespacefc_a7da125cb1e99553c27c07139ee8a62ca}{Coordinate} $>$ $>$ fc\+::\+Blob\+Merger\+::\+\_\+to\+Merge \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Merge structure. 
+
+
+
+Definition at line 166 of file Blob\+Merger.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/anb22/\+Documents/\+Fast-\/\+Image/\+Fast\+Image/src/\+Fast\+Image/\+Feature\+Collection/\+Tasks/\hyperlink{BlobMerger_8h}{Blob\+Merger.\+h}\end{DoxyCompactItemize}

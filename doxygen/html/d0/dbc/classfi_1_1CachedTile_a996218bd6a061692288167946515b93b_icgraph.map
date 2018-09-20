@@ -1,0 +1,6 @@
+<map id="fi::CachedTile::lock" name="fi::CachedTile::lock">
+<area shape="rect" id="node2" href="$d7/d31/classfi_1_1FigCache.html#a611074d024b48d548a84dbb08c97eb3d" title="Private function. Get Least Recently Used Tiles, clean it, and put it back in the pool..." alt="" coords="219,5,383,32"/>
+<area shape="rect" id="node4" href="$d7/d31/classfi_1_1FigCache.html#a407bf89cbbc37af734bf31709d382920" title="Private function. Get a new locked tile from the pool. " alt="" coords="197,56,406,83"/>
+<area shape="rect" id="node5" href="$d7/d31/classfi_1_1FigCache.html#affc8808f55b290811485aecef22573e6" title="Private function. Get cached locked tile. " alt="" coords="188,107,415,133"/>
+<area shape="rect" id="node3" href="$d7/d31/classfi_1_1FigCache.html#aff587e5ffcbeeab89a0ed4a0629231e3" title="Get a locked tile from the cache system. " alt="" coords="463,56,645,83"/>
+</map>

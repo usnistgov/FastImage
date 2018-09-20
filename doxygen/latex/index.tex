@@ -1,0 +1,554 @@
+An application programming interface to access big images
+
+The A\+PI is designed to aid in creating image processing algorithms to obtain performance across C\+P\+Us and big images.
+
+\subsection*{Content}
+
+
+\begin{DoxyItemize}
+\item \href{#installation-instructions}{\tt Installation Instructions}
+\begin{DoxyItemize}
+\item \href{#dependencies}{\tt Dependencies}
+\item \href{#building-fast-image}{\tt Building Fast Image}
+\end{DoxyItemize}
+\item \href{#motivation}{\tt Motivation}
+\item \href{#approach}{\tt Approach}
+\item \href{#architecture}{\tt Architecture}
+\item \href{#steps-to-programming-with-fast-image}{\tt Steps to Programming with Fast Image}
+\begin{DoxyItemize}
+\item \href{#linking-_fast-image_}{\tt Linking Fast Image}
+\item \href{#api-overview}{\tt A\+PI overview}
+\item \href{#how-to-create-a-tile-loader-how-to-access-a-specific-file-}{\tt How to create a Tile Loader ? How to access a specific file ?}
+\item \href{#getting-started}{\tt Getting started}
+\begin{DoxyItemize}
+\item \href{#image-traversal}{\tt Image traversal}
+\item \href{#spatial-convolution}{\tt Spatial convolution}
+\item \href{#opencv-convolution}{\tt Open\+CV convolution}
+\item \href{#feature-collection-usage}{\tt Feature Collection usage}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item \href{#credits}{\tt Credits}
+\item \href{#contact-us}{\tt Contact Us}
+\end{DoxyItemize}
+
+\section*{Installation Instructions}
+
+\subsection*{Dependencies}
+
+1) g++/gcc version 4.\+8.\+4+
+
+2) H\+T\+GS (\href{https://github.com/usnistgov/htgs}{\tt https\+://github.\+com/usnistgov/htgs})
+
+3) Lib\+T\+I\+FF (\href{http://www.simplesystems.org/libtiff/}{\tt http\+://www.\+simplesystems.\+org/libtiff/}) \mbox{[}optional / Tile\+Loader\mbox{]}
+
+4) libpng (\href{http://www.libpng.org/}{\tt http\+://www.\+libpng.\+org/}) \mbox{[}optional / Tile\+Loader\mbox{]}
+
+5) doxygen (www.\+doxygen.\+org/) \mbox{[}optional / Documentation\mbox{]}
+
+\subsection*{Building Fast Image}
+
+{\bfseries C\+Make Options\+:}
+
+C\+M\+A\+K\+E\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+P\+R\+E\+F\+IX -\/ Where to install Fast Image (and documentation)
+
+B\+U\+I\+L\+D\+\_\+\+D\+O\+X\+Y\+G\+EN -\/ Creates doxygen documentation
+
+R\+U\+N\+\_\+\+G\+T\+E\+ST -\/ Compiles and runs google unit tests for Fast Image (\textquotesingle{}make run-\/test\textquotesingle{} to re-\/run)
+
+
+\begin{DoxyCode}
+:$ cd <FastImage\_Directory>
+:<FastImage\_Directory>$ mkdir build && cd build
+:<FastImage\_Directory>/build$ ccmake ../ (or cmake-gui)
+
+'Configure' and setup cmake parameters
+'Configure' and 'Build'
+
+:<FastImage\_Directory>/build$ make
+:<FastImage\_Directory>/build$ [sudo] make install
+\end{DoxyCode}
+
+
+\section*{Motivation}
+
+The hardware landscape for high-\/performance computing currently features compute nodes with a high degree of parallelism within a node (e.\+g., 46 cores for the newly-\/announced Qualcomm Centriq C\+PU, 32 physical cores for the A\+MD Epyc C\+PU, and 24 logical cores for an Intel Xeon Skylake C\+PU), that increases with every new hardware generation. By contrast, the amount of memory available per core is not increasing in a commensurate manner and may even be decreasing especially when considered on a per-\/core basis. Furthermore, while the computational capacity of these systems keeps on improving, their programmability remains quite challenging. As such, designing image processing algorithms to minimize memory usage is a key strategy to taking advantage of this parallelism and support concurrent users or the multi-\/threaded processing to large images.
+
+\section*{Approach}
+
+{\itshape Fast Image} improves programmer productivity by providing high-\/level abstractions, {\itshape View} and {\itshape Tile}, along with routines that build on these abstractions to operate across an entire image without actually loading it in memory. The library operates on tiles (e.\+g., a 1024x1024 partial image out of a very large 100K x 100K image) with possibly a halo of pixels around an individual tile. {\itshape Fast Image} only loads a small number of tiles to maintain a low-\/memory footprint and manages an in-\/memory cache. Furthermore, the library takes advantage of multi-\/core computing by offloading tiles to compute threads as soon as they become available. This allows for multiple users to maintain high throughput, while processing several images or views concurrently.
+
+\section*{Architecture}
+
+{\itshape Fast Image} architecture shows how the system work and interact with the algorithm. First of all it works asynchronously from the algorithm. Secondly each part of Fast Image will be on on different threads. Finally the static memory manager guaranty that the amount of memory will be limited as asked.
+
+When an algorithm will ask {\itshape n} views through {\itshape View Request}. {\itshape Fast Image} will use this {\itshape View Request} to build a {\itshape view} and make it available as soon as possible. The algorithm will be able to use it (and release it). In the mean time, if enough memory is available an other {\itshape view} will be created.
+
+The {\itshape View} creation go through 3 steps\+:
+\begin{DoxyEnumerate}
+\item {\itshape View Loader}\+: Request memory from the memory manager and split the {\itshape View Request}, to {\itshape n} {\itshape Tile Loader} and send them to the {\itshape Tile Loader}.
+\item {\itshape Tile Loader}\+: Specific to the file {\itshape Fast Image} access to. Will ask the {\itshape Tile} to {\itshape Tile Cache}, if it not available the {\itshape Tile} will be loaded from the file, then cast and copy to the {\itshape Tile Cache}. From the cache only the interesting {\itshape Tile}\textquotesingle{}s part will be copied to the {\itshape View}.
+\item {\itshape View Counter}\+: Wait to the {\itshape view} to be fully loaded from file\textquotesingle{}s parts. Then build the ghost region if needed, and send the complete {\itshape view} to the algorithm.
+\end{DoxyEnumerate}
+
+Following the Fast Image Graph and it\textquotesingle{}s interaction with the algorithm\+:
+
+ \section*{Steps to Programming with Fast Image}
+
+\subsection*{Linking {\itshape Fast Image}}
+
+{\itshape Fast Image} can be easily link to any C++ 11 compliant code using cmake. Add the path to the folder Fast\+Image\+Directory/cmake-\/modules/ to the C\+M\+A\+K\+E\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+P\+A\+TH variable in your C\+Make\+Lists.\+txt. Then add the following lines in your C\+Make\+Lists.\+txt\+: 
+\begin{DoxyCode}
+find\_package(FastImage REQUIRED)
+include\_directories($\{HTGS\_INCLUDE\_DIR\})
+include\_directories($\{FastImage\_INCLUDE\_DIR\})
+link\_libraries($\{FastImage\_LIBRARIES\})
+\end{DoxyCode}
+
+
+\subsection*{A\+PI overview}
+
+3 A\+PI exists in {\itshape Fast Image}\+:
+\begin{DoxyEnumerate}
+\item The Fast\+Image object to access views of an image
+\item The {\itshape View} object to access pixel/data in the {\itshape View}
+\item Feature\+Collection to get the information on region of interests
+\item Tile Loader
+\end{DoxyEnumerate}
+
+\subsection*{How to create a Tile Loader ? How to access a specific file ?}
+
+To access to a new file format, a specific {\itshape Tile Loader} is needed. A specific {\itshape Tile Loader} class will inherit from the class {\itshape A\+Tile\+Loader}.
+
+The following methods need to be implemented\+: 
+\begin{DoxyCode}
+\textcolor{comment}{// Constructor}
+ATileLoader                       (\textcolor{keyword}{const} std::string &filePath, \textcolor{keywordtype}{size\_t} numThreads = 1);
+
+\textcolor{comment}{// Copy function to duplicate the Tile Loader into n threads }
+ATileLoader*  copyTileLoader      ();
+
+\textcolor{comment}{// Task Name getter used for graph generation }
+std::string   getName             ();
+
+\textcolor{comment}{// Basic file information getter }
+uint32\_t      getImageHeight      (uint32\_t level = 0) \textcolor{keyword}{const};
+uint32\_t      getImageWidth       (uint32\_t level = 0) \textcolor{keyword}{const};
+uint32\_t      getTileWidth        (uint32\_t level = 0) \textcolor{keyword}{const};
+uint32\_t      getTileHeight       (uint32\_t level = 0) \textcolor{keyword}{const};
+\textcolor{keywordtype}{short}         getBitsPerSample    () \textcolor{keyword}{const};
+uint32\_t      getNbPyramidLevels  () \textcolor{keyword}{const};
+
+\textcolor{comment}{// Load a specific tile from the file, the tile has already allocated. Return the disk loading time in ms.}
+\textcolor{keywordtype}{double}        loadTileFromFile    (UserType *tile, uint32\_t indexRowGlobalTile, uint32\_t indexColGlobalTile
+      );
+\end{DoxyCode}
+
+
+Here a Tile Loader for Greyscale Tiled Tiff\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{template}<\textcolor{keyword}{typename} UserType>
+\textcolor{keyword}{class }TiffTileLoader : \textcolor{keyword}{public} ATileLoader<UserType> \{
+ \textcolor{keyword}{private}:
+  TIFF *
+      \_tiff = \textcolor{keyword}{nullptr};
+
+  uint32\_t
+      \_imageHeight = 0,
+      \_imageWidth = 0,
+      \_tileHeight = 0,
+      \_tileWidth = 0;
+
+  \textcolor{keywordtype}{short}
+      \_sampleFormat = 0,
+      \_bitsPerSample = 0;
+
+  \textcolor{comment}{// Copy Constructor used by copyTileLoader}
+  TiffTileLoader(\textcolor{keywordtype}{size\_t} numThreads, \textcolor{keyword}{const} std::string &filePath, \textcolor{keyword}{const} TiffTileLoader &from)
+      : ATileLoader<UserType>(filePath, numThreads) \{
+    this->\_tiff = TIFFOpen(filePath.c\_str(), \textcolor{stringliteral}{"r"});
+    this->\_imageWidth = from.\_imageWidth;
+    this->\_imageHeight = from.\_imageHeight;
+    this->\_tileWidth = from.\_tileWidth;
+    this->\_tileHeight = from.\_tileHeight;
+    this->\_bitsPerSample = from.\_bitsPerSample;
+    this->\_sampleFormat = from.\_sampleFormat;
+  \}
+
+ \textcolor{keyword}{public}:
+  \textcolor{comment}{// Tile Loader constructor where the actual file is open}
+  TiffTileLoader(\textcolor{keyword}{const} std::string &fileName, \textcolor{keywordtype}{size\_t} numThreads = 1) : ATileLoader<UserType>(fileName,
+                                                                                             numThreads) \{
+    \textcolor{keywordtype}{short} samplesPerPixel = 0;
+
+    this->\_tiff = TIFFOpen(fileName.c\_str(), \textcolor{stringliteral}{"r"});
+    \textcolor{keywordflow}{if} (this->\_tiff != \textcolor{keyword}{nullptr}) \{
+      \textcolor{keywordflow}{if} (TIFFIsTiled(\_tiff) == 0) \{
+        std::stringstream message;
+        message << \textcolor{stringliteral}{"Tile Loader ERROR: The image is not tiled."};
+        \textcolor{keyword}{auto} messageChr = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[message.str().length() + 1];
+        strcpy(messageChr, message.str().c\_str());
+        \textcolor{keywordflow}{throw} (FastImageException(messageChr));
+      \}
+      TIFFGetField(this->\_tiff, TIFFTAG\_IMAGEWIDTH, &(this->\_imageWidth));
+      TIFFGetField(this->\_tiff, TIFFTAG\_IMAGELENGTH, &(this->\_imageHeight));
+      TIFFGetField(this->\_tiff, TIFFTAG\_TILEWIDTH, &this->\_tileWidth);
+      TIFFGetField(this->\_tiff, TIFFTAG\_TILELENGTH, &this->\_tileHeight);
+      TIFFGetField(this->\_tiff, TIFFTAG\_SAMPLESPERPIXEL, &samplesPerPixel);
+      TIFFGetField(this->\_tiff, TIFFTAG\_BITSPERSAMPLE, &(this->\_bitsPerSample));
+      TIFFGetField(this->\_tiff, TIFFTAG\_SAMPLEFORMAT, &(this->\_sampleFormat));
+
+      \textcolor{keywordflow}{if} (samplesPerPixel != 1) \{
+        std::stringstream message;
+        message << \textcolor{stringliteral}{"Tile Loader ERROR: The image is not greyscale: SamplesPerPixel = "} << samplesPerPixel
+                << \textcolor{stringliteral}{"."};
+        \textcolor{keyword}{auto} messageChr = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[message.str().length() + 1];
+        strcpy(messageChr, message.str().c\_str());
+        \textcolor{keywordflow}{throw} (FastImageException(messageChr));
+      \}
+
+      \textcolor{keywordflow}{if} (\_sampleFormat < 1 && \_sampleFormat > 3) \{
+        \_sampleFormat = 1;
+      \}
+
+    \} \textcolor{keywordflow}{else} \{
+      std::stringstream message;
+      message << \textcolor{stringliteral}{"Tile Loader ERROR: The image can not be opened."};
+      \textcolor{keyword}{auto} messageChr = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[message.str().length() + 1];
+      strcpy(messageChr, message.str().c\_str());
+      \textcolor{keywordflow}{throw} (FastImageException(messageChr));
+    \}
+  \}
+
+  ~TiffTileLoader() \{
+    \textcolor{keywordflow}{if} (this->\_tiff != \textcolor{keyword}{nullptr}) \{
+      TIFFClose(this->\_tiff);
+    \}
+  \}
+
+  \textcolor{comment}{// Differents getter specific to the file format}
+  std::string getName()\textcolor{keyword}{ override }\{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"TIFF Tile Loader"}; \}
+  uint32\_t getImageHeight(uint32\_t level = 0)\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \_imageHeight; \}
+  uint32\_t getImageWidth(uint32\_t level = 0)\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \_imageWidth; \}
+  uint32\_t getTileWidth(uint32\_t level = 0)\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \_tileWidth; \}
+  uint32\_t getTileHeight(uint32\_t level = 0)\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \_tileHeight; \}
+  \textcolor{keywordtype}{short} getBitsPerSample()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \_bitsPerSample; \}
+  uint32\_t getNbPyramidLevels()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} 1; \}
+
+  \textcolor{keyword}{template}<\textcolor{keyword}{typename} FileType>
+  \textcolor{keywordtype}{void} loadTile(tdata\_t src, UserType *dest) \{
+    \textcolor{keywordflow}{for} (uint32\_t row = 0; row < \_tileHeight; ++row) \{
+      \textcolor{keywordflow}{for} (uint32\_t col = 0; col < \_tileWidth; ++col) \{
+        dest[row * \_tileWidth + col] = (UserType) ((FileType *) (src))[row * \_tileWidth + col];
+      \}
+    \}
+  \}
+
+  \textcolor{comment}{// Load the tile from the file }
+  \textcolor{keywordtype}{double} loadTileFromFile(UserType *tile, uint32\_t indexRowGlobalTile, uint32\_t indexColGlobalTile)\textcolor{keyword}{
+       override }\{
+    tdata\_t tiffTile = \textcolor{keyword}{nullptr};
+    tiffTile = \_TIFFmalloc(TIFFTileSize(\_tiff));
+    \textcolor{keyword}{auto} begin = std::chrono::high\_resolution\_clock::now();
+    TIFFReadTile(\_tiff, tiffTile, indexColGlobalTile * \_tileWidth, indexRowGlobalTile * \_tileHeight, 0, 0);
+    \textcolor{keyword}{auto} end = std::chrono::high\_resolution\_clock::now();
+    \textcolor{keywordtype}{double} diskDuration = (std::chrono::duration\_cast<std::chrono::nanoseconds>(end - begin).count());
+    std::stringstream message;
+    \textcolor{keywordflow}{switch} (this->\_sampleFormat) \{
+      \textcolor{keywordflow}{case} 1 :
+        \textcolor{keywordflow}{switch} (this->\_bitsPerSample) \{
+          \textcolor{keywordflow}{case} 8:loadTile<uint8\_t>(tiffTile, tile);
+            \textcolor{keywordflow}{break};
+          \textcolor{keywordflow}{case} 16:loadTile<uint16\_t>(tiffTile, tile);
+            \textcolor{keywordflow}{break};
+          \textcolor{keywordflow}{case} 32:loadTile<uint32\_t>(tiffTile, tile);
+            \textcolor{keywordflow}{break};
+          \textcolor{keywordflow}{case} 64:loadTile<uint64\_t>(tiffTile, tile);
+            \textcolor{keywordflow}{break};
+          \textcolor{keywordflow}{default}:
+            message << \textcolor{stringliteral}{"Tile Loader ERROR: The data format is not supported for unsigned integer, "}
+                \textcolor{stringliteral}{"number bits per pixel = "} << this->\_bitsPerSample;
+            \textcolor{keyword}{auto} messageChr = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[message.str().length() + 1];
+            strcpy(messageChr, message.str().c\_str());
+            \textcolor{keywordflow}{throw} (FastImageException(messageChr));
+        \}
+        \textcolor{keywordflow}{break};
+      \textcolor{keywordflow}{case} 2:
+        \textcolor{keywordflow}{switch} (this->\_bitsPerSample) \{
+          \textcolor{keywordflow}{case} 8:loadTile<int8\_t>(tiffTile, tile);
+            \textcolor{keywordflow}{break};
+          \textcolor{keywordflow}{case} 16:loadTile<int16\_t>(tiffTile, tile);
+            \textcolor{keywordflow}{break};
+          \textcolor{keywordflow}{case} 32:loadTile<int32\_t>(tiffTile, tile);
+            \textcolor{keywordflow}{break};
+          \textcolor{keywordflow}{case} 64:loadTile<int64\_t>(tiffTile, tile);
+            \textcolor{keywordflow}{break};
+          \textcolor{keywordflow}{default}:
+            message << \textcolor{stringliteral}{"Tile Loader ERROR: The data format is not supported for signed integer, "}
+                \textcolor{stringliteral}{"number bits per pixel = "} << this->\_bitsPerSample;
+            \textcolor{keyword}{auto} messageChr = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[message.str().length() + 1];
+            strcpy(messageChr, message.str().c\_str());
+            \textcolor{keywordflow}{throw} (FastImageException(messageChr));
+        \}
+        \textcolor{keywordflow}{break};
+      \textcolor{keywordflow}{case} 3:
+        \textcolor{keywordflow}{switch} (this->\_bitsPerSample) \{
+          \textcolor{keywordflow}{case} 8:loadTile<float>(tiffTile, tile);
+            \textcolor{keywordflow}{break};
+          \textcolor{keywordflow}{case} 16:loadTile<float>(tiffTile, tile);
+            \textcolor{keywordflow}{break};
+          \textcolor{keywordflow}{case} 32:loadTile<float>(tiffTile, tile);
+            \textcolor{keywordflow}{break};
+          \textcolor{keywordflow}{case} 64:loadTile<double>(tiffTile, tile);
+            \textcolor{keywordflow}{break};
+          \textcolor{keywordflow}{default}:
+            message << \textcolor{stringliteral}{"Tile Loader ERROR: The data format is not supported for float, "}
+                \textcolor{stringliteral}{"number bits per pixel = "} << this->\_bitsPerSample;
+            \textcolor{keyword}{auto} messageChr = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[message.str().length() + 1];
+            strcpy(messageChr, message.str().c\_str());
+            \textcolor{keywordflow}{throw} (FastImageException(messageChr));
+        \}
+        \textcolor{keywordflow}{break};
+      \textcolor{keywordflow}{default}:
+        message << \textcolor{stringliteral}{"Tile Loader ERROR: The data format is not supported, sample format = "}
+                << this->\_sampleFormat;
+        \textcolor{keyword}{auto} messageChr = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[message.str().length() + 1];
+        strcpy(messageChr, message.str().c\_str());
+        \textcolor{keywordflow}{throw} (FastImageException(messageChr));
+    \}
+    \_TIFFfree(tiffTile);
+    \textcolor{keywordflow}{return} diskDuration;
+  \}
+
+  \textcolor{comment}{// Copy the Tile Loader}
+  ATileLoader<UserType> *copyTileLoader()\textcolor{keyword}{ override }\{
+    \textcolor{keywordflow}{return} \textcolor{keyword}{new} TiffTileLoader<UserType>(this->getNumThreads(), this->getFilePath(), *\textcolor{keyword}{this});
+  \}
+\};
+\}
+\end{DoxyCode}
+
+
+\#\# Getting started 
+\begin{DoxyCode}
+The code in this section is only PSEUDOCODE, and is not meant to be executed as is.
+\end{DoxyCode}
+
+
+\subsubsection*{Image traversal}
+
+Here a little program to go through all the pixel in a tiled greyscale tiff image\+: 
+\begin{DoxyCode}
+\textcolor{comment}{// Tile loader creation depending on the image}
+\hyperlink{classfi_1_1ATileLoader}{fi::ATileLoader<uint32\_t>} *tileLoader = \textcolor{keyword}{new} fi::TiffTileLoader<uint32\_t>(pathImage
+      ); 
+
+\textcolor{comment}{// Fast Image accessor creation}
+\textcolor{keyword}{auto} *fi = \textcolor{keyword}{new} \hyperlink{classfi_1_1FastImage}{fi::FastImage<uint32\_t>}(tileLoader, 0);
+
+\textcolor{comment}{// Configure and run the Fast Image}
+fi->\hyperlink{classfi_1_1FastImage_aa2ae5e5498f57462abd876108a55475c}{configureAndRun}();
+
+\textcolor{comment}{// Requesting all tiles }
+fi->requestAllTiles(\textcolor{keyword}{true});
+
+\textcolor{comment}{// Getting Data while Fast Image is processing some}
+\textcolor{keywordflow}{while} (fi->isGraphProcessingTiles()) \{
+
+    \textcolor{comment}{// Getting an image's view }
+    \textcolor{keyword}{auto} pView = fi->getAvailableViewBlocking();
+
+    \textcolor{comment}{// If not the last one}
+    \textcolor{keywordflow}{if} (pView != \textcolor{keyword}{nullptr}) \{
+
+        \textcolor{comment}{// Resolve shared\_ptr}
+        \textcolor{keyword}{auto} view = pView->get();
+        \textcolor{comment}{// Get information on the tile and looping through it }
+        \textcolor{keywordflow}{for} (int32\_t r = 0; r < view->getTileHeight(); ++r) \{
+            \textcolor{keywordflow}{for} (int32\_t c = 0; c < view->getTileWidth(); ++c) \{
+                \textcolor{comment}{// Getting the pixel}
+                view->getPixel(r, c);
+            \}
+        \}
+
+        \textcolor{comment}{// Release the memory}
+        pView->releaseMemory();
+    \}
+\}
+
+\textcolor{comment}{// Waiting for FI to copmlete all it tasks}
+fi->waitForGraphComplete();
+
+\textcolor{comment}{// Delete Fast Image (it will take care of the Tile Loader)}
+\textcolor{keyword}{delete} fi;
+\end{DoxyCode}
+
+
+\subsubsection*{Spatial convolution}
+
+This code do a spatial convolution on a tiled greyscale tiff image (kernel creation and tile writing are not showed). A full example is given in the fast image example. 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} radius = 6;
+\textcolor{keywordtype}{float} pixelOut = 0;
+\textcolor{keywordtype}{double} sigma = 2;
+int32\_t sizeKernel = radius * 2 + 1;
+
+
+\hyperlink{classfi_1_1ATileLoader}{fi::ATileLoader<uint32\_t>} *tileLoader = \textcolor{keyword}{new} fi::TiffTileLoader<uint32\_t>(pathImage
+      ); \textcolor{comment}{// Tile loader creation depending on the image}
+\textcolor{keyword}{auto} *fi = \textcolor{keyword}{new} \hyperlink{classfi_1_1FastImage}{fi::FastImage<uint32\_t>}(tileLoader, 0); \textcolor{comment}{// Fast Image accessor
+       creation}
+
+std::vector<double> kernel = gaussian(radiusKernel, sigma); \textcolor{comment}{// Kernel creation }
+\textcolor{keyword}{auto} *tileOut = \textcolor{keyword}{new} \textcolor{keywordtype}{float}[fi->getTileWidth() * fi->getTileHeight()]();
+
+fi->configureAndRun(); \textcolor{comment}{// Configure and run the Fast Image}
+fi->requestAllTiles(\textcolor{keyword}{true}); \textcolor{comment}{// Requesting all tiles }
+
+\textcolor{comment}{// Getting Data while Fast Image is processing some}
+\textcolor{keywordflow}{while} (fi->isGraphProcessingTiles()) \{
+    \textcolor{keyword}{auto} pView = fi->getAvailableViewBlocking(); \textcolor{comment}{// Getting an image's view }
+    \textcolor{comment}{// If not the last one}
+    \textcolor{keywordflow}{if} (pView != \textcolor{keyword}{nullptr}) \{
+
+        \textcolor{keyword}{auto} view = pView->get(); \textcolor{comment}{// Resolve shared\_ptr}
+        \textcolor{comment}{// Get information on the tile and looping through it }
+        \textcolor{keywordflow}{for} (int32\_t r = 0; r < view->getTileHeight(); ++r) \{
+            \textcolor{keywordflow}{for} (int32\_t c = 0; c < view->getTileWidth(); ++c) \{
+                pixelOut = 0;
+                \textcolor{keywordflow}{for} (int32\_t rK = -radius; rK <= radius; ++rK) \{
+                    \textcolor{keywordflow}{for} (int32\_t cK = -radius; cK <= radius; ++cK) \{
+                        pixelOut += view->getPixel(r + rK, c + cK) * kernel[(rK + radius) * sizeKernel + (
+      cK + radius)];
+                    \}
+                \}
+                tileOut[r * tileWidth + c] = pixelOut / (view->getTileHeight() * view->getTileWidth());
+            \}
+        \}
+
+        writeTile(tileOut, view->getGlobalXOffset(), view->getGlobalYOffset());
+        \textcolor{comment}{// Release the memory}
+        pView->releaseMemory();
+    \}
+\}
+
+\textcolor{keyword}{delete} [] tileOut;
+\textcolor{keyword}{delete} (fi)
+\end{DoxyCode}
+
+
+\subsubsection*{Open\+CV convolution}
+
+This code do a convolution with Open\+CV on a tiled greyscale tiff image (kernel creation and tile writing are not showed). A full example is given in the fast image example. 
+\begin{DoxyCode}
+\textcolor{keyword}{using namespace }cv; 
+
+\textcolor{keywordtype}{int} radius = 6;
+\textcolor{keywordtype}{float} pixelOut = 0;
+\textcolor{keywordtype}{double} sigma = 2;
+int32\_t sizeKernel = radius * 2 + 1;
+
+
+\hyperlink{classfi_1_1ATileLoader}{fi::ATileLoader<uint32\_t>} *tileLoader = \textcolor{keyword}{new} fi::TiffTileLoader<uint32\_t>(pathImage
+      ); \textcolor{comment}{// Tile loader creation depending on the image}
+\textcolor{keyword}{auto} *fi = \textcolor{keyword}{new} \hyperlink{classfi_1_1FastImage}{fi::FastImage<uint32\_t>}(tileLoader, 0); \textcolor{comment}{// Fast Image accessor
+       creation}
+
+Mat kernel = gaussian(radius, sigma, CV\_32F); \textcolor{comment}{// Kernel creation }
+
+\textcolor{keyword}{auto} *tileOut = \textcolor{keyword}{new} \textcolor{keywordtype}{float}[fi->getTileWidth() * fi->getTileHeight()]();
+
+fi->configureAndRun(); \textcolor{comment}{// Configure and run the Fast Image}
+fi->requestAllTiles(\textcolor{keyword}{true}); \textcolor{comment}{// Requesting all tiles }
+
+\textcolor{keyword}{auto} viewHeight = fi->getViewHeight();
+\textcolor{keyword}{auto} viewWidth = fi->getViewWidth();
+
+\textcolor{comment}{// Getting Data while Fast Image is processing some}
+\textcolor{keywordflow}{while} (fi->isGraphProcessingTiles()) \{
+    \textcolor{keyword}{auto} pView = fi->getAvailableViewBlocking(); \textcolor{comment}{// Getting an image's view }
+    \textcolor{comment}{// If not the last one}
+    \textcolor{keywordflow}{if} (pView != \textcolor{keyword}{nullptr}) \{
+        \textcolor{keyword}{auto} view = pView->get(); \textcolor{comment}{// Resolve shared\_ptr}
+
+        Mat matInput(viewHeight, viewWidth, CV\_32F, view->getData())
+        Mat tileResult;
+
+        \textcolor{comment}{//Do the convolution}
+        filter2D(matInput, tileResult, CV\_32F, \_kernel, cvPoint(-1, -1));
+
+        cv::Rect roi(radius, radius, view->getTileWidth(), view->getTileHeight());
+        cv::Mat<float> matOut = tileResult(roi).clone();
+
+        tileOut = (\textcolor{keywordtype}{float} *)matOut.data;
+
+        writeTile(tileOut, view->getGlobalXOffset(), view->getGlobalYOffset());
+        \textcolor{comment}{// Release the memory}
+        pView->releaseMemory();
+    \}
+\}
+
+\textcolor{keyword}{delete} [] tileOut;
+\textcolor{keyword}{delete} (fi)
+\end{DoxyCode}
+
+
+\subsubsection*{Feature Collection usage}
+
+This code go through a tiled greyscale tiff image (kernel creation and tile writing are not showed) through is mask. A full example is given in the fast image example. 
+\begin{DoxyCode}
+\hyperlink{classfi_1_1ATileLoader}{fi::ATileLoader<uint32\_t>} *tileLoader = \textcolor{keyword}{new} fi::TiffTileLoader<uint32\_t>(pathImage
+      ); \textcolor{comment}{// Tile loader creation depending on the image}
+\textcolor{keyword}{auto} *fi = \textcolor{keyword}{new} \hyperlink{classfi_1_1FastImage}{fi::FastImage<uint32\_t>}(tileLoader, 0); \textcolor{comment}{// Fast Image accessor
+       creation}
+
+\textcolor{comment}{// Feature Collection creation }
+\hyperlink{classfc_1_1FeatureCollection}{fc::FeatureCollection} featureCollection;
+featureCollection.deserialize(pathFeatureCollection);
+
+fi->\hyperlink{classfi_1_1FastImage_aa2ae5e5498f57462abd876108a55475c}{configureAndRun}();
+
+\textcolor{comment}{// Go through all features}
+\textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} &feature : featureCollection) \{
+    \textcolor{comment}{// Request views from a feature}
+    fi->requestFeature(feature);
+    \textcolor{keywordflow}{while} (!fi->isFeatureDone()) \{
+        \textcolor{keyword}{auto} sh\_view = fi->getAvailableViewBlocking();
+        \textcolor{keyword}{auto} view = sh\_view->get();
+        \textcolor{keywordflow}{if} (view != \textcolor{keyword}{nullptr}) \{
+            \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} row = 0; row < view->getTileHeight(); ++row) \{
+                \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} col = 0; col < view->getTileWidth(); ++col) \{
+
+                    \textcolor{comment}{// Test is a pixel is in the bitmask}
+                    \textcolor{keywordflow}{if} (feature.isInBitMask(row + view->getGlobalYOffset(), col + view->getGlobalXOffset())
+      ) \{
+                        view->getPixel(row, col);
+                    \}
+
+                \}
+            \}
+            sh\_view->releaseMemory();
+        \}
+    \}
+\}
+fi->finishedRequestingTiles();
+\textcolor{keyword}{delete} fi;
+\end{DoxyCode}
+
+
+\section*{Credits}
+
+Alexandre Bardakoff
+
+Timothy Blattner
+
+Walid Keyrouz
+
+Mary Brady
+
+\section*{Contact Us}
+
+\href{mailto:alexandre.bardakoff@nist.gov}{\tt Alexandre Bardakoff (alexandre.\+bardakoff ( at ) nist.\+gov}
+
+\href{mailto:timothy.blattner@nist.gov}{\tt Timothy Blattner (timothy.\+blattner ( at ) nist.\+gov} 

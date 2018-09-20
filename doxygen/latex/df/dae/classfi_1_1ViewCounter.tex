@@ -1,0 +1,525 @@
+\hypertarget{classfi_1_1ViewCounter}{}\section{fi\+:\+:View\+Counter$<$ User\+Type $>$ Class Template Reference}
+\label{classfi_1_1ViewCounter}\index{fi\+::\+View\+Counter$<$ User\+Type $>$@{fi\+::\+View\+Counter$<$ User\+Type $>$}}
+
+
+\hyperlink{classfi_1_1View}{View} Counter, graph\textquotesingle{}s last task, finalise the view.  
+
+
+
+
+{\ttfamily \#include $<$Fast\+Image/tasks/\+View\+Counter.\+h$>$}
+
+
+
+Inheritance diagram for fi\+:\+:View\+Counter$<$ User\+Type $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{d9/d57/classfi_1_1ViewCounter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for fi\+:\+:View\+Counter$<$ User\+Type $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d0d/classfi_1_1ViewCounter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfi_1_1ViewCounter_a91de9bc19ea0f0629ebb689ecae07f68}{View\+Counter} (\hyperlink{namespacefi_a6808b618c85d179a330ca388162215bd}{Filling\+Type} filling\+Type=\hyperlink{namespacefi_a6808b618c85d179a330ca388162215bdae8225b11842409df543692aebed34fd1}{Filling\+Type\+::\+F\+I\+LL}, bool ordered=false)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1View}{View} counter constructor, set if the view are send in ordered way or not, and set the filling type. \end{DoxyCompactList}\item 
+\hyperlink{classfi_1_1ViewCounter_abc86ae6ba64c6be66d512ab6412ce108}{$\sim$\+View\+Counter} ()=default
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1View}{View} counter destructor. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classfi_1_1ViewCounter_a555dfa42020fa6cc1a710221838b2e1e}{get\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get task name. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1ViewCounter_ae0c572277d297849a1b2dde6f8e4a521}{add\+Traversal} (std\+::queue$<$ std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$$>$ traversal)
+\begin{DoxyCompactList}\small\item\em Add a traversal to insure ordering. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1ViewCounter_a2c05a287109d15c0e33b6855545db65d}{execute\+Task} (std\+::shared\+\_\+ptr$<$ \hyperlink{classfi_1_1HTGSTileRequestData}{fi\+::\+H\+T\+G\+S\+Tile\+Request\+Data}$<$ User\+Type $>$$>$ tile\+Request\+Data)
+\begin{DoxyCompactList}\small\item\em Wait for the view data to be fully loaded from the file data, Fill the ghost region if needed, send the view\+Data when completed. \end{DoxyCompactList}\item 
+\hyperlink{classfi_1_1ViewCounter}{View\+Counter} $\ast$ \hyperlink{classfi_1_1ViewCounter_a78ffe68387ffe83ce2135c9cd5cac033}{copy} ()
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classfi_1_1ViewCounter_ae583cf9ca69170e595208b2c4066c767}{fill} (std\+::shared\+\_\+ptr$<$ \hyperlink{classfi_1_1HTGSTileRequestData}{fi\+::\+H\+T\+G\+S\+Tile\+Request\+Data}$<$ User\+Type $>$$>$ tile\+Request\+Data)
+\begin{DoxyCompactList}\small\item\em Filling type where the data are duplicated from the nearest border \+: radius 1 for a 3x3 tile with only ghost region a abc c. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1ViewCounter_a9b208c1ff386265adc30d4e338dbc2c8}{fill\+Ghost\+Region} (std\+::shared\+\_\+ptr$<$ \hyperlink{classfi_1_1HTGSTileRequestData}{fi\+::\+H\+T\+G\+S\+Tile\+Request\+Data}$<$ User\+Type $>$$>$ tile\+Request\+Data)
+\begin{DoxyCompactList}\small\item\em Switch for the selected filling and fill the ghost region. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1ViewCounter_a8a1bd60b42035140d6abee7e58fc3561}{update\+Current\+Traversal} ()
+\begin{DoxyCompactList}\small\item\em Update the current traversal, used for insure ordering. \end{DoxyCompactList}\item 
+bool \hyperlink{classfi_1_1ViewCounter_a30a0d5ae3d727aea55e70ee4eb45127f}{view\+Is\+Next} (htgs\+::m\+\_\+data\+\_\+t$<$ \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$$>$ view)
+\begin{DoxyCompactList}\small\item\em Test if the view received is next one to be send if order needed. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1ViewCounter_a6941e894f768fe1f0deb1b7ff771e2bc}{handle\+Stored\+Views} ()
+\begin{DoxyCompactList}\small\item\em Try to send already stored view. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1ViewCounter_a20e96bdb97f1aecc5bb0a81fb456c0fc}{data\+Ready} (htgs\+::m\+\_\+data\+\_\+t$<$ \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$$>$ view)
+\begin{DoxyCompactList}\small\item\em Send the current view if no ordered, or handle the traversal and the views. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacefi_a6808b618c85d179a330ca388162215bd}{Filling\+Type} \hyperlink{classfi_1_1ViewCounter_a1b73e5b8d05eeaec0ff50ae5f53fb405}{\+\_\+filling\+Type}
+\begin{DoxyCompactList}\small\item\em Filling Type to choose the fill. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ htgs\+::m\+\_\+data\+\_\+t$<$ \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$ $>$, uint32\+\_\+t $>$ \hyperlink{classfi_1_1ViewCounter_ad37ec893e7e014bab185105eaf0ce65a}{\+\_\+count\+Map}
+\begin{DoxyCompactList}\small\item\em Map between the view, and the number of tiles loaded. \end{DoxyCompactList}\item 
+std\+::list$<$ htgs\+::m\+\_\+data\+\_\+t$<$ \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$ $>$ $>$ \hyperlink{classfi_1_1ViewCounter_af3ee501d1562ebca98353a4dd68ea3c5}{\+\_\+waiting\+List}
+\begin{DoxyCompactList}\small\item\em Views stored because not in the right order. \end{DoxyCompactList}\item 
+std\+::queue$<$ std\+::queue$<$ std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ $>$ $>$ \hyperlink{classfi_1_1ViewCounter_a1f03f92f9e6d2c0db314faa1b70459b2}{\+\_\+queue\+Traversals}
+\begin{DoxyCompactList}\small\item\em List of traversals. \end{DoxyCompactList}\item 
+std\+::queue$<$ std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ $>$ \hyperlink{classfi_1_1ViewCounter_acb9cacb70afa4c4d2de4ad572042b76d}{\+\_\+current\+Traversal}
+\begin{DoxyCompactList}\small\item\em Current traversal. \end{DoxyCompactList}\item 
+bool \hyperlink{classfi_1_1ViewCounter_a0dfcb4d800a0d80591e4e6d34b148731}{\+\_\+ordered}
+\begin{DoxyCompactList}\small\item\em Order preserved. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename User\+Type$>$\newline
+class fi\+::\+View\+Counter$<$ User\+Type $>$}
+
+\hyperlink{classfi_1_1View}{View} Counter, graph\textquotesingle{}s last task, finalise the view. 
+
+Finalize the view, wait for each pieces of the view to be loaded from the file. When done, if there is a radius, then a ghost region will be filled in as needed. Insure also the order if the option is set.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em User\+Type} & Pixel Type asked by the end user \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 59 of file View\+Counter.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfi_1_1ViewCounter_a91de9bc19ea0f0629ebb689ecae07f68}\label{classfi_1_1ViewCounter_a91de9bc19ea0f0629ebb689ecae07f68}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!View\+Counter@{View\+Counter}}
+\index{View\+Counter@{View\+Counter}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{View\+Counter()}{ViewCounter()}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+\hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::\hyperlink{classfi_1_1ViewCounter}{View\+Counter} (\begin{DoxyParamCaption}\item[{\hyperlink{namespacefi_a6808b618c85d179a330ca388162215bd}{Filling\+Type}}]{filling\+Type = {\ttfamily \hyperlink{namespacefi_a6808b618c85d179a330ca388162215bdae8225b11842409df543692aebed34fd1}{Filling\+Type\+::\+F\+I\+LL}},  }\item[{bool}]{ordered = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\hyperlink{classfi_1_1View}{View} counter constructor, set if the view are send in ordered way or not, and set the filling type. 
+
+
+
+Definition at line 64 of file View\+Counter.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dae/classfi_1_1ViewCounter_a91de9bc19ea0f0629ebb689ecae07f68_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dae/classfi_1_1ViewCounter_a91de9bc19ea0f0629ebb689ecae07f68_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1ViewCounter_abc86ae6ba64c6be66d512ab6412ce108}\label{classfi_1_1ViewCounter_abc86ae6ba64c6be66d512ab6412ce108}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!````~View\+Counter@{$\sim$\+View\+Counter}}
+\index{````~View\+Counter@{$\sim$\+View\+Counter}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{$\sim$\+View\+Counter()}{~ViewCounter()}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+\hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::$\sim$\hyperlink{classfi_1_1ViewCounter}{View\+Counter} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\hyperlink{classfi_1_1View}{View} counter destructor. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dae/classfi_1_1ViewCounter_abc86ae6ba64c6be66d512ab6412ce108_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classfi_1_1ViewCounter_ae0c572277d297849a1b2dde6f8e4a521}\label{classfi_1_1ViewCounter_ae0c572277d297849a1b2dde6f8e4a521}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!add\+Traversal@{add\+Traversal}}
+\index{add\+Traversal@{add\+Traversal}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{add\+Traversal()}{addTraversal()}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+void \hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::add\+Traversal (\begin{DoxyParamCaption}\item[{std\+::queue$<$ std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$$>$}]{traversal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a traversal to insure ordering. 
+
+
+
+Definition at line 76 of file View\+Counter.\+h.
+
+\mbox{\Hypertarget{classfi_1_1ViewCounter_a78ffe68387ffe83ce2135c9cd5cac033}\label{classfi_1_1ViewCounter_a78ffe68387ffe83ce2135c9cd5cac033}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!copy@{copy}}
+\index{copy@{copy}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+\hyperlink{classfi_1_1ViewCounter}{View\+Counter}$\ast$ \hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::copy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy operator. 
+
+\begin{DoxyReturn}{Returns}
+New task 
+\end{DoxyReturn}
+
+
+Definition at line 118 of file View\+Counter.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dae/classfi_1_1ViewCounter_a78ffe68387ffe83ce2135c9cd5cac033_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1ViewCounter_a20e96bdb97f1aecc5bb0a81fb456c0fc}\label{classfi_1_1ViewCounter_a20e96bdb97f1aecc5bb0a81fb456c0fc}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!data\+Ready@{data\+Ready}}
+\index{data\+Ready@{data\+Ready}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{data\+Ready()}{dataReady()}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+void \hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::data\+Ready (\begin{DoxyParamCaption}\item[{htgs\+::m\+\_\+data\+\_\+t$<$ \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$$>$}]{view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Send the current view if no ordered, or handle the traversal and the views. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em view} & \hyperlink{classfi_1_1View}{View} ready to be sent or stored. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 245 of file View\+Counter.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dae/classfi_1_1ViewCounter_a20e96bdb97f1aecc5bb0a81fb456c0fc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dae/classfi_1_1ViewCounter_a20e96bdb97f1aecc5bb0a81fb456c0fc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1ViewCounter_a2c05a287109d15c0e33b6855545db65d}\label{classfi_1_1ViewCounter_a2c05a287109d15c0e33b6855545db65d}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!execute\+Task@{execute\+Task}}
+\index{execute\+Task@{execute\+Task}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{execute\+Task()}{executeTask()}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+void \hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::execute\+Task (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classfi_1_1HTGSTileRequestData}{fi\+::\+H\+T\+G\+S\+Tile\+Request\+Data}$<$ User\+Type $>$$>$}]{tile\+Request\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wait for the view data to be fully loaded from the file data, Fill the ghost region if needed, send the view\+Data when completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Request\+Data} & Tile from the tile loader to test \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 83 of file View\+Counter.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dae/classfi_1_1ViewCounter_a2c05a287109d15c0e33b6855545db65d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1ViewCounter_ae583cf9ca69170e595208b2c4066c767}\label{classfi_1_1ViewCounter_ae583cf9ca69170e595208b2c4066c767}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!fill@{fill}}
+\index{fill@{fill}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{fill()}{fill()}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+void \hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::fill (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classfi_1_1HTGSTileRequestData}{fi\+::\+H\+T\+G\+S\+Tile\+Request\+Data}$<$ User\+Type $>$$>$}]{tile\+Request\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Filling type where the data are duplicated from the nearest border \+: radius 1 for a 3x3 tile with only ghost region a abc c. 
+
+a abc c d def f g ghi i
+
+g ghi i
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Request\+Data} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 133 of file View\+Counter.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dae/classfi_1_1ViewCounter_ae583cf9ca69170e595208b2c4066c767_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1ViewCounter_a9b208c1ff386265adc30d4e338dbc2c8}\label{classfi_1_1ViewCounter_a9b208c1ff386265adc30d4e338dbc2c8}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!fill\+Ghost\+Region@{fill\+Ghost\+Region}}
+\index{fill\+Ghost\+Region@{fill\+Ghost\+Region}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{fill\+Ghost\+Region()}{fillGhostRegion()}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+void \hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::fill\+Ghost\+Region (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classfi_1_1HTGSTileRequestData}{fi\+::\+H\+T\+G\+S\+Tile\+Request\+Data}$<$ User\+Type $>$$>$}]{tile\+Request\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Switch for the selected filling and fill the ghost region. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Request\+Data} & tile to fill \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 196 of file View\+Counter.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{df/dae/classfi_1_1ViewCounter_a9b208c1ff386265adc30d4e338dbc2c8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dae/classfi_1_1ViewCounter_a9b208c1ff386265adc30d4e338dbc2c8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1ViewCounter_a555dfa42020fa6cc1a710221838b2e1e}\label{classfi_1_1ViewCounter_a555dfa42020fa6cc1a710221838b2e1e}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+std\+::string \hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get task name. 
+
+\begin{DoxyReturn}{Returns}
+Task name 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file View\+Counter.\+h.
+
+\mbox{\Hypertarget{classfi_1_1ViewCounter_a6941e894f768fe1f0deb1b7ff771e2bc}\label{classfi_1_1ViewCounter_a6941e894f768fe1f0deb1b7ff771e2bc}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!handle\+Stored\+Views@{handle\+Stored\+Views}}
+\index{handle\+Stored\+Views@{handle\+Stored\+Views}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{handle\+Stored\+Views()}{handleStoredViews()}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+void \hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::handle\+Stored\+Views (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Try to send already stored view. 
+
+
+
+Definition at line 221 of file View\+Counter.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dae/classfi_1_1ViewCounter_a6941e894f768fe1f0deb1b7ff771e2bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dae/classfi_1_1ViewCounter_a6941e894f768fe1f0deb1b7ff771e2bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1ViewCounter_a8a1bd60b42035140d6abee7e58fc3561}\label{classfi_1_1ViewCounter_a8a1bd60b42035140d6abee7e58fc3561}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!update\+Current\+Traversal@{update\+Current\+Traversal}}
+\index{update\+Current\+Traversal@{update\+Current\+Traversal}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{update\+Current\+Traversal()}{updateCurrentTraversal()}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+void \hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::update\+Current\+Traversal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Update the current traversal, used for insure ordering. 
+
+
+
+Definition at line 205 of file View\+Counter.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dae/classfi_1_1ViewCounter_a8a1bd60b42035140d6abee7e58fc3561_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1ViewCounter_a30a0d5ae3d727aea55e70ee4eb45127f}\label{classfi_1_1ViewCounter_a30a0d5ae3d727aea55e70ee4eb45127f}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!view\+Is\+Next@{view\+Is\+Next}}
+\index{view\+Is\+Next@{view\+Is\+Next}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{view\+Is\+Next()}{viewIsNext()}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+bool \hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::view\+Is\+Next (\begin{DoxyParamCaption}\item[{htgs\+::m\+\_\+data\+\_\+t$<$ \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$$>$}]{view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Test if the view received is next one to be send if order needed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em view} & \hyperlink{classfi_1_1View}{View} to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the view is the next one to be sent, else Fasle 
+\end{DoxyReturn}
+
+
+Definition at line 215 of file View\+Counter.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dae/classfi_1_1ViewCounter_a30a0d5ae3d727aea55e70ee4eb45127f_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classfi_1_1ViewCounter_ad37ec893e7e014bab185105eaf0ce65a}\label{classfi_1_1ViewCounter_ad37ec893e7e014bab185105eaf0ce65a}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!\+\_\+count\+Map@{\+\_\+count\+Map}}
+\index{\+\_\+count\+Map@{\+\_\+count\+Map}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{\+\_\+count\+Map}{\_countMap}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+std\+::unordered\+\_\+map$<$htgs\+::m\+\_\+data\+\_\+t$<$\hyperlink{classfi_1_1View}{fi\+::\+View}$<$User\+Type$>$ $>$, uint32\+\_\+t$>$ \hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::\+\_\+count\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map between the view, and the number of tiles loaded. 
+
+
+
+Definition at line 264 of file View\+Counter.\+h.
+
+\mbox{\Hypertarget{classfi_1_1ViewCounter_acb9cacb70afa4c4d2de4ad572042b76d}\label{classfi_1_1ViewCounter_acb9cacb70afa4c4d2de4ad572042b76d}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!\+\_\+current\+Traversal@{\+\_\+current\+Traversal}}
+\index{\+\_\+current\+Traversal@{\+\_\+current\+Traversal}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{\+\_\+current\+Traversal}{\_currentTraversal}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+std\+::queue$<$std\+::pair$<$uint32\+\_\+t, uint32\+\_\+t$>$ $>$ \hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::\+\_\+current\+Traversal\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current traversal. 
+
+
+
+Definition at line 273 of file View\+Counter.\+h.
+
+\mbox{\Hypertarget{classfi_1_1ViewCounter_a1b73e5b8d05eeaec0ff50ae5f53fb405}\label{classfi_1_1ViewCounter_a1b73e5b8d05eeaec0ff50ae5f53fb405}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!\+\_\+filling\+Type@{\+\_\+filling\+Type}}
+\index{\+\_\+filling\+Type@{\+\_\+filling\+Type}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{\+\_\+filling\+Type}{\_fillingType}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+\hyperlink{namespacefi_a6808b618c85d179a330ca388162215bd}{Filling\+Type} \hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::\+\_\+filling\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Filling Type to choose the fill. 
+
+
+
+Definition at line 261 of file View\+Counter.\+h.
+
+\mbox{\Hypertarget{classfi_1_1ViewCounter_a0dfcb4d800a0d80591e4e6d34b148731}\label{classfi_1_1ViewCounter_a0dfcb4d800a0d80591e4e6d34b148731}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!\+\_\+ordered@{\+\_\+ordered}}
+\index{\+\_\+ordered@{\+\_\+ordered}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{\+\_\+ordered}{\_ordered}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+bool \hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::\+\_\+ordered\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Order preserved. 
+
+
+
+Definition at line 276 of file View\+Counter.\+h.
+
+\mbox{\Hypertarget{classfi_1_1ViewCounter_a1f03f92f9e6d2c0db314faa1b70459b2}\label{classfi_1_1ViewCounter_a1f03f92f9e6d2c0db314faa1b70459b2}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!\+\_\+queue\+Traversals@{\+\_\+queue\+Traversals}}
+\index{\+\_\+queue\+Traversals@{\+\_\+queue\+Traversals}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{\+\_\+queue\+Traversals}{\_queueTraversals}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+std\+::queue$<$std\+::queue$<$std\+::pair$<$uint32\+\_\+t, uint32\+\_\+t$>$ $>$ $>$ \hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::\+\_\+queue\+Traversals\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+List of traversals. 
+
+
+
+Definition at line 270 of file View\+Counter.\+h.
+
+\mbox{\Hypertarget{classfi_1_1ViewCounter_af3ee501d1562ebca98353a4dd68ea3c5}\label{classfi_1_1ViewCounter_af3ee501d1562ebca98353a4dd68ea3c5}} 
+\index{fi\+::\+View\+Counter@{fi\+::\+View\+Counter}!\+\_\+waiting\+List@{\+\_\+waiting\+List}}
+\index{\+\_\+waiting\+List@{\+\_\+waiting\+List}!fi\+::\+View\+Counter@{fi\+::\+View\+Counter}}
+\subsubsection{\texorpdfstring{\+\_\+waiting\+List}{\_waitingList}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+std\+::list$<$htgs\+::m\+\_\+data\+\_\+t$<$\hyperlink{classfi_1_1View}{fi\+::\+View}$<$User\+Type$>$ $>$ $>$ \hyperlink{classfi_1_1ViewCounter}{fi\+::\+View\+Counter}$<$ User\+Type $>$\+::\+\_\+waiting\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Views stored because not in the right order. 
+
+
+
+Definition at line 267 of file View\+Counter.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/anb22/\+Documents/\+Fast-\/\+Image/\+Fast\+Image/src/\+Fast\+Image/tasks/\hyperlink{ViewCounter_8h}{View\+Counter.\+h}\end{DoxyCompactItemize}

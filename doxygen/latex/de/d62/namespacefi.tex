@@ -1,0 +1,211 @@
+\hypertarget{namespacefi}{}\section{fi Namespace Reference}
+\label{namespacefi}\index{fi@{fi}}
+
+
+\hyperlink{classfi_1_1FastImage}{Fast\+Image} namespace.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classfi_1_1ATileLoader}{A\+Tile\+Loader}
+\begin{DoxyCompactList}\small\item\em Tile Loader interface. \end{DoxyCompactList}\item 
+class \hyperlink{classfi_1_1CachedTile}{Cached\+Tile}
+\begin{DoxyCompactList}\small\item\em Tile Cached from the file. \end{DoxyCompactList}\item 
+class \hyperlink{classfi_1_1DistributePyramidRule}{Distribute\+Pyramid\+Rule}
+\begin{DoxyCompactList}\small\item\em Distribute Pyramid Rule used by the execution pipeline. \end{DoxyCompactList}\item 
+class \hyperlink{classfi_1_1FastImage}{Fast\+Image}
+\begin{DoxyCompactList}\small\item\em Main api object to access the targeted image. \end{DoxyCompactList}\item 
+class \hyperlink{classfi_1_1FastImageException}{Fast\+Image\+Exception}
+\begin{DoxyCompactList}\small\item\em Exception specialized for Fast Image. \end{DoxyCompactList}\item 
+class \hyperlink{classfi_1_1FigCache}{Fig\+Cache}
+\begin{DoxyCompactList}\small\item\em Fast Image cache. \end{DoxyCompactList}\item 
+class \hyperlink{classfi_1_1GrayscaleTiffTileLoader}{Grayscale\+Tiff\+Tile\+Loader}
+\begin{DoxyCompactList}\small\item\em Tile loader specialized in grayscale tiff file. Use libtiff library. \end{DoxyCompactList}\item 
+class \hyperlink{classfi_1_1HTGSTileRequestData}{H\+T\+G\+S\+Tile\+Request\+Data}
+\begin{DoxyCompactList}\small\item\em Data representing a tile request. \end{DoxyCompactList}\item 
+class \hyperlink{classfi_1_1HTGSViewRequestData}{H\+T\+G\+S\+View\+Request\+Data}
+\begin{DoxyCompactList}\small\item\em Data representing a view request. \end{DoxyCompactList}\item 
+class \hyperlink{classfi_1_1ReleaseCountRule}{Release\+Count\+Rule}
+\begin{DoxyCompactList}\small\item\em Memory management release rule based on a count that is decremented after each use, and released when the count reaches 0. \end{DoxyCompactList}\item 
+class \hyperlink{classfi_1_1Traversal}{Traversal}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1Traversal}{Traversal} object used to generate a vector of pair of coordinates. \end{DoxyCompactList}\item 
+class \hyperlink{classfi_1_1VariableMemoryManager}{Variable\+Memory\+Manager}
+\begin{DoxyCompactList}\small\item\em Variable Memory manager used to manage the memory for each pyramid level. \end{DoxyCompactList}\item 
+class \hyperlink{classfi_1_1View}{View}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1View}{View} used by \hyperlink{classfi_1_1FastImage}{Fast\+Image} to represent image\textquotesingle{}s region. \end{DoxyCompactList}\item 
+class \hyperlink{classfi_1_1ViewAllocator}{View\+Allocator}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1View}{View} Allocator allocates a \hyperlink{classfi_1_1FastImage}{Fast\+Image} view that is used by the H\+T\+GS memory manager. \end{DoxyCompactList}\item 
+class \hyperlink{classfi_1_1ViewCounter}{View\+Counter}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1View}{View} Counter, graph\textquotesingle{}s last task, finalise the view. \end{DoxyCompactList}\item 
+class \hyperlink{classfi_1_1ViewLoader}{View\+Loader}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1View}{View} loader task. Take a \hyperlink{classfi_1_1HTGSViewRequestData}{H\+T\+G\+S\+View\+Request\+Data} and produce a \hyperlink{classfi_1_1HTGSTileRequestData}{H\+T\+G\+S\+Tile\+Request\+Data}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespacefi_a6808b618c85d179a330ca388162215bd}{Filling\+Type} \{ \hyperlink{namespacefi_a6808b618c85d179a330ca388162215bdae8225b11842409df543692aebed34fd1}{Filling\+Type\+::\+F\+I\+LL}
+ \}\begin{DoxyCompactList}\small\item\em Filling Strategy for ghost regions. \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcb}{Traversal\+Type} \{ \newline
+\hyperlink{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcba33e8270128b994b16da5c9e367bb94cf}{Traversal\+Type\+::\+N\+A\+I\+VE}, 
+\hyperlink{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcba6a30da74d0b15b45ec14072c93b6645d}{Traversal\+Type\+::\+S\+N\+A\+KE}, 
+\hyperlink{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcbad3fbf8a4dbb33b1e296fcaa32703b66d}{Traversal\+Type\+::\+D\+I\+A\+G\+O\+N\+AL}, 
+\hyperlink{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcba778dce36564f152ab7c452d6e5b773e9}{Traversal\+Type\+::\+H\+I\+L\+B\+E\+RT}, 
+\newline
+\hyperlink{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcba550c81f476de2243dc93872a898ea918}{Traversal\+Type\+::\+S\+P\+I\+R\+AL}
+ \}\begin{DoxyCompactList}\small\item\em Different traversal name. \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespacefi_ac2e0fa52c14712db1a6e70da35ae8352}{Direction} \{ \hyperlink{namespacefi_ac2e0fa52c14712db1a6e70da35ae8352a2bf8f791695c70efa9c14e6f1c326403}{Direction\+::\+N\+O\+R\+TH}, 
+\hyperlink{namespacefi_ac2e0fa52c14712db1a6e70da35ae8352a96e44fa82e5a5263fb92337be422d3eb}{Direction\+::\+S\+O\+U\+TH}, 
+\hyperlink{namespacefi_ac2e0fa52c14712db1a6e70da35ae8352a45ac78bf3d4882ac520f4e7fb08d55c5}{Direction\+::\+E\+A\+ST}, 
+\hyperlink{namespacefi_ac2e0fa52c14712db1a6e70da35ae8352a83c9f5692281bf59471b13dfddb3af91}{Direction\+::\+W\+E\+ST}
+ \}\begin{DoxyCompactList}\small\item\em Different direction. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{namespacefi_afe2f57440da92fd8c3eebda3a33e7556}{M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON} = 1
+\item 
+const int \hyperlink{namespacefi_a879229879c7f2a74c9a8b26495ab64ae}{M\+I\+N\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON} = 0
+\item 
+const int \hyperlink{namespacefi_aaa7396b6cc73524dbd906ce5af6317fc}{P\+A\+T\+C\+H\+\_\+\+V\+E\+R\+S\+I\+ON} = 8
+\item 
+const std\+::string \hyperlink{namespacefi_afaee9ec38f2807bff312e7ea8ec993ce}{F\+U\+L\+L\+\_\+\+V\+E\+R\+S\+I\+ON} = \char`\"{}1.\+0.\+8\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classfi_1_1FastImage}{Fast\+Image} namespace. 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacefi_ac2e0fa52c14712db1a6e70da35ae8352}\label{namespacefi_ac2e0fa52c14712db1a6e70da35ae8352}} 
+\index{fi@{fi}!Direction@{Direction}}
+\index{Direction@{Direction}!fi@{fi}}
+\subsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily enum \hyperlink{namespacefi_ac2e0fa52c14712db1a6e70da35ae8352}{fi\+::\+Direction}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Different direction. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+R\+TH@{N\+O\+R\+TH}!fi@{fi}}\index{fi@{fi}!N\+O\+R\+TH@{N\+O\+R\+TH}}}\mbox{\Hypertarget{namespacefi_ac2e0fa52c14712db1a6e70da35ae8352a2bf8f791695c70efa9c14e6f1c326403}\label{namespacefi_ac2e0fa52c14712db1a6e70da35ae8352a2bf8f791695c70efa9c14e6f1c326403}} 
+N\+O\+R\+TH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+O\+U\+TH@{S\+O\+U\+TH}!fi@{fi}}\index{fi@{fi}!S\+O\+U\+TH@{S\+O\+U\+TH}}}\mbox{\Hypertarget{namespacefi_ac2e0fa52c14712db1a6e70da35ae8352a96e44fa82e5a5263fb92337be422d3eb}\label{namespacefi_ac2e0fa52c14712db1a6e70da35ae8352a96e44fa82e5a5263fb92337be422d3eb}} 
+S\+O\+U\+TH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+A\+ST@{E\+A\+ST}!fi@{fi}}\index{fi@{fi}!E\+A\+ST@{E\+A\+ST}}}\mbox{\Hypertarget{namespacefi_ac2e0fa52c14712db1a6e70da35ae8352a45ac78bf3d4882ac520f4e7fb08d55c5}\label{namespacefi_ac2e0fa52c14712db1a6e70da35ae8352a45ac78bf3d4882ac520f4e7fb08d55c5}} 
+E\+A\+ST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+E\+ST@{W\+E\+ST}!fi@{fi}}\index{fi@{fi}!W\+E\+ST@{W\+E\+ST}}}\mbox{\Hypertarget{namespacefi_ac2e0fa52c14712db1a6e70da35ae8352a83c9f5692281bf59471b13dfddb3af91}\label{namespacefi_ac2e0fa52c14712db1a6e70da35ae8352a83c9f5692281bf59471b13dfddb3af91}} 
+W\+E\+ST&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 55 of file Data\+Type.\+h.
+
+\mbox{\Hypertarget{namespacefi_a6808b618c85d179a330ca388162215bd}\label{namespacefi_a6808b618c85d179a330ca388162215bd}} 
+\index{fi@{fi}!Filling\+Type@{Filling\+Type}}
+\index{Filling\+Type@{Filling\+Type}!fi@{fi}}
+\subsubsection{\texorpdfstring{Filling\+Type}{FillingType}}
+{\footnotesize\ttfamily enum \hyperlink{namespacefi_a6808b618c85d179a330ca388162215bd}{fi\+::\+Filling\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Filling Strategy for ghost regions. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+I\+LL@{F\+I\+LL}!fi@{fi}}\index{fi@{fi}!F\+I\+LL@{F\+I\+LL}}}\mbox{\Hypertarget{namespacefi_a6808b618c85d179a330ca388162215bdae8225b11842409df543692aebed34fd1}\label{namespacefi_a6808b618c85d179a330ca388162215bdae8225b11842409df543692aebed34fd1}} 
+F\+I\+LL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 41 of file Data\+Type.\+h.
+
+\mbox{\Hypertarget{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcb}\label{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcb}} 
+\index{fi@{fi}!Traversal\+Type@{Traversal\+Type}}
+\index{Traversal\+Type@{Traversal\+Type}!fi@{fi}}
+\subsubsection{\texorpdfstring{Traversal\+Type}{TraversalType}}
+{\footnotesize\ttfamily enum \hyperlink{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcb}{fi\+::\+Traversal\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Different traversal name. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+A\+I\+VE@{N\+A\+I\+VE}!fi@{fi}}\index{fi@{fi}!N\+A\+I\+VE@{N\+A\+I\+VE}}}\mbox{\Hypertarget{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcba33e8270128b994b16da5c9e367bb94cf}\label{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcba33e8270128b994b16da5c9e367bb94cf}} 
+N\+A\+I\+VE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+N\+A\+KE@{S\+N\+A\+KE}!fi@{fi}}\index{fi@{fi}!S\+N\+A\+KE@{S\+N\+A\+KE}}}\mbox{\Hypertarget{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcba6a30da74d0b15b45ec14072c93b6645d}\label{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcba6a30da74d0b15b45ec14072c93b6645d}} 
+S\+N\+A\+KE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+I\+A\+G\+O\+N\+AL@{D\+I\+A\+G\+O\+N\+AL}!fi@{fi}}\index{fi@{fi}!D\+I\+A\+G\+O\+N\+AL@{D\+I\+A\+G\+O\+N\+AL}}}\mbox{\Hypertarget{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcbad3fbf8a4dbb33b1e296fcaa32703b66d}\label{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcbad3fbf8a4dbb33b1e296fcaa32703b66d}} 
+D\+I\+A\+G\+O\+N\+AL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+I\+L\+B\+E\+RT@{H\+I\+L\+B\+E\+RT}!fi@{fi}}\index{fi@{fi}!H\+I\+L\+B\+E\+RT@{H\+I\+L\+B\+E\+RT}}}\mbox{\Hypertarget{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcba778dce36564f152ab7c452d6e5b773e9}\label{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcba778dce36564f152ab7c452d6e5b773e9}} 
+H\+I\+L\+B\+E\+RT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+P\+I\+R\+AL@{S\+P\+I\+R\+AL}!fi@{fi}}\index{fi@{fi}!S\+P\+I\+R\+AL@{S\+P\+I\+R\+AL}}}\mbox{\Hypertarget{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcba550c81f476de2243dc93872a898ea918}\label{namespacefi_a7ba5ce68668e7f273b22e5f56ca6dfcba550c81f476de2243dc93872a898ea918}} 
+S\+P\+I\+R\+AL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 46 of file Data\+Type.\+h.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacefi_afaee9ec38f2807bff312e7ea8ec993ce}\label{namespacefi_afaee9ec38f2807bff312e7ea8ec993ce}} 
+\index{fi@{fi}!F\+U\+L\+L\+\_\+\+V\+E\+R\+S\+I\+ON@{F\+U\+L\+L\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\index{F\+U\+L\+L\+\_\+\+V\+E\+R\+S\+I\+ON@{F\+U\+L\+L\+\_\+\+V\+E\+R\+S\+I\+ON}!fi@{fi}}
+\subsubsection{\texorpdfstring{F\+U\+L\+L\+\_\+\+V\+E\+R\+S\+I\+ON}{FULL\_VERSION}}
+{\footnotesize\ttfamily const std\+::string fi\+::\+F\+U\+L\+L\+\_\+\+V\+E\+R\+S\+I\+ON = \char`\"{}1.\+0.\+8\char`\"{}}
+
+
+
+Definition at line 15 of file Version.\+h.
+
+\mbox{\Hypertarget{namespacefi_afe2f57440da92fd8c3eebda3a33e7556}\label{namespacefi_afe2f57440da92fd8c3eebda3a33e7556}} 
+\index{fi@{fi}!M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON@{M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\index{M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON@{M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON}!fi@{fi}}
+\subsubsection{\texorpdfstring{M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON}{MAJOR\_VERSION}}
+{\footnotesize\ttfamily const int fi\+::\+M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON = 1}
+
+
+
+Definition at line 12 of file Version.\+h.
+
+\mbox{\Hypertarget{namespacefi_a879229879c7f2a74c9a8b26495ab64ae}\label{namespacefi_a879229879c7f2a74c9a8b26495ab64ae}} 
+\index{fi@{fi}!M\+I\+N\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON@{M\+I\+N\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\index{M\+I\+N\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON@{M\+I\+N\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON}!fi@{fi}}
+\subsubsection{\texorpdfstring{M\+I\+N\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON}{MINOR\_VERSION}}
+{\footnotesize\ttfamily const int fi\+::\+M\+I\+N\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON = 0}
+
+
+
+Definition at line 13 of file Version.\+h.
+
+\mbox{\Hypertarget{namespacefi_aaa7396b6cc73524dbd906ce5af6317fc}\label{namespacefi_aaa7396b6cc73524dbd906ce5af6317fc}} 
+\index{fi@{fi}!P\+A\+T\+C\+H\+\_\+\+V\+E\+R\+S\+I\+ON@{P\+A\+T\+C\+H\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\index{P\+A\+T\+C\+H\+\_\+\+V\+E\+R\+S\+I\+ON@{P\+A\+T\+C\+H\+\_\+\+V\+E\+R\+S\+I\+ON}!fi@{fi}}
+\subsubsection{\texorpdfstring{P\+A\+T\+C\+H\+\_\+\+V\+E\+R\+S\+I\+ON}{PATCH\_VERSION}}
+{\footnotesize\ttfamily const int fi\+::\+P\+A\+T\+C\+H\+\_\+\+V\+E\+R\+S\+I\+ON = 8}
+
+
+
+Definition at line 14 of file Version.\+h.
+

@@ -1,0 +1,32 @@
+<map id="fc::Vector2::getY" name="fc::Vector2::getY">
+<area shape="rect" id="node2" href="$d7/d71/classfc_1_1Feature.html#a0f716104b68b033b427c60c1f2672a76" title="Test if a Vector2&lt;double&gt; point is in a bounding box. " alt="" coords="223,5,365,32"/>
+<area shape="rect" id="node3" href="$d9/d08/classfc_1_1Vector2.html#a10c728791bce724586901ddb73038858" title="fc::Vector2\&lt; T \&gt;::Vector2" alt="" coords="209,56,379,83"/>
+<area shape="rect" id="node4" href="$d9/d08/classfc_1_1Vector2.html#a0befaabdafcb34ab8c3bc0063d0b94a3" title="fc::Vector2\&lt; T \&gt;::getJ" alt="" coords="219,107,369,133"/>
+<area shape="rect" id="node5" href="$d9/d08/classfc_1_1Vector2.html#a4f9533a9e1a0dc8527f06e7531d238e5" title="fc::Vector2\&lt; T \&gt;::getXY" alt="" coords="213,157,375,184"/>
+<area shape="rect" id="node6" href="$d9/d08/classfc_1_1Vector2.html#a9a093d6e5b12bd014a66a2202edaf84d" title="fc::Vector2\&lt; T \&gt;::getMagnitude" alt="" coords="192,208,396,235"/>
+<area shape="rect" id="node7" href="$d9/d08/classfc_1_1Vector2.html#a936d1ee4ee9945867b816f91d2a6f3f5" title="fc::Vector2\&lt; T \&gt;::getMagnitudeSqr" alt="" coords="182,259,406,285"/>
+<area shape="rect" id="node8" href="$d9/d08/classfc_1_1Vector2.html#ac00492b982cddd75f43a2f1a00f29dbe" title="fc::Vector2\&lt; T \&gt;::getL1Magnitude" alt="" coords="185,309,403,336"/>
+<area shape="rect" id="node9" href="$d9/d08/classfc_1_1Vector2.html#a6df1b13d81c9e0574beb9fdc90c23deb" title="fc::Vector2\&lt; T \&gt;::getL1MagnitudeSqr" alt="" coords="175,360,413,387"/>
+<area shape="rect" id="node10" href="$d9/d08/classfc_1_1Vector2.html#aa9501d6580d5a78bf1573b23019b8821" title="fc::Vector2\&lt; T \&gt;::roundDown" alt="" coords="198,411,390,437"/>
+<area shape="rect" id="node11" href="$d9/d08/classfc_1_1Vector2.html#ae782de3d87d058ec441aa872348340b2" title="fc::Vector2\&lt; T \&gt;::roundUp" alt="" coords="207,461,381,488"/>
+<area shape="rect" id="node12" href="$d9/d08/classfc_1_1Vector2.html#a9d656278089d6b2da7bdae8a1112551d" title="fc::Vector2\&lt; T \&gt;::operator+" alt="" coords="203,512,385,539"/>
+<area shape="rect" id="node13" href="$d9/d08/classfc_1_1Vector2.html#a7e15b16fc37078fdf982b7ba9753d6d8" title="fc::Vector2\&lt; T \&gt;::operator&#45;" alt="" coords="205,563,383,589"/>
+<area shape="rect" id="node14" href="$d9/d08/classfc_1_1Vector2.html#a5b839a912dfd536facec32a7dd6e098b" title="fc::Vector2\&lt; T \&gt;::operator*" alt="" coords="205,613,383,640"/>
+<area shape="rect" id="node15" href="$d9/d08/classfc_1_1Vector2.html#aa955f41047305cd02519b12a51b2dd59" title="fc::Vector2\&lt; T \&gt;::operator/" alt="" coords="205,664,383,691"/>
+<area shape="rect" id="node16" href="$d2/db4/namespacefc.html#a54dd7df4c8a01e800426c7aefe3b349b" title="fc::operator+" alt="" coords="246,715,342,741"/>
+<area shape="rect" id="node17" href="$d2/db4/namespacefc.html#a851bc28427c29f20a4433485c0ae7afd" title="fc::operator&#45;" alt="" coords="248,765,340,792"/>
+<area shape="rect" id="node18" href="$d2/db4/namespacefc.html#a29cd1b829e901810afd80ee5f75cdcc2" title="fc::operator*" alt="" coords="247,816,341,843"/>
+<area shape="rect" id="node19" href="$d2/db4/namespacefc.html#a639753beb1103357bce89497028a1443" title="fc::operator/" alt="" coords="248,867,340,893"/>
+<area shape="rect" id="node20" href="$d9/d08/classfc_1_1Vector2.html#aa85cc460abc8809bd278cc1a37a34738" title="fc::Vector2\&lt; T \&gt;::operator+=" alt="" coords="199,917,389,944"/>
+<area shape="rect" id="node21" href="$d9/d08/classfc_1_1Vector2.html#acf30967fe6f42911aeea516543eb726e" title="fc::Vector2\&lt; T \&gt;::operator&#45;=" alt="" coords="201,968,387,995"/>
+<area shape="rect" id="node22" href="$d9/d08/classfc_1_1Vector2.html#acbc36b7ced69acf8fa5094e216bf45a7" title="fc::Vector2\&lt; T \&gt;::operator*=" alt="" coords="201,1019,387,1045"/>
+<area shape="rect" id="node23" href="$d9/d08/classfc_1_1Vector2.html#a3057882a89f1b623f706af68614a2fbf" title="fc::Vector2\&lt; T \&gt;::operator/=" alt="" coords="201,1069,387,1096"/>
+<area shape="rect" id="node24" href="$d9/d08/classfc_1_1Vector2.html#a2bf9246d95a97c3f3883fd7b22c45f6e" title="fc::Vector2\&lt; T \&gt;::operator=" alt="" coords="203,1120,385,1147"/>
+<area shape="rect" id="node25" href="$d9/d08/classfc_1_1Vector2.html#a05acd66d911bf36944147ca102db1000" title="fc::Vector2\&lt; T \&gt;::operator==" alt="" coords="199,1171,389,1197"/>
+<area shape="rect" id="node26" href="$d9/d08/classfc_1_1Vector2.html#aceb03f4c1b057710fbb95d0b29c11e1b" title="fc::Vector2\&lt; T \&gt;::translate" alt="" coords="206,1221,382,1248"/>
+<area shape="rect" id="node27" href="$d9/d08/classfc_1_1Vector2.html#a05169b39e6b1daa7a5a996fe8aec5f29" title="fc::Vector2\&lt; T \&gt;::dot" alt="" coords="222,1272,366,1299"/>
+<area shape="rect" id="node28" href="$d9/d08/classfc_1_1Vector2.html#a045f037481473f7cd9abe09f8b552021" title="fc::Vector2\&lt; T \&gt;::capBelow" alt="" coords="203,1323,385,1349"/>
+<area shape="rect" id="node29" href="$d9/d08/classfc_1_1Vector2.html#a62c8f4a3f1909857834e5cc9e8342574" title="fc::Vector2\&lt; T \&gt;::capAbove" alt="" coords="202,1373,386,1400"/>
+<area shape="rect" id="node30" href="$d9/d08/classfc_1_1Vector2.html#a5d08f50cf4fbb34744a0c31ad9b591e6" title="fc::Vector2\&lt; T \&gt;::normalize" alt="" coords="203,1424,385,1451"/>
+<area shape="rect" id="node31" href="$d9/d08/classfc_1_1Vector2.html#a8509e8227671890c432f39cb66d1940c" title="fc::Vector2\&lt; T \&gt;::leftMatrix\lMult2x2" alt="" coords="204,1475,384,1517"/>
+</map>

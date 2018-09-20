@@ -1,0 +1,9 @@
+<map id="fi::FigCache::recycleTile" name="fi::FigCache::recycleTile">
+<area shape="rect" id="node2" href="$d0/dbc/classfi_1_1CachedTile.html#a996218bd6a061692288167946515b93b" title="Lock the tile. " alt="" coords="239,5,373,32"/>
+<area shape="rect" id="node3" href="$d0/dbc/classfi_1_1CachedTile.html#a970c5b3cb066030fee17e9c60b9814ab" title="get row index of the tile in the image " alt="" coords="225,57,387,98"/>
+<area shape="rect" id="node4" href="$d0/dbc/classfi_1_1CachedTile.html#a6e351e6dbc3856d4e3a944eabb615ff9" title="get col index of the tile in the image " alt="" coords="225,122,387,163"/>
+<area shape="rect" id="node5" href="$d0/dbc/classfi_1_1CachedTile.html#a18d2ea689e777d9d341fa09564edc752" title="Setter to row index of the tile in the image. " alt="" coords="225,187,387,229"/>
+<area shape="rect" id="node6" href="$d0/dbc/classfi_1_1CachedTile.html#ad95876a2ad4b7bd2199c9645047d8e4c" title="Setter to column index of the tile in the image. " alt="" coords="225,253,387,294"/>
+<area shape="rect" id="node7" href="$d0/dbc/classfi_1_1CachedTile.html#afc0c6c1365b9a4205c221f1d061c3611" title="Set if the tile is a new tile. " alt="" coords="217,319,395,345"/>
+<area shape="rect" id="node8" href="$d0/dbc/classfi_1_1CachedTile.html#a2ea14c7fc1599f72a5d725ae7983457d" title="Unlock the tile. " alt="" coords="231,369,381,396"/>
+</map>

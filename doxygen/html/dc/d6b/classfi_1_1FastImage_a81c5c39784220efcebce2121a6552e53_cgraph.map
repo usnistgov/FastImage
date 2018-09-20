@@ -1,0 +1,16 @@
+<map id="fi::FastImage::requestAllTiles" name="fi::FastImage::requestAllTiles">
+<area shape="rect" id="node2" href="$dc/db9/classfi_1_1FastImage_1_1Options.html#a3cfa4c38cdb0b2018c812bbcb8e9dd63" title="Get if is finish sent. " alt="" coords="485,5,676,47"/>
+<area shape="rect" id="node3" href="$dc/db9/classfi_1_1FastImage_1_1Options.html#a8f422b375446460e2200597fd064e79c" title="Get traversal type. " alt="" coords="252,136,404,177"/>
+<area shape="rect" id="node4" href="$dc/d6b/classfi_1_1FastImage.html#a84984ae1d928ef604866f126ed0a583b" title="Get number of tiles in a column. " alt="" coords="495,136,666,177"/>
+<area shape="rect" id="node7" href="$dc/d6b/classfi_1_1FastImage.html#a5bb1377a075185ce8445b1dcb6886b6e" title="Get number of tiles in a row. " alt="" coords="495,456,666,497"/>
+<area shape="rect" id="node10" href="$d8/d0e/classfi_1_1Traversal.html#a98b73bee5830777b04e3757fb940209a" title="Get the traversal as a queue. " alt="" coords="251,354,405,381"/>
+<area shape="rect" id="node11" href="$d8/d0e/classfi_1_1Traversal.html#a5642cddfccb1e3b914615771164511f1" title="Get the traversal vector. " alt="" coords="243,405,413,431"/>
+<area shape="rect" id="node12" href="$dc/d6b/classfi_1_1FastImage.html#a40fb0f9749893a6e04548ee778ee5c1a" title="Send a View request to the ViewLoader about the tile at coordinate (indexTileRow, indexTileCol) ..." alt="" coords="236,253,420,279"/>
+<area shape="rect" id="node14" href="$dc/d6b/classfi_1_1FastImage.html#af123b9f6554040faab14dcb0a06e2b84" title="Indicate to the system no more request will be done. " alt="" coords="219,71,437,112"/>
+<area shape="rect" id="node5" href="$dc/d6b/classfi_1_1FastImage.html#a355d2e82840f50ccafe0ee681f9aa70f" title="Get Image height in px. " alt="" coords="724,297,923,323"/>
+<area shape="rect" id="node6" href="$dc/d6b/classfi_1_1FastImage.html#ae9f67a164a2e42f7c80b8443080e876b" title="Get Tile height in px. " alt="" coords="731,173,915,199"/>
+<area shape="rect" id="node8" href="$dc/d6b/classfi_1_1FastImage.html#a1ea580c3c08fe5be5575f0007b1bafbe" title="Get Image width in px. " alt="" coords="726,362,921,389"/>
+<area shape="rect" id="node9" href="$dc/d6b/classfi_1_1FastImage.html#a4544e690ce41bfc0b4ca4e94f5ecd2b1" title="Get Tile width in px. " alt="" coords="733,442,913,469"/>
+<area shape="rect" id="node13" href="$dc/d6b/classfi_1_1FastImage.html#a17a18b7839a4fd6f8b1cfd2253983bd5" title="fi::FastImage::getRadius" alt="" coords="497,253,664,279"/>
+<area shape="rect" id="node15" href="$dc/db9/classfi_1_1FastImage_1_1Options.html#a7c0ae60a439a4be02b4600618e2fcebe" title="Set if has finish requesting views. " alt="" coords="488,71,673,112"/>
+</map>

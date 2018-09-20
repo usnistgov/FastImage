@@ -1,0 +1,8 @@
+<map id="/home/anb22/Documents/Fast&#45;Image/FastImage/src/FastImage/FeatureCollection/Data/Blob.h" name="/home/anb22/Documents/Fast&#45;Image/FastImage/src/FastImage/FeatureCollection/Data/Blob.h">
+<area shape="rect" id="node2" href="$dd/dd8/ListBlobs_8h.html" title="Conveniant object representing a list of blobs. " alt="" coords="270,124,486,195"/>
+<area shape="rect" id="node5" href="$da/de6/ViewAnalyse_8h.html" title="Main interface to construct a tile loader. " alt="" coords="30,124,246,195"/>
+<area shape="rect" id="node6" href="$de/d8c/ViewAnalyser_8h.html" title="Task wich analyse a view to find the different blob into it. " alt="" coords="54,243,270,313"/>
+<area shape="rect" id="node7" href="$da/dc9/UnionFind_8h.html" title="Union FInd algorithm. " alt="" coords="392,243,608,313"/>
+<area shape="rect" id="node3" href="$dc/d85/BlobMerger_8h.html" title="Blob merger task. " alt="" coords="246,361,462,432"/>
+<area shape="rect" id="node4" href="$da/dbf/FeatureCollection_8h.html" title="Mask representation, used with FastImage. " alt="" coords="246,480,462,551"/>
+</map>

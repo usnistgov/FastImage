@@ -1,0 +1,4 @@
+<map id="fi::ATileLoader::copyTileToView" name="fi::ATileLoader::copyTileToView">
+<area shape="rect" id="node2" href="$d0/dbc/classfi_1_1CachedTile.html#addb4bbc69414fd2e04c1d6f8f9e0b8b7" title="Get pointer to the data buffer. " alt="" coords="216,5,373,32"/>
+<area shape="rect" id="node3" href="$d5/dd4/classfi_1_1View.html#a8fd719fcea9c7a98cfd0feba96fe5afe" title="Get the pointer to the view. " alt="" coords="235,56,355,83"/>
+</map>

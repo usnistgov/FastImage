@@ -1,0 +1,15 @@
+<map id="fi::FigCache::getLockedTile" name="fi::FigCache::getLockedTile">
+<area shape="rect" id="node2" href="$d7/d31/classfi_1_1FigCache.html#aa67a984797e38073d2c3a4697b8e472f" title="Lock the cache. " alt="" coords="287,5,412,32"/>
+<area shape="rect" id="node3" href="$d7/d31/classfi_1_1FigCache.html#a4d4792d8a1d737b5b6baa261c1761751" title="Test if the row, column tile is in the cache. " alt="" coords="269,56,429,83"/>
+<area shape="rect" id="node4" href="$d7/d31/classfi_1_1FigCache.html#affc8808f55b290811485aecef22573e6" title="Private function. Get cached locked tile. " alt="" coords="236,107,463,133"/>
+<area shape="rect" id="node6" href="$d7/d31/classfi_1_1FigCache.html#a611074d024b48d548a84dbb08c97eb3d" title="Private function. Get Least Recently Used Tiles, clean it, and put it back in the pool..." alt="" coords="267,215,431,241"/>
+<area shape="rect" id="node13" href="$d7/d31/classfi_1_1FigCache.html#a407bf89cbbc37af734bf31709d382920" title="Private function. Get a new locked tile from the pool. " alt="" coords="245,157,454,184"/>
+<area shape="rect" id="node14" href="$d7/d31/classfi_1_1FigCache.html#af463d23f5dbf6f418e14da2e26774e10" title="Unlock the cache. " alt="" coords="280,265,419,292"/>
+<area shape="rect" id="node5" href="$d0/dbc/classfi_1_1CachedTile.html#a996218bd6a061692288167946515b93b" title="Lock the tile. " alt="" coords="532,91,667,117"/>
+<area shape="rect" id="node7" href="$d0/dbc/classfi_1_1CachedTile.html#a970c5b3cb066030fee17e9c60b9814ab" title="get row index of the tile in the image " alt="" coords="519,325,680,366"/>
+<area shape="rect" id="node8" href="$d0/dbc/classfi_1_1CachedTile.html#a6e351e6dbc3856d4e3a944eabb615ff9" title="get col index of the tile in the image " alt="" coords="519,390,680,431"/>
+<area shape="rect" id="node9" href="$d0/dbc/classfi_1_1CachedTile.html#a18d2ea689e777d9d341fa09564edc752" title="Setter to row index of the tile in the image. " alt="" coords="519,207,680,249"/>
+<area shape="rect" id="node10" href="$d0/dbc/classfi_1_1CachedTile.html#ad95876a2ad4b7bd2199c9645047d8e4c" title="Setter to column index of the tile in the image. " alt="" coords="519,142,680,183"/>
+<area shape="rect" id="node11" href="$d0/dbc/classfi_1_1CachedTile.html#afc0c6c1365b9a4205c221f1d061c3611" title="Set if the tile is a new tile. " alt="" coords="511,456,688,483"/>
+<area shape="rect" id="node12" href="$d0/dbc/classfi_1_1CachedTile.html#a2ea14c7fc1599f72a5d725ae7983457d" title="Unlock the tile. " alt="" coords="525,273,674,300"/>
+</map>

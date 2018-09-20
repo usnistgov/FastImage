@@ -1,0 +1,11 @@
+<map id="/home/anb22/Documents/Fast&#45;Image/FastImage/src/FastImage/FeatureCollection/BoundingBox.h" name="/home/anb22/Documents/Fast&#45;Image/FastImage/src/FastImage/FeatureCollection/BoundingBox.h">
+<area shape="rect" id="node2" href="$dc/d2f/Feature_8h.html" title="Feature representation. " alt="" coords="212,124,428,195"/>
+<area shape="rect" id="node7" href="$da/dbf/FeatureCollection_8h.html" title="Mask representation, used with FastImage. " alt="" coords="188,821,404,892"/>
+<area shape="rect" id="node3" href="$d3/d3e/FastImage_8h.html" title="Main object to manage a picture. " alt="" coords="216,243,424,299"/>
+<area shape="rect" id="node4" href="$dd/d1c/Blob_8h.html" title="Blob object representing a part of a feature. " alt="" coords="212,347,428,417"/>
+<area shape="rect" id="node5" href="$dd/dd8/ListBlobs_8h.html" title="Conveniant object representing a list of blobs. " alt="" coords="140,465,356,536"/>
+<area shape="rect" id="node8" href="$da/de6/ViewAnalyse_8h.html" title="Main interface to construct a tile loader. " alt="" coords="431,465,647,536"/>
+<area shape="rect" id="node9" href="$de/d8c/ViewAnalyser_8h.html" title="Task wich analyse a view to find the different blob into it. " alt="" coords="333,584,549,655"/>
+<area shape="rect" id="node10" href="$da/dc9/UnionFind_8h.html" title="Union FInd algorithm. " alt="" coords="43,584,259,655"/>
+<area shape="rect" id="node6" href="$dc/d85/BlobMerger_8h.html" title="Blob merger task. " alt="" coords="188,703,404,773"/>
+</map>

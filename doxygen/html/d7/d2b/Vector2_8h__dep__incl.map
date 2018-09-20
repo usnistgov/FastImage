@@ -1,0 +1,13 @@
+<map id="/home/anb22/Documents/Fast&#45;Image/FastImage/src/FastImage/FeatureCollection/tools/Vector2.h" name="/home/anb22/Documents/Fast&#45;Image/FastImage/src/FastImage/FeatureCollection/tools/Vector2.h">
+<area shape="rect" id="node2" href="$dc/d2f/Feature_8h.html" title="Feature representation. " alt="" coords="153,124,369,195"/>
+<area shape="rect" id="node11" href="$de/d86/AABBTree_8h.html" title="/home/anb22/Documents\l/Fast&#45;Image/FastImage\l/src/FastImage/FeatureCollection\l/tools/AABBTree.h" alt="" coords="564,243,780,313"/>
+<area shape="rect" id="node12" href="$d9/d67/Cuboid_8h.html" title="/home/anb22/Documents\l/Fast&#45;Image/FastImage\l/src/FastImage/FeatureCollection\l/tools/Cuboid.h" alt="" coords="419,124,635,195"/>
+<area shape="rect" id="node3" href="$d3/d3e/FastImage_8h.html" title="Main object to manage a picture. " alt="" coords="157,250,365,306"/>
+<area shape="rect" id="node7" href="$da/dbf/FeatureCollection_8h.html" title="Mask representation, used with FastImage. " alt="" coords="188,836,404,907"/>
+<area shape="rect" id="node4" href="$dd/d1c/Blob_8h.html" title="Blob object representing a part of a feature. " alt="" coords="153,361,369,432"/>
+<area shape="rect" id="node5" href="$dd/dd8/ListBlobs_8h.html" title="Conveniant object representing a list of blobs. " alt="" coords="140,480,356,551"/>
+<area shape="rect" id="node8" href="$da/de6/ViewAnalyse_8h.html" title="Main interface to construct a tile loader. " alt="" coords="431,480,647,551"/>
+<area shape="rect" id="node9" href="$de/d8c/ViewAnalyser_8h.html" title="Task wich analyse a view to find the different blob into it. " alt="" coords="333,599,549,669"/>
+<area shape="rect" id="node10" href="$da/dc9/UnionFind_8h.html" title="Union FInd algorithm. " alt="" coords="43,599,259,669"/>
+<area shape="rect" id="node6" href="$dc/d85/BlobMerger_8h.html" title="Blob merger task. " alt="" coords="188,717,404,788"/>
+</map>

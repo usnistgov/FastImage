@@ -1,0 +1,10 @@
+<map id="/home/anb22/Documents/Fast&#45;Image/FastImage/src/FastImage/TileLoaders/GrayscaleTiffTileLoader.h" name="/home/anb22/Documents/Fast&#45;Image/FastImage/src/FastImage/TileLoaders/GrayscaleTiffTileLoader.h">
+<area shape="rect" id="node3" href="$d4/d96/ATileLoader_8h.html" title="Main interface to construct a tile loader. " alt="" coords="1227,124,1417,151"/>
+<area shape="rect" id="node21" href="$d2/d16/DataType_8h.html" title="Different enum used in Fast Image. " alt="" coords="1483,445,1614,471"/>
+<area shape="rect" id="node22" href="$d6/dcc/FigCache_8h.html" title="Cache used by FastImage. " alt="" coords="968,363,1108,389"/>
+<area shape="rect" id="node8" href="$da/d1a/HTGSTileRequestData_8h.html" title="Data representing a tile request. " alt="" coords="190,199,414,240"/>
+<area shape="rect" id="node12" href="$da/d6a/HTGSViewRequestData_8h.html" title="Data Representing a View Request. " alt="" coords="158,363,334,389"/>
+<area shape="rect" id="node14" href="$d4/d57/View_8h.html" title="Image&#39;s region. " alt="" coords="513,288,662,315"/>
+<area shape="rect" id="node18" href="$d9/d81/CachedTile_8h.html" title="Cached tile representation. " alt="" coords="311,445,506,471"/>
+<area shape="rect" id="node28" href="$db/d1f/FastImageException_8h.html" title="Special Exception for Fast Image. " alt="" coords="623,437,791,479"/>
+</map>

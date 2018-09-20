@@ -1,0 +1,22 @@
+<map id="/home/anb22/Documents/Fast&#45;Image/FastImage/src/FastImage/FeatureCollection/tools/UnionFind.h" name="/home/anb22/Documents/Fast&#45;Image/FastImage/src/FastImage/FeatureCollection/tools/UnionFind.h">
+<area shape="rect" id="node4" href="$dd/d1c/Blob_8h.html" title="Blob object representing a part of a feature. " alt="" coords="2258,124,2449,165"/>
+<area shape="rect" id="node10" href="$d3/d3e/FastImage_8h.html" title="Main object to manage a picture. " alt="" coords="1491,221,1674,247"/>
+<area shape="rect" id="node16" href="$d4/d96/ATileLoader_8h.html" title="Main interface to construct a tile loader. " alt="" coords="1822,310,1925,337"/>
+<area shape="rect" id="node29" href="$d6/dcc/FigCache_8h.html" title="Cache used by FastImage. " alt="" coords="1805,578,1945,605"/>
+<area shape="rect" id="node32" href="$db/d1f/FastImageException_8h.html" title="Special Exception for Fast Image. " alt="" coords="760,660,928,701"/>
+<area shape="rect" id="node35" href="$d4/da3/ViewLoader_8h.html" title="View Loader task. " alt="" coords="1595,310,1797,337"/>
+<area shape="rect" id="node37" href="$da/d65/ViewCounter_8h.html" title="View Counter, graph&#39;s last task, finalise the view. " alt="" coords="1949,310,2160,337"/>
+<area shape="rect" id="node38" href="$d7/d09/ViewAllocator_8h.html" title="View Allocator used by the HTGS memory manager. " alt="" coords="2235,310,2411,337"/>
+<area shape="rect" id="node40" href="$d7/dee/VariableMemoryManager_8h.html" title="Variable Memory manager used to manage the views depending on the pyramid level. " alt="" coords="347,303,525,344"/>
+<area shape="rect" id="node42" href="$d6/dd5/DistributePyramidRule_8h.html" title="Pyramid release rule. " alt="" coords="725,303,896,344"/>
+<area shape="rect" id="node44" href="$db/d22/Traversal_8h.html" title="Traversal pattern for an image. " alt="" coords="2143,489,2281,515"/>
+<area shape="rect" id="node45" href="$dc/d2f/Feature_8h.html" title="Feature representation. " alt="" coords="717,481,853,523"/>
+<area shape="rect" id="node19" href="$da/d1a/HTGSTileRequestData_8h.html" title="Data representing a tile request. " alt="" coords="1439,392,1663,433"/>
+<area shape="rect" id="node28" href="$d2/d16/DataType_8h.html" title="Different enum used in Fast Image. " alt="" coords="2108,667,2239,694"/>
+<area shape="rect" id="node22" href="$da/d6a/HTGSViewRequestData_8h.html" title="Data Representing a View Request. " alt="" coords="1300,578,1476,605"/>
+<area shape="rect" id="node23" href="$d4/d57/View_8h.html" title="Image&#39;s region. " alt="" coords="1724,489,1873,515"/>
+<area shape="rect" id="node27" href="$d9/d81/CachedTile_8h.html" title="Cached tile representation. " alt="" coords="2263,667,2457,694"/>
+<area shape="rect" id="node36" href="$d8/d2d/ReleaseCountRule_8h.html" title="Release rule for the views. " alt="" coords="2356,481,2559,523"/>
+<area shape="rect" id="node47" href="$d4/d41/BoundingBox_8h.html" title="Feature Bounding box. " alt="" coords="617,578,727,605"/>
+<area shape="rect" id="node48" href="$d0/df7/Vector2_8h.html" title="FastImage/FeatureCollection\l/tools/Vector2.h" alt="" coords="933,571,1123,612"/>
+</map>

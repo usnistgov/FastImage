@@ -1,0 +1,22 @@
+<map id="/home/anb22/Documents/Fast&#45;Image/FastImage/src/FastImage/FeatureCollection/FeatureCollection.h" name="/home/anb22/Documents/Fast&#45;Image/FastImage/src/FastImage/FeatureCollection/FeatureCollection.h">
+<area shape="rect" id="node3" href="$dc/d85/BlobMerger_8h.html" title="Blob merger task. " alt="" coords="1617,124,1807,165"/>
+<area shape="rect" id="node8" href="$da/dc9/UnionFind_8h.html" title="Union FInd algorithm. " alt="" coords="601,288,737,315"/>
+<area shape="rect" id="node31" href="$db/d1f/FastImageException_8h.html" title="Special Exception for Fast Image. " alt="" coords="2317,631,2485,672"/>
+<area shape="rect" id="node34" href="$dc/d2f/Feature_8h.html" title="Feature representation. " alt="" coords="2676,541,2812,583"/>
+<area shape="rect" id="node36" href="$d4/d41/BoundingBox_8h.html" title="Feature Bounding box. " alt="" coords="2825,638,2935,665"/>
+<area shape="rect" id="node45" href="$de/d8c/ViewAnalyser_8h.html" title="Task wich analyse a view to find the different blob into it. " alt="" coords="2010,213,2123,240"/>
+<area shape="rect" id="node48" href="$de/d86/AABBTree_8h.html" title="FastImage/FeatureCollection\l/tools/AABBTree.h" alt="" coords="2963,452,3154,493"/>
+<area shape="rect" id="node44" href="$dd/dd8/ListBlobs_8h.html" title="Conveniant object representing a list of blobs. " alt="" coords="1109,288,1240,315"/>
+<area shape="rect" id="node11" href="$dd/d1c/Blob_8h.html" title="Blob object representing a part of a feature. " alt="" coords="574,363,765,404"/>
+<area shape="rect" id="node15" href="$d3/d3e/FastImage_8h.html" title="Main object to manage a picture. " alt="" coords="1491,459,1674,486"/>
+<area shape="rect" id="node21" href="$d4/d96/ATileLoader_8h.html" title="Main interface to construct a tile loader. " alt="" coords="2026,549,2129,575"/>
+<area shape="rect" id="node23" href="$d4/da3/ViewLoader_8h.html" title="View Loader task. " alt="" coords="1799,549,2001,575"/>
+<area shape="rect" id="node24" href="$da/d65/ViewCounter_8h.html" title="View Counter, graph&#39;s last task, finalise the view. " alt="" coords="2153,549,2364,575"/>
+<area shape="rect" id="node25" href="$d7/d09/ViewAllocator_8h.html" title="View Allocator used by the HTGS memory manager. " alt="" coords="1353,549,1529,575"/>
+<area shape="rect" id="node26" href="$d7/dee/VariableMemoryManager_8h.html" title="Variable Memory manager used to manage the views depending on the pyramid level. " alt="" coords="296,631,475,672"/>
+<area shape="rect" id="node27" href="$d6/dd5/DistributePyramidRule_8h.html" title="Pyramid release rule. " alt="" coords="1553,541,1724,583"/>
+<area shape="rect" id="node28" href="$d6/dcc/FigCache_8h.html" title="Cache used by FastImage. " alt="" coords="514,549,654,575"/>
+<area shape="rect" id="node38" href="$d0/df7/Vector2_8h.html" title="FastImage/FeatureCollection\l/tools/Vector2.h" alt="" coords="3090,631,3281,672"/>
+<area shape="rect" id="node46" href="$da/de6/ViewAnalyse_8h.html" title="Main interface to construct a tile loader. " alt="" coords="1910,288,2063,315"/>
+<area shape="rect" id="node50" href="$d9/d67/Cuboid_8h.html" title="Cuboid.h" alt="" coords="3121,549,3196,575"/>
+</map>

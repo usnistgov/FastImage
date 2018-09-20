@@ -1,0 +1,5 @@
+<map id="fi::ViewCounter::updateCurrentTraversal" name="fi::ViewCounter::updateCurrentTraversal">
+<area shape="rect" id="node2" href="$df/dae/classfi_1_1ViewCounter.html#a6941e894f768fe1f0deb1b7ff771e2bc" title="Try to send already stored view. " alt="" coords="256,5,452,47"/>
+<area shape="rect" id="node3" href="$df/dae/classfi_1_1ViewCounter.html#a20e96bdb97f1aecc5bb0a81fb456c0fc" title="Send the current view if no ordered, or handle the traversal and the views. " alt="" coords="500,42,683,69"/>
+<area shape="rect" id="node4" href="$df/dae/classfi_1_1ViewCounter.html#a2c05a287109d15c0e33b6855545db65d" title="Wait for the view data to be fully loaded from the file data, Fill the ghost region if needed..." alt="" coords="731,42,925,69"/>
+</map>

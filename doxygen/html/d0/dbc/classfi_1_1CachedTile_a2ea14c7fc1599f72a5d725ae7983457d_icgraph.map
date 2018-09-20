@@ -1,0 +1,6 @@
+<map id="fi::CachedTile::unlock" name="fi::CachedTile::unlock">
+<area shape="rect" id="node2" href="$dc/d54/classfi_1_1ATileLoader.html#ab3fb2e90d11d160e89c6b8a7df684c7f" title="Load a tile from a file, populate the current view, and send the view to the view counter..." alt="" coords="203,5,392,32"/>
+<area shape="rect" id="node4" href="$d7/d31/classfi_1_1FigCache.html#a611074d024b48d548a84dbb08c97eb3d" title="Private function. Get Least Recently Used Tiles, clean it, and put it back in the pool..." alt="" coords="215,56,379,83"/>
+<area shape="rect" id="node3" href="$dc/d54/classfi_1_1ATileLoader.html#a12929a1a82ff9cf2615e7a7420ba92c4" title="Initialize function. " alt="" coords="451,5,612,32"/>
+<area shape="rect" id="node5" href="$d7/d31/classfi_1_1FigCache.html#aff587e5ffcbeeab89a0ed4a0629231e3" title="Get a locked tile from the cache system. " alt="" coords="440,56,623,83"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="fi::FastImage::getTileWidth" name="fi::FastImage::getTileWidth">
+<area shape="rect" id="node2" href="$dc/d6b/classfi_1_1FastImage.html#aa2ae5e5498f57462abd876108a55475c" title="Set up and run the graph. " alt="" coords="481,5,641,47"/>
+<area shape="rect" id="node4" href="$dc/d6b/classfi_1_1FastImage.html#a21092b9c0fe86ea190291fc79901dc93" title="Get view width. " alt="" coords="233,13,421,39"/>
+<area shape="rect" id="node5" href="$dc/d6b/classfi_1_1FastImage.html#a5bb1377a075185ce8445b1dcb6886b6e" title="Get number of tiles in a row. " alt="" coords="242,115,413,156"/>
+<area shape="rect" id="node7" href="$dc/d6b/classfi_1_1FastImage.html#abd44908134edad1df4a61faec9cdbf9e" title="Request a specific feature into a features collection. " alt="" coords="701,223,896,250"/>
+<area shape="rect" id="node9" href="$dc/d6b/classfi_1_1FastImage.html#a40fb0f9749893a6e04548ee778ee5c1a" title="Send a View request to the ViewLoader about the tile at coordinate (indexTileRow, indexTileCol) ..." alt="" coords="469,173,653,199"/>
+<area shape="rect" id="node3" href="$d9/d78/classfc_1_1FeatureCollection.html#acc38a1542fc4dc04175961140677ac51" title="Create a feature collection from a mask. " alt="" coords="727,5,870,47"/>
+<area shape="rect" id="node6" href="$dc/d6b/classfi_1_1FastImage.html#a595c22ba44ba635133c7a20cbd4e2d13" title="Request a tile. " alt="" coords="713,79,884,106"/>
+<area shape="rect" id="node8" href="$dc/d6b/classfi_1_1FastImage.html#a81c5c39784220efcebce2121a6552e53" title="Request all tiles following a traversal. " alt="" coords="716,148,881,189"/>
+</map>

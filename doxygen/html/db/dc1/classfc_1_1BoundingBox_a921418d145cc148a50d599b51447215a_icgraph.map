@@ -1,0 +1,12 @@
+<map id="fc::BoundingBox::getUpperLeftRow" name="fc::BoundingBox::getUpperLeftRow">
+<area shape="rect" id="node2" href="$dc/d6b/classfi_1_1FastImage.html#abd44908134edad1df4a61faec9cdbf9e" title="Request a specific feature into a features collection. " alt="" coords="236,5,431,32"/>
+<area shape="rect" id="node3" href="$db/dc1/classfc_1_1BoundingBox.html#aeb427ee69514165e4d4357a007c963c1" title="Copy constructor. " alt="" coords="232,56,435,83"/>
+<area shape="rect" id="node4" href="$db/dc1/classfc_1_1BoundingBox.html#a80e775cb93499c77462ea281d9740f74" title="Assignement operator. " alt="" coords="243,107,424,133"/>
+<area shape="rect" id="node5" href="$db/dc1/classfc_1_1BoundingBox.html#a2a1f28a0e0cd0a8b6041ba8e9c0f9b4f" title="Equality operator to test purpose. " alt="" coords="239,157,428,184"/>
+<area shape="rect" id="node6" href="$d7/d71/classfc_1_1Feature.html#acaef36b11296ff7130d9454a0195148d" title="Get maximum coordinate in a specific dimension, used by the AABB tree. " alt="" coords="248,208,419,235"/>
+<area shape="rect" id="node7" href="$d7/d71/classfc_1_1Feature.html#a034cb38f61076e527f4f16eecb97c0b4" title="Get minimum coordinate in a specific dimension, used by the AABB tree. " alt="" coords="250,259,417,285"/>
+<area shape="rect" id="node8" href="$d7/d71/classfc_1_1Feature.html#ae1c529caa66d56edfb361431a832f806" title="Test if a point from its coordinate is in a bounding box. " alt="" coords="262,309,405,336"/>
+<area shape="rect" id="node9" href="$d7/d71/classfc_1_1Feature.html#a8cd5e2721373377bb80d87dd72265f98" title="Test if a point from its coordinate is in a bitmask. " alt="" coords="483,335,645,361"/>
+<area shape="rect" id="node10" href="$d9/d78/classfc_1_1FeatureCollection.html#a6cb55ca9179ea92ef2dedf9f25531b77" title="fc::FeatureCollection\l::createFCFromListBlobs" alt="" coords="249,411,417,453"/>
+<area shape="rect" id="node11" href="$d9/d78/classfc_1_1FeatureCollection.html#acc38a1542fc4dc04175961140677ac51" title="Create a feature collection from a mask. " alt="" coords="493,411,635,453"/>
+</map>

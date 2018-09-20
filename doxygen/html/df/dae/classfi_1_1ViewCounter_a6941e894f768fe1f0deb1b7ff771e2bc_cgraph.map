@@ -1,0 +1,4 @@
+<map id="fi::ViewCounter::handleStoredViews" name="fi::ViewCounter::handleStoredViews">
+<area shape="rect" id="node2" href="$df/dae/classfi_1_1ViewCounter.html#a8a1bd60b42035140d6abee7e58fc3561" title="Update the current traversal, used for insure ordering. " alt="" coords="249,5,452,47"/>
+<area shape="rect" id="node3" href="$df/dae/classfi_1_1ViewCounter.html#a30a0d5ae3d727aea55e70ee4eb45127f" title="Test if the view received is next one to be send if order needed. " alt="" coords="257,71,444,98"/>
+</map>

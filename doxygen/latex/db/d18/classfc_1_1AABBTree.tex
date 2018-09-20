@@ -1,0 +1,211 @@
+\hypertarget{classfc_1_1AABBTree}{}\section{fc\+:\+:A\+A\+B\+B\+Tree$<$ ObjectT $>$ Class Template Reference}
+\label{classfc_1_1AABBTree}\index{fc\+::\+A\+A\+B\+B\+Tree$<$ Object\+T $>$@{fc\+::\+A\+A\+B\+B\+Tree$<$ Object\+T $>$}}
+
+
+{\ttfamily \#include $<$A\+A\+B\+B\+Tree.\+h$>$}
+
+
+
+Inheritance diagram for fc\+:\+:A\+A\+B\+B\+Tree$<$ ObjectT $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{dd/d48/classfc_1_1AABBTree__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for fc\+:\+:A\+A\+B\+B\+Tree$<$ ObjectT $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d0/dea/classfc_1_1AABBTree__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structfc_1_1AABBTree_1_1AABBNode}{A\+A\+B\+B\+Node}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfc_1_1AABBTree_a4d8525582030f9cc79b68ed97271c000}{A\+A\+B\+B\+Tree} (\hyperlink{classfc_1_1AABBTree_a3333c421c1fa34841043bd8545de8ea8}{objects\+\_\+size\+\_\+type} \hyperlink{classfc_1_1AABBTree_a4116e801983d055e249fa6166fa47266}{max\+Node\+Size}=4)
+\item 
+\hyperlink{classfc_1_1AABBTree_a13dfddea7618153509ca07e14334cfe0}{$\sim$\+A\+A\+B\+B\+Tree} ()
+\item 
+void \hyperlink{classfc_1_1AABBTree_a481a24bdded9dfbebfcb298899126df3}{preprocess} (std\+::vector$<$ ObjectT $>$ $\ast$objects)
+\item 
+std\+::vector$<$ ObjectT $\ast$ $>$ \hyperlink{classfc_1_1AABBTree_aef6e5c039251417ae18f17cf9f30f638}{objects\+Contain} (\hyperlink{classfc_1_1Vector2}{Vector2}$<$ double $>$ const \&query\+Point) const
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{classfc_1_1AABBTree_a3333c421c1fa34841043bd8545de8ea8}{objects\+\_\+size\+\_\+type} = typename std\+::vector$<$ ObjectT $>$\+::size\+\_\+type
+\item 
+using \hyperlink{classfc_1_1AABBTree_a18706db5b992d8875e08dc325abf3811}{aabb\+Tree\+\_\+size\+\_\+type} = typename std\+::vector$<$ \hyperlink{structfc_1_1AABBTree_1_1AABBNode}{A\+A\+B\+B\+Node} $>$\+::size\+\_\+type
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classfc_1_1AABBTree_aac657a296e6a26e675a259c5d3fef53d}{compute\+A\+A\+B\+B\+Bounds} (\hyperlink{classfc_1_1AABBTree_a18706db5b992d8875e08dc325abf3811}{aabb\+Tree\+\_\+size\+\_\+type} node\+Index)
+\item 
+void \hyperlink{classfc_1_1AABBTree_a01f4466619083a8820f721cff76831dc}{split\+A\+A\+B\+B\+Node} (\hyperlink{classfc_1_1AABBTree_a18706db5b992d8875e08dc325abf3811}{aabb\+Tree\+\_\+size\+\_\+type} node\+Index, int split\+Dim)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classfc_1_1AABBTree_a3333c421c1fa34841043bd8545de8ea8}{objects\+\_\+size\+\_\+type} \hyperlink{classfc_1_1AABBTree_a4116e801983d055e249fa6166fa47266}{max\+Node\+Size}
+\item 
+std\+::vector$<$ \hyperlink{structfc_1_1AABBTree_1_1AABBNode}{A\+A\+B\+B\+Node} $>$ \hyperlink{classfc_1_1AABBTree_a971132f54e3a462458362901fac9b37f}{aabb\+Tree}
+\item 
+std\+::vector$<$ ObjectT $>$ $\ast$ \hyperlink{classfc_1_1AABBTree_ad28d9de49d42c0dffae1f6c47be5b523}{sorted\+Objects}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class ObjectT$>$\newline
+class fc\+::\+A\+A\+B\+B\+Tree$<$ Object\+T $>$}
+
+Spatial data structure for nearest-\/object queries based on an Axis Aligned Bounding Box (A\+A\+BB) tree. The data structure can store any objects which themselves can be enclosed in an A\+A\+BB and which can compute their distance to a point. Specifically, the objects must provide the following functions\+:
+
+double get\+Max\+Coord(int dim) double get\+Min\+Coord(int dim) double get\+Distance\+Sqr\+To(\+Vector2$<$double$>$ const \& point) bool contains(\+Vector2$<$double$>$ const \& point) 
+
+Definition at line 63 of file A\+A\+B\+B\+Tree.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classfc_1_1AABBTree_a18706db5b992d8875e08dc325abf3811}\label{classfc_1_1AABBTree_a18706db5b992d8875e08dc325abf3811}} 
+\index{fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}!aabb\+Tree\+\_\+size\+\_\+type@{aabb\+Tree\+\_\+size\+\_\+type}}
+\index{aabb\+Tree\+\_\+size\+\_\+type@{aabb\+Tree\+\_\+size\+\_\+type}!fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}}
+\subsubsection{\texorpdfstring{aabb\+Tree\+\_\+size\+\_\+type}{aabbTree\_size\_type}}
+{\footnotesize\ttfamily template$<$class ObjectT$>$ \\
+using \hyperlink{classfc_1_1AABBTree}{fc\+::\+A\+A\+B\+B\+Tree}$<$ ObjectT $>$\+::\hyperlink{classfc_1_1AABBTree_a18706db5b992d8875e08dc325abf3811}{aabb\+Tree\+\_\+size\+\_\+type} =  typename std\+::vector$<$\hyperlink{structfc_1_1AABBTree_1_1AABBNode}{A\+A\+B\+B\+Node}$>$\+::size\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 72 of file A\+A\+B\+B\+Tree.\+h.
+
+\mbox{\Hypertarget{classfc_1_1AABBTree_a3333c421c1fa34841043bd8545de8ea8}\label{classfc_1_1AABBTree_a3333c421c1fa34841043bd8545de8ea8}} 
+\index{fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}!objects\+\_\+size\+\_\+type@{objects\+\_\+size\+\_\+type}}
+\index{objects\+\_\+size\+\_\+type@{objects\+\_\+size\+\_\+type}!fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}}
+\subsubsection{\texorpdfstring{objects\+\_\+size\+\_\+type}{objects\_size\_type}}
+{\footnotesize\ttfamily template$<$class ObjectT$>$ \\
+using \hyperlink{classfc_1_1AABBTree}{fc\+::\+A\+A\+B\+B\+Tree}$<$ ObjectT $>$\+::\hyperlink{classfc_1_1AABBTree_a3333c421c1fa34841043bd8545de8ea8}{objects\+\_\+size\+\_\+type} =  typename std\+::vector$<$ObjectT$>$\+::size\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 65 of file A\+A\+B\+B\+Tree.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfc_1_1AABBTree_a4d8525582030f9cc79b68ed97271c000}\label{classfc_1_1AABBTree_a4d8525582030f9cc79b68ed97271c000}} 
+\index{fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}!A\+A\+B\+B\+Tree@{A\+A\+B\+B\+Tree}}
+\index{A\+A\+B\+B\+Tree@{A\+A\+B\+B\+Tree}!fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}}
+\subsubsection{\texorpdfstring{A\+A\+B\+B\+Tree()}{AABBTree()}}
+{\footnotesize\ttfamily template$<$class ObjectT $>$ \\
+\hyperlink{classfc_1_1AABBTree}{fc\+::\+A\+A\+B\+B\+Tree}$<$ ObjectT $>$\+::\hyperlink{classfc_1_1AABBTree}{A\+A\+B\+B\+Tree} (\begin{DoxyParamCaption}\item[{\hyperlink{classfc_1_1AABBTree_a3333c421c1fa34841043bd8545de8ea8}{objects\+\_\+size\+\_\+type}}]{max\+Node\+Size = {\ttfamily 4} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructs an empty spatial data structure. 
+
+Definition at line 101 of file A\+A\+B\+B\+Tree.\+h.
+
+\mbox{\Hypertarget{classfc_1_1AABBTree_a13dfddea7618153509ca07e14334cfe0}\label{classfc_1_1AABBTree_a13dfddea7618153509ca07e14334cfe0}} 
+\index{fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}!````~A\+A\+B\+B\+Tree@{$\sim$\+A\+A\+B\+B\+Tree}}
+\index{````~A\+A\+B\+B\+Tree@{$\sim$\+A\+A\+B\+B\+Tree}!fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}}
+\subsubsection{\texorpdfstring{$\sim$\+A\+A\+B\+B\+Tree()}{~AABBTree()}}
+{\footnotesize\ttfamily template$<$class ObjectT $>$ \\
+\hyperlink{classfc_1_1AABBTree}{fc\+::\+A\+A\+B\+B\+Tree}$<$ ObjectT $>$\+::$\sim$\hyperlink{classfc_1_1AABBTree}{A\+A\+B\+B\+Tree} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classfc_1_1AABBTree_aac657a296e6a26e675a259c5d3fef53d}\label{classfc_1_1AABBTree_aac657a296e6a26e675a259c5d3fef53d}} 
+\index{fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}!compute\+A\+A\+B\+B\+Bounds@{compute\+A\+A\+B\+B\+Bounds}}
+\index{compute\+A\+A\+B\+B\+Bounds@{compute\+A\+A\+B\+B\+Bounds}!fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}}
+\subsubsection{\texorpdfstring{compute\+A\+A\+B\+B\+Bounds()}{computeAABBBounds()}}
+{\footnotesize\ttfamily template$<$class ObjectT $>$ \\
+void \hyperlink{classfc_1_1AABBTree}{fc\+::\+A\+A\+B\+B\+Tree}$<$ ObjectT $>$\+::compute\+A\+A\+B\+B\+Bounds (\begin{DoxyParamCaption}\item[{\hyperlink{classfc_1_1AABBTree_a18706db5b992d8875e08dc325abf3811}{aabb\+Tree\+\_\+size\+\_\+type}}]{node\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 178 of file A\+A\+B\+B\+Tree.\+h.
+
+\mbox{\Hypertarget{classfc_1_1AABBTree_aef6e5c039251417ae18f17cf9f30f638}\label{classfc_1_1AABBTree_aef6e5c039251417ae18f17cf9f30f638}} 
+\index{fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}!objects\+Contain@{objects\+Contain}}
+\index{objects\+Contain@{objects\+Contain}!fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}}
+\subsubsection{\texorpdfstring{objects\+Contain()}{objectsContain()}}
+{\footnotesize\ttfamily template$<$class ObjectT $>$ \\
+std\+::vector$<$ ObjectT $\ast$ $>$ \hyperlink{classfc_1_1AABBTree}{fc\+::\+A\+A\+B\+B\+Tree}$<$ ObjectT $>$\+::objects\+Contain (\begin{DoxyParamCaption}\item[{\hyperlink{classfc_1_1Vector2}{Vector2}$<$ double $>$ const \&}]{query\+Point }\end{DoxyParamCaption}) const}
+
+Returns whether any object in the tree contains the given query point. 
+
+Definition at line 268 of file A\+A\+B\+B\+Tree.\+h.
+
+\mbox{\Hypertarget{classfc_1_1AABBTree_a481a24bdded9dfbebfcb298899126df3}\label{classfc_1_1AABBTree_a481a24bdded9dfbebfcb298899126df3}} 
+\index{fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}!preprocess@{preprocess}}
+\index{preprocess@{preprocess}!fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}}
+\subsubsection{\texorpdfstring{preprocess()}{preprocess()}}
+{\footnotesize\ttfamily template$<$class ObjectT$>$ \\
+void \hyperlink{classfc_1_1AABBTree}{fc\+::\+A\+A\+B\+B\+Tree}$<$ ObjectT $>$\+::preprocess (\begin{DoxyParamCaption}\item[{std\+::vector$<$ ObjectT $>$ $\ast$}]{objects }\end{DoxyParamCaption})}
+
+Inserts the given objects into the spatial data structure. The objects vector may be modified and must not be changed outside the class. 
+
+Definition at line 117 of file A\+A\+B\+B\+Tree.\+h.
+
+\mbox{\Hypertarget{classfc_1_1AABBTree_a01f4466619083a8820f721cff76831dc}\label{classfc_1_1AABBTree_a01f4466619083a8820f721cff76831dc}} 
+\index{fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}!split\+A\+A\+B\+B\+Node@{split\+A\+A\+B\+B\+Node}}
+\index{split\+A\+A\+B\+B\+Node@{split\+A\+A\+B\+B\+Node}!fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}}
+\subsubsection{\texorpdfstring{split\+A\+A\+B\+B\+Node()}{splitAABBNode()}}
+{\footnotesize\ttfamily template$<$class ObjectT $>$ \\
+void \hyperlink{classfc_1_1AABBTree}{fc\+::\+A\+A\+B\+B\+Tree}$<$ ObjectT $>$\+::split\+A\+A\+B\+B\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{classfc_1_1AABBTree_a18706db5b992d8875e08dc325abf3811}{aabb\+Tree\+\_\+size\+\_\+type}}]{node\+Index,  }\item[{int}]{split\+Dim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 214 of file A\+A\+B\+B\+Tree.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classfc_1_1AABBTree_a971132f54e3a462458362901fac9b37f}\label{classfc_1_1AABBTree_a971132f54e3a462458362901fac9b37f}} 
+\index{fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}!aabb\+Tree@{aabb\+Tree}}
+\index{aabb\+Tree@{aabb\+Tree}!fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}}
+\subsubsection{\texorpdfstring{aabb\+Tree}{aabbTree}}
+{\footnotesize\ttfamily template$<$class ObjectT$>$ \\
+std\+::vector$<$\hyperlink{structfc_1_1AABBTree_1_1AABBNode}{A\+A\+B\+B\+Node}$>$ \hyperlink{classfc_1_1AABBTree}{fc\+::\+A\+A\+B\+B\+Tree}$<$ ObjectT $>$\+::aabb\+Tree\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 76 of file A\+A\+B\+B\+Tree.\+h.
+
+\mbox{\Hypertarget{classfc_1_1AABBTree_a4116e801983d055e249fa6166fa47266}\label{classfc_1_1AABBTree_a4116e801983d055e249fa6166fa47266}} 
+\index{fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}!max\+Node\+Size@{max\+Node\+Size}}
+\index{max\+Node\+Size@{max\+Node\+Size}!fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}}
+\subsubsection{\texorpdfstring{max\+Node\+Size}{maxNodeSize}}
+{\footnotesize\ttfamily template$<$class ObjectT$>$ \\
+const \hyperlink{classfc_1_1AABBTree_a3333c421c1fa34841043bd8545de8ea8}{objects\+\_\+size\+\_\+type} \hyperlink{classfc_1_1AABBTree}{fc\+::\+A\+A\+B\+B\+Tree}$<$ ObjectT $>$\+::max\+Node\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 74 of file A\+A\+B\+B\+Tree.\+h.
+
+\mbox{\Hypertarget{classfc_1_1AABBTree_ad28d9de49d42c0dffae1f6c47be5b523}\label{classfc_1_1AABBTree_ad28d9de49d42c0dffae1f6c47be5b523}} 
+\index{fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}!sorted\+Objects@{sorted\+Objects}}
+\index{sorted\+Objects@{sorted\+Objects}!fc\+::\+A\+A\+B\+B\+Tree@{fc\+::\+A\+A\+B\+B\+Tree}}
+\subsubsection{\texorpdfstring{sorted\+Objects}{sortedObjects}}
+{\footnotesize\ttfamily template$<$class ObjectT$>$ \\
+std\+::vector$<$ObjectT$>$$\ast$ \hyperlink{classfc_1_1AABBTree}{fc\+::\+A\+A\+B\+B\+Tree}$<$ ObjectT $>$\+::sorted\+Objects\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 78 of file A\+A\+B\+B\+Tree.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/anb22/\+Documents/\+Fast-\/\+Image/\+Fast\+Image/src/\+Fast\+Image/\+Feature\+Collection/tools/\hyperlink{AABBTree_8h}{A\+A\+B\+B\+Tree.\+h}\end{DoxyCompactItemize}

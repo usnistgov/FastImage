@@ -1,0 +1,545 @@
+\hypertarget{classfi_1_1CachedTile}{}\section{fi\+:\+:Cached\+Tile$<$ User\+Type $>$ Class Template Reference}
+\label{classfi_1_1CachedTile}\index{fi\+::\+Cached\+Tile$<$ User\+Type $>$@{fi\+::\+Cached\+Tile$<$ User\+Type $>$}}
+
+
+Tile Cached from the file.  
+
+
+
+
+{\ttfamily \#include $<$Fast\+Image/data/\+Cached\+Tile.\+h$>$}
+
+
+
+Collaboration diagram for fi\+:\+:Cached\+Tile$<$ User\+Type $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/da1/classfi_1_1CachedTile__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfi_1_1CachedTile_a1dd05836168d06224fd540d576e4e6e2}{Cached\+Tile} (uint32\+\_\+t tile\+Width, uint32\+\_\+t tile\+Height)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1CachedTile}{Cached\+Tile} Constructor, allocate the data buffer. \end{DoxyCompactList}\item 
+\hyperlink{classfi_1_1CachedTile_a1fb901c94fe2ad2f880e8eefa893da5d}{$\sim$\+Cached\+Tile} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1CachedTile}{Cached\+Tile} Destructor, deallocate the data buffer. \end{DoxyCompactList}\item 
+User\+Type $\ast$ \hyperlink{classfi_1_1CachedTile_addb4bbc69414fd2e04c1d6f8f9e0b8b7}{get\+Data} () const
+\begin{DoxyCompactList}\small\item\em Get pointer to the data buffer. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1CachedTile_a970c5b3cb066030fee17e9c60b9814ab}{get\+Index\+Row\+Global} () const
+\begin{DoxyCompactList}\small\item\em get row index of the tile in the image \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1CachedTile_a6e351e6dbc3856d4e3a944eabb615ff9}{get\+Index\+Col\+Global} () const
+\begin{DoxyCompactList}\small\item\em get col index of the tile in the image \end{DoxyCompactList}\item 
+bool \hyperlink{classfi_1_1CachedTile_ab2d77a5ac2fd2c68038fbce58a4ffb1f}{is\+New\+Tile} () const
+\begin{DoxyCompactList}\small\item\em Test is the tile is a new tile. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1CachedTile_acfc950d0ebe9da5cc6c67af567526d4f}{get\+Tile\+Width} () const
+\begin{DoxyCompactList}\small\item\em Get the width of the tile. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1CachedTile_ae83ddf4e93fd9ba481b9edd05384dcc2}{get\+Tile\+Height} () const
+\begin{DoxyCompactList}\small\item\em Get the height of the tile. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1CachedTile_ad95876a2ad4b7bd2199c9645047d8e4c}{set\+Index\+Col\+Global} (uint32\+\_\+t index\+Col\+Global)
+\begin{DoxyCompactList}\small\item\em Setter to column index of the tile in the image. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1CachedTile_a18d2ea689e777d9d341fa09564edc752}{set\+Index\+Row\+Global} (uint32\+\_\+t index\+Row\+Global)
+\begin{DoxyCompactList}\small\item\em Setter to row index of the tile in the image. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1CachedTile_afc0c6c1365b9a4205c221f1d061c3611}{set\+New\+Tile} (bool new\+Tile)
+\begin{DoxyCompactList}\small\item\em Set if the tile is a new tile. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1CachedTile_a996218bd6a061692288167946515b93b}{lock} ()
+\begin{DoxyCompactList}\small\item\em Lock the tile. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1CachedTile_a2ea14c7fc1599f72a5d725ae7983457d}{unlock} ()
+\begin{DoxyCompactList}\small\item\em Unlock the tile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+User\+Type $\ast$ \hyperlink{classfi_1_1CachedTile_a47bd4b69660f58f993b7ff336dc5f188}{\+\_\+data}
+\begin{DoxyCompactList}\small\item\em Tile data. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1CachedTile_aab0a9c9723c4d318e71e9b8e2fe80e92}{\+\_\+index\+Row}
+\begin{DoxyCompactList}\small\item\em Row index tile asked in global coordinate. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1CachedTile_aa5ba6ea184ad614c488023a3c3e04963}{\+\_\+index\+Col}
+\begin{DoxyCompactList}\small\item\em Column index tile asked in global coordinate. \end{DoxyCompactList}\item 
+bool \hyperlink{classfi_1_1CachedTile_ad17f4d3676869cec36d4d03a0c865c1e}{\+\_\+new\+Tile}
+\begin{DoxyCompactList}\small\item\em True if the tile is a new tile, else not. \end{DoxyCompactList}\item 
+std\+::mutex \hyperlink{classfi_1_1CachedTile_a4e45c4300e3d593dbc5f7ab7f23354a1}{\+\_\+access\+Mutex}
+\begin{DoxyCompactList}\small\item\em Access mutex. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1CachedTile_af77038cc15872076b1d02323ca6f2353}{\+\_\+tile\+Width}
+\begin{DoxyCompactList}\small\item\em Tile width. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1CachedTile_aed23a0a9cf8b01a84bc55835b9ffc102}{\+\_\+tile\+Height}
+\begin{DoxyCompactList}\small\item\em Tile height. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classfi_1_1CachedTile_ad9cf6881c370368b2c7658e6527b3d51}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classfi_1_1CachedTile}{Cached\+Tile} \&tile)
+\begin{DoxyCompactList}\small\item\em Output stream to print a tile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename User\+Type$>$\newline
+class fi\+::\+Cached\+Tile$<$ User\+Type $>$}
+
+Tile Cached from the file. 
+
+The cached tile is used to prevent excess IO (i.\+e. from disk). Once a tile has been loaded from the file it is saved to the cache.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em User\+Type} & Pixel Type asked by the end user \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 56 of file Cached\+Tile.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfi_1_1CachedTile_a1dd05836168d06224fd540d576e4e6e2}\label{classfi_1_1CachedTile_a1dd05836168d06224fd540d576e4e6e2}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!Cached\+Tile@{Cached\+Tile}}
+\index{Cached\+Tile@{Cached\+Tile}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{Cached\+Tile()}{CachedTile()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+\hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::\hyperlink{classfi_1_1CachedTile}{Cached\+Tile} (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{tile\+Width,  }\item[{uint32\+\_\+t}]{tile\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\hyperlink{classfi_1_1CachedTile}{Cached\+Tile} Constructor, allocate the data buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Width} & Tile width in px \\
+\hline
+{\em tile\+Height} & Tile height in px \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file Cached\+Tile.\+h.
+
+\mbox{\Hypertarget{classfi_1_1CachedTile_a1fb901c94fe2ad2f880e8eefa893da5d}\label{classfi_1_1CachedTile_a1fb901c94fe2ad2f880e8eefa893da5d}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!````~Cached\+Tile@{$\sim$\+Cached\+Tile}}
+\index{````~Cached\+Tile@{$\sim$\+Cached\+Tile}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{$\sim$\+Cached\+Tile()}{~CachedTile()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+\hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::$\sim$\hyperlink{classfi_1_1CachedTile}{Cached\+Tile} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\hyperlink{classfi_1_1CachedTile}{Cached\+Tile} Destructor, deallocate the data buffer. 
+
+
+
+Definition at line 70 of file Cached\+Tile.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classfi_1_1CachedTile_addb4bbc69414fd2e04c1d6f8f9e0b8b7}\label{classfi_1_1CachedTile_addb4bbc69414fd2e04c1d6f8f9e0b8b7}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!get\+Data@{get\+Data}}
+\index{get\+Data@{get\+Data}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{get\+Data()}{getData()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+User\+Type$\ast$ \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get pointer to the data buffer. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the data buffer 
+\end{DoxyReturn}
+
+
+Definition at line 74 of file Cached\+Tile.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dbc/classfi_1_1CachedTile_addb4bbc69414fd2e04c1d6f8f9e0b8b7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1CachedTile_a6e351e6dbc3856d4e3a944eabb615ff9}\label{classfi_1_1CachedTile_a6e351e6dbc3856d4e3a944eabb615ff9}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!get\+Index\+Col\+Global@{get\+Index\+Col\+Global}}
+\index{get\+Index\+Col\+Global@{get\+Index\+Col\+Global}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{get\+Index\+Col\+Global()}{getIndexColGlobal()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::get\+Index\+Col\+Global (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get col index of the tile in the image 
+
+\begin{DoxyReturn}{Returns}
+Col index of the tile in the image 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file Cached\+Tile.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dbc/classfi_1_1CachedTile_a6e351e6dbc3856d4e3a944eabb615ff9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1CachedTile_a970c5b3cb066030fee17e9c60b9814ab}\label{classfi_1_1CachedTile_a970c5b3cb066030fee17e9c60b9814ab}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!get\+Index\+Row\+Global@{get\+Index\+Row\+Global}}
+\index{get\+Index\+Row\+Global@{get\+Index\+Row\+Global}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{get\+Index\+Row\+Global()}{getIndexRowGlobal()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::get\+Index\+Row\+Global (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get row index of the tile in the image 
+
+\begin{DoxyReturn}{Returns}
+Row index of the tile in the image 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file Cached\+Tile.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dbc/classfi_1_1CachedTile_a970c5b3cb066030fee17e9c60b9814ab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1CachedTile_ae83ddf4e93fd9ba481b9edd05384dcc2}\label{classfi_1_1CachedTile_ae83ddf4e93fd9ba481b9edd05384dcc2}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!get\+Tile\+Height@{get\+Tile\+Height}}
+\index{get\+Tile\+Height@{get\+Tile\+Height}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{get\+Tile\+Height()}{getTileHeight()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::get\+Tile\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the height of the tile. 
+
+\begin{DoxyReturn}{Returns}
+Tile height 
+\end{DoxyReturn}
+
+
+Definition at line 94 of file Cached\+Tile.\+h.
+
+\mbox{\Hypertarget{classfi_1_1CachedTile_acfc950d0ebe9da5cc6c67af567526d4f}\label{classfi_1_1CachedTile_acfc950d0ebe9da5cc6c67af567526d4f}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!get\+Tile\+Width@{get\+Tile\+Width}}
+\index{get\+Tile\+Width@{get\+Tile\+Width}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{get\+Tile\+Width()}{getTileWidth()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::get\+Tile\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the width of the tile. 
+
+\begin{DoxyReturn}{Returns}
+Tile width 
+\end{DoxyReturn}
+
+
+Definition at line 90 of file Cached\+Tile.\+h.
+
+\mbox{\Hypertarget{classfi_1_1CachedTile_ab2d77a5ac2fd2c68038fbce58a4ffb1f}\label{classfi_1_1CachedTile_ab2d77a5ac2fd2c68038fbce58a4ffb1f}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!is\+New\+Tile@{is\+New\+Tile}}
+\index{is\+New\+Tile@{is\+New\+Tile}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{is\+New\+Tile()}{isNewTile()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+bool \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::is\+New\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Test is the tile is a new tile. 
+
+\begin{DoxyReturn}{Returns}
+True if the tile new, else False 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file Cached\+Tile.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dbc/classfi_1_1CachedTile_ab2d77a5ac2fd2c68038fbce58a4ffb1f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1CachedTile_a996218bd6a061692288167946515b93b}\label{classfi_1_1CachedTile_a996218bd6a061692288167946515b93b}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!lock@{lock}}
+\index{lock@{lock}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{lock()}{lock()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lock the tile. 
+
+
+
+Definition at line 113 of file Cached\+Tile.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dbc/classfi_1_1CachedTile_a996218bd6a061692288167946515b93b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1CachedTile_ad95876a2ad4b7bd2199c9645047d8e4c}\label{classfi_1_1CachedTile_ad95876a2ad4b7bd2199c9645047d8e4c}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!set\+Index\+Col\+Global@{set\+Index\+Col\+Global}}
+\index{set\+Index\+Col\+Global@{set\+Index\+Col\+Global}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{set\+Index\+Col\+Global()}{setIndexColGlobal()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::set\+Index\+Col\+Global (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{index\+Col\+Global }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter to column index of the tile in the image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\+Col\+Global} & Column index of the tile in the image \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 98 of file Cached\+Tile.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dbc/classfi_1_1CachedTile_ad95876a2ad4b7bd2199c9645047d8e4c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1CachedTile_a18d2ea689e777d9d341fa09564edc752}\label{classfi_1_1CachedTile_a18d2ea689e777d9d341fa09564edc752}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!set\+Index\+Row\+Global@{set\+Index\+Row\+Global}}
+\index{set\+Index\+Row\+Global@{set\+Index\+Row\+Global}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{set\+Index\+Row\+Global()}{setIndexRowGlobal()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::set\+Index\+Row\+Global (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{index\+Row\+Global }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter to row index of the tile in the image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\+Row\+Global} & Row index of the tile in the image \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file Cached\+Tile.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dbc/classfi_1_1CachedTile_a18d2ea689e777d9d341fa09564edc752_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1CachedTile_afc0c6c1365b9a4205c221f1d061c3611}\label{classfi_1_1CachedTile_afc0c6c1365b9a4205c221f1d061c3611}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!set\+New\+Tile@{set\+New\+Tile}}
+\index{set\+New\+Tile@{set\+New\+Tile}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{set\+New\+Tile()}{setNewTile()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::set\+New\+Tile (\begin{DoxyParamCaption}\item[{bool}]{new\+Tile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set if the tile is a new tile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Tile} & True if the tile is new, else False \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 110 of file Cached\+Tile.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dbc/classfi_1_1CachedTile_afc0c6c1365b9a4205c221f1d061c3611_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1CachedTile_a2ea14c7fc1599f72a5d725ae7983457d}\label{classfi_1_1CachedTile_a2ea14c7fc1599f72a5d725ae7983457d}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!unlock@{unlock}}
+\index{unlock@{unlock}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{unlock()}{unlock()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::unlock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Unlock the tile. 
+
+
+
+Definition at line 116 of file Cached\+Tile.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dbc/classfi_1_1CachedTile_a2ea14c7fc1599f72a5d725ae7983457d_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classfi_1_1CachedTile_ad9cf6881c370368b2c7658e6527b3d51}\label{classfi_1_1CachedTile_ad9cf6881c370368b2c7658e6527b3d51}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classfi_1_1CachedTile}{Cached\+Tile}$<$ User\+Type $>$ \&}]{tile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream to print a tile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Stream to put the tile information \\
+\hline
+{\em tile} & The \hyperlink{classfi_1_1CachedTile}{Cached\+Tile} to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the output stream with the information 
+\end{DoxyReturn}
+
+
+Definition at line 122 of file Cached\+Tile.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classfi_1_1CachedTile_a4e45c4300e3d593dbc5f7ab7f23354a1}\label{classfi_1_1CachedTile_a4e45c4300e3d593dbc5f7ab7f23354a1}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!\+\_\+access\+Mutex@{\+\_\+access\+Mutex}}
+\index{\+\_\+access\+Mutex@{\+\_\+access\+Mutex}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{\+\_\+access\+Mutex}{\_accessMutex}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+std\+::mutex \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::\+\_\+access\+Mutex\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Access mutex. 
+
+
+
+Definition at line 149 of file Cached\+Tile.\+h.
+
+\mbox{\Hypertarget{classfi_1_1CachedTile_a47bd4b69660f58f993b7ff336dc5f188}\label{classfi_1_1CachedTile_a47bd4b69660f58f993b7ff336dc5f188}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!\+\_\+data@{\+\_\+data}}
+\index{\+\_\+data@{\+\_\+data}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{\+\_\+data}{\_data}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+User\+Type$\ast$ \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::\+\_\+data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Tile data. 
+
+
+
+Definition at line 139 of file Cached\+Tile.\+h.
+
+\mbox{\Hypertarget{classfi_1_1CachedTile_aa5ba6ea184ad614c488023a3c3e04963}\label{classfi_1_1CachedTile_aa5ba6ea184ad614c488023a3c3e04963}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!\+\_\+index\+Col@{\+\_\+index\+Col}}
+\index{\+\_\+index\+Col@{\+\_\+index\+Col}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{\+\_\+index\+Col}{\_indexCol}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::\+\_\+index\+Col\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Column index tile asked in global coordinate. 
+
+
+
+Definition at line 142 of file Cached\+Tile.\+h.
+
+\mbox{\Hypertarget{classfi_1_1CachedTile_aab0a9c9723c4d318e71e9b8e2fe80e92}\label{classfi_1_1CachedTile_aab0a9c9723c4d318e71e9b8e2fe80e92}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!\+\_\+index\+Row@{\+\_\+index\+Row}}
+\index{\+\_\+index\+Row@{\+\_\+index\+Row}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{\+\_\+index\+Row}{\_indexRow}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::\+\_\+index\+Row\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Row index tile asked in global coordinate. 
+
+
+
+Definition at line 142 of file Cached\+Tile.\+h.
+
+\mbox{\Hypertarget{classfi_1_1CachedTile_ad17f4d3676869cec36d4d03a0c865c1e}\label{classfi_1_1CachedTile_ad17f4d3676869cec36d4d03a0c865c1e}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!\+\_\+new\+Tile@{\+\_\+new\+Tile}}
+\index{\+\_\+new\+Tile@{\+\_\+new\+Tile}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{\+\_\+new\+Tile}{\_newTile}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+bool \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::\+\_\+new\+Tile\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+True if the tile is a new tile, else not. 
+
+
+
+Definition at line 146 of file Cached\+Tile.\+h.
+
+\mbox{\Hypertarget{classfi_1_1CachedTile_aed23a0a9cf8b01a84bc55835b9ffc102}\label{classfi_1_1CachedTile_aed23a0a9cf8b01a84bc55835b9ffc102}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!\+\_\+tile\+Height@{\+\_\+tile\+Height}}
+\index{\+\_\+tile\+Height@{\+\_\+tile\+Height}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{\+\_\+tile\+Height}{\_tileHeight}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::\+\_\+tile\+Height\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Tile height. 
+
+
+
+Definition at line 152 of file Cached\+Tile.\+h.
+
+\mbox{\Hypertarget{classfi_1_1CachedTile_af77038cc15872076b1d02323ca6f2353}\label{classfi_1_1CachedTile_af77038cc15872076b1d02323ca6f2353}} 
+\index{fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}!\+\_\+tile\+Width@{\+\_\+tile\+Width}}
+\index{\+\_\+tile\+Width@{\+\_\+tile\+Width}!fi\+::\+Cached\+Tile@{fi\+::\+Cached\+Tile}}
+\subsubsection{\texorpdfstring{\+\_\+tile\+Width}{\_tileWidth}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1CachedTile}{fi\+::\+Cached\+Tile}$<$ User\+Type $>$\+::\+\_\+tile\+Width\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Tile width. 
+
+
+
+Definition at line 152 of file Cached\+Tile.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/anb22/\+Documents/\+Fast-\/\+Image/\+Fast\+Image/src/\+Fast\+Image/data/\hyperlink{CachedTile_8h}{Cached\+Tile.\+h}\end{DoxyCompactItemize}

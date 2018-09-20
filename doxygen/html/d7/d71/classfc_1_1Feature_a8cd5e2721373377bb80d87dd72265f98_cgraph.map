@@ -1,0 +1,8 @@
+<map id="fc::Feature::isInBitMask" name="fc::Feature::isInBitMask">
+<area shape="rect" id="node2" href="$d7/d71/classfc_1_1Feature.html#ae1c529caa66d56edfb361431a832f806" title="Test if a point from its coordinate is in a bounding box. " alt="" coords="239,79,381,106"/>
+<area shape="rect" id="node3" href="$db/dc1/classfc_1_1BoundingBox.html#a921418d145cc148a50d599b51447215a" title="Getter to the upper left row. " alt="" coords="454,5,633,47"/>
+<area shape="rect" id="node5" href="$db/dc1/classfc_1_1BoundingBox.html#a21e8dcad0b3d37aa0a37c6dab4200974" title="Getter to the upper left column. " alt="" coords="454,123,633,164"/>
+<area shape="rect" id="node6" href="$db/dc1/classfc_1_1BoundingBox.html#aecdcbec558ef3396ed42924d4937d981" title="Getter the Bounding Box width. " alt="" coords="454,189,633,215"/>
+<area shape="rect" id="node7" href="$d7/d71/classfc_1_1Feature.html#ac5793261f78e3cd9ec934b1f70ef4725" title="Bounding box getter. " alt="" coords="216,231,404,258"/>
+<area shape="rect" id="node4" href="$db/dc1/classfc_1_1BoundingBox.html#a9f26359f081940896dcf90ab5d5f0132" title="Getter to the Bounding Box height. " alt="" coords="452,71,635,98"/>
+</map>

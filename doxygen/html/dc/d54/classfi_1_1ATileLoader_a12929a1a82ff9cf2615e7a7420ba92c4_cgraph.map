@@ -1,0 +1,10 @@
+<map id="fi::ATileLoader::initialize" name="fi::ATileLoader::initialize">
+<area shape="rect" id="node2" href="$dc/d54/classfi_1_1ATileLoader.html#ab3fb2e90d11d160e89c6b8a7df684c7f" title="Load a tile from a file, populate the current view, and send the view to the view counter..." alt="" coords="215,144,404,171"/>
+<area shape="rect" id="node3" href="$d0/dbc/classfi_1_1CachedTile.html#ab2d77a5ac2fd2c68038fbce58a4ffb1f" title="Test is the tile is a new tile. " alt="" coords="456,5,625,32"/>
+<area shape="rect" id="node4" href="$d0/dbc/classfi_1_1CachedTile.html#afc0c6c1365b9a4205c221f1d061c3611" title="Set if the tile is a new tile. " alt="" coords="452,56,629,83"/>
+<area shape="rect" id="node5" href="$dc/d54/classfi_1_1ATileLoader.html#a46d85c52fe89339a3ffbc1cb9c377eb0" title="Load a specific Tile at 0 based indexes (indexRowGlobalTile, indexColGlobalTile) of size tileHeight x..." alt="" coords="461,107,620,149"/>
+<area shape="rect" id="node6" href="$d0/dbc/classfi_1_1CachedTile.html#addb4bbc69414fd2e04c1d6f8f9e0b8b7" title="Get pointer to the data buffer. " alt="" coords="677,177,835,204"/>
+<area shape="rect" id="node7" href="$dc/d54/classfi_1_1ATileLoader.html#a69b1eaf0e9f636f756f514bd985a4cb5" title="Copy (part of or all) the cached tile to the view. " alt="" coords="459,225,622,266"/>
+<area shape="rect" id="node9" href="$d0/dbc/classfi_1_1CachedTile.html#a2ea14c7fc1599f72a5d725ae7983457d" title="Unlock the tile. " alt="" coords="466,291,615,317"/>
+<area shape="rect" id="node8" href="$d5/dd4/classfi_1_1View.html#a8fd719fcea9c7a98cfd0feba96fe5afe" title="Get the pointer to the view. " alt="" coords="696,232,816,259"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$d3/df4/classfc_1_1BlobMerger.html" title="Merges multiple fc::ViewAnalyse to build the Feature Collection. " alt="" coords="156,5,263,32"/>
+<area shape="rect" id="node3" href="$df/daf/classfc_1_1ViewAnalyser.html" title="View Analyser, HTGS task, take a FastImage view and produce a ViewAnalyse to the BlobMerger. " alt="" coords="108,56,311,83"/>
+<area shape="rect" id="node4" href="$dc/d54/classfi_1_1ATileLoader.html" title="Tile Loader interface. " alt="" coords="116,107,303,133"/>
+<area shape="rect" id="node6" href="$df/dae/classfi_1_1ViewCounter.html" title="View Counter, graph&#39;s last task, finalise the view. " alt="" coords="113,157,306,184"/>
+<area shape="rect" id="node7" href="$d8/daf/classfi_1_1ViewLoader.html" title="View loader task. Take a HTGSViewRequestData and produce a HTGSTileRequestData. " alt="" coords="116,208,303,235"/>
+<area shape="rect" id="node5" href="$dc/dcf/classfi_1_1GrayscaleTiffTileLoader.html" title="Tile loader specialized in grayscale tiff file. Use libtiff library. " alt="" coords="359,99,533,141"/>
+</map>

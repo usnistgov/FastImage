@@ -1,0 +1,193 @@
+\hypertarget{classfi_1_1ViewAllocator}{}\section{fi\+:\+:View\+Allocator$<$ User\+Type $>$ Class Template Reference}
+\label{classfi_1_1ViewAllocator}\index{fi\+::\+View\+Allocator$<$ User\+Type $>$@{fi\+::\+View\+Allocator$<$ User\+Type $>$}}
+
+
+\hyperlink{classfi_1_1View}{View} Allocator allocates a \hyperlink{classfi_1_1FastImage}{Fast\+Image} view that is used by the H\+T\+GS memory manager.  
+
+
+
+
+{\ttfamily \#include $<$Fast\+Image/memory/\+View\+Allocator.\+h$>$}
+
+
+
+Inheritance diagram for fi\+:\+:View\+Allocator$<$ User\+Type $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{df/dac/classfi_1_1ViewAllocator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for fi\+:\+:View\+Allocator$<$ User\+Type $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{d6/de0/classfi_1_1ViewAllocator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfi_1_1ViewAllocator_a17e386590e9c9146b804a82cd878dfe9}{View\+Allocator} (const uint32\+\_\+t \&view\+Height, const uint32\+\_\+t \&view\+Width)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1View}{View} allocator constructor. \end{DoxyCompactList}\item 
+\hyperlink{classfi_1_1View}{View}$<$ User\+Type $>$ $\ast$ \hyperlink{classfi_1_1ViewAllocator_ac0744636f7f0b90054c13adf49af279b}{mem\+Alloc} (size\+\_\+t size) override
+\begin{DoxyCompactList}\small\item\em Allocate the memory in a view. \end{DoxyCompactList}\item 
+\hyperlink{classfi_1_1View}{View}$<$ User\+Type $>$ $\ast$ \hyperlink{classfi_1_1ViewAllocator_a6cc2583a683f09e59f35d7180fe0c188}{mem\+Alloc} () override
+\begin{DoxyCompactList}\small\item\em Allocate the memory in a view. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1ViewAllocator_a63bd33e7f615ea7dcc138e988f4a09e9}{mem\+Free} (\hyperlink{classfi_1_1View}{View}$<$ User\+Type $>$ $\ast$\&memory) override
+\begin{DoxyCompactList}\small\item\em Free a view\+Data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{classfi_1_1ViewAllocator_a881d0f5707b2eaa7734be0edf66267bc}{\+\_\+view\+Height}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1View}{View} height. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1ViewAllocator_ace1013f391dd45b3ed672ebf2be47bff}{\+\_\+view\+Width}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1View}{View} Width. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename User\+Type$>$\newline
+class fi\+::\+View\+Allocator$<$ User\+Type $>$}
+
+\hyperlink{classfi_1_1View}{View} Allocator allocates a \hyperlink{classfi_1_1FastImage}{Fast\+Image} view that is used by the H\+T\+GS memory manager. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em User\+Type} & Pixel Type asked by the end user \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 54 of file View\+Allocator.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfi_1_1ViewAllocator_a17e386590e9c9146b804a82cd878dfe9}\label{classfi_1_1ViewAllocator_a17e386590e9c9146b804a82cd878dfe9}} 
+\index{fi\+::\+View\+Allocator@{fi\+::\+View\+Allocator}!View\+Allocator@{View\+Allocator}}
+\index{View\+Allocator@{View\+Allocator}!fi\+::\+View\+Allocator@{fi\+::\+View\+Allocator}}
+\subsubsection{\texorpdfstring{View\+Allocator()}{ViewAllocator()}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+\hyperlink{classfi_1_1ViewAllocator}{fi\+::\+View\+Allocator}$<$ User\+Type $>$\+::\hyperlink{classfi_1_1ViewAllocator}{View\+Allocator} (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t \&}]{view\+Height,  }\item[{const uint32\+\_\+t \&}]{view\+Width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\hyperlink{classfi_1_1View}{View} allocator constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em view\+Height} & \hyperlink{classfi_1_1View}{View} Height in pixel \\
+\hline
+{\em view\+Width} & \hyperlink{classfi_1_1View}{View} width in pixel \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file View\+Allocator.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classfi_1_1ViewAllocator_ac0744636f7f0b90054c13adf49af279b}\label{classfi_1_1ViewAllocator_ac0744636f7f0b90054c13adf49af279b}} 
+\index{fi\+::\+View\+Allocator@{fi\+::\+View\+Allocator}!mem\+Alloc@{mem\+Alloc}}
+\index{mem\+Alloc@{mem\+Alloc}!fi\+::\+View\+Allocator@{fi\+::\+View\+Allocator}}
+\subsubsection{\texorpdfstring{mem\+Alloc()}{memAlloc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+\hyperlink{classfi_1_1View}{View}$<$User\+Type$>$$\ast$ \hyperlink{classfi_1_1ViewAllocator}{fi\+::\+View\+Allocator}$<$ User\+Type $>$\+::mem\+Alloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Allocate the memory in a view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Bot used but needed by H\+T\+GS \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new View\+Data allocated 
+\end{DoxyReturn}
+
+
+Definition at line 66 of file View\+Allocator.\+h.
+
+\mbox{\Hypertarget{classfi_1_1ViewAllocator_a6cc2583a683f09e59f35d7180fe0c188}\label{classfi_1_1ViewAllocator_a6cc2583a683f09e59f35d7180fe0c188}} 
+\index{fi\+::\+View\+Allocator@{fi\+::\+View\+Allocator}!mem\+Alloc@{mem\+Alloc}}
+\index{mem\+Alloc@{mem\+Alloc}!fi\+::\+View\+Allocator@{fi\+::\+View\+Allocator}}
+\subsubsection{\texorpdfstring{mem\+Alloc()}{memAlloc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+\hyperlink{classfi_1_1View}{View}$<$User\+Type$>$$\ast$ \hyperlink{classfi_1_1ViewAllocator}{fi\+::\+View\+Allocator}$<$ User\+Type $>$\+::mem\+Alloc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Allocate the memory in a view. 
+
+\begin{DoxyReturn}{Returns}
+A new View\+Data allocated 
+\end{DoxyReturn}
+
+
+Definition at line 72 of file View\+Allocator.\+h.
+
+\mbox{\Hypertarget{classfi_1_1ViewAllocator_a63bd33e7f615ea7dcc138e988f4a09e9}\label{classfi_1_1ViewAllocator_a63bd33e7f615ea7dcc138e988f4a09e9}} 
+\index{fi\+::\+View\+Allocator@{fi\+::\+View\+Allocator}!mem\+Free@{mem\+Free}}
+\index{mem\+Free@{mem\+Free}!fi\+::\+View\+Allocator@{fi\+::\+View\+Allocator}}
+\subsubsection{\texorpdfstring{mem\+Free()}{memFree()}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+void \hyperlink{classfi_1_1ViewAllocator}{fi\+::\+View\+Allocator}$<$ User\+Type $>$\+::mem\+Free (\begin{DoxyParamCaption}\item[{\hyperlink{classfi_1_1View}{View}$<$ User\+Type $>$ $\ast$\&}]{memory }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Free a view\+Data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em memory} & view\+Data to free \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file View\+Allocator.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classfi_1_1ViewAllocator_a881d0f5707b2eaa7734be0edf66267bc}\label{classfi_1_1ViewAllocator_a881d0f5707b2eaa7734be0edf66267bc}} 
+\index{fi\+::\+View\+Allocator@{fi\+::\+View\+Allocator}!\+\_\+view\+Height@{\+\_\+view\+Height}}
+\index{\+\_\+view\+Height@{\+\_\+view\+Height}!fi\+::\+View\+Allocator@{fi\+::\+View\+Allocator}}
+\subsubsection{\texorpdfstring{\+\_\+view\+Height}{\_viewHeight}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1ViewAllocator}{fi\+::\+View\+Allocator}$<$ User\+Type $>$\+::\+\_\+view\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{classfi_1_1View}{View} height. 
+
+
+
+Definition at line 84 of file View\+Allocator.\+h.
+
+\mbox{\Hypertarget{classfi_1_1ViewAllocator_ace1013f391dd45b3ed672ebf2be47bff}\label{classfi_1_1ViewAllocator_ace1013f391dd45b3ed672ebf2be47bff}} 
+\index{fi\+::\+View\+Allocator@{fi\+::\+View\+Allocator}!\+\_\+view\+Width@{\+\_\+view\+Width}}
+\index{\+\_\+view\+Width@{\+\_\+view\+Width}!fi\+::\+View\+Allocator@{fi\+::\+View\+Allocator}}
+\subsubsection{\texorpdfstring{\+\_\+view\+Width}{\_viewWidth}}
+{\footnotesize\ttfamily template$<$typename User\+Type $>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1ViewAllocator}{fi\+::\+View\+Allocator}$<$ User\+Type $>$\+::\+\_\+view\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{classfi_1_1View}{View} Width. 
+
+
+
+Definition at line 84 of file View\+Allocator.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/anb22/\+Documents/\+Fast-\/\+Image/\+Fast\+Image/src/\+Fast\+Image/memory/\hyperlink{ViewAllocator_8h}{View\+Allocator.\+h}\end{DoxyCompactItemize}

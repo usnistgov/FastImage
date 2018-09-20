@@ -1,0 +1,14 @@
+<map id="fc::BlobMerger::executeTask" name="fc::BlobMerger::executeTask">
+<area shape="rect" id="node2" href="$d3/df4/classfc_1_1BlobMerger.html#a11fa980b355aa46271460f33a5cce0ac" title="Merge all the blobs from all the view analyser. " alt="" coords="244,95,395,121"/>
+<area shape="rect" id="node3" href="$dd/d13/classfc_1_1UnionFind.html#af2a4f58739f658a16006fb023a6fa9fc" title="Unify to elements. " alt="" coords="443,21,637,48"/>
+<area shape="rect" id="node5" href="$d3/df4/classfc_1_1BlobMerger.html#ac2e61560c60b1467e385a3d08577c650" title="Retrieve a blob from a coordinate, nullptr is to blob is corresponding. " alt="" coords="445,87,635,129"/>
+<area shape="rect" id="node6" href="$d2/d7e/classfc_1_1Blob.html#ae84692d9e132dd046b56bb6ac06dd8bb" title="Merge 2 blobs, and delete the unused one. " alt="" coords="454,183,626,209"/>
+<area shape="rect" id="node4" href="$dd/d13/classfc_1_1UnionFind.html#afea42f5456053c1185991449afeedb01" title="Find the element parent, and compress the path. " alt="" coords="694,5,823,32"/>
+<area shape="rect" id="node7" href="$d2/d7e/classfc_1_1Blob.html#a7443f8362ad88c61e5dcfae2dad54d47" title="Get number of pixels in a blob. " alt="" coords="695,56,823,83"/>
+<area shape="rect" id="node8" href="$d2/d7e/classfc_1_1Blob.html#a14a42d0f0fe5a8c06444609027faecbe" title="Minimum bounding box row setter. " alt="" coords="688,107,829,133"/>
+<area shape="rect" id="node9" href="$d2/d7e/classfc_1_1Blob.html#a167b6c3a33f301a7dcb527b289dd0834" title="Get minimum bounding box row. " alt="" coords="688,157,829,184"/>
+<area shape="rect" id="node10" href="$d2/d7e/classfc_1_1Blob.html#ac4e8548eb6f47c1febbd70184bee315a" title="Get minimum bounding box col. " alt="" coords="691,208,826,235"/>
+<area shape="rect" id="node11" href="$d2/d7e/classfc_1_1Blob.html#af4a030b9ba08fd02242137a296a3692b" title="Get maximum bounding box row. " alt="" coords="686,259,831,285"/>
+<area shape="rect" id="node12" href="$d2/d7e/classfc_1_1Blob.html#a1f9cfacc7e5d2f048c26f8b9c706141a" title="Get maximum bounding box col. " alt="" coords="689,309,828,336"/>
+<area shape="rect" id="node13" href="$d2/d7e/classfc_1_1Blob.html#a80e63b761ebffdf90dea47b8a59b2c32" title="Get sparse matrix structure. " alt="" coords="685,360,832,387"/>
+</map>

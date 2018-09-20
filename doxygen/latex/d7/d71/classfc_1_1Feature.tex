@@ -1,0 +1,614 @@
+\hypertarget{classfc_1_1Feature}{}\section{fc\+:\+:Feature Class Reference}
+\label{classfc_1_1Feature}\index{fc\+::\+Feature@{fc\+::\+Feature}}
+
+
+Define a \hyperlink{classfc_1_1Feature}{Feature} in a \hyperlink{classfc_1_1FeatureCollection}{Feature\+Collection} context.  
+
+
+
+
+{\ttfamily \#include $<$Fast\+Image/\+Feature\+Collection/\+Feature.\+h$>$}
+
+
+
+Collaboration diagram for fc\+:\+:Feature\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d2/da8/classfc_1_1Feature__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfc_1_1Feature_a3cf1b0876a3bf6df2de24365ab640adb}{Feature} (uint32\+\_\+t id, const \hyperlink{classfc_1_1BoundingBox}{Bounding\+Box} \&bounding\+Box, uint32\+\_\+t $\ast$bit\+Mask)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfc_1_1Feature}{Feature} constructor from a bounding box and a bitmask. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfc_1_1Feature_aaca79900d55dd3e037e8edfe36330af0}{get\+Id} () const
+\begin{DoxyCompactList}\small\item\em Id getter. \end{DoxyCompactList}\item 
+const \hyperlink{classfc_1_1BoundingBox}{Bounding\+Box} \& \hyperlink{classfc_1_1Feature_ac5793261f78e3cd9ec934b1f70ef4725}{get\+Bounding\+Box} () const
+\begin{DoxyCompactList}\small\item\em Bounding box getter. \end{DoxyCompactList}\item 
+uint32\+\_\+t $\ast$ \hyperlink{classfc_1_1Feature_a965a679e9a751be23d2a7d51c0573a61}{get\+Bit\+Mask} () const
+\begin{DoxyCompactList}\small\item\em Bit Mask getter. \end{DoxyCompactList}\item 
+double \hyperlink{classfc_1_1Feature_acaef36b11296ff7130d9454a0195148d}{get\+Max\+Coord} (int dim)
+\begin{DoxyCompactList}\small\item\em Get maximum coordinate in a specific dimension, used by the A\+A\+BB tree. \end{DoxyCompactList}\item 
+double \hyperlink{classfc_1_1Feature_a034cb38f61076e527f4f16eecb97c0b4}{get\+Min\+Coord} (int dim)
+\begin{DoxyCompactList}\small\item\em Get minimum coordinate in a specific dimension, used by the A\+A\+BB tree. \end{DoxyCompactList}\item 
+double \hyperlink{classfc_1_1Feature_a21626e0da332bd17ef8b50b137c6e696}{get\+Distance\+Sqr\+To} (\hyperlink{classfc_1_1Vector2}{Vector2}$<$ double $>$ const \&point)
+\begin{DoxyCompactList}\small\item\em Get the distance between a feature and a point. \end{DoxyCompactList}\item 
+bool \hyperlink{classfc_1_1Feature_ae1c529caa66d56edfb361431a832f806}{contains} (uint32\+\_\+t row, uint32\+\_\+t col) const
+\begin{DoxyCompactList}\small\item\em Test if a point from its coordinate is in a bounding box. \end{DoxyCompactList}\item 
+bool \hyperlink{classfc_1_1Feature_a0f716104b68b033b427c60c1f2672a76}{contains} (\hyperlink{classfc_1_1Vector2}{Vector2}$<$ double $>$ const \&point)
+\begin{DoxyCompactList}\small\item\em Test if a \hyperlink{classfc_1_1Vector2}{Vector2$<$double$>$} point is in a bounding box. \end{DoxyCompactList}\item 
+bool \hyperlink{classfc_1_1Feature_a8cd5e2721373377bb80d87dd72265f98}{is\+In\+Bit\+Mask} (uint32\+\_\+t row, uint32\+\_\+t col) const
+\begin{DoxyCompactList}\small\item\em Test if a point from its coordinate is in a bitmask. \end{DoxyCompactList}\item 
+void \hyperlink{classfc_1_1Feature_ac37080e8b096f9d2024e761f18495578}{serialize\+Feature} (std\+::ofstream \&out\+File)
+\begin{DoxyCompactList}\small\item\em Serialize a \hyperlink{classfc_1_1Feature}{Feature} into an output stream. \end{DoxyCompactList}\item 
+bool \hyperlink{classfc_1_1Feature_aba149cb57c347382caee231a8637f2a3}{operator==} (const \hyperlink{classfc_1_1Feature}{Feature} \&other) const
+\begin{DoxyCompactList}\small\item\em Equality operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classfc_1_1Feature_a04bfee2095c243b512be2fc53b0ea08c}{operator!=} (const \hyperlink{classfc_1_1Feature}{Feature} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Inequality operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classfc_1_1Feature}{Feature} \hyperlink{classfc_1_1Feature_a6ea5b6e3e6d14f29a6faa9b4464f8d4b}{deserialize\+Feature} (std\+::ifstream \&in\+File)
+\begin{DoxyCompactList}\small\item\em Deserialize a \hyperlink{classfc_1_1Feature}{Feature} from an input file stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfc_1_1Feature_ac61c6f20533da3d4d4b3ee03f4976278}{Feature} (uint32\+\_\+t id, const \hyperlink{classfc_1_1BoundingBox}{Bounding\+Box} \&bounding\+Box, uint32\+\_\+t nb\+Elements\+Bit\+Mask, uint32\+\_\+t $\ast$bit\+Mask)
+\begin{DoxyCompactList}\small\item\em Private constructor used by the deserialization method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{classfc_1_1Feature_aa212a88fec6bc5973c655069d64825fd}{\+\_\+id}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfc_1_1Feature}{Feature} Id. \end{DoxyCompactList}\item 
+uint32\+\_\+t $\ast$ \hyperlink{classfc_1_1Feature_acab3e3e0a9d67af174f19ec7f8e3668f}{\+\_\+bit\+Mask}
+\begin{DoxyCompactList}\small\item\em Bit\+Mask, each bit represent a pixel. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfc_1_1Feature_abf72f4385cf0552270cc99df0dd6ecdd}{\+\_\+nb\+Elements\+Bit\+Mask}
+\begin{DoxyCompactList}\small\item\em Bit\+Mask size. \end{DoxyCompactList}\item 
+\hyperlink{classfc_1_1BoundingBox}{Bounding\+Box} \hyperlink{classfc_1_1Feature_ac6bc52c10118373d56c6789dcffc59fa}{\+\_\+bounding\+Box}
+\begin{DoxyCompactList}\small\item\em Bounding box. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classfc_1_1Feature_a87a7af61219690a546906a8d61762dce}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classfc_1_1Feature}{Feature} \&region)
+\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Define a \hyperlink{classfc_1_1Feature}{Feature} in a \hyperlink{classfc_1_1FeatureCollection}{Feature\+Collection} context. 
+
+A \hyperlink{classfc_1_1Feature}{Feature} is a set of connected pixels (4 or 8), corresponding to a part of mask delimiting a region. The representation of a feature is center on this feature, not on the pixel. Each \hyperlink{classfc_1_1Feature}{Feature} will be constituted by\+: \+\_\+\+An Id, \+\_\+A \hyperlink{classfc_1_1BoundingBox}{Bounding\+Box} delimiting the feature, \+\_\+A bitmask, telling for each pixel in the \hyperlink{classfc_1_1BoundingBox}{Bounding\+Box} if it belongs to the feature \+\_\+\+The number of pixel in the feature. 
+
+Definition at line 62 of file Feature.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfc_1_1Feature_a3cf1b0876a3bf6df2de24365ab640adb}\label{classfc_1_1Feature_a3cf1b0876a3bf6df2de24365ab640adb}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!Feature@{Feature}}
+\index{Feature@{Feature}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{Feature()}{Feature()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily fc\+::\+Feature\+::\+Feature (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{id,  }\item[{const \hyperlink{classfc_1_1BoundingBox}{Bounding\+Box} \&}]{bounding\+Box,  }\item[{uint32\+\_\+t $\ast$}]{bit\+Mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\hyperlink{classfc_1_1Feature}{Feature} constructor from a bounding box and a bitmask. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \hyperlink{classfc_1_1Feature}{Feature} Id \\
+\hline
+{\em bounding\+Box} & \hyperlink{classfc_1_1Feature}{Feature} bounding box \\
+\hline
+{\em bit\+Mask} & \hyperlink{classfc_1_1Feature}{Feature} bit mask to copy \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file Feature.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d71/classfc_1_1Feature_a3cf1b0876a3bf6df2de24365ab640adb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfc_1_1Feature_ac61c6f20533da3d4d4b3ee03f4976278}\label{classfc_1_1Feature_ac61c6f20533da3d4d4b3ee03f4976278}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!Feature@{Feature}}
+\index{Feature@{Feature}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{Feature()}{Feature()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily fc\+::\+Feature\+::\+Feature (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{id,  }\item[{const \hyperlink{classfc_1_1BoundingBox}{Bounding\+Box} \&}]{bounding\+Box,  }\item[{uint32\+\_\+t}]{nb\+Elements\+Bit\+Mask,  }\item[{uint32\+\_\+t $\ast$}]{bit\+Mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Private constructor used by the deserialization method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \hyperlink{classfc_1_1Feature}{Feature} id \\
+\hline
+{\em bounding\+Box} & \hyperlink{classfc_1_1Feature}{Feature} bounding box \\
+\hline
+{\em nb\+Elements\+Bit\+Mask} & Bit Mask size \\
+\hline
+{\em bit\+Mask} & Bit mask \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 291 of file Feature.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classfc_1_1Feature_ae1c529caa66d56edfb361431a832f806}\label{classfc_1_1Feature_ae1c529caa66d56edfb361431a832f806}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!contains@{contains}}
+\index{contains@{contains}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool fc\+::\+Feature\+::contains (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{row,  }\item[{uint32\+\_\+t}]{col }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Test if a point from its coordinate is in a bounding box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & row point to test \\
+\hline
+{\em col} & column point to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the point is in the \hyperlink{classfc_1_1Feature}{Feature}, else False 
+\end{DoxyReturn}
+
+
+Definition at line 141 of file Feature.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d71/classfc_1_1Feature_ae1c529caa66d56edfb361431a832f806_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{d7/d71/classfc_1_1Feature_ae1c529caa66d56edfb361431a832f806_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfc_1_1Feature_a0f716104b68b033b427c60c1f2672a76}\label{classfc_1_1Feature_a0f716104b68b033b427c60c1f2672a76}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!contains@{contains}}
+\index{contains@{contains}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool fc\+::\+Feature\+::contains (\begin{DoxyParamCaption}\item[{\hyperlink{classfc_1_1Vector2}{Vector2}$<$ double $>$ const \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Test if a \hyperlink{classfc_1_1Vector2}{Vector2$<$double$>$} point is in a bounding box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & \hyperlink{classfc_1_1Vector2}{Vector2$<$double$>$} to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the point is in the \hyperlink{classfc_1_1Feature}{Feature}, else False 
+\end{DoxyReturn}
+
+
+Definition at line 154 of file Feature.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d71/classfc_1_1Feature_a0f716104b68b033b427c60c1f2672a76_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfc_1_1Feature_a6ea5b6e3e6d14f29a6faa9b4464f8d4b}\label{classfc_1_1Feature_a6ea5b6e3e6d14f29a6faa9b4464f8d4b}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!deserialize\+Feature@{deserialize\+Feature}}
+\index{deserialize\+Feature@{deserialize\+Feature}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{deserialize\+Feature()}{deserializeFeature()}}
+{\footnotesize\ttfamily static \hyperlink{classfc_1_1Feature}{Feature} fc\+::\+Feature\+::deserialize\+Feature (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{in\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Deserialize a \hyperlink{classfc_1_1Feature}{Feature} from an input file stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+File} & input file stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The feature deserialized 
+\end{DoxyReturn}
+
+
+Definition at line 207 of file Feature.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d71/classfc_1_1Feature_a6ea5b6e3e6d14f29a6faa9b4464f8d4b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d71/classfc_1_1Feature_a6ea5b6e3e6d14f29a6faa9b4464f8d4b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfc_1_1Feature_a965a679e9a751be23d2a7d51c0573a61}\label{classfc_1_1Feature_a965a679e9a751be23d2a7d51c0573a61}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!get\+Bit\+Mask@{get\+Bit\+Mask}}
+\index{get\+Bit\+Mask@{get\+Bit\+Mask}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{get\+Bit\+Mask()}{getBitMask()}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ fc\+::\+Feature\+::get\+Bit\+Mask (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Bit Mask getter. 
+
+\begin{DoxyReturn}{Returns}
+Bit Mask 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file Feature.\+h.
+
+\mbox{\Hypertarget{classfc_1_1Feature_ac5793261f78e3cd9ec934b1f70ef4725}\label{classfc_1_1Feature_ac5793261f78e3cd9ec934b1f70ef4725}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!get\+Bounding\+Box@{get\+Bounding\+Box}}
+\index{get\+Bounding\+Box@{get\+Bounding\+Box}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{get\+Bounding\+Box()}{getBoundingBox()}}
+{\footnotesize\ttfamily const \hyperlink{classfc_1_1BoundingBox}{Bounding\+Box}\& fc\+::\+Feature\+::get\+Bounding\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Bounding box getter. 
+
+\begin{DoxyReturn}{Returns}
+Bounding box 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file Feature.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d71/classfc_1_1Feature_ac5793261f78e3cd9ec934b1f70ef4725_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfc_1_1Feature_a21626e0da332bd17ef8b50b137c6e696}\label{classfc_1_1Feature_a21626e0da332bd17ef8b50b137c6e696}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!get\+Distance\+Sqr\+To@{get\+Distance\+Sqr\+To}}
+\index{get\+Distance\+Sqr\+To@{get\+Distance\+Sqr\+To}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{get\+Distance\+Sqr\+To()}{getDistanceSqrTo()}}
+{\footnotesize\ttfamily double fc\+::\+Feature\+::get\+Distance\+Sqr\+To (\begin{DoxyParamCaption}\item[{\hyperlink{classfc_1_1Vector2}{Vector2}$<$ double $>$ const \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the distance between a feature and a point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & Point to calculate the distance from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance between the feature and a point 
+\end{DoxyReturn}
+
+
+Definition at line 129 of file Feature.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d71/classfc_1_1Feature_a21626e0da332bd17ef8b50b137c6e696_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfc_1_1Feature_aaca79900d55dd3e037e8edfe36330af0}\label{classfc_1_1Feature_aaca79900d55dd3e037e8edfe36330af0}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{get\+Id()}{getId()}}
+{\footnotesize\ttfamily uint32\+\_\+t fc\+::\+Feature\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Id getter. 
+
+\begin{DoxyReturn}{Returns}
+Id 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file Feature.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{d7/d71/classfc_1_1Feature_aaca79900d55dd3e037e8edfe36330af0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfc_1_1Feature_acaef36b11296ff7130d9454a0195148d}\label{classfc_1_1Feature_acaef36b11296ff7130d9454a0195148d}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!get\+Max\+Coord@{get\+Max\+Coord}}
+\index{get\+Max\+Coord@{get\+Max\+Coord}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{get\+Max\+Coord()}{getMaxCoord()}}
+{\footnotesize\ttfamily double fc\+::\+Feature\+::get\+Max\+Coord (\begin{DoxyParamCaption}\item[{int}]{dim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get maximum coordinate in a specific dimension, used by the A\+A\+BB tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dim} & Dimension to get the maximum coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Maximum coordinate in a specific dimension 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file Feature.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d71/classfc_1_1Feature_acaef36b11296ff7130d9454a0195148d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfc_1_1Feature_a034cb38f61076e527f4f16eecb97c0b4}\label{classfc_1_1Feature_a034cb38f61076e527f4f16eecb97c0b4}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!get\+Min\+Coord@{get\+Min\+Coord}}
+\index{get\+Min\+Coord@{get\+Min\+Coord}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{get\+Min\+Coord()}{getMinCoord()}}
+{\footnotesize\ttfamily double fc\+::\+Feature\+::get\+Min\+Coord (\begin{DoxyParamCaption}\item[{int}]{dim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get minimum coordinate in a specific dimension, used by the A\+A\+BB tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dim} & Dimension to get the minimum coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Minimum coordinate in a specific dimension 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file Feature.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d71/classfc_1_1Feature_a034cb38f61076e527f4f16eecb97c0b4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfc_1_1Feature_a8cd5e2721373377bb80d87dd72265f98}\label{classfc_1_1Feature_a8cd5e2721373377bb80d87dd72265f98}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!is\+In\+Bit\+Mask@{is\+In\+Bit\+Mask}}
+\index{is\+In\+Bit\+Mask@{is\+In\+Bit\+Mask}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{is\+In\+Bit\+Mask()}{isInBitMask()}}
+{\footnotesize\ttfamily bool fc\+::\+Feature\+::is\+In\+Bit\+Mask (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{row,  }\item[{uint32\+\_\+t}]{col }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Test if a point from its coordinate is in a bitmask. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & row point to test \\
+\hline
+{\em col} & column point to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the point is in the \hyperlink{classfc_1_1Feature}{Feature}, else False 
+\end{DoxyReturn}
+
+
+Definition at line 168 of file Feature.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d71/classfc_1_1Feature_a8cd5e2721373377bb80d87dd72265f98_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfc_1_1Feature_a04bfee2095c243b512be2fc53b0ea08c}\label{classfc_1_1Feature_a04bfee2095c243b512be2fc53b0ea08c}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool fc\+::\+Feature\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classfc_1_1Feature}{Feature} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inequality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \hyperlink{classfc_1_1Feature}{Feature} to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if not equal, False Else 
+\end{DoxyReturn}
+
+
+Definition at line 281 of file Feature.\+h.
+
+\mbox{\Hypertarget{classfc_1_1Feature_aba149cb57c347382caee231a8637f2a3}\label{classfc_1_1Feature_aba149cb57c347382caee231a8637f2a3}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!operator==@{operator==}}
+\index{operator==@{operator==}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool fc\+::\+Feature\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classfc_1_1Feature}{Feature} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Equality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \hyperlink{classfc_1_1Feature}{Feature} to compare with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True is the feature are equal, else False 
+\end{DoxyReturn}
+
+
+Definition at line 264 of file Feature.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d71/classfc_1_1Feature_aba149cb57c347382caee231a8637f2a3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfc_1_1Feature_ac37080e8b096f9d2024e761f18495578}\label{classfc_1_1Feature_ac37080e8b096f9d2024e761f18495578}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!serialize\+Feature@{serialize\+Feature}}
+\index{serialize\+Feature@{serialize\+Feature}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{serialize\+Feature()}{serializeFeature()}}
+{\footnotesize\ttfamily void fc\+::\+Feature\+::serialize\+Feature (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{out\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serialize a \hyperlink{classfc_1_1Feature}{Feature} into an output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+File} & Output stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 195 of file Feature.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d71/classfc_1_1Feature_ac37080e8b096f9d2024e761f18495578_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classfc_1_1Feature_a87a7af61219690a546906a8d61762dce}\label{classfc_1_1Feature_a87a7af61219690a546906a8d61762dce}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classfc_1_1Feature}{Feature} \&}]{region }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & output stream to print the feature \\
+\hline
+{\em region} & \hyperlink{classfc_1_1Feature}{Feature} to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output stream with data printed 
+\end{DoxyReturn}
+
+
+Definition at line 233 of file Feature.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classfc_1_1Feature_acab3e3e0a9d67af174f19ec7f8e3668f}\label{classfc_1_1Feature_acab3e3e0a9d67af174f19ec7f8e3668f}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!\+\_\+bit\+Mask@{\+\_\+bit\+Mask}}
+\index{\+\_\+bit\+Mask@{\+\_\+bit\+Mask}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{\+\_\+bit\+Mask}{\_bitMask}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ fc\+::\+Feature\+::\+\_\+bit\+Mask\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bit\+Mask, each bit represent a pixel. 
+
+
+
+Definition at line 304 of file Feature.\+h.
+
+\mbox{\Hypertarget{classfc_1_1Feature_ac6bc52c10118373d56c6789dcffc59fa}\label{classfc_1_1Feature_ac6bc52c10118373d56c6789dcffc59fa}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!\+\_\+bounding\+Box@{\+\_\+bounding\+Box}}
+\index{\+\_\+bounding\+Box@{\+\_\+bounding\+Box}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{\+\_\+bounding\+Box}{\_boundingBox}}
+{\footnotesize\ttfamily \hyperlink{classfc_1_1BoundingBox}{Bounding\+Box} fc\+::\+Feature\+::\+\_\+bounding\+Box\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bounding box. 
+
+
+
+Definition at line 308 of file Feature.\+h.
+
+\mbox{\Hypertarget{classfc_1_1Feature_aa212a88fec6bc5973c655069d64825fd}\label{classfc_1_1Feature_aa212a88fec6bc5973c655069d64825fd}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!\+\_\+id@{\+\_\+id}}
+\index{\+\_\+id@{\+\_\+id}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{\+\_\+id}{\_id}}
+{\footnotesize\ttfamily uint32\+\_\+t fc\+::\+Feature\+::\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{classfc_1_1Feature}{Feature} Id. 
+
+
+
+Definition at line 301 of file Feature.\+h.
+
+\mbox{\Hypertarget{classfc_1_1Feature_abf72f4385cf0552270cc99df0dd6ecdd}\label{classfc_1_1Feature_abf72f4385cf0552270cc99df0dd6ecdd}} 
+\index{fc\+::\+Feature@{fc\+::\+Feature}!\+\_\+nb\+Elements\+Bit\+Mask@{\+\_\+nb\+Elements\+Bit\+Mask}}
+\index{\+\_\+nb\+Elements\+Bit\+Mask@{\+\_\+nb\+Elements\+Bit\+Mask}!fc\+::\+Feature@{fc\+::\+Feature}}
+\subsubsection{\texorpdfstring{\+\_\+nb\+Elements\+Bit\+Mask}{\_nbElementsBitMask}}
+{\footnotesize\ttfamily uint32\+\_\+t fc\+::\+Feature\+::\+\_\+nb\+Elements\+Bit\+Mask\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bit\+Mask size. 
+
+
+
+Definition at line 304 of file Feature.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/anb22/\+Documents/\+Fast-\/\+Image/\+Fast\+Image/src/\+Fast\+Image/\+Feature\+Collection/\hyperlink{Feature_8h}{Feature.\+h}\end{DoxyCompactItemize}

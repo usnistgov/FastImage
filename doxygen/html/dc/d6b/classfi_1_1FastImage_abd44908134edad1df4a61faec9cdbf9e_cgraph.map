@@ -1,0 +1,17 @@
+<map id="fi::FastImage::requestFeature" name="fi::FastImage::requestFeature">
+<area shape="rect" id="node2" href="$d7/d71/classfc_1_1Feature.html#ac5793261f78e3cd9ec934b1f70ef4725" title="Bounding box getter. " alt="" coords="248,5,436,32"/>
+<area shape="rect" id="node3" href="$db/dc1/classfc_1_1BoundingBox.html#a921418d145cc148a50d599b51447215a" title="Getter to the upper left row. " alt="" coords="253,57,431,98"/>
+<area shape="rect" id="node4" href="$dc/d6b/classfi_1_1FastImage.html#ae9f67a164a2e42f7c80b8443080e876b" title="Get Tile height in px. " alt="" coords="710,181,894,208"/>
+<area shape="rect" id="node5" href="$db/dc1/classfc_1_1BoundingBox.html#a21e8dcad0b3d37aa0a37c6dab4200974" title="Getter to the upper left column. " alt="" coords="253,697,431,738"/>
+<area shape="rect" id="node6" href="$dc/d6b/classfi_1_1FastImage.html#a4544e690ce41bfc0b4ca4e94f5ecd2b1" title="Get Tile width in px. " alt="" coords="712,544,892,571"/>
+<area shape="rect" id="node7" href="$db/dc1/classfc_1_1BoundingBox.html#aedfb5b832d699a78a954c6778208414c" title="Getter to the bottom right column. " alt="" coords="249,762,435,803"/>
+<area shape="rect" id="node8" href="$dc/d6b/classfi_1_1FastImage.html#a1ea580c3c08fe5be5575f0007b1bafbe" title="Get Image width in px. " alt="" coords="705,603,899,629"/>
+<area shape="rect" id="node9" href="$dc/d6b/classfi_1_1FastImage.html#a5bb1377a075185ce8445b1dcb6886b6e" title="Get number of tiles in a row. " alt="" coords="484,595,655,637"/>
+<area shape="rect" id="node10" href="$db/dc1/classfc_1_1BoundingBox.html#a74411180845c0572329c693170621245" title="Getter to the bottom right row. " alt="" coords="249,827,435,869"/>
+<area shape="rect" id="node11" href="$dc/d6b/classfi_1_1FastImage.html#a355d2e82840f50ccafe0ee681f9aa70f" title="Get Image height in px. " alt="" coords="703,291,901,317"/>
+<area shape="rect" id="node12" href="$dc/d6b/classfi_1_1FastImage.html#a84984ae1d928ef604866f126ed0a583b" title="Get number of tiles in a column. " alt="" coords="484,174,655,215"/>
+<area shape="rect" id="node13" href="$dc/d6b/classfi_1_1FastImage.html#a8b88d3cfcc2acc2e6d6d4baa2185cf9a" title="Set the number of tiles in a feature already computed. " alt="" coords="257,893,427,934"/>
+<area shape="rect" id="node14" href="$dc/d6b/classfi_1_1FastImage.html#a7313f9c3bddf643dfab8cf026527651a" title="Set the number of total tiles in a feature. " alt="" coords="257,958,427,999"/>
+<area shape="rect" id="node15" href="$dc/d6b/classfi_1_1FastImage.html#a40fb0f9749893a6e04548ee778ee5c1a" title="Send a View request to the ViewLoader about the tile at coordinate (indexTileRow, indexTileCol) ..." alt="" coords="250,417,434,444"/>
+<area shape="rect" id="node16" href="$dc/d6b/classfi_1_1FastImage.html#a17a18b7839a4fd6f8b1cfd2253983bd5" title="fi::FastImage::getRadius" alt="" coords="486,392,653,419"/>
+</map>

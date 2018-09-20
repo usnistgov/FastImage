@@ -1,0 +1,9 @@
+<map id="fc::Blob::mergeAndDelete" name="fc::Blob::mergeAndDelete">
+<area shape="rect" id="node2" href="$d2/d7e/classfc_1_1Blob.html#a7443f8362ad88c61e5dcfae2dad54d47" title="Get number of pixels in a blob. " alt="" coords="235,5,363,32"/>
+<area shape="rect" id="node3" href="$d2/d7e/classfc_1_1Blob.html#a14a42d0f0fe5a8c06444609027faecbe" title="Minimum bounding box row setter. " alt="" coords="228,56,369,83"/>
+<area shape="rect" id="node4" href="$d2/d7e/classfc_1_1Blob.html#a167b6c3a33f301a7dcb527b289dd0834" title="Get minimum bounding box row. " alt="" coords="228,107,369,133"/>
+<area shape="rect" id="node5" href="$d2/d7e/classfc_1_1Blob.html#ac4e8548eb6f47c1febbd70184bee315a" title="Get minimum bounding box col. " alt="" coords="231,157,366,184"/>
+<area shape="rect" id="node6" href="$d2/d7e/classfc_1_1Blob.html#af4a030b9ba08fd02242137a296a3692b" title="Get maximum bounding box row. " alt="" coords="226,208,371,235"/>
+<area shape="rect" id="node7" href="$d2/d7e/classfc_1_1Blob.html#a1f9cfacc7e5d2f048c26f8b9c706141a" title="Get maximum bounding box col. " alt="" coords="229,259,368,285"/>
+<area shape="rect" id="node8" href="$d2/d7e/classfc_1_1Blob.html#a80e63b761ebffdf90dea47b8a59b2c32" title="Get sparse matrix structure. " alt="" coords="225,309,372,336"/>
+</map>

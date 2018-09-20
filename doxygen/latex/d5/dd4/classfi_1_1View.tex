@@ -1,0 +1,827 @@
+\hypertarget{classfi_1_1View}{}\section{fi\+:\+:View$<$ User\+Type $>$ Class Template Reference}
+\label{classfi_1_1View}\index{fi\+::\+View$<$ User\+Type $>$@{fi\+::\+View$<$ User\+Type $>$}}
+
+
+\hyperlink{classfi_1_1View}{View} used by \hyperlink{classfi_1_1FastImage}{Fast\+Image} to represent image\textquotesingle{}s region.  
+
+
+
+
+{\ttfamily \#include $<$Fast\+Image/api/\+View.\+h$>$}
+
+
+
+Inheritance diagram for fi\+:\+:View$<$ User\+Type $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{d9/d7e/classfi_1_1View__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for fi\+:\+:View$<$ User\+Type $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dcc/classfi_1_1View__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfi_1_1View_a08c083035ccc805607ce81bfc199443f}{View} (const uint32\+\_\+t \&row, const uint32\+\_\+t \&col)
+\begin{DoxyCompactList}\small\item\em Create the \hyperlink{classfi_1_1View}{View}, allocate the array of pixel. \end{DoxyCompactList}\item 
+\hyperlink{classfi_1_1View_aa560ab63a88319b516b974793186fab6}{$\sim$\+View} () override
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1View}{View} destructor, deallocate the array of pixel. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1View_aa2682cae27645a080fb51ce39d1667b4}{get\+View\+Width} () const
+\begin{DoxyCompactList}\small\item\em Get view width in px. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1View_ad56a6ba2d23c2352403e9e36526a163b}{get\+View\+Height} () const
+\begin{DoxyCompactList}\small\item\em Get view height in px. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{classfi_1_1View_a0bfbcd904e7ed80b9f4ed92403825fc4}{get\+Tile\+Width} () const
+\begin{DoxyCompactList}\small\item\em Get Tile width of pixels coming from the image. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{classfi_1_1View_a08d9c1b251ce6ce11ff51cde2046a84d}{get\+Tile\+Height} () const
+\begin{DoxyCompactList}\small\item\em Get Tile height of pixels coming from the file. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1View_a42316b387625b552c0ea5b9c01df49b2}{get\+Row} () const
+\begin{DoxyCompactList}\small\item\em Get row grid index of the view\textquotesingle{}s tile. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1View_a40f94b02c882acb3be8623781b912cb2}{get\+Col} () const
+\begin{DoxyCompactList}\small\item\em Get column grid index of the view\textquotesingle{}s tile. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1View_a5fb12e145b33bc8b27a58d56d23fb774}{get\+Radius} () const
+\begin{DoxyCompactList}\small\item\em Get the \hyperlink{classfi_1_1View}{View} Radius. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1View_ae904f2103857876c460a3d9cb09c463b}{get\+Global\+X\+Offset} () const
+\begin{DoxyCompactList}\small\item\em Get Global Tile X Offset. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1View_a6cb46dcea151973eb4ebc0160586b16e}{get\+Global\+Y\+Offset} () const
+\begin{DoxyCompactList}\small\item\em Get Global Tile Y Offset. \end{DoxyCompactList}\item 
+User\+Type \hyperlink{classfi_1_1View_a5b05f97a8d0a58a8126911a0467f4544}{get\+Pixel} (const int32\+\_\+t \&row\+Asked, const int32\+\_\+t \&col\+Asked) const
+\begin{DoxyCompactList}\small\item\em Get the pixel value from it local coordinate. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1View_a8ed9ab561cde1f356fab4500e987ad46}{set\+Pixel} (const int32\+\_\+t \&row\+Asked, const int32\+\_\+t \&col\+Asked, const User\+Type \&value)
+\begin{DoxyCompactList}\small\item\em Set a pixel in the view. \end{DoxyCompactList}\item 
+User\+Type $\ast$ \hyperlink{classfi_1_1View_af386d23db727519b0016bb885061e5f4}{get\+Pointer\+Tile} ()
+\begin{DoxyCompactList}\small\item\em Get the pointer to the central tile. \end{DoxyCompactList}\item 
+User\+Type $\ast$ \hyperlink{classfi_1_1View_a8fd719fcea9c7a98cfd0feba96fe5afe}{get\+Data} () const
+\begin{DoxyCompactList}\small\item\em Get the pointer to the view. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1View_a0e586b5f01729eb97c6358b02426c50b}{get\+Pyramid\+Level} () const
+\begin{DoxyCompactList}\small\item\em Get the pyramid level the view come from. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1View_aafc262cff3e6af06f7c626bc4a0da4cf}{get\+Leading\+Dimension} ()
+\begin{DoxyCompactList}\small\item\em Get the leading dimension. \end{DoxyCompactList}\item 
+void \hyperlink{classfi_1_1View_a45cf9767af7b68e813e166d24acab720}{init} (const std\+::shared\+\_\+ptr$<$ \hyperlink{classfi_1_1HTGSViewRequestData}{fi\+::\+H\+T\+G\+S\+View\+Request\+Data}$<$ User\+Type $>$$>$ \&view\+Request, \hyperlink{namespacefi_a6808b618c85d179a330ca388162215bd}{Filling\+Type} filling\+Type=\hyperlink{namespacefi_a6808b618c85d179a330ca388162215bdae8225b11842409df543692aebed34fd1}{Filling\+Type\+::\+F\+I\+LL})
+\begin{DoxyCompactList}\small\item\em Initializes the view with the information contained in the view request and the tile size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classfi_1_1View_a227f31e08d755d67e364967ceb3a1758}{is\+Local\+Coordinate\+Correct} (const int32\+\_\+t \&row\+Asked, const int32\+\_\+t \&col\+Asked) const
+\begin{DoxyCompactList}\small\item\em Test if the local coordinate is in the view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+User\+Type $\ast$ \hyperlink{classfi_1_1View_a96a3a09cea8cdc605c758d6bc63e989a}{\+\_\+data}
+\begin{DoxyCompactList}\small\item\em Augmented Tile, Tile w/ a ghost region. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classfi_1_1HTGSViewRequestData}{fi\+::\+H\+T\+G\+S\+View\+Request\+Data}$<$ User\+Type $>$ $>$ \hyperlink{classfi_1_1View_aea86565df8c8407afd3192d5a21a7821}{\+\_\+view\+Request\+Data}
+\begin{DoxyCompactList}\small\item\em View\+Request creating the view. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1View_aafa2b86f9582cb59b60418b904abb5b2}{\+\_\+view\+Height}
+\begin{DoxyCompactList}\small\item\em Tile height in pixel. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1View_a44c92ac3b13fbad8e0cc0ae0cca6efc8}{\+\_\+view\+Width}
+\begin{DoxyCompactList}\small\item\em Tile width in pixel. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1View_a56cf8c8b40c17e7530f64bfbceb744df}{\+\_\+min\+Row\+Center\+Tile\+Global} \{\}
+\begin{DoxyCompactList}\small\item\em Row minimum in the central tile in global coordinate. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1View_a711f41125a37607525f34f84f729d702}{\+\_\+min\+Col\+Center\+Tile\+Global} \{\}
+\begin{DoxyCompactList}\small\item\em Column minimum in the central tile in global coordinate. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1View_add201fdbd6c6975e38ae826e11afaa78}{\+\_\+max\+Row\+Center\+Tile\+Global} \{\}
+\begin{DoxyCompactList}\small\item\em Row maximum in the central tile in global coordinate. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classfi_1_1View_a97df6aed1697d0a729fe0fc051fd8bcc}{\+\_\+max\+Col\+Center\+Tile\+Global} \{\}
+\begin{DoxyCompactList}\small\item\em Column maximum in the central tile in global coordinate. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{classfi_1_1View_aadafc4e11a0a12776eb0d5dd776dfab7}{\+\_\+max\+Row\+Center\+Tile\+Local} \{\}
+\begin{DoxyCompactList}\small\item\em Row maximum in the central tile in local coordinate. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{classfi_1_1View_ab13cc15a780703ce9854a3a01f744f89}{\+\_\+max\+Col\+Center\+Tile\+Local} \{\}
+\begin{DoxyCompactList}\small\item\em Column maximum in the central tile in local coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classfi_1_1View_a80b5a6c2350a5cdc15eef29a0ab11035}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classfi_1_1View}{View} \&data)
+\begin{DoxyCompactList}\small\item\em Output operator stream to print a view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename User\+Type$>$\newline
+class fi\+::\+View$<$ User\+Type $>$}
+
+\hyperlink{classfi_1_1View}{View} used by \hyperlink{classfi_1_1FastImage}{Fast\+Image} to represent image\textquotesingle{}s region. 
+
+\hyperlink{classfi_1_1View}{View} data class, contains the tiles loaded by the Fast-\/\+Image graph. The view is defined by a central tile, and the pixels surrounding it. The views will be pre-\/allocated by the memory manager. The pixels are located by their local coordinate where the position (0/0) is in the upper left of the central tile.
+
+For example to get once all the pixel of the image, the radius is set to 0, and it can be used\+:
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{for} (int32\_t r = 0; r < view->getTileHeight(); ++r) \{
+  \textcolor{keywordflow}{for} (int32\_t c = 0; c < view->getTileWidth(); ++c) \{
+    \textcolor{comment}{// Get the pixel from it's coordinate}
+    pixValue = view->getPixel(r, c);
+    \textcolor{keywordflow}{if} (!std::isnan(pixValue)) \{
+      ...
+    \}
+  \}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em User\+Type} & Pixel Type asked by the end user \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 77 of file View.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfi_1_1View_a08c083035ccc805607ce81bfc199443f}\label{classfi_1_1View_a08c083035ccc805607ce81bfc199443f}} 
+\index{fi\+::\+View@{fi\+::\+View}!View@{View}}
+\index{View@{View}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{View()}{View()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+\hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::\hyperlink{classfi_1_1View}{View} (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t \&}]{row,  }\item[{const uint32\+\_\+t \&}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create the \hyperlink{classfi_1_1View}{View}, allocate the array of pixel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & Number of pixel in a view \\
+\hline
+{\em col} & Number of pixel in a view \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 82 of file View.\+h.
+
+\mbox{\Hypertarget{classfi_1_1View_aa560ab63a88319b516b974793186fab6}\label{classfi_1_1View_aa560ab63a88319b516b974793186fab6}} 
+\index{fi\+::\+View@{fi\+::\+View}!````~View@{$\sim$\+View}}
+\index{````~View@{$\sim$\+View}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{$\sim$\+View()}{~View()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+\hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::$\sim$\hyperlink{classfi_1_1View}{View} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+\hyperlink{classfi_1_1View}{View} destructor, deallocate the array of pixel. 
+
+
+
+Definition at line 86 of file View.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classfi_1_1View_a40f94b02c882acb3be8623781b912cb2}\label{classfi_1_1View_a40f94b02c882acb3be8623781b912cb2}} 
+\index{fi\+::\+View@{fi\+::\+View}!get\+Col@{get\+Col}}
+\index{get\+Col@{get\+Col}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{get\+Col()}{getCol()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::get\+Col (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get column grid index of the view\textquotesingle{}s tile. 
+
+\begin{DoxyReturn}{Returns}
+Column grid index of the view\textquotesingle{}s tile 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file View.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{d5/dd4/classfi_1_1View_a40f94b02c882acb3be8623781b912cb2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1View_a8fd719fcea9c7a98cfd0feba96fe5afe}\label{classfi_1_1View_a8fd719fcea9c7a98cfd0feba96fe5afe}} 
+\index{fi\+::\+View@{fi\+::\+View}!get\+Data@{get\+Data}}
+\index{get\+Data@{get\+Data}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{get\+Data()}{getData()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+User\+Type$\ast$ \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the pointer to the view. 
+
+\begin{DoxyReturn}{Returns}
+The pointer to the view 
+\end{DoxyReturn}
+
+
+Definition at line 169 of file View.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dd4/classfi_1_1View_a8fd719fcea9c7a98cfd0feba96fe5afe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1View_ae904f2103857876c460a3d9cb09c463b}\label{classfi_1_1View_ae904f2103857876c460a3d9cb09c463b}} 
+\index{fi\+::\+View@{fi\+::\+View}!get\+Global\+X\+Offset@{get\+Global\+X\+Offset}}
+\index{get\+Global\+X\+Offset@{get\+Global\+X\+Offset}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{get\+Global\+X\+Offset()}{getGlobalXOffset()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::get\+Global\+X\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get Global Tile X Offset. 
+
+\begin{DoxyNote}{Note}
+Only used to map DO N\+OT U\+SE with Get\+Pixel 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Global Tile X Offset 
+\end{DoxyReturn}
+
+
+Definition at line 127 of file View.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{d5/dd4/classfi_1_1View_ae904f2103857876c460a3d9cb09c463b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1View_a6cb46dcea151973eb4ebc0160586b16e}\label{classfi_1_1View_a6cb46dcea151973eb4ebc0160586b16e}} 
+\index{fi\+::\+View@{fi\+::\+View}!get\+Global\+Y\+Offset@{get\+Global\+Y\+Offset}}
+\index{get\+Global\+Y\+Offset@{get\+Global\+Y\+Offset}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{get\+Global\+Y\+Offset()}{getGlobalYOffset()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::get\+Global\+Y\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get Global Tile Y Offset. 
+
+\begin{DoxyNote}{Note}
+Only used to map DO N\+OT U\+SE with Get\+Pixel 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Global Tile Y Offset 
+\end{DoxyReturn}
+
+
+Definition at line 134 of file View.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d5/dd4/classfi_1_1View_a6cb46dcea151973eb4ebc0160586b16e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1View_aafc262cff3e6af06f7c626bc4a0da4cf}\label{classfi_1_1View_aafc262cff3e6af06f7c626bc4a0da4cf}} 
+\index{fi\+::\+View@{fi\+::\+View}!get\+Leading\+Dimension@{get\+Leading\+Dimension}}
+\index{get\+Leading\+Dimension@{get\+Leading\+Dimension}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{get\+Leading\+Dimension()}{getLeadingDimension()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::get\+Leading\+Dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the leading dimension. 
+
+\begin{DoxyReturn}{Returns}
+Leading dimension 
+\end{DoxyReturn}
+
+
+Definition at line 177 of file View.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dd4/classfi_1_1View_aafc262cff3e6af06f7c626bc4a0da4cf_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1View_a5b05f97a8d0a58a8126911a0467f4544}\label{classfi_1_1View_a5b05f97a8d0a58a8126911a0467f4544}} 
+\index{fi\+::\+View@{fi\+::\+View}!get\+Pixel@{get\+Pixel}}
+\index{get\+Pixel@{get\+Pixel}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{get\+Pixel()}{getPixel()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+User\+Type \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::get\+Pixel (\begin{DoxyParamCaption}\item[{const int32\+\_\+t \&}]{row\+Asked,  }\item[{const int32\+\_\+t \&}]{col\+Asked }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the pixel value from it local coordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row\+Asked} & Row coordinate\textquotesingle{}s pixel \\
+\hline
+{\em col\+Asked} & Column coordinate\textquotesingle{}s pixel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Shout be only use with local coordinates 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The pixel value 
+\end{DoxyReturn}
+
+
+Definition at line 143 of file View.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dd4/classfi_1_1View_a5b05f97a8d0a58a8126911a0467f4544_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1View_af386d23db727519b0016bb885061e5f4}\label{classfi_1_1View_af386d23db727519b0016bb885061e5f4}} 
+\index{fi\+::\+View@{fi\+::\+View}!get\+Pointer\+Tile@{get\+Pointer\+Tile}}
+\index{get\+Pointer\+Tile@{get\+Pointer\+Tile}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{get\+Pointer\+Tile()}{getPointerTile()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+User\+Type$\ast$ \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::get\+Pointer\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the pointer to the central tile. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the central tile 
+\end{DoxyReturn}
+
+
+Definition at line 163 of file View.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d5/dd4/classfi_1_1View_af386d23db727519b0016bb885061e5f4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1View_a0e586b5f01729eb97c6358b02426c50b}\label{classfi_1_1View_a0e586b5f01729eb97c6358b02426c50b}} 
+\index{fi\+::\+View@{fi\+::\+View}!get\+Pyramid\+Level@{get\+Pyramid\+Level}}
+\index{get\+Pyramid\+Level@{get\+Pyramid\+Level}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{get\+Pyramid\+Level()}{getPyramidLevel()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::get\+Pyramid\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the pyramid level the view come from. 
+
+\begin{DoxyReturn}{Returns}
+Pyramid level 
+\end{DoxyReturn}
+
+
+Definition at line 173 of file View.\+h.
+
+\mbox{\Hypertarget{classfi_1_1View_a5fb12e145b33bc8b27a58d56d23fb774}\label{classfi_1_1View_a5fb12e145b33bc8b27a58d56d23fb774}} 
+\index{fi\+::\+View@{fi\+::\+View}!get\+Radius@{get\+Radius}}
+\index{get\+Radius@{get\+Radius}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{get\+Radius()}{getRadius()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::get\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the \hyperlink{classfi_1_1View}{View} Radius. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classfi_1_1View}{View} Radius 
+\end{DoxyReturn}
+
+
+Definition at line 122 of file View.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dd4/classfi_1_1View_a5fb12e145b33bc8b27a58d56d23fb774_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1View_a42316b387625b552c0ea5b9c01df49b2}\label{classfi_1_1View_a42316b387625b552c0ea5b9c01df49b2}} 
+\index{fi\+::\+View@{fi\+::\+View}!get\+Row@{get\+Row}}
+\index{get\+Row@{get\+Row}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{get\+Row()}{getRow()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::get\+Row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get row grid index of the view\textquotesingle{}s tile. 
+
+\begin{DoxyReturn}{Returns}
+Row grid index of the view\textquotesingle{}s tile 
+\end{DoxyReturn}
+
+
+Definition at line 110 of file View.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d5/dd4/classfi_1_1View_a42316b387625b552c0ea5b9c01df49b2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1View_a08d9c1b251ce6ce11ff51cde2046a84d}\label{classfi_1_1View_a08d9c1b251ce6ce11ff51cde2046a84d}} 
+\index{fi\+::\+View@{fi\+::\+View}!get\+Tile\+Height@{get\+Tile\+Height}}
+\index{get\+Tile\+Height@{get\+Tile\+Height}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{get\+Tile\+Height()}{getTileHeight()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+int32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::get\+Tile\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get Tile height of pixels coming from the file. 
+
+\begin{DoxyNote}{Note}
+Differ from the tile height from the fast image which is the tile height from the file 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Tile height of pixels coming from the file 
+\end{DoxyReturn}
+
+
+Definition at line 106 of file View.\+h.
+
+\mbox{\Hypertarget{classfi_1_1View_a0bfbcd904e7ed80b9f4ed92403825fc4}\label{classfi_1_1View_a0bfbcd904e7ed80b9f4ed92403825fc4}} 
+\index{fi\+::\+View@{fi\+::\+View}!get\+Tile\+Width@{get\+Tile\+Width}}
+\index{get\+Tile\+Width@{get\+Tile\+Width}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{get\+Tile\+Width()}{getTileWidth()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+int32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::get\+Tile\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get Tile width of pixels coming from the image. 
+
+\begin{DoxyNote}{Note}
+Differ from the tile width from the fast image which is the tile width from the file 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Tile Width of pixels coming from the file 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file View.\+h.
+
+\mbox{\Hypertarget{classfi_1_1View_ad56a6ba2d23c2352403e9e36526a163b}\label{classfi_1_1View_ad56a6ba2d23c2352403e9e36526a163b}} 
+\index{fi\+::\+View@{fi\+::\+View}!get\+View\+Height@{get\+View\+Height}}
+\index{get\+View\+Height@{get\+View\+Height}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{get\+View\+Height()}{getViewHeight()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::get\+View\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get view height in px. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classfi_1_1View}{View} height in px 
+\end{DoxyReturn}
+
+
+Definition at line 94 of file View.\+h.
+
+\mbox{\Hypertarget{classfi_1_1View_aa2682cae27645a080fb51ce39d1667b4}\label{classfi_1_1View_aa2682cae27645a080fb51ce39d1667b4}} 
+\index{fi\+::\+View@{fi\+::\+View}!get\+View\+Width@{get\+View\+Width}}
+\index{get\+View\+Width@{get\+View\+Width}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{get\+View\+Width()}{getViewWidth()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::get\+View\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get view width in px. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classfi_1_1View}{View} width in px 
+\end{DoxyReturn}
+
+
+Definition at line 90 of file View.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dd4/classfi_1_1View_aa2682cae27645a080fb51ce39d1667b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1View_a45cf9767af7b68e813e166d24acab720}\label{classfi_1_1View_a45cf9767af7b68e813e166d24acab720}} 
+\index{fi\+::\+View@{fi\+::\+View}!init@{init}}
+\index{init@{init}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::init (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{classfi_1_1HTGSViewRequestData}{fi\+::\+H\+T\+G\+S\+View\+Request\+Data}$<$ User\+Type $>$$>$ \&}]{view\+Request,  }\item[{\hyperlink{namespacefi_a6808b618c85d179a330ca388162215bd}{Filling\+Type}}]{filling\+Type = {\ttfamily \hyperlink{namespacefi_a6808b618c85d179a330ca388162215bdae8225b11842409df543692aebed34fd1}{Filling\+Type\+::\+F\+I\+LL}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes the view with the information contained in the view request and the tile size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em view\+Request} & \hyperlink{classfi_1_1View}{View} request information to initialize the view \\
+\hline
+{\em filling\+Type} & Filling used to complete the ghost region \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 183 of file View.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{d5/dd4/classfi_1_1View_a45cf9767af7b68e813e166d24acab720_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1View_a227f31e08d755d67e364967ceb3a1758}\label{classfi_1_1View_a227f31e08d755d67e364967ceb3a1758}} 
+\index{fi\+::\+View@{fi\+::\+View}!is\+Local\+Coordinate\+Correct@{is\+Local\+Coordinate\+Correct}}
+\index{is\+Local\+Coordinate\+Correct@{is\+Local\+Coordinate\+Correct}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{is\+Local\+Coordinate\+Correct()}{isLocalCoordinateCorrect()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+bool \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::is\+Local\+Coordinate\+Correct (\begin{DoxyParamCaption}\item[{const int32\+\_\+t \&}]{row\+Asked,  }\item[{const int32\+\_\+t \&}]{col\+Asked }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Test if the local coordinate is in the view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row\+Asked} & Row asked in picture coordinate \\
+\hline
+{\em col\+Asked} & Global asked in picture coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the coordinates are in the view, else false 
+\end{DoxyReturn}
+
+
+Definition at line 305 of file View.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dd4/classfi_1_1View_a227f31e08d755d67e364967ceb3a1758_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{d5/dd4/classfi_1_1View_a227f31e08d755d67e364967ceb3a1758_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1View_a8ed9ab561cde1f356fab4500e987ad46}\label{classfi_1_1View_a8ed9ab561cde1f356fab4500e987ad46}} 
+\index{fi\+::\+View@{fi\+::\+View}!set\+Pixel@{set\+Pixel}}
+\index{set\+Pixel@{set\+Pixel}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{set\+Pixel()}{setPixel()}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+void \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::set\+Pixel (\begin{DoxyParamCaption}\item[{const int32\+\_\+t \&}]{row\+Asked,  }\item[{const int32\+\_\+t \&}]{col\+Asked,  }\item[{const User\+Type \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set a pixel in the view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row\+Asked} & Pixel\textquotesingle{}s row \\
+\hline
+{\em col\+Asked} & Pixel\textquotesingle{}s col \\
+\hline
+{\em value} & value to set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 153 of file View.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dd4/classfi_1_1View_a8ed9ab561cde1f356fab4500e987ad46_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classfi_1_1View_a80b5a6c2350a5cdc15eef29a0ab11035}\label{classfi_1_1View_a80b5a6c2350a5cdc15eef29a0ab11035}} 
+\index{fi\+::\+View@{fi\+::\+View}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classfi_1_1View}{View}$<$ User\+Type $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output operator stream to print a view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Stream to put the view information \\
+\hline
+{\em data} & The View\+Data to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the output stream with the information 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Used for debugging only 
+\end{DoxyNote}
+
+
+Definition at line 209 of file View.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classfi_1_1View_a96a3a09cea8cdc605c758d6bc63e989a}\label{classfi_1_1View_a96a3a09cea8cdc605c758d6bc63e989a}} 
+\index{fi\+::\+View@{fi\+::\+View}!\+\_\+data@{\+\_\+data}}
+\index{\+\_\+data@{\+\_\+data}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{\+\_\+data}{\_data}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+User\+Type$\ast$ \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Augmented Tile, Tile w/ a ghost region. 
+
+
+
+Definition at line 277 of file View.\+h.
+
+\mbox{\Hypertarget{classfi_1_1View_a97df6aed1697d0a729fe0fc051fd8bcc}\label{classfi_1_1View_a97df6aed1697d0a729fe0fc051fd8bcc}} 
+\index{fi\+::\+View@{fi\+::\+View}!\+\_\+max\+Col\+Center\+Tile\+Global@{\+\_\+max\+Col\+Center\+Tile\+Global}}
+\index{\+\_\+max\+Col\+Center\+Tile\+Global@{\+\_\+max\+Col\+Center\+Tile\+Global}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{\+\_\+max\+Col\+Center\+Tile\+Global}{\_maxColCenterTileGlobal}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::\+\_\+max\+Col\+Center\+Tile\+Global \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Column maximum in the central tile in global coordinate. 
+
+
+
+Definition at line 293 of file View.\+h.
+
+\mbox{\Hypertarget{classfi_1_1View_ab13cc15a780703ce9854a3a01f744f89}\label{classfi_1_1View_ab13cc15a780703ce9854a3a01f744f89}} 
+\index{fi\+::\+View@{fi\+::\+View}!\+\_\+max\+Col\+Center\+Tile\+Local@{\+\_\+max\+Col\+Center\+Tile\+Local}}
+\index{\+\_\+max\+Col\+Center\+Tile\+Local@{\+\_\+max\+Col\+Center\+Tile\+Local}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{\+\_\+max\+Col\+Center\+Tile\+Local}{\_maxColCenterTileLocal}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+int32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::\+\_\+max\+Col\+Center\+Tile\+Local \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Column maximum in the central tile in local coordinate. 
+
+
+
+Definition at line 299 of file View.\+h.
+
+\mbox{\Hypertarget{classfi_1_1View_add201fdbd6c6975e38ae826e11afaa78}\label{classfi_1_1View_add201fdbd6c6975e38ae826e11afaa78}} 
+\index{fi\+::\+View@{fi\+::\+View}!\+\_\+max\+Row\+Center\+Tile\+Global@{\+\_\+max\+Row\+Center\+Tile\+Global}}
+\index{\+\_\+max\+Row\+Center\+Tile\+Global@{\+\_\+max\+Row\+Center\+Tile\+Global}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{\+\_\+max\+Row\+Center\+Tile\+Global}{\_maxRowCenterTileGlobal}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::\+\_\+max\+Row\+Center\+Tile\+Global \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Row maximum in the central tile in global coordinate. 
+
+
+
+Definition at line 291 of file View.\+h.
+
+\mbox{\Hypertarget{classfi_1_1View_aadafc4e11a0a12776eb0d5dd776dfab7}\label{classfi_1_1View_aadafc4e11a0a12776eb0d5dd776dfab7}} 
+\index{fi\+::\+View@{fi\+::\+View}!\+\_\+max\+Row\+Center\+Tile\+Local@{\+\_\+max\+Row\+Center\+Tile\+Local}}
+\index{\+\_\+max\+Row\+Center\+Tile\+Local@{\+\_\+max\+Row\+Center\+Tile\+Local}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{\+\_\+max\+Row\+Center\+Tile\+Local}{\_maxRowCenterTileLocal}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+int32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::\+\_\+max\+Row\+Center\+Tile\+Local \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Row maximum in the central tile in local coordinate. 
+
+
+
+Definition at line 297 of file View.\+h.
+
+\mbox{\Hypertarget{classfi_1_1View_a711f41125a37607525f34f84f729d702}\label{classfi_1_1View_a711f41125a37607525f34f84f729d702}} 
+\index{fi\+::\+View@{fi\+::\+View}!\+\_\+min\+Col\+Center\+Tile\+Global@{\+\_\+min\+Col\+Center\+Tile\+Global}}
+\index{\+\_\+min\+Col\+Center\+Tile\+Global@{\+\_\+min\+Col\+Center\+Tile\+Global}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{\+\_\+min\+Col\+Center\+Tile\+Global}{\_minColCenterTileGlobal}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::\+\_\+min\+Col\+Center\+Tile\+Global \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Column minimum in the central tile in global coordinate. 
+
+
+
+Definition at line 289 of file View.\+h.
+
+\mbox{\Hypertarget{classfi_1_1View_a56cf8c8b40c17e7530f64bfbceb744df}\label{classfi_1_1View_a56cf8c8b40c17e7530f64bfbceb744df}} 
+\index{fi\+::\+View@{fi\+::\+View}!\+\_\+min\+Row\+Center\+Tile\+Global@{\+\_\+min\+Row\+Center\+Tile\+Global}}
+\index{\+\_\+min\+Row\+Center\+Tile\+Global@{\+\_\+min\+Row\+Center\+Tile\+Global}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{\+\_\+min\+Row\+Center\+Tile\+Global}{\_minRowCenterTileGlobal}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::\+\_\+min\+Row\+Center\+Tile\+Global \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Row minimum in the central tile in global coordinate. 
+
+
+
+Definition at line 287 of file View.\+h.
+
+\mbox{\Hypertarget{classfi_1_1View_aafa2b86f9582cb59b60418b904abb5b2}\label{classfi_1_1View_aafa2b86f9582cb59b60418b904abb5b2}} 
+\index{fi\+::\+View@{fi\+::\+View}!\+\_\+view\+Height@{\+\_\+view\+Height}}
+\index{\+\_\+view\+Height@{\+\_\+view\+Height}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{\+\_\+view\+Height}{\_viewHeight}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::\+\_\+view\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tile height in pixel. 
+
+
+
+Definition at line 283 of file View.\+h.
+
+\mbox{\Hypertarget{classfi_1_1View_aea86565df8c8407afd3192d5a21a7821}\label{classfi_1_1View_aea86565df8c8407afd3192d5a21a7821}} 
+\index{fi\+::\+View@{fi\+::\+View}!\+\_\+view\+Request\+Data@{\+\_\+view\+Request\+Data}}
+\index{\+\_\+view\+Request\+Data@{\+\_\+view\+Request\+Data}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{\+\_\+view\+Request\+Data}{\_viewRequestData}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+std\+::shared\+\_\+ptr$<$\hyperlink{classfi_1_1HTGSViewRequestData}{fi\+::\+H\+T\+G\+S\+View\+Request\+Data}$<$User\+Type$>$ $>$ \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::\+\_\+view\+Request\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+View\+Request creating the view. 
+
+
+
+Definition at line 280 of file View.\+h.
+
+\mbox{\Hypertarget{classfi_1_1View_a44c92ac3b13fbad8e0cc0ae0cca6efc8}\label{classfi_1_1View_a44c92ac3b13fbad8e0cc0ae0cca6efc8}} 
+\index{fi\+::\+View@{fi\+::\+View}!\+\_\+view\+Width@{\+\_\+view\+Width}}
+\index{\+\_\+view\+Width@{\+\_\+view\+Width}!fi\+::\+View@{fi\+::\+View}}
+\subsubsection{\texorpdfstring{\+\_\+view\+Width}{\_viewWidth}}
+{\footnotesize\ttfamily template$<$typename User\+Type$>$ \\
+uint32\+\_\+t \hyperlink{classfi_1_1View}{fi\+::\+View}$<$ User\+Type $>$\+::\+\_\+view\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tile width in pixel. 
+
+
+
+Definition at line 283 of file View.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/anb22/\+Documents/\+Fast-\/\+Image/\+Fast\+Image/src/\+Fast\+Image/api/\hyperlink{View_8h}{View.\+h}\end{DoxyCompactItemize}

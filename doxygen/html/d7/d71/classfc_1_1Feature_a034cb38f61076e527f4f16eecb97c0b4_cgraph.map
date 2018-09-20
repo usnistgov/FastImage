@@ -1,0 +1,5 @@
+<map id="fc::Feature::getMinCoord" name="fc::Feature::getMinCoord">
+<area shape="rect" id="node2" href="$d7/d71/classfc_1_1Feature.html#ac5793261f78e3cd9ec934b1f70ef4725" title="Bounding box getter. " alt="" coords="220,5,408,32"/>
+<area shape="rect" id="node3" href="$db/dc1/classfc_1_1BoundingBox.html#a21e8dcad0b3d37aa0a37c6dab4200974" title="Getter to the upper left column. " alt="" coords="225,57,403,98"/>
+<area shape="rect" id="node4" href="$db/dc1/classfc_1_1BoundingBox.html#a921418d145cc148a50d599b51447215a" title="Getter to the upper left row. " alt="" coords="225,122,403,163"/>
+</map>

@@ -1,0 +1,122 @@
+\hypertarget{classfc_1_1UnionFind}{}\section{fc\+:\+:Union\+Find$<$ T $>$ Class Template Reference}
+\label{classfc_1_1UnionFind}\index{fc\+::\+Union\+Find$<$ T $>$@{fc\+::\+Union\+Find$<$ T $>$}}
+
+
+Templatized Union-\/\+Find algorithm as described \href{https://en.wikipedia.org/wiki/Disjoint-set_data_structure}{\tt https\+://en.\+wikipedia.\+org/wiki/\+Disjoint-\/set\+\_\+data\+\_\+structure}.  
+
+
+
+
+{\ttfamily \#include $<$Fast\+Image/\+Feature\+Collection/tools/\+Union\+Find.\+h$>$}
+
+
+
+Collaboration diagram for fc\+:\+:Union\+Find$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{df/df4/classfc_1_1UnionFind__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$ \hyperlink{classfc_1_1UnionFind_afea42f5456053c1185991449afeedb01}{find} (T $\ast$elem)
+\begin{DoxyCompactList}\small\item\em Find the element parent, and compress the path. \end{DoxyCompactList}\item 
+void \hyperlink{classfc_1_1UnionFind_af2a4f58739f658a16006fb023a6fa9fc}{union\+Elements} (T $\ast$elem1, T $\ast$elem2)
+\begin{DoxyCompactList}\small\item\em Unify to elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class fc\+::\+Union\+Find$<$ T $>$}
+
+Templatized Union-\/\+Find algorithm as described \href{https://en.wikipedia.org/wiki/Disjoint-set_data_structure}{\tt https\+://en.\+wikipedia.\+org/wiki/\+Disjoint-\/set\+\_\+data\+\_\+structure}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & File type \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 50 of file Union\+Find.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classfc_1_1UnionFind_afea42f5456053c1185991449afeedb01}\label{classfc_1_1UnionFind_afea42f5456053c1185991449afeedb01}} 
+\index{fc\+::\+Union\+Find@{fc\+::\+Union\+Find}!find@{find}}
+\index{find@{find}!fc\+::\+Union\+Find@{fc\+::\+Union\+Find}}
+\subsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T$\ast$ \hyperlink{classfc_1_1UnionFind}{fc\+::\+Union\+Find}$<$ T $>$\+::find (\begin{DoxyParamCaption}\item[{T $\ast$}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Find the element parent, and compress the path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & Element to look for the parent \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this if has not parent or parent address 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file Union\+Find.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d13/classfc_1_1UnionFind_afea42f5456053c1185991449afeedb01_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfc_1_1UnionFind_af2a4f58739f658a16006fb023a6fa9fc}\label{classfc_1_1UnionFind_af2a4f58739f658a16006fb023a6fa9fc}} 
+\index{fc\+::\+Union\+Find@{fc\+::\+Union\+Find}!union\+Elements@{union\+Elements}}
+\index{union\+Elements@{union\+Elements}!fc\+::\+Union\+Find@{fc\+::\+Union\+Find}}
+\subsubsection{\texorpdfstring{union\+Elements()}{unionElements()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classfc_1_1UnionFind}{fc\+::\+Union\+Find}$<$ T $>$\+::union\+Elements (\begin{DoxyParamCaption}\item[{T $\ast$}]{elem1,  }\item[{T $\ast$}]{elem2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Unify to elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem1} & element 1 to unify \\
+\hline
+{\em elem2} & element 2 to unify \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file Union\+Find.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d13/classfc_1_1UnionFind_af2a4f58739f658a16006fb023a6fa9fc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d13/classfc_1_1UnionFind_af2a4f58739f658a16006fb023a6fa9fc_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/anb22/\+Documents/\+Fast-\/\+Image/\+Fast\+Image/src/\+Fast\+Image/\+Feature\+Collection/tools/\hyperlink{UnionFind_8h}{Union\+Find.\+h}\end{DoxyCompactItemize}

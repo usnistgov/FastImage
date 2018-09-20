@@ -1,0 +1,9 @@
+<map id="fc::FeatureCollection::FeatureCollection" name="fc::FeatureCollection::FeatureCollection">
+<area shape="rect" id="node2" href="$d9/d78/classfc_1_1FeatureCollection.html#aad397b4427b4c8805e3330cda59330ef" title="Deserialize a feature collection from a file. " alt="" coords="196,39,339,80"/>
+<area shape="rect" id="node3" href="$d7/d71/classfc_1_1Feature.html#a6ea5b6e3e6d14f29a6faa9b4464f8d4b" title="Deserialize a Feature from an input file stream. " alt="" coords="387,5,541,47"/>
+<area shape="rect" id="node6" href="$d9/d78/classfc_1_1FeatureCollection.html#ae2de0cf9672c5391f54b4882b86b57a2" title="Preprocessing function to call to build an AABB tree as soon as all the feature have been added..." alt="" coords="393,71,535,112"/>
+<area shape="rect" id="node4" href="$db/dc1/classfc_1_1BoundingBox.html#acdd286d48651286d78c1b1eabe2357c9" title="Deserialize a bounding box from a file. " alt="" coords="589,5,777,47"/>
+<area shape="rect" id="node5" href="$db/dc1/classfc_1_1BoundingBox.html#a521a34a72d4e4786d4c5e910b7334407" title="Bounding box constructor. " alt="" coords="825,13,1028,39"/>
+<area shape="rect" id="node7" href="$d9/d78/classfc_1_1FeatureCollection.html#a95ca2ce4b95b45a67b9cfec99cd686f2" title="Get Image Width. " alt="" coords="612,71,755,112"/>
+<area shape="rect" id="node8" href="$d9/d78/classfc_1_1FeatureCollection.html#a592c9d590dda0d84725ca48a0463143b" title="Get Image Height. " alt="" coords="612,136,755,177"/>
+</map>

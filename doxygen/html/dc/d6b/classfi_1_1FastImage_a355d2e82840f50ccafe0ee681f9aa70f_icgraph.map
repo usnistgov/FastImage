@@ -1,0 +1,10 @@
+<map id="fi::FastImage::getImageHeight" name="fi::FastImage::getImageHeight">
+<area shape="rect" id="node2" href="$dc/d6b/classfi_1_1FastImage.html#a84984ae1d928ef604866f126ed0a583b" title="Get number of tiles in a column. " alt="" coords="260,137,431,178"/>
+<area shape="rect" id="node4" href="$d9/d78/classfc_1_1FeatureCollection.html#acc38a1542fc4dc04175961140677ac51" title="Create a feature collection from a mask. " alt="" coords="745,24,887,65"/>
+<area shape="rect" id="node6" href="$dc/d6b/classfi_1_1FastImage.html#abd44908134edad1df4a61faec9cdbf9e" title="Request a specific feature into a features collection. " alt="" coords="719,246,913,272"/>
+<area shape="rect" id="node8" href="$dc/d6b/classfi_1_1FastImage.html#a40fb0f9749893a6e04548ee778ee5c1a" title="Send a View request to the ViewLoader about the tile at coordinate (indexTileRow, indexTileCol) ..." alt="" coords="487,195,671,222"/>
+<area shape="rect" id="node9" href="$dc/d6b/classfi_1_1FastImage.html#a9a2d39cfad1bbc8a1b5d573a5249cb68" title="Get the image size in Bytes. " alt="" coords="252,348,439,389"/>
+<area shape="rect" id="node3" href="$dc/d6b/classfi_1_1FastImage.html#aa2ae5e5498f57462abd876108a55475c" title="Set up and run the graph. " alt="" coords="499,28,659,69"/>
+<area shape="rect" id="node5" href="$dc/d6b/classfi_1_1FastImage.html#a595c22ba44ba635133c7a20cbd4e2d13" title="Request a tile. " alt="" coords="731,98,901,124"/>
+<area shape="rect" id="node7" href="$dc/d6b/classfi_1_1FastImage.html#a81c5c39784220efcebce2121a6552e53" title="Request all tiles following a traversal. " alt="" coords="733,166,899,208"/>
+</map>

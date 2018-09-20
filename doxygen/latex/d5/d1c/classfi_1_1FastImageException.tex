@@ -1,0 +1,190 @@
+\hypertarget{classfi_1_1FastImageException}{}\section{fi\+:\+:Fast\+Image\+Exception Class Reference}
+\label{classfi_1_1FastImageException}\index{fi\+::\+Fast\+Image\+Exception@{fi\+::\+Fast\+Image\+Exception}}
+
+
+Exception specialized for Fast Image.  
+
+
+
+
+{\ttfamily \#include $<$Fast\+Image/exception/\+Fast\+Image\+Exception.\+h$>$}
+
+
+
+Inheritance diagram for fi\+:\+:Fast\+Image\+Exception\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{d2/df2/classfi_1_1FastImageException__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for fi\+:\+:Fast\+Image\+Exception\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{d2/d8d/classfi_1_1FastImageException__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfi_1_1FastImageException_a0c33cb505f265f4f5a8501500b90795a}{Fast\+Image\+Exception} (std\+::string message=\char`\"{}\char`\"{}) noexcept
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1FastImageException}{Fast\+Image\+Exception} constructor. \end{DoxyCompactList}\item 
+\hyperlink{classfi_1_1FastImageException_a96ff2db20c0f2ba43ed962afa999c5fb}{Fast\+Image\+Exception} (\hyperlink{classfi_1_1FastImageException}{Fast\+Image\+Exception} \&\&exception) noexcept
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1FastImageException}{Fast\+Image\+Exception} copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classfi_1_1FastImageException_aee6254b5bad18046029c39f4d7688463}{$\sim$\+Fast\+Image\+Exception} () noexcept override=default
+\begin{DoxyCompactList}\small\item\em \hyperlink{classfi_1_1FastImageException}{Fast\+Image\+Exception} destructor. \end{DoxyCompactList}\item 
+const std\+::string \& \hyperlink{classfi_1_1FastImageException_afea494cd1b0bfe73da9eb6865228aec3}{get\+\_\+message} () const
+\begin{DoxyCompactList}\small\item\em Message getter. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{classfi_1_1FastImageException_ac07476e6ffb78d5411865012d9527a93}{what} () const noexcept override
+\begin{DoxyCompactList}\small\item\em Returns a C-\/style character string describing the general cause of the current error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classfi_1_1FastImageException_aae758858090a83245d8bd58fd86aab6e}{\+\_\+message}
+\begin{DoxyCompactList}\small\item\em Error message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Exception specialized for Fast Image. 
+
+Definition at line 52 of file Fast\+Image\+Exception.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfi_1_1FastImageException_a0c33cb505f265f4f5a8501500b90795a}\label{classfi_1_1FastImageException_a0c33cb505f265f4f5a8501500b90795a}} 
+\index{fi\+::\+Fast\+Image\+Exception@{fi\+::\+Fast\+Image\+Exception}!Fast\+Image\+Exception@{Fast\+Image\+Exception}}
+\index{Fast\+Image\+Exception@{Fast\+Image\+Exception}!fi\+::\+Fast\+Image\+Exception@{fi\+::\+Fast\+Image\+Exception}}
+\subsubsection{\texorpdfstring{Fast\+Image\+Exception()}{FastImageException()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily fi\+::\+Fast\+Image\+Exception\+::\+Fast\+Image\+Exception (\begin{DoxyParamCaption}\item[{std\+::string}]{message = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+
+\hyperlink{classfi_1_1FastImageException}{Fast\+Image\+Exception} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Exception message \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file Fast\+Image\+Exception.\+h.
+
+\mbox{\Hypertarget{classfi_1_1FastImageException_a96ff2db20c0f2ba43ed962afa999c5fb}\label{classfi_1_1FastImageException_a96ff2db20c0f2ba43ed962afa999c5fb}} 
+\index{fi\+::\+Fast\+Image\+Exception@{fi\+::\+Fast\+Image\+Exception}!Fast\+Image\+Exception@{Fast\+Image\+Exception}}
+\index{Fast\+Image\+Exception@{Fast\+Image\+Exception}!fi\+::\+Fast\+Image\+Exception@{fi\+::\+Fast\+Image\+Exception}}
+\subsubsection{\texorpdfstring{Fast\+Image\+Exception()}{FastImageException()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily fi\+::\+Fast\+Image\+Exception\+::\+Fast\+Image\+Exception (\begin{DoxyParamCaption}\item[{\hyperlink{classfi_1_1FastImageException}{Fast\+Image\+Exception} \&\&}]{exception }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+\hyperlink{classfi_1_1FastImageException}{Fast\+Image\+Exception} copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em exception} & \hyperlink{classfi_1_1FastImageException}{Fast\+Image\+Exception} to copy \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file Fast\+Image\+Exception.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d1c/classfi_1_1FastImageException_a96ff2db20c0f2ba43ed962afa999c5fb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfi_1_1FastImageException_aee6254b5bad18046029c39f4d7688463}\label{classfi_1_1FastImageException_aee6254b5bad18046029c39f4d7688463}} 
+\index{fi\+::\+Fast\+Image\+Exception@{fi\+::\+Fast\+Image\+Exception}!````~Fast\+Image\+Exception@{$\sim$\+Fast\+Image\+Exception}}
+\index{````~Fast\+Image\+Exception@{$\sim$\+Fast\+Image\+Exception}!fi\+::\+Fast\+Image\+Exception@{fi\+::\+Fast\+Image\+Exception}}
+\subsubsection{\texorpdfstring{$\sim$\+Fast\+Image\+Exception()}{~FastImageException()}}
+{\footnotesize\ttfamily fi\+::\+Fast\+Image\+Exception\+::$\sim$\+Fast\+Image\+Exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+
+
+\hyperlink{classfi_1_1FastImageException}{Fast\+Image\+Exception} destructor. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d1c/classfi_1_1FastImageException_aee6254b5bad18046029c39f4d7688463_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classfi_1_1FastImageException_afea494cd1b0bfe73da9eb6865228aec3}\label{classfi_1_1FastImageException_afea494cd1b0bfe73da9eb6865228aec3}} 
+\index{fi\+::\+Fast\+Image\+Exception@{fi\+::\+Fast\+Image\+Exception}!get\+\_\+message@{get\+\_\+message}}
+\index{get\+\_\+message@{get\+\_\+message}!fi\+::\+Fast\+Image\+Exception@{fi\+::\+Fast\+Image\+Exception}}
+\subsubsection{\texorpdfstring{get\+\_\+message()}{get\_message()}}
+{\footnotesize\ttfamily const std\+::string\& fi\+::\+Fast\+Image\+Exception\+::get\+\_\+message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Message getter. 
+
+\begin{DoxyReturn}{Returns}
+message 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file Fast\+Image\+Exception.\+h.
+
+\mbox{\Hypertarget{classfi_1_1FastImageException_ac07476e6ffb78d5411865012d9527a93}\label{classfi_1_1FastImageException_ac07476e6ffb78d5411865012d9527a93}} 
+\index{fi\+::\+Fast\+Image\+Exception@{fi\+::\+Fast\+Image\+Exception}!what@{what}}
+\index{what@{what}!fi\+::\+Fast\+Image\+Exception@{fi\+::\+Fast\+Image\+Exception}}
+\subsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily const char$\ast$ fi\+::\+Fast\+Image\+Exception\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [noexcept]}}
+
+
+
+Returns a C-\/style character string describing the general cause of the current error. 
+
+\begin{DoxyReturn}{Returns}
+C-\/style character string describing the general cause of the current error 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file Fast\+Image\+Exception.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{d5/d1c/classfi_1_1FastImageException_ac07476e6ffb78d5411865012d9527a93_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classfi_1_1FastImageException_aae758858090a83245d8bd58fd86aab6e}\label{classfi_1_1FastImageException_aae758858090a83245d8bd58fd86aab6e}} 
+\index{fi\+::\+Fast\+Image\+Exception@{fi\+::\+Fast\+Image\+Exception}!\+\_\+message@{\+\_\+message}}
+\index{\+\_\+message@{\+\_\+message}!fi\+::\+Fast\+Image\+Exception@{fi\+::\+Fast\+Image\+Exception}}
+\subsubsection{\texorpdfstring{\+\_\+message}{\_message}}
+{\footnotesize\ttfamily std\+::string fi\+::\+Fast\+Image\+Exception\+::\+\_\+message\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Error message. 
+
+
+
+Definition at line 81 of file Fast\+Image\+Exception.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/anb22/\+Documents/\+Fast-\/\+Image/\+Fast\+Image/src/\+Fast\+Image/exception/\hyperlink{FastImageException_8h}{Fast\+Image\+Exception.\+h}\end{DoxyCompactItemize}
