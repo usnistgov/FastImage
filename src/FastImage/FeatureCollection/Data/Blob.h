@@ -43,7 +43,7 @@
 #include <list>
 #include <iostream>
 #include <FastImage/api/FastImage.h>
-#include <FastImage/TileLoadersExamples/TiffTileLoader.h>
+#include <FastImage/TileLoaders/GrayscaleTiffTileLoader.h>
 #include <unordered_set>
 
 /// \namespace fc FeatureCollection namespace
@@ -64,6 +64,7 @@ using Coordinate = std::pair<int32_t, int32_t>;
   **/
 class Blob {
  public:
+
   /// \brief Blob construction and initialisation
   Blob()
       : _parent(this),

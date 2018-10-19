@@ -29,7 +29,7 @@
 cmake_minimum_required(VERSION 2.8.2)
 
 cmake_policy(SET CMP0048 NEW)
-project(FastImage VERSION 1.0.8)
+project(FastImage VERSION 1.0.10)
 
 set(CMAKE_CXX_STANDARD 14)
 

@@ -44,7 +44,6 @@ install(DIRECTORY FastImage
         DESTINATION include
         COMPONENT headers)
 
-
 if (BUILD_MAIN)
     find_package(HTGS REQUIRED)
     find_package(TIFF REQUIRED)

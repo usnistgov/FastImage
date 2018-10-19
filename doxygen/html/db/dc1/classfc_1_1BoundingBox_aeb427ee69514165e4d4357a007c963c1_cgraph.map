@@ -1,6 +1,0 @@
-<map id="fc::BoundingBox::BoundingBox" name="fc::BoundingBox::BoundingBox">
-<area shape="rect" id="node2" href="$db/dc1/classfc_1_1BoundingBox.html#a921418d145cc148a50d599b51447215a" title="Getter to the upper left row. " alt="" coords="260,5,439,47"/>
-<area shape="rect" id="node3" href="$db/dc1/classfc_1_1BoundingBox.html#a21e8dcad0b3d37aa0a37c6dab4200974" title="Getter to the upper left column. " alt="" coords="260,71,439,112"/>
-<area shape="rect" id="node4" href="$db/dc1/classfc_1_1BoundingBox.html#a74411180845c0572329c693170621245" title="Getter to the bottom right row. " alt="" coords="256,136,443,177"/>
-<area shape="rect" id="node5" href="$db/dc1/classfc_1_1BoundingBox.html#aedfb5b832d699a78a954c6778208414c" title="Getter to the bottom right column. " alt="" coords="256,201,443,243"/>
-</map>

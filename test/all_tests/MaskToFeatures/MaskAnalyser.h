@@ -34,7 +34,7 @@
 #define HTGS_FAST_IMAGE_MASKANALYSER_H
 
 #include <iostream>
-#include <FastImage/FeatureCollection/FeatureCollection.h>
+#include "FastImage/FeatureCollection/FeatureCollection.h"
 #include <include/gtest/gtest.h>
 
 template<typename UserType>

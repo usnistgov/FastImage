@@ -37,7 +37,7 @@
 #include <htgs/api/TaskGraphConf.hpp>
 #include <htgs/api/TaskGraphRuntime.hpp>
 #include <FastImage/memory/ViewAllocator.h>
-#include <FastImage/TileLoadersExamples/TiffTileLoader.h>
+#include <FastImage/TileLoaders/GrayscaleTiffTileLoader.h>
 #include <include/gtest/gtest.h>
 
 std::pair<htgs::TaskGraphRuntime *,
@@ -70,7 +70,7 @@ createGraphTestTileLoader(fi::ATileLoader<int> *tileLoader) {
 void testTileLoading() {
   std::vector<fi::FigCache<int> *> vCaches;
   auto cache = new fi::FigCache<int>(1);
-  auto tileLoader = new fi::TiffTileLoader<int>("mosaic.tif");
+  auto tileLoader = new fi::GrayscaleTiffTileLoader<int>("mosaic.tif");
   vCaches.push_back(cache);
   tileLoader->setCache(vCaches);
   auto pairRuntimeGraph = createGraphTestTileLoader(tileLoader);

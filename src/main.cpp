@@ -27,80 +27,8 @@
 // the United States.
 
 
-#include <memory>
-#include "FastImage/TileLoaders/GrayscaleTiffTileLoader.h"
-#include "FastImage/api/FastImage.h"
 
-void orderedProcessing(const std::string &pathImage) {
-  auto
-      *orderedFi = new fi::FastImage<uint32_t>(new fi::GrayscaleTiffTileLoader<uint32_t>(
-      pathImage,
-      50), 0);
+int main(){
 
-  orderedFi->getFastImageOptions()->setPreserveOrder(true);
-  orderedFi->getFastImageOptions()->setTraversalType(
-      fi::TraversalType::DIAGONAL);
-  orderedFi->getFastImageOptions()->setNumberOfViewParallel(50);
-  orderedFi->configureAndRun();
-  orderedFi->requestAllTiles(true);
-
-  std::cout << "Ordered Output" << std::endl;
-  while (orderedFi->isGraphProcessingTiles()) {
-    auto pView = orderedFi->getAvailableViewBlocking();
-    if (pView != nullptr) { pView->releaseMemory(); }
-  }
-  orderedFi->waitForGraphComplete();
-  delete (orderedFi);
-}
-
-void unorderedProcessing(const std::string &pathImage) {
-  auto
-      *unorderedFi =
-      new fi::FastImage<uint32_t>(new fi::GrayscaleTiffTileLoader<uint32_t>(pathImage,
-                                                                   50), 0);
-
-  unorderedFi->getFastImageOptions()->setPreserveOrder(false);
-  unorderedFi->getFastImageOptions()->setTraversalType(
-      fi::TraversalType::DIAGONAL);
-  unorderedFi->getFastImageOptions()->setNumberOfViewParallel(50);
-  unorderedFi->configureAndRun();
-  unorderedFi->requestAllTiles(true);
-
-  std::cout << "Unordered Output" << std::endl;
-  while (unorderedFi->isGraphProcessingTiles()) {
-    auto pView = unorderedFi->getAvailableViewBlocking();
-    if (pView != nullptr) {
-      pView->releaseMemory();
-    }
-  }
-  unorderedFi->waitForGraphComplete();
-
-  unorderedFi->writeGraphDotFile("unordered.dot");
-  delete (unorderedFi);
-}
-
-int main() {
-  std::string pathImage = "";
-  auto fig =
-      new fi::FastImage<float>(std::make_unique<fi::GrayscaleTiffTileLoader<float>>(
-          pathImage), 0);
-  fig->configureAndRun();
-  fig->requestTile(2, 3, true);
-  while (fig->isGraphProcessingTiles()) {
-    auto pView = fig->getAvailableViewBlocking();
-    if (pView != nullptr) {
-      auto view = pView->get();
-      try {
-        view->getPixel(1, 1);
-      } catch (fi::FastImageException &e) {
-        std::cout << e.get_message() << std::endl;
-      }
-      pView->releaseMemory();
-    }
-  }
-  delete (fig);
-
-  orderedProcessing(pathImage);
-  unorderedProcessing(pathImage);
-
+return 0;
 }

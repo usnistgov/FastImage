@@ -1,4 +1,0 @@
-<map id="fi::CachedTile::getIndexColGlobal" name="fi::CachedTile::getIndexColGlobal">
-<area shape="rect" id="node2" href="$d7/d31/classfi_1_1FigCache.html#a611074d024b48d548a84dbb08c97eb3d" title="Private function. Get Least Recently Used Tiles, clean it, and put it back in the pool..." alt="" coords="215,13,379,39"/>
-<area shape="rect" id="node3" href="$d7/d31/classfi_1_1FigCache.html#aff587e5ffcbeeab89a0ed4a0629231e3" title="Get a locked tile from the cache system. " alt="" coords="427,13,609,39"/>
-</map>

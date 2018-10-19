@@ -1,9 +1,0 @@
-<map id="fc::FeatureCollection::getImageHeight" name="fc::FeatureCollection::getImageHeight">
-<area shape="rect" id="node2" href="$d9/d78/classfc_1_1FeatureCollection.html#ae2de0cf9672c5391f54b4882b86b57a2" title="Preprocessing function to call to build an AABB tree as soon as all the feature have been added..." alt="" coords="207,37,350,79"/>
-<area shape="rect" id="node7" href="$d9/d78/classfc_1_1FeatureCollection.html#a42a98939246d7ca645dafa6694b1aaa3" title="Create a tiled tiff mask, where the pixels are the feature id. " alt="" coords="207,103,350,144"/>
-<area shape="rect" id="node8" href="$d9/d78/classfc_1_1FeatureCollection.html#a6a3df355558df392bbf54e8734975964" title="Create a tiled tiff mask, where the pixels are 1. " alt="" coords="196,168,361,209"/>
-<area shape="rect" id="node3" href="$d9/d78/classfc_1_1FeatureCollection.html#aad397b4427b4c8805e3330cda59330ef" title="Deserialize a feature collection from a file. " alt="" coords="422,5,565,47"/>
-<area shape="rect" id="node5" href="$d9/d78/classfc_1_1FeatureCollection.html#a6cb55ca9179ea92ef2dedf9f25531b77" title="fc::FeatureCollection\l::createFCFromListBlobs" alt="" coords="409,71,577,112"/>
-<area shape="rect" id="node4" href="$d9/d78/classfc_1_1FeatureCollection.html#aa5d92c395512b9dd5d6c240fa150f992" title="Open and deserialized a FC file. " alt="" coords="625,5,768,47"/>
-<area shape="rect" id="node6" href="$d9/d78/classfc_1_1FeatureCollection.html#acc38a1542fc4dc04175961140677ac51" title="Create a feature collection from a mask. " alt="" coords="625,71,768,112"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="fi::CachedTile::getData" name="fi::CachedTile::getData">
-<area shape="rect" id="node2" href="$dc/d54/classfi_1_1ATileLoader.html#ab3fb2e90d11d160e89c6b8a7df684c7f" title="Load a tile from a file, populate the current view, and send the view to the view counter..." alt="" coords="421,5,611,32"/>
-<area shape="rect" id="node4" href="$dc/d54/classfi_1_1ATileLoader.html#a69b1eaf0e9f636f756f514bd985a4cb5" title="Copy (part of or all) the cached tile to the view. " alt="" coords="211,27,373,69"/>
-<area shape="rect" id="node3" href="$dc/d54/classfi_1_1ATileLoader.html#a12929a1a82ff9cf2615e7a7420ba92c4" title="Initialize function. " alt="" coords="659,5,820,32"/>
-</map>

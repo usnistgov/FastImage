@@ -35,7 +35,7 @@
 
 #include <gtest/gtest.h>
 #include "FastImage/api/FastImage.h"
-#include "FastImage/TileLoadersExamples/TiffTileLoader.h"
+#include "FastImage/TileLoaders/GrayscaleTiffTileLoader.h"
 #include "FastImage/FeatureCollection/FeatureCollection.h"
 #include "MaskToFeatures/FloodStrategy.h"
 #include "MaskToFeatures/MaskAnalyser.h"
@@ -124,7 +124,7 @@ void testFeatureCollection() {
 };
 
 void testMosaicCreation() {
-  auto tileLoader = new fi::TiffTileLoader<uint8_t>("mask_mosaic.tif");
+  auto tileLoader = new fi::GrayscaleTiffTileLoader<uint8_t>("mask_mosaic.tif");
   auto *fi = new fi::FastImage<uint8_t>(tileLoader, 2);
   int rank = 8;
 
@@ -160,6 +160,64 @@ void testMosaicCreation() {
   ma.save("fc_mosaic.serial");
   fi->waitForGraphComplete();
   delete fi;
+}
+
+void testConnectivityAnalysis() {
+  fc::FeatureCollection
+    baseMask;
+
+  ////////// Creation specific mask ////////////////////////
+  std::vector<Region> vRegion;
+  vRegion.emplace_back(0, 15, 15, 17, 17, 4026531840);
+  vRegion.emplace_back(11, 18, 15, 19, 17, 3221225472);
+  vRegion.emplace_back(12, 20, 15, 22, 17, 1610612736);
+  vRegion.emplace_back(1, 15, 18, 17, 19, 3221225472);
+  vRegion.emplace_back(2, 15, 20, 17, 22, 1610612736);
+  vRegion.emplace_back(13, 23, 15, 25, 17, 2415919104);
+  vRegion.emplace_back(18, 26, 15, 29, 17, 3087007744);
+  vRegion.emplace_back(14, 31, 15, 33, 17, 4026531840);
+  vRegion.emplace_back(15, 31, 18, 33, 19, 3221225472);
+  vRegion.emplace_back(16, 31, 20, 33, 22, 2415919104);
+  vRegion.emplace_back(3, 15, 23, 17, 25, 2415919104);
+  vRegion.emplace_back(4, 15, 26, 17, 29, 3892314112);
+  vRegion.emplace_back(5, 15, 31, 17, 33, 4026531840);
+  vRegion.emplace_back(6, 18, 31, 19, 33, 3221225472);
+  vRegion.emplace_back(7, 20, 31, 22, 33, 2415919104);
+  vRegion.emplace_back(17, 31, 23, 33, 25, 1610612736);
+  vRegion.emplace_back(19, 31, 26, 33, 29, 1543503872);
+  vRegion.emplace_back(8, 23, 31, 25, 33, 1610612736);
+  vRegion.emplace_back(9, 26, 31, 29, 33, 1946157056);
+  vRegion.emplace_back(10, 31, 31, 33, 33, 4026531840);
+
+  for (auto region :vRegion) {
+    baseMask.addFeature(region._id,
+                    fc::BoundingBox(region._ULR,
+                                    region._ULC,
+                                    region._BRR,
+                                    region._BRC),
+                    region._region);
+  }
+
+  baseMask.setImageHeight(48);
+  baseMask.setImageWidth(48);
+
+  baseMask.preProcessing();
+
+  for (auto region : vRegion) {
+    delete[] region._region;
+  }
+
+  baseMask.createBlackWhiteMask("maskConnectivity.tiff", 16);
+
+  /////////// Creation FCs .////////////////////////
+  fc::FeatureCollection
+      fc4(new fi::GrayscaleTiffTileLoader<uint8_t>("maskConnectivity.tiff"), 4),
+      fc8(new fi::GrayscaleTiffTileLoader<uint8_t>("maskConnectivity.tiff"), 8);
+
+  ////////// Test /////////////////////
+
+  ASSERT_EQ(fc4.getVectorFeatures().size(), 28);
+  ASSERT_EQ(fc8.getVectorFeatures().size(), 20);
 }
 
 #endif //FASTIMAGE_TESTFEATURECOLLECTION_H

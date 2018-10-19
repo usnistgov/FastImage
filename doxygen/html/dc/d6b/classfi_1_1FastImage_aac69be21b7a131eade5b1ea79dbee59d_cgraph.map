@@ -1,5 +1,0 @@
-<map id="fi::FastImage::waitForGraphComplete" name="fi::FastImage::waitForGraphComplete">
-<area shape="rect" id="node2" href="$dc/db9/classfi_1_1FastImage_1_1Options.html#a3cfa4c38cdb0b2018c812bbcb8e9dd63" title="Get if is finish sent. " alt="" coords="505,5,696,47"/>
-<area shape="rect" id="node3" href="$dc/d6b/classfi_1_1FastImage.html#af123b9f6554040faab14dcb0a06e2b84" title="Indicate to the system no more request will be done. " alt="" coords="239,64,457,105"/>
-<area shape="rect" id="node4" href="$dc/db9/classfi_1_1FastImage_1_1Options.html#a7c0ae60a439a4be02b4600618e2fcebe" title="Set if has finish requesting views. " alt="" coords="508,71,693,112"/>
-</map>

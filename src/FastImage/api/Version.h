@@ -11,6 +11,6 @@ namespace fi{
 // Fast Image Version number
 	const int MAJOR_VERSION = 1;
 	const int MINOR_VERSION = 0;
-	const int PATCH_VERSION = 8;
-	const std::string FULL_VERSION = "1.0.8"; // NOLINT
+	const int PATCH_VERSION = 10;
+	const std::string FULL_VERSION = "1.0.10"; // NOLINT
 }

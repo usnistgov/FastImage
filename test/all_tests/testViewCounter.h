@@ -34,12 +34,12 @@
 #define FASTIMAGE_TESTVIEWCOUNTER_H
 
 #include <cstdint>
-#include <FastImage/api/FastImage.h>
-#include <FastImage/TileLoadersExamples/TiffTileLoader.h>
+#include "FastImage/api/FastImage.h"
+#include "FastImage/TileLoaders/GrayscaleTiffTileLoader.h"
 #include <include/gtest/gtest.h>
 
 void testViewCounterNoRadius() {
-  auto tileLoader = new fi::TiffTileLoader<uint8_t>("mosaic.tif");
+  auto tileLoader = new fi::GrayscaleTiffTileLoader <uint8_t>("mosaic.tif");
   auto fi = new fi::FastImage<uint8_t>(tileLoader, 0);
   fi->configureAndRun();
   fi->requestTile(0, 0, true);
@@ -59,7 +59,7 @@ void testViewCounterNoRadius() {
 }
 
 void testViewCounterRadiusUL() {
-  auto tileLoader = new fi::TiffTileLoader<uint8_t>("mosaic.tif");
+  auto tileLoader = new fi::GrayscaleTiffTileLoader<uint8_t>("mosaic.tif");
   auto fi = new fi::FastImage<uint8_t>(tileLoader, 18);
   fi->configureAndRun();
   fi->requestTile(0, 0, true);
@@ -81,7 +81,7 @@ void testViewCounterRadiusUL() {
 
 void testViewCounterRadiusBR() {
   auto fi =
-      new fi::FastImage<uint8_t>(new fi::TiffTileLoader<uint8_t>("mosaic.tif"),
+      new fi::FastImage<uint8_t>(new fi::GrayscaleTiffTileLoader<uint8_t>("mosaic.tif"),
                                  14);
   fi->configureAndRun();
   fi->requestTile(2, 3, true);

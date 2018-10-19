@@ -1,8 +1,0 @@
-<map id="fi::FastImage::Options::isFinishedRequestingViews" name="fi::FastImage::Options::isFinishedRequestingViews">
-<area shape="rect" id="node2" href="$dc/d6b/classfi_1_1FastImage.html#af123b9f6554040faab14dcb0a06e2b84" title="Indicate to the system no more request will be done. " alt="" coords="244,101,463,143"/>
-<area shape="rect" id="node3" href="$dc/d6b/classfi_1_1FastImage.html#aac69be21b7a131eade5b1ea79dbee59d" title="Wait to the graph to complete. " alt="" coords="511,5,696,47"/>
-<area shape="rect" id="node5" href="$dc/d6b/classfi_1_1FastImage.html#a595c22ba44ba635133c7a20cbd4e2d13" title="Request a tile. " alt="" coords="518,97,689,123"/>
-<area shape="rect" id="node6" href="$dc/d6b/classfi_1_1FastImage.html#a81c5c39784220efcebce2121a6552e53" title="Request all tiles following a traversal. " alt="" coords="521,148,686,189"/>
-<area shape="rect" id="node7" href="$dc/d6b/classfi_1_1FastImage.html#a9a9ebae36096801272a6a8bf8260ef05" title="Test if the system has finished sending tiles. " alt="" coords="270,219,437,260"/>
-<area shape="rect" id="node4" href="$dc/d6b/classfi_1_1FastImage.html#a694492eb7802678db82993d8d087604b" title="FastImage destructor. " alt="" coords="744,13,921,39"/>
-</map>

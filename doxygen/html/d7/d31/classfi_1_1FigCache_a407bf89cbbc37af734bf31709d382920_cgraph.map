@@ -1,5 +1,0 @@
-<map id="fi::FigCache::getNewLockedTile" name="fi::FigCache::getNewLockedTile">
-<area shape="rect" id="node2" href="$d0/dbc/classfi_1_1CachedTile.html#a996218bd6a061692288167946515b93b" title="Lock the tile. " alt="" coords="276,5,411,32"/>
-<area shape="rect" id="node3" href="$d0/dbc/classfi_1_1CachedTile.html#ad95876a2ad4b7bd2199c9645047d8e4c" title="Setter to column index of the tile in the image. " alt="" coords="263,57,424,98"/>
-<area shape="rect" id="node4" href="$d0/dbc/classfi_1_1CachedTile.html#a18d2ea689e777d9d341fa09564edc752" title="Setter to row index of the tile in the image. " alt="" coords="263,122,424,163"/>
-</map>

@@ -33,11 +33,9 @@ obtain performance across CPUs and big images.
 
 2) HTGS (https://github.com/usnistgov/htgs)
 
-3) LibTIFF (http://www.simplesystems.org/libtiff/) [optional / TileLoader]
+3) LibTIFF (http://www.simplesystems.org/libtiff/)
 
-4) libpng (http://www.libpng.org/) [optional / TileLoader]
-
-5) doxygen (www.doxygen.org/) [optional / Documentation]
+4) doxygen (www.doxygen.org/) [optional / Documentation]
 
 ## Building Fast Image
 **CMake Options:**
@@ -176,49 +174,22 @@ The following methods need to be implemented:
 Here a Tile Loader for Greyscale Tiled Tiff:
 
 ```cpp
-template<typename UserType>
-class TiffTileLoader : public ATileLoader<UserType> {
- private:
-  TIFF *
-      _tiff = nullptr;
-
-  uint32_t
-      _imageHeight = 0,
-      _imageWidth = 0,
-      _tileHeight = 0,
-      _tileWidth = 0;
-
-  short
-      _sampleFormat = 0,
-      _bitsPerSample = 0;
-
-  // Copy Constructor used by copyTileLoader
-  TiffTileLoader(size_t numThreads, const std::string &filePath, const TiffTileLoader &from)
-      : ATileLoader<UserType>(filePath, numThreads) {
-    this->_tiff = TIFFOpen(filePath.c_str(), "r");
-    this->_imageWidth = from._imageWidth;
-    this->_imageHeight = from._imageHeight;
-    this->_tileWidth = from._tileWidth;
-    this->_tileHeight = from._tileHeight;
-    this->_bitsPerSample = from._bitsPerSample;
-    this->_sampleFormat = from._sampleFormat;
-  }
-
- public:
-  // Tile Loader constructor where the actual file is open
-  TiffTileLoader(const std::string &fileName, size_t numThreads = 1) : ATileLoader<UserType>(fileName,
-                                                                                             numThreads) {
+explicit GrayscaleTiffTileLoader(const std::string &fileName,
+                                   size_t numThreads = 1)
+      : ATileLoader<UserType>(fileName,
+                              numThreads) {
     short samplesPerPixel = 0;
 
+    // Open the file
     this->_tiff = TIFFOpen(fileName.c_str(), "r");
     if (this->_tiff != nullptr) {
       if (TIFFIsTiled(_tiff) == 0) {
         std::stringstream message;
         message << "Tile Loader ERROR: The image is not tiled.";
-        auto messageChr = new char[message.str().length() + 1];
-        strcpy(messageChr, message.str().c_str());
-        throw (FastImageException(messageChr));
+        std::string m = message.str();
+        throw (FastImageException(m));
       }
+      // Load/parse header
       TIFFGetField(this->_tiff, TIFFTAG_IMAGEWIDTH, &(this->_imageWidth));
       TIFFGetField(this->_tiff, TIFFTAG_IMAGELENGTH, &(this->_imageHeight));
       TIFFGetField(this->_tiff, TIFFTAG_TILEWIDTH, &this->_tileWidth);
@@ -227,15 +198,17 @@ class TiffTileLoader : public ATileLoader<UserType> {
       TIFFGetField(this->_tiff, TIFFTAG_BITSPERSAMPLE, &(this->_bitsPerSample));
       TIFFGetField(this->_tiff, TIFFTAG_SAMPLEFORMAT, &(this->_sampleFormat));
 
+      // Test if the file is greyscale
       if (samplesPerPixel != 1) {
         std::stringstream message;
-        message << "Tile Loader ERROR: The image is not greyscale: SamplesPerPixel = " << samplesPerPixel
-                << ".";
-        auto messageChr = new char[message.str().length() + 1];
-        strcpy(messageChr, message.str().c_str());
-        throw (FastImageException(messageChr));
+        message
+            << "Tile Loader ERROR: The image is not greyscale: "
+               "SamplesPerPixel = " << samplesPerPixel << ".";
+        std::string m = message.str();
+        throw (FastImageException(m));
       }
 
+      // Interpret undefined data format as unsigned integer data
       if (_sampleFormat < 1 && _sampleFormat > 3) {
         _sampleFormat = 1;
       }
@@ -243,44 +216,103 @@ class TiffTileLoader : public ATileLoader<UserType> {
     } else {
       std::stringstream message;
       message << "Tile Loader ERROR: The image can not be opened.";
-      auto messageChr = new char[message.str().length() + 1];
-      strcpy(messageChr, message.str().c_str());
-      throw (FastImageException(messageChr));
+      std::string m = message.str();
+      throw (FastImageException(m));
     }
   }
 
-  ~TiffTileLoader() {
+  /// \brief TiffTileLoader default destructor
+  /// \details Destroy a GrayscaleTiffTileLoader and close the underlined file
+  ~GrayscaleTiffTileLoader() {
     if (this->_tiff != nullptr) {
       TIFFClose(this->_tiff);
     }
   }
 
-  // Differents getter specific to the file format
-  std::string getName() override { return "TIFF Tile Loader"; }
-  uint32_t getImageHeight(uint32_t level = 0) const override { return _imageHeight; }
-  uint32_t getImageWidth(uint32_t level = 0) const override { return _imageWidth; }
-  uint32_t getTileWidth(uint32_t level = 0) const override { return _tileWidth; }
-  uint32_t getTileHeight(uint32_t level = 0) const override { return _tileHeight; }
-  short getBitsPerSample() const override { return _bitsPerSample; }
+  /// \brief Get Image height
+  /// \return Image height in px
+  uint32_t getImageHeight(uint32_t level = 0) const override {
+    return _imageHeight;
+  }
+
+  /// \brief Get Image width
+  /// \return Image width in px
+  uint32_t getImageWidth(uint32_t level = 0) const override {
+    return _imageWidth;
+  }
+
+  /// \brief Get tile width
+  /// \return Tile width in px
+  uint32_t getTileWidth(uint32_t level = 0) const override {
+    return _tileWidth;
+  }
+
+  /// \brief Get tile height
+  /// \return Tile height in px
+  uint32_t getTileHeight(uint32_t level = 0) const override {
+    return _tileHeight;
+  }
+
+  /// \brief Get the bits per sample from the file
+  /// \details Return the number of bits per sample as defined in the libtiff library:
+  /// https://www.awaresystems.be/imaging/tiff/tifftags/bitspersample.html
+  /// \return the number of bits per sample
+  short getBitsPerSample() const override {
+    return _bitsPerSample;
+  }
+
+  /// \brief Getter to the number of pyramids levels
+  /// \details Get the number of pyramids levels, in this case 1, because the
+  /// assumption is the image is planar
+  /// \return
   uint32_t getNbPyramidLevels() const override { return 1; }
 
+  /// \brief Loader to the tile with a specific cast
+  /// \brief Load a specific tile from the file into a tile buffer,
+  /// casting each pixels from  FileType to UserType
+  /// \tparam FileType Type deduced from the file
+  /// \param src Source data buffer
+  /// \param dest Tile buffer
   template<typename FileType>
   void loadTile(tdata_t src, UserType *dest) {
     for (uint32_t row = 0; row < _tileHeight; ++row) {
       for (uint32_t col = 0; col < _tileWidth; ++col) {
-        dest[row * _tileWidth + col] = (UserType) ((FileType *) (src))[row * _tileWidth + col];
+        dest[row * _tileWidth + col] =
+            (UserType) ((FileType *) (src))[row * _tileWidth + col];
       }
     }
   }
 
-  // Load the tile from the file 
-  double loadTileFromFile(UserType *tile, uint32_t indexRowGlobalTile, uint32_t indexColGlobalTile) override {
+  /// \brief Get down scale Factor for pyramid images. The tiff image for this
+  /// loader are not pyramids, so return 1
+  /// \param level level to ask--> Not used
+  /// \return 1
+  float getDownScaleFactor(uint32_t level = 0) override { return 1; }
+
+  /// \brief Load a tile from the disk
+  /// \details Allocate a buffer, load a tile from the file into the buffer,
+  /// cast each pixel to the right format into parameter tile, and close
+  /// the buffer.
+  /// \param tile Pointer to a tile already allocated to fill
+  /// \param indexRowGlobalTile Row index tile asked
+  /// \param indexColGlobalTile Column Index tile asked
+  /// \return Duration in mS to load a tile from the disk, use for statistics
+  /// purpose
+  double loadTileFromFile(UserType *tile,
+                          uint32_t indexRowGlobalTile,
+                          uint32_t indexColGlobalTile) override {
     tdata_t tiffTile = nullptr;
     tiffTile = _TIFFmalloc(TIFFTileSize(_tiff));
     auto begin = std::chrono::high_resolution_clock::now();
-    TIFFReadTile(_tiff, tiffTile, indexColGlobalTile * _tileWidth, indexRowGlobalTile * _tileHeight, 0, 0);
+    TIFFReadTile(_tiff,
+                 tiffTile,
+                 indexColGlobalTile * _tileWidth,
+                 indexRowGlobalTile * _tileHeight,
+                 0,
+                 0);
     auto end = std::chrono::high_resolution_clock::now();
-    double diskDuration = (std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin).count());
+    double diskDuration = (std::chrono::duration_cast<std::chrono::nanoseconds>(
+        end - begin).count());
     std::stringstream message;
     switch (this->_sampleFormat) {
       case 1 :
@@ -294,11 +326,12 @@ class TiffTileLoader : public ATileLoader<UserType> {
           case 64:loadTile<uint64_t>(tiffTile, tile);
             break;
           default:
-            message << "Tile Loader ERROR: The data format is not supported for unsigned integer, "
-                "number bits per pixel = " << this->_bitsPerSample;
-            auto messageChr = new char[message.str().length() + 1];
-            strcpy(messageChr, message.str().c_str());
-            throw (FastImageException(messageChr));
+            message
+                << "Tile Loader ERROR: The data format is not supported for "
+                   "unsigned integer, number bits per pixel = "
+                << this->_bitsPerSample;
+            std::string m = message.str();
+            throw (FastImageException(m));
         }
         break;
       case 2:
@@ -312,11 +345,12 @@ class TiffTileLoader : public ATileLoader<UserType> {
           case 64:loadTile<int64_t>(tiffTile, tile);
             break;
           default:
-            message << "Tile Loader ERROR: The data format is not supported for signed integer, "
-                "number bits per pixel = " << this->_bitsPerSample;
-            auto messageChr = new char[message.str().length() + 1];
-            strcpy(messageChr, message.str().c_str());
-            throw (FastImageException(messageChr));
+            message
+                << "Tile Loader ERROR: The data format is not supported for "
+                   "signed integer, number bits per pixel = "
+                << this->_bitsPerSample;
+            std::string m = message.str();
+            throw (FastImageException(m));
         }
         break;
       case 3:
@@ -330,30 +364,70 @@ class TiffTileLoader : public ATileLoader<UserType> {
           case 64:loadTile<double>(tiffTile, tile);
             break;
           default:
-            message << "Tile Loader ERROR: The data format is not supported for float, "
-                "number bits per pixel = " << this->_bitsPerSample;
-            auto messageChr = new char[message.str().length() + 1];
-            strcpy(messageChr, message.str().c_str());
-            throw (FastImageException(messageChr));
+            message
+                << "Tile Loader ERROR: The data format is not supported for "
+                   "float, number bits per pixel = " << this->_bitsPerSample;
+            std::string m = message.str();
+            throw (FastImageException(m));
         }
         break;
       default:
-        message << "Tile Loader ERROR: The data format is not supported, sample format = "
-                << this->_sampleFormat;
-        auto messageChr = new char[message.str().length() + 1];
-        strcpy(messageChr, message.str().c_str());
-        throw (FastImageException(messageChr));
+        message
+            << "Tile Loader ERROR: The data format is not supported, sample "
+               "format = " << this->_sampleFormat;
+        std::string m = message.str();
+        throw (FastImageException(m));
     }
+
     _TIFFfree(tiffTile);
     return diskDuration;
   }
 
-  // Copy the Tile Loader
+  /// \brief Copy function used by HTGS to use multiple Tile Loader
+  /// \return  A new ATileLoader copied
   ATileLoader<UserType> *copyTileLoader() override {
-    return new TiffTileLoader<UserType>(this->getNumThreads(), this->getFilePath(), *this);
+    return new GrayscaleTiffTileLoader<UserType>(this->getNumThreads(),
+                                                 this->getFilePath(),
+                                                 *this);
   }
+
+  /// \brief Get the name of the tile loader
+  /// \return Name of the tile loader
+  std::string getName() override {
+    return "TIFF Tile Loader";
+  }
+
+ private:
+  /// \brief TiffTileLoader constructor used by the copy operator
+  /// \param numThreads Number of thread used by the tiff tile loader
+  /// \param filePath File path
+  /// \param from Origin TiffTileLoader
+  GrayscaleTiffTileLoader(size_t numThreads,
+                          const std::string &filePath,
+                          const GrayscaleTiffTileLoader &from)
+      : ATileLoader<UserType>(filePath, numThreads) {
+    this->_tiff = TIFFOpen(filePath.c_str(), "r");
+    this->_imageWidth = from._imageWidth;
+    this->_imageHeight = from._imageHeight;
+    this->_tileWidth = from._tileWidth;
+    this->_tileHeight = from._tileHeight;
+    this->_bitsPerSample = from._bitsPerSample;
+    this->_sampleFormat = from._sampleFormat;
+  }
+
+  TIFF *
+      _tiff = nullptr;             ///< Tiff file pointer
+
+  uint32_t
+      _imageHeight = 0,           ///< Image height in pixel
+      _imageWidth = 0,            ///< Image width in pixel
+      _tileHeight = 0,            ///< Tile height
+      _tileWidth = 0;             ///< Tile width
+
+  short
+      _sampleFormat = 0,          ///< Sample format as defined by libtiff
+      _bitsPerSample = 0;         ///< Bit Per Sample as defined by libtiff
 };
-}
 ```
 
 ## Getting started
@@ -366,7 +440,7 @@ The code in this section is only PSEUDOCODE, and is not meant to be executed as 
 Here a little program to go through all the pixel in a tiled greyscale tiff image:
 ```cpp
 // Tile loader creation depending on the image
-fi::ATileLoader<uint32_t> *tileLoader = new fi::TiffTileLoader<uint32_t>(pathImage); 
+fi::ATileLoader<uint32_t> *tileLoader = new fi::GrayscaleTiffTileLoader<uint32_t>(pathImage); 
 
 // Fast Image accessor creation
 auto *fi = new fi::FastImage<uint32_t>(tileLoader, 0);
@@ -419,7 +493,7 @@ double sigma = 2;
 int32_t sizeKernel = radius * 2 + 1;
 
 
-fi::ATileLoader<uint32_t> *tileLoader = new fi::TiffTileLoader<uint32_t>(pathImage); // Tile loader creation depending on the image
+fi::ATileLoader<uint32_t> *tileLoader = new fi::GrayscaleTiffTileLoader<uint32_t>(pathImage); // Tile loader creation depending on the image
 auto *fi = new fi::FastImage<uint32_t>(tileLoader, 0); // Fast Image accessor creation
 
 std::vector<double> kernel = gaussian(radiusKernel, sigma); // Kernel creation 
@@ -470,7 +544,7 @@ double sigma = 2;
 int32_t sizeKernel = radius * 2 + 1;
 
 
-fi::ATileLoader<uint32_t> *tileLoader = new fi::TiffTileLoader<uint32_t>(pathImage); // Tile loader creation depending on the image
+fi::ATileLoader<uint32_t> *tileLoader = new fi::GrayscaleTiffTileLoader<uint32_t>(pathImage); // Tile loader creation depending on the image
 auto *fi = new fi::FastImage<uint32_t>(tileLoader, 0); // Fast Image accessor creation
 
 Mat kernel = gaussian(radius, sigma, CV_32F); // Kernel creation 
@@ -515,7 +589,7 @@ delete (fi)
 
 This code go through a tiled greyscale tiff image (kernel creation and tile writing are not showed) through is mask. A full example is given in the fast image example. 
 ```cpp
-fi::ATileLoader<uint32_t> *tileLoader = new fi::TiffTileLoader<uint32_t>(pathImage); // Tile loader creation depending on the image
+fi::ATileLoader<uint32_t> *tileLoader = new fi::GrayscaleTiffTileLoader<uint32_t>(pathImage); // Tile loader creation depending on the image
 auto *fi = new fi::FastImage<uint32_t>(tileLoader, 0); // Fast Image accessor creation
 
 // Feature Collection creation 

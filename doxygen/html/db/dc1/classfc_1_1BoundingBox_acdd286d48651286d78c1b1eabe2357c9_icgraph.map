@@ -1,5 +1,0 @@
-<map id="fc::BoundingBox::deserializeBoundingBox" name="fc::BoundingBox::deserializeBoundingBox">
-<area shape="rect" id="node2" href="$d7/d71/classfc_1_1Feature.html#a6ea5b6e3e6d14f29a6faa9b4464f8d4b" title="Deserialize a Feature from an input file stream. " alt="" coords="241,5,396,47"/>
-<area shape="rect" id="node3" href="$d9/d78/classfc_1_1FeatureCollection.html#aad397b4427b4c8805e3330cda59330ef" title="Deserialize a feature collection from a file. " alt="" coords="444,5,587,47"/>
-<area shape="rect" id="node4" href="$d9/d78/classfc_1_1FeatureCollection.html#aa5d92c395512b9dd5d6c240fa150f992" title="Open and deserialized a FC file. " alt="" coords="635,5,777,47"/>
-</map>

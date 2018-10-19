@@ -263,8 +263,7 @@ class Feature {
   /// \return True is the feature are equal, else False
   bool operator==(const Feature &other) const {
     bool answer = true;
-    if (this->getId() == other.getId()
-        && this->_nbElementsBitMask == other._nbElementsBitMask) {
+    if (this->_nbElementsBitMask == other._nbElementsBitMask) {
       for (uint32_t elem = 0; elem < this->_nbElementsBitMask; ++elem) {
         answer = answer && (this->_bitMask[elem] == other._bitMask[elem]);
       }

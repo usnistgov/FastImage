@@ -59,7 +59,7 @@ template<class UserType>
 class ViewAnalyser : public htgs::ITask<htgs::MemoryData<fi::View<UserType>>,
                                         ViewAnalyse> {
  public:
-  /// \brief View analyser constructor, create a view analyser from the mask 
+  /// \brief View analyser constructor, create a view analyser from the mask
   /// information
   /// \param numThreads Number of threads the view analyser will be executed in 
   /// parallel
@@ -186,9 +186,8 @@ class ViewAnalyser : public htgs::ITask<htgs::MemoryData<fi::View<UserType>>,
 
     // Add a pixel to to merge if the bottom-right pixel is outside of the tile, 
     // but had a foreground value
-    if (row + 1 == _tileHeight
-        && row + _view->getGlobalYOffset() + 1 != _imageHeight
-        && col + 1 == _tileWidth
+    if ((col == _tileWidth - 1 || row == _tileHeight - 1) &&
+        row + _view->getGlobalYOffset() + 1 != _imageHeight
         && col + _view->getGlobalXOffset() + 1 != _imageWidth) {
       if (_view->getPixel(row + 1, col + 1) != _background) {
         _vAnalyse->addToMerge(_currentBlob,
@@ -200,7 +199,8 @@ class ViewAnalyser : public htgs::ITask<htgs::MemoryData<fi::View<UserType>>,
 
     // Add a pixel to to merge if the top-right pixel is outside of the tile, 
     // but had a foreground value
-    if (row == 0 && row + _view->getGlobalYOffset() > 0 && col + 1 == _tileWidth
+    if ((row == 0 || col == _tileWidth - 1)
+        && row + _view->getGlobalYOffset() > 0
         && col + _view->getGlobalXOffset() + 1 != _imageWidth) {
       if (_view->getPixel(row - 1, col + 1) != _background) {
         _vAnalyse->addToMerge(_currentBlob,
@@ -211,12 +211,13 @@ class ViewAnalyser : public htgs::ITask<htgs::MemoryData<fi::View<UserType>>,
     }
   }
 
+
+
   /// \brief Execute the task, do a view analyse
   /// \param view View given by the FI
   void executeTask(std::shared_ptr<MemoryData<fi::View<UserType>>> view)
   override {
     _view = view->get();
-
     //Set tup the environment for the tile
     _tileHeight = _view->getTileHeight();
     _tileWidth = _view->getTileWidth();
@@ -238,6 +239,8 @@ class ViewAnalyser : public htgs::ITask<htgs::MemoryData<fi::View<UserType>>,
           _currentBlob->addPixel(
               _view->getGlobalYOffset() + neighbourCoord.first,
               _view->getGlobalXOffset() + neighbourCoord.second);
+
+
           if (_rank == 4) {
             analyseNeighbour4(neighbourCoord.first, neighbourCoord.second);
           } else {
@@ -253,8 +256,9 @@ class ViewAnalyser : public htgs::ITask<htgs::MemoryData<fi::View<UserType>>,
 
         // Test if the current pixel need to be visited
         if (needVisit(row, col)) {
-          //Create a blob for it
           _currentBlob = new Blob();
+
+          //Create a blob for it
           _currentBlob->addPixel(_view->getGlobalYOffset() + row,
                                  _view->getGlobalXOffset() + col);
           _view->setPixel(row, col, _background);
@@ -310,7 +314,7 @@ class ViewAnalyser : public htgs::ITask<htgs::MemoryData<fi::View<UserType>>,
 
   uint8_t
       _rank{};                      ///< Rank to the connectivity:
-  ///< 4=> 4-connectivity, 8=> 8-connectivity
+                                    ///< 4=> 4-connectivity, 8=> 8-connectivity
 
   int32_t
       _tileHeight{},                ///< Tile actual height

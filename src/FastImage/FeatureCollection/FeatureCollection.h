@@ -87,23 +87,23 @@ class FeatureCollection {
   /// [default 4 * std::thread::hardware_concurrency()]
   /// \note The Tile Loader that is sent into the FeatureCollection
   /// will be deleted.
-  template<class FileType>
-  explicit FeatureCollection(fi::ATileLoader<FileType> *tileLoader,
+  template<class UserType>
+  explicit FeatureCollection(fi::ATileLoader<UserType> *tileLoader,
                              uint8_t rank = 8,
-                             FileType background = 0,
+                             UserType background = 0,
                              uint32_t numberOfThreadsParallel =
                              std::thread::hardware_concurrency(),
                              uint32_t numberOfViewParallel = 4
                                  * std::thread::hardware_concurrency())
       : _imageWidth(0), _imageHeight(0) {
-    fi::FastImage<FileType> *
+    fi::FastImage<UserType> *
         fi;              //< Fast Image object going through the mask
 
     uint32_t
         imageHeight,     //< Image Height
         imageWidth;      //< Image Width
 
-    htgs::TaskGraphConf<htgs::MemoryData<fi::View<FileType>>, ListBlobs>
+    htgs::TaskGraphConf<htgs::MemoryData<fi::View<UserType>>, ListBlobs>
         *analyseGraph;  //< Analyse graph
 
     htgs::TaskGraphRuntime
@@ -113,7 +113,7 @@ class FeatureCollection {
     try {
       //Create the Fast image and get the info from it
       //The radius of 1 is used to make the link between the tiles
-      fi = new fi::FastImage<FileType>(tileLoader, 1);
+      fi = new fi::FastImage<UserType>(tileLoader, 1);
       fi->getFastImageOptions()->setNumberOfViewParallel(numberOfViewParallel);
       fi->configureAndRun();
       imageHeight = fi->getImageHeight();
@@ -131,9 +131,9 @@ class FeatureCollection {
     }
 
     // Create the analyse graph
-    analyseGraph = new htgs::TaskGraphConf<htgs::MemoryData<fi::View<FileType>>,
+    analyseGraph = new htgs::TaskGraphConf<htgs::MemoryData<fi::View<UserType>>,
                                            ListBlobs>;
-    auto viewAnalyseTask = new ViewAnalyser<FileType>(numberOfThreadsParallel,
+    auto viewAnalyseTask = new ViewAnalyser<UserType>(numberOfThreadsParallel,
                                                       fi,
                                                       rank,
                                                       background);
@@ -361,21 +361,20 @@ class FeatureCollection {
   /// \return True if equal, else False
   bool operator==(FeatureCollection &fc) {
     bool answer = true;
+    auto b = fc._vectorFeatures.begin();
+    auto e = fc._vectorFeatures.end();
+
     if (this->_vectorFeatures.size() == fc._vectorFeatures.size()) {
-      std::sort(this->begin(),
-                this->end(),
-                [](Feature &a, Feature &b) { return a.getId() < b.getId(); });
-      std::sort(fc.begin(),
-                fc.end(),
-                [](Feature &a, Feature &b) { return a.getId() < b.getId(); });
-      for (auto a = this->begin(), b = fc.begin();
-           a != this->end() && b != fc.end(); ++a, b++) {
-        if ((*a) != (*b)) {
+      for(auto feature = this->_vectorFeatures.begin(); feature != this->_vectorFeatures.end() && answer; ++feature){
+        if(std::find(b,e, *feature) == e){
           answer = false;
-          break;
         }
       }
-    } else { answer = false; }
+
+    } else {
+      answer = false;
+    }
+
     return answer;
   }
 
@@ -397,7 +396,7 @@ class FeatureCollection {
         imageHeight = this->getImageHeight();
 
     // Create two tiles pointer: one empty, one to be filled
-    std::vector<uint32_t>
+    std::vector<uint32_t >
         *emptyTile = new std::vector<uint32_t>(tileSize * tileSize, 0),
         *currentTile = nullptr;
 
@@ -436,6 +435,7 @@ class FeatureCollection {
       TIFFSetField(tif, TIFFTAG_TILEWIDTH, tileSize);
       TIFFSetField(tif, TIFFTAG_BITSPERSAMPLE, 8 * sizeof(uint32_t));
       TIFFSetField(tif, TIFFTAG_ROWSPERSTRIP, 1);
+      TIFFSetField(tif, TIFFTAG_SAMPLESPERPIXEL, 1);
       TIFFSetField(tif, TIFFTAG_SAMPLEFORMAT, SAMPLEFORMAT_UINT);
       TIFFSetField(tif, TIFFTAG_PLANARCONFIG, PLANARCONFIG_CONTIG);
       TIFFSetField(tif, TIFFTAG_COMPRESSION, COMPRESSION_NONE);
@@ -602,6 +602,7 @@ class FeatureCollection {
       TIFFSetField(tif, TIFFTAG_TILEWIDTH, tileSize);
       TIFFSetField(tif, TIFFTAG_BITSPERSAMPLE, 8 * sizeof(uint8_t));
       TIFFSetField(tif, TIFFTAG_ROWSPERSTRIP, 1);
+      TIFFSetField(tif, TIFFTAG_SAMPLESPERPIXEL, 1);
       TIFFSetField(tif, TIFFTAG_SAMPLEFORMAT, SAMPLEFORMAT_UINT);
       TIFFSetField(tif, TIFFTAG_PLANARCONFIG, PLANARCONFIG_CONTIG);
       TIFFSetField(tif, TIFFTAG_COMPRESSION, COMPRESSION_NONE);

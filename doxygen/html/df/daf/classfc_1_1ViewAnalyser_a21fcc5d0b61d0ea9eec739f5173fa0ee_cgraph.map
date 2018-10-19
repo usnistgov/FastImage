@@ -1,9 +1,0 @@
-<map id="fc::ViewAnalyser::executeTask" name="fc::ViewAnalyser::executeTask">
-<area shape="rect" id="node2" href="$d2/d7e/classfc_1_1Blob.html#a01be7313665ad198c73220165a008f2b" title="Add a pixel to the blob and update blob metadata. " alt="" coords="286,5,411,32"/>
-<area shape="rect" id="node4" href="$df/daf/classfc_1_1ViewAnalyser.html#a8ae4286b034a9f4b99f7b629d5fbed95" title="Analyse the neighbour of a pixel for a 4&#45;connectivity. " alt="" coords="261,173,436,214"/>
-<area shape="rect" id="node5" href="$df/daf/classfc_1_1ViewAnalyser.html#a3e64703fb8f40d4bb4953be268f1afb9" title="Test if a pixel need to be visited. " alt="" coords="495,115,678,141"/>
-<area shape="rect" id="node7" href="$df/daf/classfc_1_1ViewAnalyser.html#ae29f29bef0e7b1b7ccc48f0f6be593ae" title="Analyse the neighbour of a pixel for a 8&#45;connectivity. " alt="" coords="261,107,436,149"/>
-<area shape="rect" id="node8" href="$d8/d72/classfc_1_1ViewAnalyse.html#a3e319a372ebecb594a2d728a110f1be5" title="Insert a blob to the list of blobs. " alt="" coords="257,239,440,265"/>
-<area shape="rect" id="node3" href="$d2/d7e/classfc_1_1Blob.html#a4c9d015ad9326b4f5688af7ae190e613" title="Add a pixel to the sparse matrix. " alt="" coords="515,5,658,32"/>
-<area shape="rect" id="node6" href="$d8/d72/classfc_1_1ViewAnalyse.html#ab1138c97855a370559dd6df6521529c7" title="Add an entry to the to merge structure. " alt="" coords="488,172,685,199"/>
-</map>

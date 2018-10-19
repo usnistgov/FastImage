@@ -1,6 +1,0 @@
-<map id="fi::FastImage::finishedRequestingTiles" name="fi::FastImage::finishedRequestingTiles">
-<area shape="rect" id="node2" href="$dc/d6b/classfi_1_1FastImage.html#aac69be21b7a131eade5b1ea79dbee59d" title="Wait to the graph to complete. " alt="" coords="272,5,457,47"/>
-<area shape="rect" id="node4" href="$dc/d6b/classfi_1_1FastImage.html#a595c22ba44ba635133c7a20cbd4e2d13" title="Request a tile. " alt="" coords="279,71,450,98"/>
-<area shape="rect" id="node5" href="$dc/d6b/classfi_1_1FastImage.html#a81c5c39784220efcebce2121a6552e53" title="Request all tiles following a traversal. " alt="" coords="282,123,447,164"/>
-<area shape="rect" id="node3" href="$dc/d6b/classfi_1_1FastImage.html#a694492eb7802678db82993d8d087604b" title="FastImage destructor. " alt="" coords="505,13,683,39"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="fi::Traversal::rot" name="fi::Traversal::rot">
-<area shape="rect" id="node2" href="$d8/d0e/classfi_1_1Traversal.html#a2f0459d7872d143e8b8d750ac14d4d7c" title="Function used in the hilbert algorithm. " alt="" coords="168,5,295,32"/>
-<area shape="rect" id="node3" href="$d8/d0e/classfi_1_1Traversal.html#a77545ba72aaf6831409ce8bcc399a7eb" title="Generate a hilbert _traversal filled with a snake. " alt="" coords="343,5,532,32"/>
-<area shape="rect" id="node4" href="$d8/d0e/classfi_1_1Traversal.html#a789f0f9a1641ac219367922fb9fc8fb0" title="Construct a traversal, from it type and the image dimension. " alt="" coords="580,5,733,32"/>
-</map>

@@ -1,3 +1,0 @@
-<map id="fc::AABBTree&lt; ObjectT &gt;" name="fc::AABBTree&lt; ObjectT &gt;">
-<area shape="rect" id="node2" href="$db/d18/classfc_1_1AABBTree.html" title="{fc::AABBTree\&lt; fc::Feature \&gt;\n|&#45; maxNodeSize\l&#45; aabbTree\l&#45; sortedObjects\l|+ AABBTree()\l+ ~AABBTree()\l+ preprocess()\l+ objectsContain()\l&#45; computeAABBBounds()\l&#45; splitAABBNode()\l}" alt="" coords="5,248,196,428"/>
-</map>

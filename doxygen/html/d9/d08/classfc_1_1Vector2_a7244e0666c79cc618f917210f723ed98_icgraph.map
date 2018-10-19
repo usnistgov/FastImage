@@ -1,7 +1,0 @@
-<map id="fc::Vector2::setY" name="fc::Vector2::setY">
-<area shape="rect" id="node2" href="$d9/d08/classfc_1_1Vector2.html#a4923fcc5867390a449fcb4b93cb2d0c7" title="fc::Vector2\&lt; T \&gt;::setJ" alt="" coords="191,5,342,32"/>
-<area shape="rect" id="node3" href="$d9/d08/classfc_1_1Vector2.html#a5aec5245348bcf0d5e5dda71b9178001" title="fc::Vector2\&lt; T \&gt;::setXY" alt="" coords="185,56,348,83"/>
-<area shape="rect" id="node4" href="$d9/d08/classfc_1_1Vector2.html#a045f037481473f7cd9abe09f8b552021" title="fc::Vector2\&lt; T \&gt;::capBelow" alt="" coords="175,107,358,133"/>
-<area shape="rect" id="node5" href="$d9/d08/classfc_1_1Vector2.html#a62c8f4a3f1909857834e5cc9e8342574" title="fc::Vector2\&lt; T \&gt;::capAbove" alt="" coords="175,157,359,184"/>
-<area shape="rect" id="node6" href="$d9/d08/classfc_1_1Vector2.html#a8509e8227671890c432f39cb66d1940c" title="fc::Vector2\&lt; T \&gt;::leftMatrix\lMult2x2" alt="" coords="177,209,357,250"/>
-</map>

@@ -41,7 +41,7 @@
 
 void testWholeImage() {
 
-  auto tileLoader = new fi::TiffTileLoader<int>("mosaic.tif");
+  auto tileLoader = new fi::GrayscaleTiffTileLoader<int>("mosaic.tif");
   auto fi = new fi::FastImage<int>(tileLoader, 0);
 
   int
@@ -98,7 +98,7 @@ void testWholeImage() {
 
 void testPartImage() {
   fc::FeatureCollection featureCollection;
-  auto tileLoader = new fi::TiffTileLoader<float>("mosaic.tif");
+  auto tileLoader = new fi::GrayscaleTiffTileLoader<float>("mosaic.tif");
   auto fi = new fi::FastImage<float>(tileLoader, 0);
 
   uint32_t
@@ -176,7 +176,7 @@ void testPartImage() {
 
 void testSingleTile() {
   fc::FeatureCollection featureCollection;
-  auto tileLoader = new fi::TiffTileLoader<uint8_t>("mosaic.tif");
+  auto tileLoader = new fi::GrayscaleTiffTileLoader<uint8_t>("mosaic.tif");
   auto fi = new fi::FastImage<uint8_t>(tileLoader, 0);
   uint8_t
       pixelValue;

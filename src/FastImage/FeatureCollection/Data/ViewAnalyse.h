@@ -69,7 +69,7 @@ class ViewAnalyse : public htgs::IData {
   /// \brief Add an entry to the to merge structure
   /// \param b Blob to add
   /// \param c Coordinate links to this  blob
-  void addToMerge(Blob *b, Coordinate c) { _toMerge[b].push_back(c); }
+  void addToMerge(Blob *b, Coordinate c) {_toMerge[b].push_back(c);}
 
   /// \brief Insert a blob to the list of blobs
   /// \param b blob to add

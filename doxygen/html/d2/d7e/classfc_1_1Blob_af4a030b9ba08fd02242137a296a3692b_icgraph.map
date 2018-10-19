@@ -1,5 +1,0 @@
-<map id="fc::Blob::getRowMax" name="fc::Blob::getRowMax">
-<area shape="rect" id="node2" href="$d2/d7e/classfc_1_1Blob.html#ae84692d9e132dd046b56bb6ac06dd8bb" title="Merge 2 blobs, and delete the unused one. " alt="" coords="199,5,371,32"/>
-<area shape="rect" id="node3" href="$d3/df4/classfc_1_1BlobMerger.html#a11fa980b355aa46271460f33a5cce0ac" title="Merge all the blobs from all the view analyser. " alt="" coords="419,5,569,32"/>
-<area shape="rect" id="node4" href="$d3/df4/classfc_1_1BlobMerger.html#a81af854864e9ae220ad7c5fed0eef195" title="Get the view analyse, merge them into one analyse and merge all blob to build the feature collection..." alt="" coords="617,5,808,32"/>
-</map>

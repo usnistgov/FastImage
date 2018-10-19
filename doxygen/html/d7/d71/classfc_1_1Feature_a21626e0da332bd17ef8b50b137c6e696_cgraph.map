@@ -1,7 +1,0 @@
-<map id="fc::Feature::getDistanceSqrTo" name="fc::Feature::getDistanceSqrTo">
-<area shape="rect" id="node2" href="$d9/d08/classfc_1_1Vector2.html#a982222ce26bc27601de2ba42a3a48b80" title="fc::Vector2::getI" alt="" coords="263,5,379,32"/>
-<area shape="rect" id="node3" href="$d7/d71/classfc_1_1Feature.html#ac5793261f78e3cd9ec934b1f70ef4725" title="Bounding box getter. " alt="" coords="227,56,415,83"/>
-<area shape="rect" id="node4" href="$db/dc1/classfc_1_1BoundingBox.html#a96d9180aacc790de07f07dde841e9d01" title="Getter to the middle row. " alt="" coords="216,107,425,133"/>
-<area shape="rect" id="node5" href="$d9/d08/classfc_1_1Vector2.html#a0befaabdafcb34ab8c3bc0063d0b94a3" title="fc::Vector2::getJ" alt="" coords="261,157,380,184"/>
-<area shape="rect" id="node6" href="$db/dc1/classfc_1_1BoundingBox.html#a5d829bb45a327c47b4a6d4f563cbef0c" title="Getter to the middle column. " alt="" coords="219,208,422,235"/>
-</map>

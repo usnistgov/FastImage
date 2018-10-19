@@ -35,7 +35,7 @@
 
 #include <iostream>
 #include "FastImage/api/FastImage.h"
-#include "FastImage/TileLoadersExamples/TiffTileLoader.h"
+#include "FastImage/TileLoaders/GrayscaleTiffTileLoader.h"
 bool testOrdered() {
   uint32_t
       prevRow = 0,
@@ -44,7 +44,7 @@ bool testOrdered() {
       col = 0;
 
   auto
-      *orderedFi = new fi::FastImage<uint32_t>(new fi::TiffTileLoader<uint32_t>(
+      *orderedFi = new fi::FastImage<uint32_t>(new fi::GrayscaleTiffTileLoader<uint32_t>(
       "mosaic.tif",
       50), 0);
 

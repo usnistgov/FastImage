@@ -1,7 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$dc/d51/structfc_1_1ListBlobs.html" title="Convenient class holding a list of blobs. Derived from IData. " alt="" coords="151,5,245,32"/>
-<area shape="rect" id="node3" href="$d8/d72/classfc_1_1ViewAnalyse.html" title="Describe a collection of blob in a view. Derive from IData. " alt="" coords="139,56,257,83"/>
-<area shape="rect" id="node4" href="$d6/d08/classfi_1_1HTGSTileRequestData.html" title="Data representing a tile request. " alt="" coords="112,107,284,149"/>
-<area shape="rect" id="node5" href="$da/d22/classfi_1_1HTGSViewRequestData.html" title="Data representing a view request. " alt="" coords="108,173,288,214"/>
-<area shape="rect" id="node6" href="$d5/dd4/classfi_1_1View.html" title="View used by FastImage to represent image&#39;s region. " alt="" coords="125,239,271,265"/>
-</map>

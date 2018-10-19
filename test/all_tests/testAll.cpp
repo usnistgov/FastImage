@@ -125,6 +125,7 @@ void mosaicCreation() {
 TEST(TEST_FEATURE_COLLECTION, TEST_GLOBAL_FC) {
   ASSERT_NO_FATAL_FAILURE(testFeatureCollection());
   ASSERT_NO_FATAL_FAILURE(testMosaicCreation());
+  ASSERT_NO_FATAL_FAILURE(testConnectivityAnalysis());
 }
 
 TEST(TEST_CACHE, NEW_CACHE) {

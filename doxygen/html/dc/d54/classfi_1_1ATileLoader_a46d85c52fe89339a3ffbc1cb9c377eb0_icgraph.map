@@ -1,5 +1,0 @@
-<map id="fi::ATileLoader::loadTileFromFile" name="fi::ATileLoader::loadTileFromFile">
-<area shape="rect" id="node2" href="$dc/d54/classfi_1_1ATileLoader.html#ab3fb2e90d11d160e89c6b8a7df684c7f" title="Load a tile from a file, populate the current view, and send the view to the view counter..." alt="" coords="212,5,401,32"/>
-<area shape="rect" id="node4" href="$dc/d54/classfi_1_1ATileLoader.html#a07d565eeaa7076d905a329c80c1e980c" title="Get the down scalar factor for a specific pyramid level. " alt="" coords="223,57,390,98"/>
-<area shape="rect" id="node3" href="$dc/d54/classfi_1_1ATileLoader.html#a12929a1a82ff9cf2615e7a7420ba92c4" title="Initialize function. " alt="" coords="449,5,611,32"/>
-</map>

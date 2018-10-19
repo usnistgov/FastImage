@@ -1,6 +1,0 @@
-<map id="fc::FeatureCollection::preProcessing" name="fc::FeatureCollection::preProcessing">
-<area shape="rect" id="node2" href="$d9/d78/classfc_1_1FeatureCollection.html#aad397b4427b4c8805e3330cda59330ef" title="Deserialize a feature collection from a file. " alt="" coords="209,5,351,47"/>
-<area shape="rect" id="node4" href="$d9/d78/classfc_1_1FeatureCollection.html#a6cb55ca9179ea92ef2dedf9f25531b77" title="fc::FeatureCollection\l::createFCFromListBlobs" alt="" coords="196,71,364,112"/>
-<area shape="rect" id="node3" href="$d9/d78/classfc_1_1FeatureCollection.html#aa5d92c395512b9dd5d6c240fa150f992" title="Open and deserialized a FC file. " alt="" coords="412,5,555,47"/>
-<area shape="rect" id="node5" href="$d9/d78/classfc_1_1FeatureCollection.html#acc38a1542fc4dc04175961140677ac51" title="Create a feature collection from a mask. " alt="" coords="412,71,555,112"/>
-</map>

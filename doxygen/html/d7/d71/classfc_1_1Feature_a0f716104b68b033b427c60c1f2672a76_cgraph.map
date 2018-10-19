@@ -1,8 +1,0 @@
-<map id="fc::Feature::contains" name="fc::Feature::contains">
-<area shape="rect" id="node2" href="$d9/d08/classfc_1_1Vector2.html#a4f187c16fe4d3260ea890ff17f67d853" title="fc::Vector2::getY" alt="" coords="227,5,348,32"/>
-<area shape="rect" id="node3" href="$db/dc1/classfc_1_1BoundingBox.html#a921418d145cc148a50d599b51447215a" title="Getter to the upper left row. " alt="" coords="198,57,377,98"/>
-<area shape="rect" id="node4" href="$db/dc1/classfc_1_1BoundingBox.html#a9f26359f081940896dcf90ab5d5f0132" title="Getter to the Bounding Box height. " alt="" coords="196,123,379,149"/>
-<area shape="rect" id="node5" href="$d9/d08/classfc_1_1Vector2.html#aa38816eb2546c75ebfa2d28771095583" title="fc::Vector2::getX" alt="" coords="227,173,348,200"/>
-<area shape="rect" id="node6" href="$db/dc1/classfc_1_1BoundingBox.html#a21e8dcad0b3d37aa0a37c6dab4200974" title="Getter to the upper left column. " alt="" coords="198,225,377,266"/>
-<area shape="rect" id="node7" href="$db/dc1/classfc_1_1BoundingBox.html#aecdcbec558ef3396ed42924d4937d981" title="Getter the Bounding Box width. " alt="" coords="198,291,377,317"/>
-</map>
