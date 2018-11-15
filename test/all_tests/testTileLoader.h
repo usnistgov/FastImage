@@ -41,11 +41,11 @@
 #include <include/gtest/gtest.h>
 
 std::pair<htgs::TaskGraphRuntime *,
-          htgs::TaskGraphConf<fi::HTGSViewRequestData<int>,
-                              fi::HTGSTileRequestData<int> > *>
+          htgs::TaskGraphConf<fi::ViewRequestData<int>,
+                              fi::TileRequestData<int> > *>
 createGraphTestTileLoader(fi::ATileLoader<int> *tileLoader) {
-  auto graphConf = new htgs::TaskGraphConf<fi::HTGSViewRequestData<int>,
-                                           fi::HTGSTileRequestData<int> >();
+  auto graphConf = new htgs::TaskGraphConf<fi::ViewRequestData<int>,
+                                           fi::TileRequestData<int> >();
   htgs::TaskGraphRuntime *runtime = nullptr;
   std::vector<uint32_t> options = {1};
   auto viewLoader = new fi::ViewLoader<int>(options);
@@ -83,17 +83,17 @@ void testTileLoading() {
       (uint32_t) ceil((double) tileLoader->getImageWidth()
                           / (double) tileLoader->getTileWidth());
 
-  auto viewRequestData0 = new fi::HTGSViewRequestData<int>(
+  auto viewRequestData0 = new fi::ViewRequestData<int>(
       0, 0,
       numberTilesHeight, numberTilesWidth,
       0, tileLoader->getTileHeight(), tileLoader->getTileWidth(),
       tileLoader->getImageHeight(), tileLoader->getImageWidth(), 0),
-      viewRequestData1 = new fi::HTGSViewRequestData<int>(
+      viewRequestData1 = new fi::ViewRequestData<int>(
       0, 1,
       numberTilesHeight, numberTilesWidth,
       0, tileLoader->getTileHeight(), tileLoader->getTileWidth(),
       tileLoader->getImageHeight(), tileLoader->getImageWidth(), 0),
-      viewRequestData2 = new fi::HTGSViewRequestData<int>(
+      viewRequestData2 = new fi::ViewRequestData<int>(
       2, 3,
       numberTilesHeight, numberTilesWidth,
       0, tileLoader->getTileHeight(), tileLoader->getTileWidth(),

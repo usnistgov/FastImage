@@ -39,8 +39,8 @@
 #include <htgs/api/ITask.hpp>
 
 #include "FastImage/rules/ReleaseCountRule.h"
-#include "FastImage/data/HTGSViewRequestData.h"
-#include "FastImage/data/HTGSTileRequestData.h"
+#include "FastImage/data/ViewRequestData.h"
+#include "FastImage/data/TileRequestData.h"
 
 namespace fi {
 /// \namespace fi FastImage namespace
@@ -48,14 +48,14 @@ namespace fi {
 /**
   * @class ViewLoader ViewLoader.h <FastImage/tasks/ViewLoader.h>
   *
-  * @brief View loader task. Take a HTGSViewRequestData and produce a
-  * HTGSTileRequestData.
+  * @brief View loader task. Take a ViewRequestData and produce a
+  * TileRequestData.
   *
   * @details First task of the Fast Image graph. The goal of the ViewLoader is
-  * to use the fi::HTGSViewRequestData<UserType> to generate n
-  * fi::HTGSTileRequestData<UserType> for the ATileLoader used.
-  * The fi::HTGSViewRequestData<UserType> describes which view is requested by
-  * the end user. The fi::HTGSTileRequestData<UserType> describes which part of
+  * to use the fi::ViewRequestData<UserType> to generate n
+  * fi::TileRequestData<UserType> for the ATileLoader used.
+  * The fi::ViewRequestData<UserType> describes which view is requested by
+  * the end user. The fi::TileRequestData<UserType> describes which part of
   * the image has to be loaded and where it has to be copied in the view.
   * It will use the MemoryManager to get an empty view, or wait until a view has
   * been released. The number of views available to the memory manager can
@@ -66,8 +66,8 @@ namespace fi {
   **/
 
 template<typename UserType>
-class ViewLoader : public htgs::ITask<fi::HTGSViewRequestData<UserType>,
-                                      fi::HTGSTileRequestData<UserType>> {
+class ViewLoader : public htgs::ITask<fi::ViewRequestData<UserType>,
+                                      fi::TileRequestData<UserType>> {
  public:
   /// \brief Create a view loader and assign the count of release for each
   /// pyramid levels
@@ -78,11 +78,11 @@ class ViewLoader : public htgs::ITask<fi::HTGSViewRequestData<UserType>,
 
   /// \brief Task execution, get the view request, and generate n Tile Request.
   /// \details Get an available empty view from the MemoryManager. Use the
-  /// fi::HTGSViewRequestData<UserType> to generate n
-  /// fi::HTGSTileRequestData<UserType> send to the ATileLoader.
+  /// fi::ViewRequestData<UserType> to generate n
+  /// fi::TileRequestData<UserType> send to the ATileLoader.
   /// \param viewRequest View request
   void executeTask(
-      std::shared_ptr<fi::HTGSViewRequestData<UserType>> viewRequest) {
+      std::shared_ptr<fi::ViewRequestData<UserType>> viewRequest) {
     if (_nbReleasePyramid[this->getPipelineId()] == 0) {
       return;
     }
@@ -133,20 +133,20 @@ class ViewLoader : public htgs::ITask<fi::HTGSViewRequestData<UserType>,
                 - ulTileColGlobal;
 
         // Create the tile request
-        auto htgsTileRequestData =
-            new fi::HTGSTileRequestData<UserType>(r, c, viewMemory,
+        auto tileRequestData =
+            new fi::TileRequestData<UserType>(r, c, viewMemory,
                                                   viewRequest);
-        htgsTileRequestData->setRowFrom(rowFrom);
-        htgsTileRequestData->setColFrom(colFrom);
-        htgsTileRequestData->setRowDest(rowAlreadyFilled);
-        htgsTileRequestData->setColDest(colAlreadyFilled);
-        htgsTileRequestData->setHeightToCopy(heightToCopy);
-        htgsTileRequestData->setWidthToCopy(widthToCopy);
-        htgsTileRequestData->setTopToFill(topFill);
-        htgsTileRequestData->setRightToFill(rightFill);
-        htgsTileRequestData->setBottomToFill(botFill);
-        htgsTileRequestData->setLeftToFill(leftFill);
-        this->addResult(htgsTileRequestData);
+        tileRequestData->setRowFrom(rowFrom);
+        tileRequestData->setColFrom(colFrom);
+        tileRequestData->setRowDest(rowAlreadyFilled);
+        tileRequestData->setColDest(colAlreadyFilled);
+        tileRequestData->setHeightToCopy(heightToCopy);
+        tileRequestData->setWidthToCopy(widthToCopy);
+        tileRequestData->setTopToFill(topFill);
+        tileRequestData->setRightToFill(rightFill);
+        tileRequestData->setBottomToFill(botFill);
+        tileRequestData->setLeftToFill(leftFill);
+        this->addResult(tileRequestData);
         colAlreadyFilled += widthToCopy;
       }
       rowAlreadyFilled += heightToCopy;

@@ -26,10 +26,10 @@
 # by NIST employees is not subject to copyright protection within
 # the United States.
 
-cmake_minimum_required(VERSION 2.8.2)
+cmake_minimum_required(VERSION 2.8.)
 
 cmake_policy(SET CMP0048 NEW)
-project(FastImage VERSION 1.0.10)
+project(FastImage VERSION 1.0.11)
 
 set(CMAKE_CXX_STANDARD 14)
 

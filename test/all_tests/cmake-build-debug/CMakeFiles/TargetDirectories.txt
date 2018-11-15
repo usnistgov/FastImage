@@ -1,3 +1,0 @@
-/home/anb22/Documents/Fast-Image/FastImage/test/all_tests/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/anb22/Documents/Fast-Image/FastImage/test/all_tests/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/anb22/Documents/Fast-Image/FastImage/test/all_tests/cmake-build-debug/CMakeFiles/runAllTests.dir

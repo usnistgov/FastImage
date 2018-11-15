@@ -30,6 +30,8 @@ include_directories(${CMAKE_SOURCE_DIR}/src)
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 link_libraries(${CMAKE_THREAD_LIBS_INIT})
 
+add_definitions(-DPROFILE)
+
 set(TEST_SRC
         Statistics.h
         testAll.cpp
@@ -40,7 +42,8 @@ set(TEST_SRC
         MaskToFeatures testViewCounter.h
         testFastImageGlobal.h
         testExceptions.h
-        testOrdered.h)
+        testOrdered.h
+        testFITGT.h)
 
 add_executable(runAllTests ${TEST_SRC})
 target_link_libraries(runAllTests gtest gtest_main)

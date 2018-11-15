@@ -38,7 +38,7 @@
 #include <algorithm>
 #include <utility>
 #include <cstring>
-#include "FastImage/data/HTGSTileRequestData.h"
+#include "FastImage/data/TileRequestData.h"
 #include "FastImage/data/DataType.h"
 
 namespace fi {
@@ -47,7 +47,7 @@ namespace fi {
 /// \brief Tile Loader interface.
 /// \details
 /// Can't be instantiate. Take a
-/// HTGSTileRequestData and produce a
+/// TileRequestData and produce a
 /// htgs::MemoryData<ViewData>>. Has to be inherited to create a new tile
 /// loader. The new Tile loader has to override
 /// and implement the following functions:
@@ -70,15 +70,15 @@ namespace fi {
 /// \tparam UserType Data Type wanted by the user,
 /// which is stored within a fi::View
 template<typename UserType>
-class ATileLoader : public htgs::ITask<fi::HTGSTileRequestData<UserType>,
-                                       fi::HTGSTileRequestData<UserType> > {
+class ATileLoader : public htgs::ITask<fi::TileRequestData<UserType>,
+                                       fi::TileRequestData<UserType> > {
  public:
   /// \brief Any Tile loader default constructor
   /// \param filePath File path
   /// \param numThreads number of threads used by the tile loader
   explicit ATileLoader(std::string filePath, size_t numThreads = 1)
-      : htgs::ITask<fi::HTGSTileRequestData<UserType>,
-                    fi::HTGSTileRequestData<UserType> >(numThreads),
+      : htgs::ITask<fi::TileRequestData<UserType>,
+                    fi::TileRequestData<UserType> >(numThreads),
         _filePath(std::move(filePath)) {}
 
   /// \brief Default destructor
@@ -103,7 +103,7 @@ class ATileLoader : public htgs::ITask<fi::HTGSTileRequestData<UserType>,
   /// to the view counter.
   /// \param tileRequestData the requested tile to load
   void executeTask
-      (std::shared_ptr<fi::HTGSTileRequestData<UserType>> tileRequestData) final {
+      (std::shared_ptr<fi::TileRequestData<UserType>> tileRequestData) final {
     CachedTile<UserType> *cachedTile;
     uint32_t row = tileRequestData->getIndexRowTileAsked();
     uint32_t col = tileRequestData->getIndexColTileAsked();
@@ -129,7 +129,7 @@ class ATileLoader : public htgs::ITask<fi::HTGSTileRequestData<UserType>,
   /// \param tileRequestData Destination tile request
   /// \param cachedTile Source cached tile
   void copyTileToView(
-      std::shared_ptr<fi::HTGSTileRequestData<UserType>> tileRequestData,
+      std::shared_ptr<fi::TileRequestData<UserType>> tileRequestData,
       CachedTile<UserType> *cachedTile) {
     uint32_t
         rowFrom = tileRequestData->getRowFrom(),

@@ -40,7 +40,7 @@
 #include <vector>
 #include "FastImage/data/CachedTile.h"
 #include "../data/DataType.h"
-#include "FastImage/data/HTGSViewRequestData.h"
+#include "FastImage/data/ViewRequestData.h"
 #include "../object/FigCache.h"
 #include "../exception/FastImageException.h"
 
@@ -181,7 +181,7 @@ class View : public htgs::IData {
   /// \param viewRequest View request information to initialize the view
   /// \param fillingType Filling used to complete the ghost region
   void init(
-      const std::shared_ptr<fi::HTGSViewRequestData<UserType>> &viewRequest,
+      const std::shared_ptr<fi::ViewRequestData<UserType>> &viewRequest,
       FillingType fillingType = FillingType::FILL) {
 
     auto
@@ -276,7 +276,7 @@ class View : public htgs::IData {
   UserType *
       _data;                  ///< Augmented Tile, Tile w/ a ghost region
 
-  std::shared_ptr<fi::HTGSViewRequestData<UserType>>
+  std::shared_ptr<fi::ViewRequestData<UserType>>
       _viewRequestData;       ///< ViewRequest creating the view
 
   uint32_t

@@ -42,6 +42,7 @@
 #include "testTileLoader.h"
 #include "testFastImageGlobal.h"
 #include "testViewLoader.h"
+#include "testFITGT.h"
 
 void mosaicCreation() {
   auto
@@ -183,6 +184,9 @@ TEST(TEST_ORDERING, TEST_ORDERING) {
   ASSERT_TRUE(testOrdered());
 }
 
+TEST(TEST_FITGTASK, TEST_TGTASK){
+  ASSERT_NO_FATAL_FAILURE(testFITGTask());
+}
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   mosaicCreation();

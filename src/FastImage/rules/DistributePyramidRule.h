@@ -36,7 +36,7 @@
 #define FAST_IMAGE_DISTRIBUTEPYRAMIDRULE_H
 
 #include <htgs/api/IRule.hpp>
-#include "FastImage/data/HTGSViewRequestData.h"
+#include "FastImage/data/ViewRequestData.h"
 
 namespace fi {
 /// \namespace fi FastImage namespace
@@ -50,12 +50,12 @@ namespace fi {
   **/
 template<typename UserType>
 class DistributePyramidRule
-    : public htgs::IRule<fi::HTGSViewRequestData<UserType>,
-                         fi::HTGSViewRequestData<UserType>> {
+    : public htgs::IRule<fi::ViewRequestData<UserType>,
+                         fi::ViewRequestData<UserType>> {
  public:
   /// \brief Distributed Pyramid Rule constructor
-  DistributePyramidRule() : htgs::IRule<fi::HTGSViewRequestData<UserType>,
-                                        fi::HTGSViewRequestData<UserType>>() {}
+  DistributePyramidRule() : htgs::IRule<fi::ViewRequestData<UserType>,
+                                        fi::ViewRequestData<UserType>>() {}
 
   /// \brief Get rule name
   /// \return Rule Name
@@ -64,7 +64,7 @@ class DistributePyramidRule
   /// \brief Apply the rule to the data
   /// \param data to apply the rule to
   /// \param pipelineId to apply the rule to
-  void applyRule(std::shared_ptr<fi::HTGSViewRequestData<UserType>> data,
+  void applyRule(std::shared_ptr<fi::ViewRequestData<UserType>> data,
                  size_t pipelineId) {
     if (data->getLevel() == pipelineId) { this->addResult(data); }
   }

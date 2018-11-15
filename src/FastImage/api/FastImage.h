@@ -43,6 +43,7 @@
 #include <htgs/api/TaskGraphConf.hpp>
 #include <htgs/api/TaskGraphRuntime.hpp>
 #include <htgs/api/ExecutionPipeline.hpp>
+#include <htgs/api/TGTask.hpp>
 
 #include "ATileLoader.h"
 #include "FastImage/tasks/ViewLoader.h"
@@ -328,106 +329,46 @@ class FastImage {
   /// allocated.
   void configureAndRun() {
     if (!_hasBeenConfigured) {
-      assert(_fastImageOptions->getNumberOfViewParallel() > 0);
-      _hasBeenConfigured = true;
-      if (_fastImageOptions->getNumberOfTileLoader() == 0)
-        _fastImageOptions->setNumberOfTileLoader(1);
-
-      ViewLoader<UserType> *viewLoader = nullptr;
-      _viewCounter = nullptr;
-
-      std::vector<size_t> numViewsParallel;
-      std::vector<std::shared_ptr<htgs::IMemoryAllocator<View<UserType>>>>
-          viewAllocators;
-
-      for (uint32_t level = 0; level < _tileLoader->getNbPyramidLevels();
-           level++) {
-        // Create the cache
-        auto cache =
-            new FigCache<UserType>(
-                this->_fastImageOptions->getNumberOfTilesToCache()
-            );
-        // Init the cache
-        cache->initCache(this->getNumberTilesHeight(level),
-                         this->getNumberTilesWidth(level),
-                         this->getTileHeight(level),
-                         this->getTileWidth(level));
-        _allCache.push_back(cache);
-
-        size_t
-            numViewParallelTemp = _fastImageOptions->getNumberOfViewParallel();
-
-        // Set the number of view parallel
-        if (getNumberTilesWidth(level) * getNumberTilesHeight(level)
-            < _fastImageOptions->getNumberOfViewParallel()) {
-          numViewParallelTemp =
-              getNumberTilesWidth(level) * getNumberTilesHeight(level);
-        }
-
-        numViewsParallel.push_back(numViewParallelTemp);
-        auto viewAllocator =
-            std::shared_ptr<ViewAllocator<UserType>>(
-                new ViewAllocator<UserType>(
-                    getViewHeight(level),
-                    getViewWidth(level)
-                )
-            );
-        viewAllocators.push_back(viewAllocator);
-      }
-
-      auto memManager =
-          new VariableMemoryManager<View<UserType>>("viewMem",
-                                                    numViewsParallel,
-                                                    viewAllocators,
-                                                    htgs::MMType::Static);
-
-      // Create the Fast Image graph
-      _taskGraph = new htgs::TaskGraphConf<HTGSViewRequestData<UserType>,
-                                           htgs::MemoryData<View<UserType>>>();
-
-      // Set the cache
-      _tileLoader->setCache(_allCache);
-
-      // Init the graph's parts
-      viewLoader =
-          new ViewLoader<UserType>(
-              this->_fastImageOptions->getNbReleasePyramid()
-          );
-      _viewCounter =
-          new ViewCounter<UserType>(_fastImageOptions->getFillingType(),
-                                    _fastImageOptions->isOrderPreserved());
-
-      if (this->getNbPyramidLevels() == 1) {
-        // Set graph parts
-        _taskGraph->setGraphConsumerTask(viewLoader);
-        _taskGraph->addEdge(viewLoader, _tileLoader);
-        _taskGraph->addEdge(_tileLoader, _viewCounter);
-        _taskGraph->addGraphProducerTask(_viewCounter);
-
-        _taskGraph->addCustomMemoryManagerEdge(viewLoader, memManager);
-      } else {
-        auto pyramidGraph =
-            new htgs::TaskGraphConf<HTGSViewRequestData<UserType>,
-                                    htgs::MemoryData<View<UserType>>>();
-        pyramidGraph->setGraphConsumerTask(viewLoader);
-        pyramidGraph->addEdge(viewLoader, _tileLoader);
-        pyramidGraph->addEdge(_tileLoader, _viewCounter);
-        pyramidGraph->addGraphProducerTask(_viewCounter);
-        pyramidGraph->addCustomMemoryManagerEdge(viewLoader, memManager);
-        auto
-            execPipeline =
-            new htgs::ExecutionPipeline<HTGSViewRequestData<UserType>,
-                                        htgs::MemoryData<View<UserType>>>(
-                this->getNbPyramidLevels(), pyramidGraph);
-        auto distributeRule = new DistributePyramidRule<UserType>();
-        execPipeline->addInputRule(distributeRule);
-        _taskGraph->setGraphConsumerTask(execPipeline);
-        _taskGraph->addGraphProducerTask(execPipeline);
-      }
+      configure();
       // Launch the graph
       _runtime = new htgs::TaskGraphRuntime(_taskGraph);
       _runtime->executeRuntime();
     }
+  }
+
+  /// \brief Set up and create a TGTask from the instance of FI given.
+  /// \details Configure the FastImage object and wrap it into a TGTask.
+  /// The options are parsed and applied. The different graph's tasks
+  /// (ViewLoader, ATileLoader, ViewCounter) are created. The memory for the
+  /// graph is allocated.
+  /// The TGTask has as input a ViewRequestData<UserType> and as output
+  /// htgs::MemoryData<View<UserType>>
+  /// We recommend two methods when working with the resuling TGTask::
+  /// 1: The TGTask can accept a ViewRequestData and produce the asked
+  /// views.
+  /// 2: The FI API can be called directly on the FI instance, which will
+  /// directly produce data for the graph that is within the TGTask. This works
+  /// because the instance of the FI graph is wrapped into the TGTask.
+  /// \warning If the TGTask is copied (internally in an execution
+  /// pipeline) or by hand, then direct calls to the FI API will result in data
+  /// not being sent correctly.
+  /// \param name TGTask Name
+  /// \return TGTask wraping a FI instance
+  htgs::TGTask<ViewRequestData<UserType>, htgs::MemoryData<View<UserType>>>*
+      configureAndMoveToTaskGraphTask(std::string name = "FastImageTask"){
+    if(_hasBeenConfigured){
+      std::stringstream message;
+      message
+      << "FastImage has already seen it configuration applied, please call "
+         "directly configureAndMoveToTaskGraphTask() instead of "
+         "configureAndRun().";
+      std::string m = message.str();
+      throw (FastImageException(m));
+    }
+
+    configure();
+
+    return _taskGraph->createTaskGraphTask(name, true);
   }
 
   /// Get the view radius
@@ -694,9 +635,114 @@ class FastImage {
  private:
   /// \brief Get the HTGS task graph
   /// \return The task graph
-  htgs::TaskGraphConf<HTGSViewRequestData<UserType>,
+  htgs::TaskGraphConf<ViewRequestData<UserType>,
                       htgs::MemoryData<View<UserType>>> *getTaskGraph() const {
     return _taskGraph;
+  }
+
+  /// \brief Set up the graph.
+  /// \details Configure the FastImage object. The options are parsed and
+  /// applied. The different graph's tasks (ViewLoader, ATileLoader,
+  /// ViewCounter) are created. The memory for the graph is allocated.
+  void configure(){
+    if (!_hasBeenConfigured) {
+      assert(_fastImageOptions->getNumberOfViewParallel() > 0);
+      _hasBeenConfigured = true;
+      if (_fastImageOptions->getNumberOfTileLoader() == 0)
+        _fastImageOptions->setNumberOfTileLoader(1);
+
+      ViewLoader<UserType> *viewLoader = nullptr;
+      _viewCounter = nullptr;
+
+      std::vector<size_t> numViewsParallel;
+      std::vector<std::shared_ptr<htgs::IMemoryAllocator<View<UserType>>>>
+          viewAllocators;
+
+      for (uint32_t level = 0; level < _tileLoader->getNbPyramidLevels();
+           level++) {
+        // Create the cache
+        auto cache =
+            new FigCache<UserType>(
+                this->_fastImageOptions->getNumberOfTilesToCache()
+            );
+        // Init the cache
+        cache->initCache(this->getNumberTilesHeight(level),
+                         this->getNumberTilesWidth(level),
+                         this->getTileHeight(level),
+                         this->getTileWidth(level));
+        _allCache.push_back(cache);
+
+        size_t
+            numViewParallelTemp = _fastImageOptions->getNumberOfViewParallel();
+
+        // Set the number of view parallel
+        if (getNumberTilesWidth(level) * getNumberTilesHeight(level)
+            < _fastImageOptions->getNumberOfViewParallel()) {
+          numViewParallelTemp =
+              getNumberTilesWidth(level) * getNumberTilesHeight(level);
+        }
+
+        numViewsParallel.push_back(numViewParallelTemp);
+        auto viewAllocator =
+            std::shared_ptr<ViewAllocator<UserType>>(
+                new ViewAllocator<UserType>(
+                    getViewHeight(level),
+                    getViewWidth(level)
+                )
+            );
+        viewAllocators.push_back(viewAllocator);
+      }
+
+      auto memManager =
+          new VariableMemoryManager<View<UserType>>("viewMem",
+                                                    numViewsParallel,
+                                                    viewAllocators,
+                                                    htgs::MMType::Static);
+
+      // Create the Fast Image graph
+      _taskGraph = new htgs::TaskGraphConf<ViewRequestData<UserType>,
+                                           htgs::MemoryData<View<UserType>>>();
+
+      // Set the cache
+      _tileLoader->setCache(_allCache);
+
+      // Init the graph's parts
+      viewLoader =
+          new ViewLoader<UserType>(
+              this->_fastImageOptions->getNbReleasePyramid()
+          );
+      _viewCounter =
+          new ViewCounter<UserType>(_fastImageOptions->getFillingType(),
+                                    _fastImageOptions->isOrderPreserved());
+
+      if (this->getNbPyramidLevels() == 1) {
+        // Set graph parts
+        _taskGraph->setGraphConsumerTask(viewLoader);
+        _taskGraph->addEdge(viewLoader, _tileLoader);
+        _taskGraph->addEdge(_tileLoader, _viewCounter);
+        _taskGraph->addGraphProducerTask(_viewCounter);
+
+        _taskGraph->addCustomMemoryManagerEdge(viewLoader, memManager);
+      } else {
+        auto pyramidGraph =
+            new htgs::TaskGraphConf<ViewRequestData<UserType>,
+                                    htgs::MemoryData<View<UserType>>>();
+        pyramidGraph->setGraphConsumerTask(viewLoader);
+        pyramidGraph->addEdge(viewLoader, _tileLoader);
+        pyramidGraph->addEdge(_tileLoader, _viewCounter);
+        pyramidGraph->addGraphProducerTask(_viewCounter);
+        pyramidGraph->addCustomMemoryManagerEdge(viewLoader, memManager);
+        auto
+            execPipeline =
+            new htgs::ExecutionPipeline<ViewRequestData<UserType>,
+                                        htgs::MemoryData<View<UserType>>>(
+                this->getNbPyramidLevels(), pyramidGraph);
+        auto distributeRule = new DistributePyramidRule<UserType>();
+        execPipeline->addInputRule(distributeRule);
+        _taskGraph->setGraphConsumerTask(execPipeline);
+        _taskGraph->addGraphProducerTask(execPipeline);
+      }
+    }
   }
 
   /// \brief Test if the system has finished sending tiles
@@ -714,7 +760,7 @@ class FastImage {
                    uint32_t indexTileCol,
                    uint32_t level = 0) {
     _taskGraph->produceData(
-        new HTGSViewRequestData<UserType>(
+        new ViewRequestData<UserType>(
             indexTileRow, indexTileCol,
             getNumberTilesHeight(level), getNumberTilesWidth(level),
             this->getRadius(), getTileHeight(level), getTileWidth(level),
@@ -729,7 +775,7 @@ class FastImage {
       _numberTilesFeatureTotal;       ///< Number of tiles in totals for a
                                       ///< feature
 
-  htgs::TaskGraphConf<HTGSViewRequestData<UserType>,
+  htgs::TaskGraphConf<ViewRequestData<UserType>,
                       htgs::MemoryData<View<UserType>>> *
       _taskGraph;                     ///< HTGS Graph to load the views and the
                                       ///< tiles

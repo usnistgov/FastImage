@@ -34,8 +34,8 @@
 #define FASTIMAGE_TESTVIEWLOADER_H
 
 #include <cstdint>
-#include <FastImage/data/HTGSViewRequestData.h>
-#include <FastImage/data/HTGSTileRequestData.h>
+#include <FastImage/data/ViewRequestData.h>
+#include <FastImage/data/TileRequestData.h>
 #include <htgs/api/MemoryData.hpp>
 #include <htgs/api/TaskGraphConf.hpp>
 #include <FastImage/tasks/ViewLoader.h>
@@ -44,11 +44,11 @@
 #include <FastImage/memory/ViewAllocator.h>
 
 std::pair<htgs::TaskGraphRuntime *,
-          htgs::TaskGraphConf<fi::HTGSViewRequestData<int>,
-                              fi::HTGSTileRequestData<int> > *>
+          htgs::TaskGraphConf<fi::ViewRequestData<int>,
+                              fi::TileRequestData<int> > *>
 createGraphTestViewLoader(uint32_t viewWidth, uint32_t viewHeight) {
-  auto graphConf = new htgs::TaskGraphConf<fi::HTGSViewRequestData<int>,
-                                           fi::HTGSTileRequestData<int> >();
+  auto graphConf = new htgs::TaskGraphConf<fi::ViewRequestData<int>,
+                                           fi::TileRequestData<int> >();
   htgs::TaskGraphRuntime *runtime = nullptr;
   std::vector<uint32_t> options = {1};
   auto viewLoader = new fi::ViewLoader<int>(options);
@@ -66,7 +66,7 @@ createGraphTestViewLoader(uint32_t viewWidth, uint32_t viewHeight) {
 }
 
 void testViewRequestData() {
-  fi::HTGSViewRequestData<int>
+  fi::ViewRequestData<int>
       viewRequestDataUL(0, 0, 3, 3, 2, 5, 5, 15, 15, 0);
   ASSERT_EQ(viewRequestDataUL.getIndexRowCenterTile(), 0);
   ASSERT_EQ(viewRequestDataUL.getIndexColCenterTile(), 0);
@@ -91,7 +91,7 @@ void testViewRequestData() {
   ASSERT_EQ(viewRequestDataUL.getRightFill(), 0);
   ASSERT_EQ(viewRequestDataUL.getNumberTilesToLoad(), 4);
 
-  fi::HTGSViewRequestData<int>
+  fi::ViewRequestData<int>
       viewRequestDataBR(2, 2, 3, 3, 2, 5, 5, 15, 13, 0);
   ASSERT_EQ(viewRequestDataBR.getIndexRowCenterTile(), 2);
   ASSERT_EQ(viewRequestDataBR.getIndexColCenterTile(), 2);
@@ -131,7 +131,7 @@ void testViewLoaderTileGhostUL() {
       tileComputed = 0,
       numTileToCompute = 0;
 
-  fi::HTGSViewRequestData<int> *
+  fi::ViewRequestData<int> *
       viewRequestData = nullptr;
 
   tileWidth = 5;
@@ -147,7 +147,7 @@ void testViewLoaderTileGhostUL() {
   auto runtime = pairRuntimeGraph.first;
   auto graph = pairRuntimeGraph.second;
 
-  viewRequestData = new fi::HTGSViewRequestData<int>(
+  viewRequestData = new fi::ViewRequestData<int>(
       0, 0,
       numTileHeight, numTileWidth,
       radius, tileHeight, tileWidth,
@@ -261,7 +261,7 @@ void testViewLoaderTileGhostBR() {
       tileComputed = 0,
       numTileToCompute = 0;
 
-  fi::HTGSViewRequestData<int> *viewRequestData = nullptr;
+  fi::ViewRequestData<int> *viewRequestData = nullptr;
 
   tileWidth = 5;
   tileHeight = 5;
@@ -276,7 +276,7 @@ void testViewLoaderTileGhostBR() {
   auto runtime = pairRuntimeGraph.first;
   auto graph = pairRuntimeGraph.second;
 
-  viewRequestData = new fi::HTGSViewRequestData<int>(
+  viewRequestData = new fi::ViewRequestData<int>(
       1, 1,
       numTileHeight, numTileWidth,
       radius, tileHeight, tileWidth,

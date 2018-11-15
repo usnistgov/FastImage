@@ -38,7 +38,7 @@
 
 #include <htgs/api/ITask.hpp>
 #include "FastImage/data/CachedTile.h"
-#include "FastImage/data/HTGSTileRequestData.h"
+#include "FastImage/data/TileRequestData.h"
 
 namespace fi {
 /// \namespace fi FastImage namespace
@@ -56,7 +56,7 @@ namespace fi {
   * @tparam UserType Pixel Type asked by the end user
   **/
 template<typename UserType>
-class ViewCounter : public htgs::ITask<fi::HTGSTileRequestData<UserType>,
+class ViewCounter : public htgs::ITask<fi::TileRequestData<UserType>,
                                        htgs::MemoryData<fi::View<UserType>>> {
  public:
   /// \brief View counter constructor, set if the view are send in ordered way
@@ -81,7 +81,7 @@ class ViewCounter : public htgs::ITask<fi::HTGSTileRequestData<UserType>,
   /// Fill the ghost region if needed, send the viewData when completed
   /// \param tileRequestData Tile from the tile loader to test
   void executeTask(
-      std::shared_ptr<fi::HTGSTileRequestData<UserType>> tileRequestData) {
+      std::shared_ptr<fi::TileRequestData<UserType>> tileRequestData) {
     auto data = tileRequestData->getViewData();
 
     // Tile without radius
@@ -131,7 +131,7 @@ class ViewCounter : public htgs::ITask<fi::HTGSTileRequestData<UserType>,
   ///
   /// \param tileRequestData
   void fill(
-      std::shared_ptr<fi::HTGSTileRequestData<UserType>> tileRequestData) {
+      std::shared_ptr<fi::TileRequestData<UserType>> tileRequestData) {
 
     UserType *tile = tileRequestData->getViewData()->get()->getData();
 
@@ -194,7 +194,7 @@ class ViewCounter : public htgs::ITask<fi::HTGSTileRequestData<UserType>,
   /// \brief Switch for the selected filling and fill the ghost region
   /// \param tileRequestData tile to fill
   void fillGhostRegion(
-      std::shared_ptr<fi::HTGSTileRequestData<UserType>> tileRequestData) {
+      std::shared_ptr<fi::TileRequestData<UserType>> tileRequestData) {
     switch (_fillingType) {
       case FillingType::FILL:fill(tileRequestData);
         break;

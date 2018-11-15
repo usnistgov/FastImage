@@ -26,13 +26,13 @@
 // by NIST employees is not subject to copyright protection within 
 // the United States.
 
-/// @file HTGSViewRequestData.h
+/// @file ViewRequestData.h
 /// @author Alexandre Bardakoff - Timothy Blattner
 /// @date  7/31/17
 /// @brief Data Representing a View Request
 
-#ifndef FASTIMAGE_HTGSVIEWREQUESTDATA_H
-#define FASTIMAGE_HTGSVIEWREQUESTDATA_H
+#ifndef FASTIMAGE_VIEWREQUESTDATA_H
+#define FASTIMAGE_VIEWREQUESTDATA_H
 
 #include <htgs/api/IData.hpp>
 #include <ostream>
@@ -42,20 +42,20 @@ namespace fi {
 /// \namespace fi FastImage namespace
 
 /**
- * @class HTGSViewRequestData HTGSViewRequestData.h <FastImage/data/HTGSViewRequestData.h>
+ * @class ViewRequestData ViewRequestData.h <FastImage/data/ViewRequestData.h>
  * @brief Data representing a view request
  * @details FastImage will use this object to request a view.
  * It will be sent to a ViewLoader. The view Loader will then use it to generate
- * HTGSTileRequestData.
+ * TileRequestData.
  *
  * @tparam UserType Pixel Type asked by the end user
  *
  */
 template<typename UserType>
-class HTGSViewRequestData : public htgs::IData {
+class ViewRequestData : public htgs::IData {
  public:
 
-  /// \brief Construct a  HTGSViewRequestData
+  /// \brief Construct a  ViewRequestData
   /// \param indexTileRow Row index tile asked
   /// \param indexTileCol Col index tile asked
   /// \param numTilesHeight Number of tiles in height
@@ -66,7 +66,7 @@ class HTGSViewRequestData : public htgs::IData {
   /// \param imageHeight Image Height in px
   /// \param imageWidth Image Width in px
   /// \param level Pyramid level
-  HTGSViewRequestData(
+  ViewRequestData(
       uint32_t indexTileRow, uint32_t indexTileCol,
       uint32_t numTilesHeight, uint32_t numTilesWidth, uint32_t radius,
       uint32_t tileHeight, uint32_t tileWidth,
@@ -227,8 +227,8 @@ class HTGSViewRequestData : public htgs::IData {
   /// \param data data to print
   /// \return output stream with data printed
   friend std::ostream &operator<<(std::ostream &os,
-                                  const HTGSViewRequestData &data) {
-    os << "HTGSViewRequestData[_indexRowTileAsked: "
+                                  const ViewRequestData &data) {
+    os << "ViewRequestData[_indexRowTileAsked: "
        << data.getIndexRowMinTile() << "," << data.getIndexRowCenterTile()
        << "," << data.getIndexRowMaxTile()
        << "/_indexColTileAsked: "
@@ -277,4 +277,4 @@ class HTGSViewRequestData : public htgs::IData {
 };
 }
 
-#endif //FASTIMAGE_HTGSVIEWREQUESTDATA_H
+#endif //FASTIMAGE_VIEWREQUESTDATA_H
