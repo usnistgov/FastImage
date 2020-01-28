@@ -209,7 +209,7 @@ class Blob {
         std::max(destination->getColMax(), toDelete->getColMax()));
 
     // Merge sparse matrix
-    for (auto rowCol : toDelete->getRowCols()) {
+    for (const auto& rowCol : toDelete->getRowCols()) {
       for (auto col : rowCol.second) {
         destination->addRowCol(rowCol.first, col);
       }
@@ -260,8 +260,7 @@ class Blob {
       _count{};           ///< Number of pixel to fastened the blob merge
 
   std::unordered_map<int32_t, std::unordered_set<int32_t>>
-      _rowCols
-      {};         ///< Sparse matrix of unique coordinates composing the blob
+      _rowCols{};         ///< Sparse matrix of unique coordinates composing the blob
 };
 
 }

@@ -45,6 +45,7 @@ install(DIRECTORY FastImage
         COMPONENT headers)
 
 if (BUILD_MAIN)
+    add_definitions(-DPROFILE)
     find_package(HTGS REQUIRED)
     find_package(TIFF REQUIRED)
     find_package(OpenCV REQUIRED)
@@ -56,9 +57,7 @@ if (BUILD_MAIN)
     link_libraries(${TIFF_LIBRARIES})
     link_libraries(${HTGS_LIBRARIES})
     link_libraries(${OpenCV_LIBRARIES})
-
     file(GLOB_RECURSE INC_ALL "*.hpp" "*.h")
-    message(STATUS ${INC_ALL})
 
     include_directories(".")
     add_definitions(-DPROFILE)

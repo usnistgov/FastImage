@@ -349,9 +349,11 @@ class FastImage {
   /// 2: The FI API can be called directly on the FI instance, which will
   /// directly produce data for the graph that is within the TGTask. This works
   /// because the instance of the FI graph is wrapped into the TGTask.
-  /// \warning If the TGTask is copied (internally in an execution
+  /// \warning
+  /// 1: If the TGTask is copied (internally in an execution
   /// pipeline) or by hand, then direct calls to the FI API will result in data
   /// not being sent correctly.
+  /// 2: The FI pointer need to be deleted
   /// \param name TGTask Name
   /// \return TGTask wraping a FI instance
   htgs::TGTask<ViewRequestData<UserType>, htgs::MemoryData<View<UserType>>>*
@@ -379,6 +381,7 @@ class FastImage {
   /// \param level Pyramid level
   /// \return Image width in px
   uint32_t getImageWidth(uint32_t level = 0) const {
+    assert(level <= this->_tileLoader->getNbPyramidLevels());
     return this->_tileLoader->getImageWidth(level);
   }
 
@@ -386,6 +389,7 @@ class FastImage {
   /// \param level Pyramid level
   /// \return Image height in px
   uint32_t getImageHeight(uint32_t level = 0) const {
+    assert(level <= this->_tileLoader->getNbPyramidLevels());
     return this->_tileLoader->getImageHeight(level);
   }
 
@@ -393,6 +397,7 @@ class FastImage {
   /// \param level Pyramid level
   /// \return Tile width in px
   uint32_t getTileWidth(uint32_t level = 0) const {
+    assert(level <= this->_tileLoader->getNbPyramidLevels());
     return this->_tileLoader->getTileWidth(level);
   }
 
@@ -400,6 +405,7 @@ class FastImage {
   /// \param level Pyramid level
   /// \return Tile height in px
   uint32_t getTileHeight(uint32_t level = 0) const {
+    assert(level <= this->_tileLoader->getNbPyramidLevels());
     return this->_tileLoader->getTileHeight(level);
   }
 
@@ -462,6 +468,7 @@ class FastImage {
   /// \param level Pyramid level
   /// \return The image size in Bytes
   double getImageSizeMBytes(uint32_t level = 0) {
+    assert(level <= this->_tileLoader->getNbPyramidLevels());
     return ((double) this->getImageWidth(level)
         * (double) this->getImageHeight(level)
         * ((double) this->_tileLoader->getBitsPerSample() / 8))
@@ -516,7 +523,9 @@ class FastImage {
   /// \brief Wait to the graph to complete
   void waitForGraphComplete() {
     if (!isFinishedRequestingViews()) { finishedRequestingTiles(); }
-    _runtime->waitForRuntime();
+    if(_runtime != nullptr){
+      _runtime->waitForRuntime();
+    }
   }
 
   /// \brief Request a tile
@@ -529,8 +538,8 @@ class FastImage {
   /// \param level Pyramid level
   void requestTile(uint32_t rowIndex,
                    uint32_t colIndex,
-                   bool finishRequestingTiles,
-                   uint32_t level = 0) {
+                   uint32_t level,
+                   bool finishRequestingTiles) {
     assert(rowIndex < this->getNumberTilesHeight());
     assert(colIndex < this->getNumberTilesWidth());
     assert(_hasBeenConfigured);
@@ -658,8 +667,7 @@ class FastImage {
       std::vector<std::shared_ptr<htgs::IMemoryAllocator<View<UserType>>>>
           viewAllocators;
 
-      for (uint32_t level = 0; level < _tileLoader->getNbPyramidLevels();
-           level++) {
+      for (uint32_t level = 0; level < _tileLoader->getNbPyramidLevels(); level++) {
         // Create the cache
         auto cache =
             new FigCache<UserType>(
@@ -759,6 +767,7 @@ class FastImage {
   void sendRequest(uint32_t indexTileRow,
                    uint32_t indexTileCol,
                    uint32_t level = 0) {
+    assert(level <= this->_tileLoader->getNbPyramidLevels());
     _taskGraph->produceData(
         new ViewRequestData<UserType>(
             indexTileRow, indexTileCol,

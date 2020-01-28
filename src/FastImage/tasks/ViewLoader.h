@@ -86,13 +86,11 @@ class ViewLoader : public htgs::ITask<fi::ViewRequestData<UserType>,
     if (_nbReleasePyramid[this->getPipelineId()] == 0) {
       return;
     }
-    htgs::m_data_t<View<UserType>> viewMemory =
-        ViewLoader<UserType>::template
-                  getMemory<View<
-            UserType>>(
+    htgs::m_data_t<View<UserType>> viewMemory = ViewLoader<UserType>::template getMemory<View<UserType>>(
             "viewMem",
             new ReleaseCountRule(_nbReleasePyramid[this->getPipelineId()]));
     viewMemory->get()->init(viewRequest);
+
     uint32_t
         tileHeight = viewRequest->getTileHeight(),
         tileWidth = viewRequest->getTileWidth(),

@@ -80,7 +80,7 @@ class View : public htgs::IData {
   /// \param row Number of pixel in a view
   /// \param col Number of pixel in a view
   View(const uint32_t &row, const uint32_t &col)
-  : _data(new UserType[row * col]), _viewHeight(row), _viewWidth(col) {}
+      : _data(new UserType[row * col]), _viewHeight(row), _viewWidth(col) {}
 
   /// \brief View destructor, deallocate the array of pixel.
   ~View() override { delete[] _data; }
@@ -104,6 +104,30 @@ class View : public htgs::IData {
   /// height from the file
   /// \return Tile height of pixels coming from the file
   int32_t getTileHeight() const { return _maxRowCenterTileLocal; }
+
+  /// \brief Get minimum row position in local coordinate of pixel from the
+  /// image
+  /// \return Minimum row position in local coordinate of pixel from the
+  /// image
+  int32_t getMinRowRealPixelLocal() const { return _minRowRealPixelLocal; }
+
+  /// \brief Get maximum row position in local coordinate of pixel from the
+  /// image
+  /// \return Maximum row position in local coordinate of pixel from the
+  /// image
+  int32_t getMaxRowRealPixelLocal() const { return _maxRowRealPixelLocal; }
+
+  /// \brief Get minimum col position in local coordinate of pixel from the
+  /// image
+  /// \return Minimum col position in local coordinate of pixel from the
+  /// image
+  int32_t getMinColRealPixelLocal() const { return _minColRealPixelLocal; }
+
+  /// \brief Get maximum col position in local coordinate of pixel from the
+  /// image
+  /// \return Maximum col position in local coordinate of pixel from the
+  /// image
+  int32_t getMaxColRealPixelLocal() const { return _maxColRealPixelLocal; }
 
   /// \brief Get row grid index of the view's tile
   /// \return Row grid index of the view's tile
@@ -141,9 +165,9 @@ class View : public htgs::IData {
   /// \note Shout be only use with local coordinates
   /// \return The pixel value
   UserType getPixel(const int32_t &rowAsked, const int32_t &colAsked) const {
+
     assert(isLocalCoordinateCorrect(rowAsked, colAsked));
-    return (_data[(rowAsked + getRadius()) * _viewWidth
-        + (colAsked + getRadius())]);
+    return (_data[(rowAsked + getRadius()) * _viewWidth + (colAsked + getRadius())]);
   }
 
   /// \brief Set a pixel in the view
@@ -191,14 +215,14 @@ class View : public htgs::IData {
     this->_viewRequestData = viewRequest;
     _minRowCenterTileGlobal = viewRequest->getIndexRowCenterTile() * tileHeight;
     _minColCenterTileGlobal = viewRequest->getIndexColCenterTile() * tileWidth;
-    _maxRowCenterTileGlobal = std::min(viewRequest->getImageHeight(),
-                                       _minRowCenterTileGlobal + tileHeight);
-    _maxColCenterTileGlobal = std::min(viewRequest->getImageWidth(),
-                                       _minColCenterTileGlobal + tileWidth);
-    _maxColCenterTileLocal = _maxColCenterTileGlobal
-        - viewRequest->getIndexColCenterTile() * tileWidth;
-    _maxRowCenterTileLocal = _maxRowCenterTileGlobal
-        - viewRequest->getIndexRowCenterTile() * tileHeight;
+    _maxRowCenterTileGlobal = std::min(viewRequest->getImageHeight(), _minRowCenterTileGlobal + tileHeight);
+    _maxColCenterTileGlobal = std::min(viewRequest->getImageWidth(), _minColCenterTileGlobal + tileWidth);
+    _maxColCenterTileLocal = _maxColCenterTileGlobal - viewRequest->getIndexColCenterTile() * tileWidth;
+    _maxRowCenterTileLocal = _maxRowCenterTileGlobal - viewRequest->getIndexRowCenterTile() * tileHeight;
+    _minRowRealPixelLocal = viewRequest->getMinRowFile() - _minRowCenterTileGlobal;
+    _maxRowRealPixelLocal = viewRequest->getMaxRowFile() - _minRowCenterTileGlobal;
+    _minColRealPixelLocal = viewRequest->getMinColFile() - _minColCenterTileGlobal;
+    _maxColRealPixelLocal = viewRequest->getMaxColFile() - _minColCenterTileGlobal;
   }
 
   /// \brief Output operator stream to print a view
@@ -293,6 +317,14 @@ class View : public htgs::IData {
       {};          ///< Column maximum in the central tile in global coordinate
 
   int32_t
+      _minRowRealPixelLocal{},
+  ///< Minimum Pixel Row fro; the image in local coordinate
+      _maxRowRealPixelLocal{},
+  ///< Maximum Pixel Row fro; the image in local coordinate
+      _minColRealPixelLocal{},
+  ///< Minimum Pixel Col fro; the image in local coordinate
+      _maxColRealPixelLocal{},
+  ///< Maximum Pixel Col fro; the image in local coordinate
       _maxRowCenterTileLocal
       {},           ///< Row maximum in the central tile in local coordinate
       _maxColCenterTileLocal
@@ -305,11 +337,11 @@ class View : public htgs::IData {
   bool isLocalCoordinateCorrect(const int32_t &rowAsked,
                                 const int32_t &colAsked) const {
     return rowAsked >= (int32_t) -getRadius() &&
-      rowAsked < (int32_t) this->_viewRequestData->getViewHeight()
-          - (int32_t) getRadius() &&
-      colAsked >= (int32_t) -getRadius() &&
-      colAsked < (int32_t) this->_viewRequestData->getViewWidth()
-          - (int32_t) getRadius();
+        rowAsked < (int32_t) this->_viewRequestData->getViewHeight()
+            - (int32_t) getRadius() &&
+        colAsked >= (int32_t) -getRadius() &&
+        colAsked < (int32_t) this->_viewRequestData->getViewWidth()
+            - (int32_t) getRadius();
   }
 };
 }
