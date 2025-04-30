@@ -39,6 +39,36 @@ file(APPEND FastImage/api/Version.h "\tconst int PATCH_VERSION = ${PROJECT_VERSI
 file(APPEND FastImage/api/Version.h "\tconst std::string FULL_VERSION = \"${PROJECT_VERSION}\"; // NOLINT\n")
 file(APPEND FastImage/api/Version.h "}\n")
 
+# Add a dummy target to make the export work
+add_library(FastImage INTERFACE)
+target_include_directories(FastImage INTERFACE $<INSTALL_INTERFACE:include>)
+
+# Install the target
+install(TARGETS FastImage EXPORT FastImageTargets)
+
+configure_file(
+        "${CMAKE_CURRENT_SOURCE_DIR}/FastImageConfig.cmake.in"
+        "${CMAKE_CURRENT_BINARY_DIR}/FastImageConfig.cmake"
+        @ONLY
+)
+
+install(
+        FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/FastImageConfig.cmake"
+        DESTINATION
+        "${CMAKE_INSTALL_PREFIX}/share/FastImage"
+)
+
+install(
+        EXPORT
+        FastImageTargets
+        NAMESPACE
+        FastImage::
+        DESTINATION
+        "${CMAKE_INSTALL_PREFIX}/share/FastImage"
+        FILE FastImageTargets.cmake
+)
+
 
 install(DIRECTORY FastImage
         DESTINATION include

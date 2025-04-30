@@ -26,7 +26,7 @@
 # by NIST employees is not subject to copyright protection within
 # the United States.
 
-cmake_minimum_required(VERSION 2.8.)
+cmake_minimum_required(VERSION 3.10)
 
 cmake_policy(SET CMP0048 NEW)
 project(FastImage VERSION 1.0.15)
@@ -101,3 +101,8 @@ if (BUILD_DOXYGEN)
 endif (BUILD_DOXYGEN)
 
 add_subdirectory(src)
+
+add_custom_target(install_${PROJECT_NAME}
+        make install
+        DEPENDS src
+        COMMENT "Installing ${PROJECT_NAME}")
